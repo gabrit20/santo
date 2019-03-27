@@ -6,6 +6,7 @@ import sys
 from settings import *
 
 from alltext import *
+from allbible import *
 from playVoice import playVoice
 from playWave import playWave
 from camera import cameraInit
@@ -201,6 +202,9 @@ def elaborateAnswer(keyword):  #enters here only if it recognises some word
                         elif queryID == "day":
                                 changeState("saint", state, func_name(), False)
 
+                        elif queryID == "bible":
+                                changeState("bible", state, func_name(), False)
+
                         elif queryID == "prob":
                                 playSound("problem",0)
                                 time.sleep(1.5)
@@ -318,6 +322,37 @@ def logic():
                         countInteractions += 1
                         changeState("enquiry", state, func_name(), False)
 
+                elif (state == "bible"):
+                        global Bible
+                        randomVerseID = random.randrange(len(Bible))
+                        randomVerse = Bible[randomVerseID]
+                        
+                        while (randomVerseID < len(Bible) and randomVerse[2] != 1):
+                                randomVerseID += 1
+                                randomVerse = Bible[randomVerseID]
+                        randomVerseFilename = str(Bible[randomVerseID][0]) + str(Bible[randomVerseID][1]) + ':' + Bible[randomVerseID][2]
+                                
+
+                        print("Bible", Bible[randomVerseID][0], Bible[randomVerseID][1], Bible[randomVerseID][2])
+                        playSound("verse",0)
+                        playSound("randomVerseFilename",0)
+                        playSound("touchHand",0)
+                        
+                        
+                        time.sleep(0.8)
+                        while (randomVerseID < len(Bible)):
+                                playSound(randomVerseFilename,0)
+                                randomVerseID += 1
+                                randomVerse = Bible[randomVerseID]
+                                randomVerseFilename = str(Bible[randomVerseID][0]) + str(Bible[randomVerseID][1]) + ':' + Bible[randomVerseID][2]
+                                if (randomVerse[2] == 1):
+                                        break
+                         
+
+                        countInteractions += 1
+                        changeState("enquiry", state, func_name(), False)
+
+                                             
                 elif (state == "pray"):
                         playSound(random.choice(soundfiles.prayers),0)
                         print("replying with a prayer" )
@@ -415,6 +450,7 @@ def init():
 init()
 alltextInit()
 allvocabularies.allvocabulariesInit()
+allbibleInit()
 
 
 
