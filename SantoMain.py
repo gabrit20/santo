@@ -90,8 +90,9 @@ def listen():
 
                 speech_rec.stop()
                 print("Speech recognition stopped")
+                is_recognized = speech_rec.is_recognized
 
-
+                
                 print("is_recognized", is_recognized)
 
 
@@ -102,11 +103,8 @@ def listen():
                         if (state=="greeting"):
                                 #skip the name
                                 countEmpty = 0 
-                                alreadyPlayed = False
-                                countInteractions = 0
-                                state = "enquiry"
-                                print("go to enquiry from timeout")   #skip the name                             
-                                #changeState("enquiry", False, -1, "timeout")
+                                countInteractions = 0                           
+                                changeState("enquiry", state, func_name(), False)
 
 
                         elif (state=="enquiry"):

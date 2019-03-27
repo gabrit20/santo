@@ -12,7 +12,7 @@ def playWave(filename):
     pygame.mixer.init()
 
     try:
-        pygame.mixer.music.load(filename + '.wav')
+        pygame.mixer.music.load('../audio/' + filename + '.wav')
         pygame.mixer.music.play()
 
     except pygame.error:
