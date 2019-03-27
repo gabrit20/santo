@@ -1,0 +1,8 @@
+https://github.com/Uberi/speech_recognition/blob/master/reference/library-reference.rst
+
+Offline:
+url con languages:
+https://sourceforge.net/projects/cmusphinx/files/Acoustic%20and%20Language%20Models/Spanish/https://sourceforge.net/projects/cmusphinx/files/Acoustic%20and%20Language%20Models/
+
+como instalar:
+https://github.com/Uberi/speech_recognition/blob/master/reference/pocketsphinx.rst

@@ -23,7 +23,7 @@ def playVoice(language, textID):
     try:
         pygame.mixer.music.load('../audio/' + 'Language'+language+'/'+textID+'.mp3') #.wav
         pygame.mixer.music.play()
-        print("play")
+        #print("play")
 
     except pygame.error:
         print("Calling TTS")

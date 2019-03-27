@@ -86,7 +86,7 @@ def listen():
                 print("Speech recognition starting")
                 speech_rec.start()
                 
-                #time.sleep(recordingTime) # Make it equal to recording length inside Speech Recognition module.
+                time.sleep(recordingTime) # Make it equal to recording length inside Speech Recognition module.
 
                 speech_rec.stop()
                 print("Speech recognition stopped")

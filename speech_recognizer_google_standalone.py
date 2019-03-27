@@ -41,9 +41,7 @@ cmd2='wget -q -U "Mozilla/5.0" --post-file recording.flac --header="Content-Type
 
 from settings import *
 RECORD_SECONDS = recordingTime
-
-import os
-f = open(os.devnull, 'w')
+setting_language = str(language_in)
 
 from ctypes import *
 # From alsa-lib Git 3fd4ab9be0db7c7430ebd258f2717a976381715d
@@ -55,22 +53,20 @@ def py_error_handler(filename, line, function, err, fmt):
   pass
 c_error_handler = ERROR_HANDLER_FUNC(py_error_handler)
 
-import contextlib
 import os
 import sys
 
-@contextlib.contextmanager
+devnull = os.open(os.devnull, os.O_WRONLY)
+old_stderr = os.dup(2)
 def ignore_stderr():
-    devnull = os.open(os.devnull, os.O_WRONLY)
-    old_stderr = os.dup(2)
     sys.stderr.flush()
     os.dup2(devnull, 2)
     os.close(devnull)
-    try:
-        yield
-    finally:
-        os.dup2(old_stderr, 2)
-        os.close(old_stderr)
+
+def attend_stderr():
+    os.dup2(old_stderr, 2)
+    os.close(old_stderr)
+    
         
 class GSpeech(object):
     """Speech Recogniser using Google Speech API"""
@@ -186,18 +182,13 @@ class GSpeech(object):
             self.recording_process = True
             self.is_recognized = False
 
-            
-            import sys
-            global f
-            stderr_original = sys.stderr
-            sys.stderr = f
             #Grabar audio y guardar en wav
 
             import pyaudio
             import wave
+            import sys
 
-            
-
+                        
             asound = cdll.LoadLibrary('libasound.so')
             # Set error handler
             asound.snd_lib_error_set_handler(c_error_handler)
@@ -207,11 +198,13 @@ class GSpeech(object):
             audio = pyaudio.PyAudio()
             print("*"*65)
 
-
             # Reset to default error handler
             asound.snd_lib_error_set_handler(None)
 
-                
+            #ignore_stderr()
+            # Initialize PyAudio
+            #audio = pyaudio.PyAudio()
+            #attend_stderr()
 
             cantidad_canales = 0
             indice = 0
@@ -240,11 +233,27 @@ class GSpeech(object):
                             frames_per_buffer=CHUNK)
             print("-"*20 + "recording for " + str(RECORD_SECONDS) + " seconds" + "-"*20)
             
+
+            import time
+            global cantidad_de_veces_mas_rapido
+            factor = 5
+            toolbar_width = int(RECORD_SECONDS/cantidad_de_veces_mas_rapido) * factor * cantidad_de_veces_mas_rapido
+            # setup toolbar
+            sys.stdout.write("[%s]" % (" " * toolbar_width))
+            sys.stdout.flush()
+            sys.stdout.write("\b" * (toolbar_width+1)) # return to start of line, after '['
+
+            momento_de_actualizar = int(RATE / CHUNK * RECORD_SECONDS / factor / cantidad_de_veces_mas_rapido)
             frames = []
-             
             for i in range(0, int(RATE / CHUNK * RECORD_SECONDS)):
                 data = stream.read(CHUNK)
                 frames.append(data)
+                if (i+1) % momento_de_actualizar == 0:
+                  # update the bar
+                  sys.stdout.write("-"*int(RECORD_SECONDS/cantidad_de_veces_mas_rapido))
+                  sys.stdout.flush()
+            sys.stdout.write("\n")
+            sys.stdout.flush()
             print("-"*20 + "finished recording" + "-"*20)
             # stop Recording
             stream.stop_stream()
@@ -261,13 +270,16 @@ class GSpeech(object):
 
             import speech_recognition as sr
             import sys
+            global my_key_api
+            global setting_language
+            self.is_recognized = False
 
             audio_grabado = sr.AudioFile("grabacion.wav")
             r = sr.Recognizer()
             with audio_grabado as source:
               audio = r.record(source)
               try:
-                text = r.recognize_google(audio)
+                text = r.recognize_google(audio,language=setting_language)
                 print("From Google you said : {}".format(text))
                 sys.stdout.flush()
                 self.publish_message(text)
@@ -275,25 +287,34 @@ class GSpeech(object):
               except sr.UnknownValueError:
                 print("Sorry could not hear your voice")
                 sys.stdout.flush()
-                self.is_recognized = False
-              except sr.RequestError as e:
-                print("Could not request results from Google Speech Recognition service; {0}".format(e))
+              except:
+                print("Could not request results from Google Speech Recognition service")
                 sys.stdout.flush()
+                
                 try:
-                    #text = r.recognize_sphinx(audio, language = "en-US")
-                    text = r.recognize_sphinx(audio)
+                  text = r.recognize_google(audio,language=setting_language,key=my_key_api)
+                  print("From Google you said : {}".format(text))
+                  sys.stdout.flush()
+                  self.publish_message(text)
+                  self.is_recognized = True
+                except sr.UnknownValueError:
+                  print("Sorry could not hear your voice")
+                  sys.stdout.flush()
+                except:
+                  print("Could not request results from Google Speech Recognition service")
+                  sys.stdout.flush()
+                  
+                  try:
+                    text = r.recognize_sphinx(audio,language=setting_language)
                     print("From Sphinx you said : {}".format(text))
                     sys.stdout.flush()
                     self.publish_message(text)
                     self.is_recognized = True
-                except sr.UnknownValueError:
+                  except sr.UnknownValueError:
                     print("Sorry could not hear your voice")
                     sys.stdout.flush()
-                    self.is_recognized = False
 
               self.on_recognition_finished()
-                 
-            sys.stderr = stderr_original
 
     def loginfo(self, message):
         print("Speech rec (google) :: " + message)
