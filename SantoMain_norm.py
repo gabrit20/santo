@@ -86,7 +86,7 @@ def listen():
                 print("Speech recognition starting")
                 speech_rec.start()
                 
-                #time.sleep(recordingTime) # Make it equal to recording length inside Speech Recognition module.
+                time.sleep(recordingTime) # Make it equal to recording length inside Speech Recognition module.
 
                 speech_rec.stop()
                 print("Speech recognition stopped")
@@ -134,7 +134,7 @@ def touch():
                                 changeState("begin", state, func_name(), False)
                         if (state=="enquiry"):
                                 countEmpty = 0
-                                speech_rec.force_stop()
+                                speech_rec.stop()
                                 changeState("farewell", state, func_name(), False)
                         if (state =="reply"):
                                 while (pygame.mixer.music.get_busy()==True):

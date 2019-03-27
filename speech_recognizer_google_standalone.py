@@ -55,7 +55,22 @@ def py_error_handler(filename, line, function, err, fmt):
   pass
 c_error_handler = ERROR_HANDLER_FUNC(py_error_handler)
 
+import contextlib
+import os
+import sys
 
+@contextlib.contextmanager
+def ignore_stderr():
+    devnull = os.open(os.devnull, os.O_WRONLY)
+    old_stderr = os.dup(2)
+    sys.stderr.flush()
+    os.dup2(devnull, 2)
+    os.close(devnull)
+    try:
+        yield
+    finally:
+        os.dup2(old_stderr, 2)
+        os.close(old_stderr)
         
 class GSpeech(object):
     """Speech Recogniser using Google Speech API"""
@@ -119,16 +134,26 @@ class GSpeech(object):
         """Stop speech recognition"""
         if self.started:
             self.started = False
-            if self.recording_process != None:
-                try:
-                    self.recording_process.kill()
-                except Exception as e:
-                    print("Cannot kill sound recognition process: {0}".format(e))
             if self.recog_thread.is_alive():
                 self.recog_thread.join()
             print("gspeech recognizer stopped")
         else:
             print("gspeech is already stopped")
+
+    def force_stop(self):
+        """Stop speech recognition"""
+        if self.started:
+            self.started = False
+            if self.recording_process != None:
+                try:
+                    self.recog_thread.kill()
+                except Exception as e:
+                    print("Cannot kill sound recognition process: {0}".format(e))
+            if self.recog_thread.is_alive():
+                self.recog_thread.join()
+            print("gspeech recognizer force stopped")
+        else:
+            print("gspeech is already force stopped")
 
 
     def isStarted(self):
@@ -168,8 +193,6 @@ class GSpeech(object):
             sys.stderr = f
             #Grabar audio y guardar en wav
 
-            self.recording_process = None
-
             import pyaudio
             import wave
 
@@ -178,8 +201,13 @@ class GSpeech(object):
             asound = cdll.LoadLibrary('libasound.so')
             # Set error handler
             asound.snd_lib_error_set_handler(c_error_handler)
+
+            print("*"*65)
             # Initialize PyAudio
             audio = pyaudio.PyAudio()
+            print("*"*65)
+
+
             # Reset to default error handler
             asound.snd_lib_error_set_handler(None)
 
