@@ -140,11 +140,11 @@ class GSpeech(object):
         """Stop speech recognition"""
         if self.started:
             self.started = False
-            if self.recording_process != None:
-                try:
-                    self.recog_thread.kill()
-                except Exception as e:
-                    print("Cannot kill sound recognition process: {0}".format(e))
+##            if self.recording_process != None:
+##                try:
+##                    self.recog_thread.kill()
+##                except Exception as e:
+##                    print("Cannot kill sound recognition process: {0}".format(e))
             if self.recog_thread.is_alive():
                 self.recog_thread.join()
             print("gspeech recognizer force stopped")
@@ -209,6 +209,8 @@ class GSpeech(object):
             cantidad_canales = 0
             indice = 0
             sys.stdout.flush()
+##            print(audio.get_device_info_by_index(0)['defaultSampleRate'])
+##            sys.stdout.flush()
             for i in range(audio.get_device_count()):
               dev = audio.get_device_info_by_index(i)
               if "USB Audio Device" in dev['name']:
@@ -220,8 +222,12 @@ class GSpeech(object):
             FORMAT = pyaudio.paInt16
             CHANNELS = cantidad_canales
             DEVICE_INDEX = indice
+            #Debe mantenerse en 48000 (Hz) para que funcione bien
+            #Lo normal es que deberia ser 44100 acorde al comando audio.get_device_info_by_index(0)['defaultSampleRate']
             RATE = 48000
-            CHUNK = 1024
+            #Si hay un error de Input Overflow se debe aumentar el valor de
+            #CHUNK, su valor siempre debe ser una potencia de 2
+            CHUNK = 8192
             global RECORD_SECONDS
             WAVE_OUTPUT_FILENAME = "grabacion.wav"
 
@@ -243,18 +249,23 @@ class GSpeech(object):
             sys.stdout.flush()
             sys.stdout.write("\b" * (toolbar_width+1)) # return to start of line, after '['
 
-            momento_de_actualizar = int(RATE / CHUNK * RECORD_SECONDS / factor / cantidad_de_veces_mas_rapido)
+            cantidad_a_actualizar = int(RECORD_SECONDS/cantidad_de_veces_mas_rapido)
+            #momento_de_actualizar = int(RATE / CHUNK * RECORD_SECONDS / factor / cantidad_de_veces_mas_rapido)
+            momento_de_actualizar = int(RATE / CHUNK * RECORD_SECONDS) / float(int(toolbar_width / cantidad_a_actualizar))
             frames = []
+            contador = 1
             for i in range(0, int(RATE / CHUNK * RECORD_SECONDS)):
                 data = stream.read(CHUNK)
                 frames.append(data)
-                if (i+1) % momento_de_actualizar == 0:
+                if i < momento_de_actualizar*contador <= (i+1):
                   # update the bar
-                  sys.stdout.write("-"*int(RECORD_SECONDS/cantidad_de_veces_mas_rapido))
+                  contador += 1
+                  sys.stdout.write("-"*cantidad_a_actualizar)
                   sys.stdout.flush()
             sys.stdout.write("\n")
             sys.stdout.flush()
             print("-"*20 + "finished recording" + "-"*20)
+            
             # stop Recording
             stream.stop_stream()
             stream.close()

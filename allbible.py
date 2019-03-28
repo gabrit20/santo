@@ -2,9 +2,12 @@
 import codecs
 from settings import *
 
+Bible = []
+
+
 def allbibleInit():
     global Bible
-    Bible = []
+    
     
     #file = open("alltext.csv")
     file = codecs.open('Bible'+language_out+'.csv', encoding='latin-1')

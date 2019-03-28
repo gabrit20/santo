@@ -7,8 +7,7 @@ from settings import *
 
 from alltext import *
 from allbible import *
-from playVoice import playVoice
-from playWave import playWave
+from playVoice import *
 from camera import cameraInit
 
 from speech_recognizer_google_standalone import GSpeech
@@ -52,12 +51,16 @@ def changeState(newState, previousState, callingFunction, bStopNextSpeech):
         
 
 
-def playSound(cancion, stop):
+def playSound(cancion, archive=alltext, row=-1, column=-1):
 
         global ser
 
         print("playSound: ", cancion)
-        playVoice(language_out, cancion)
+
+        if archive == alltext:
+                playText(language_out, cancion)
+        else:
+                playArchive(language_out, cancion, archive, row, column)
 
         while (pygame.mixer.music.get_busy()==True):
                 time.sleep(1)
@@ -85,11 +88,13 @@ def listen():
                 is_recognized = -1
                 
                 print("Speech recognition starting")
+                #aureola on
                 speech_rec.start()
                 
                 time.sleep(recordingTime) # Make it equal to recording length inside Speech Recognition module.
 
                 speech_rec.stop()
+                #aureola off
                 print("Speech recognition stopped")
                 is_recognized = speech_rec.is_recognized
 
@@ -150,6 +155,12 @@ def touch():
                                         pygame.mixer.music.stop()
                                         changeState("enquiry", state, func_name(), False)
                                 
+                        if (state =="bible"):
+                                print("CALLATE")
+                                while (pygame.mixer.music.get_busy()==True):
+                                        pygame.mixer.music.stop()
+                                        changeState("enquiry", state, func_name(), False)
+                                
                                 
 
                         time.sleep(0.2) #to avoid multiple touch detected  with just one press
@@ -193,10 +204,10 @@ def elaborateAnswer(keyword):  #enters here only if it recognises some word
                 if (is_recognized == True):             
 
                         if queryID == "bye":
-                                playSound("goInPeace",0)
+                                playSound("goInPeace")
                                 time.sleep(0.4)
                                 countInteractions == 0
-                                playSound("retireShort",0)
+                                playSound("retireShort")
                                 changeState("farewell", state, func_name(), True)
                                 
                         elif queryID == "day":
@@ -206,7 +217,7 @@ def elaborateAnswer(keyword):  #enters here only if it recognises some word
                                 changeState("bible", state, func_name(), False)
 
                         elif queryID == "prob":
-                                playSound("problem",0)
+                                playSound("problem")
                                 time.sleep(1.5)
                                 changeState("pray", state, func_name(), False)
 
@@ -237,18 +248,18 @@ def elaborateAnswer(keyword):  #enters here only if it recognises some word
                         if keyword not in soundfiles.users:
                                 print("new user", keyword)
                                 soundfiles.users.append(keyword)
-                                #playSound("meet",0)
+                                #playSound("meet")
                                 if gender == "m":
-                                        playSound("meetM",0)
+                                        playSound("meetM")
                                 else:
-                                        playSound("meetF",0)
+                                        playSound("meetF")
 
                         else:
                                 print("exhisting user")
                                 if gender == "m":
-                                        playSound("welcomeBackM",0)
+                                        playSound("welcomeBackM")
                                 else:
-                                        playSound("welcomeBackF",0)
+                                        playSound("welcomeBackF")
 
                 #even if regognized is false: skip name if not detected
                 #countInteractions += 1
@@ -283,7 +294,7 @@ def logic():
 
                 elif (state == "begin"): 
 
-                        playSound("inTheNameAmen",0)
+                        playSound("inTheNameAmen")
                         if (countInteractions == 0):
                                 changeState("greeting", state, func_name(), False)
                         else:
@@ -294,9 +305,9 @@ def logic():
                 elif (state == "greeting"): 
 
                         if alreadyPlayed == False:
-                                playSound("greeting1",0)
+                                playSound("greeting1")
                                 time.sleep(0.5)
-                                alreadyPlayed = playSound("yourName",0)
+                                alreadyPlayed = playSound("yourName")
                                 time.sleep(0.5)
                                 listen()
                                 
@@ -311,11 +322,11 @@ def logic():
                                         break
                                 
                         print("playing the saint of the day")
-                        #playSound(soundfiles.saintsDB[iSaint][2],0)
-                        #playSound(soundfiles.saintsDB[iSaint][3],0) #it
-                        #playSound(soundfiles.saintsDB[iSaint][4],0) #it
+                        #playSound(soundfiles.saintsDB[iSaint][2])
+                        #playSound(soundfiles.saintsDB[iSaint][3]) #it
+                        #playSound(soundfiles.saintsDB[iSaint][4]) #it
                         for iData in range(2, len(soundfiles.saintsDB[dayInfoFound])):
-                                playSound(soundfiles.saintsDB[dayInfoFound][iData],0)
+                                playSound(soundfiles.saintsDB[dayInfoFound][iData])
                         
                         time.sleep(0.8)
                                 
@@ -328,25 +339,33 @@ def logic():
                         randomVerse = Bible[randomVerseID]
                         
                         while (randomVerseID < len(Bible) and randomVerse[2] != 1):
-                                randomVerseID += 1
+                                randomVerseID -= 1
                                 randomVerse = Bible[randomVerseID]
-                        randomVerseFilename = str(Bible[randomVerseID][0]) + str(Bible[randomVerseID][1]) + ':' + Bible[randomVerseID][2]
+                        randomVerseBookname = str(Bible[randomVerseID][0])
+                        randomVerseBooknum = str(Bible[randomVerseID][1])
+                        randomVerseFilename = str(Bible[randomVerseID][0]) + '-'  + str(Bible[randomVerseID][1]) + '-' + str(Bible[randomVerseID][2])
                                 
 
-                        print("Bible", Bible[randomVerseID][0], Bible[randomVerseID][1], Bible[randomVerseID][2])
-                        playSound("verse",0)
-                        playSound("randomVerseFilename",0)
-                        playSound("touchHand",0)
+                        print("Bible", Bible[randomVerseID][0], Bible[randomVerseID][1], Bible[randomVerseID][2], Bible[randomVerseID][3])
+                        playSound("verse")
+                        playSound("touchHand")
+                        playSound(randomVerseBookname, Bible, randomVerseID, 0)
+                        playSound(randomVerseBooknum, Bible, randomVerseID, 1)
+                        
                         
                         
                         time.sleep(0.8)
-                        while (randomVerseID < len(Bible)):
-                                playSound(randomVerseFilename,0)
-                                randomVerseID += 1
-                                randomVerse = Bible[randomVerseID]
-                                randomVerseFilename = str(Bible[randomVerseID][0]) + str(Bible[randomVerseID][1]) + ':' + Bible[randomVerseID][2]
-                                if (randomVerse[2] == 1):
+                        while (state=="bible"):
+                                playSound(randomVerseFilename, Bible, randomVerseID, 3)
+                                if (randomVerseID < len(Bible)-1):
+                                        randomVerseID += 1
+                                        randomVerse = Bible[randomVerseID]
+                                        randomVerseFilename = str(Bible[randomVerseID][0]) + '-'  + str(Bible[randomVerseID][1]) + '-' + str(Bible[randomVerseID][2])
+                                        if (randomVerse[2] == 1):
+                                                break
+                                else:
                                         break
+                                
                          
 
                         countInteractions += 1
@@ -354,7 +373,7 @@ def logic():
 
                                              
                 elif (state == "pray"):
-                        playSound(random.choice(soundfiles.prayers),0)
+                        playSound(random.choice(soundfiles.prayers))
                         print("replying with a prayer" )
                         time.sleep(0.8)
 
@@ -364,7 +383,7 @@ def logic():
                                              
                 elif (state=="farewell"):
                         if alreadyPlayed == False:
-                                playSound("retire",0)
+                                playSound("retire")
                         time.sleep(3)
                         changeState("standby", state, func_name(), True) #no chimes
 
@@ -373,12 +392,14 @@ def logic():
 
                         if alreadyPlayed == False:
                                 if countInteractions <= 0:
-                                        alreadyPlayed = playSound("tellMeLong",0)                                        
+                                        #alreadyPlayed = playSound("tellMeLong")
+                                        alreadyPlayed = playSound("avemaria")
+                                        
                                 else:
-                                        #alreadyPlayed = playSound("tellMe1",0)
+                                        #alreadyPlayed = playSound("tellMe1")
                                         for i in range(len(soundfiles.variants)):
                                                 if(soundfiles.variants[i][0] == "tellMe"): 
-                                                        alreadyPlayed = playSound(soundfiles.variants[i][random.randint(1, len(soundfiles.variants[i])-1)],0)
+                                                        alreadyPlayed = playSound(soundfiles.variants[i][random.randint(1, len(soundfiles.variants[i])-1)])
                                                         break
                                 time.sleep(0.5)
                         listen()
@@ -397,7 +418,7 @@ def logic():
 
 
                 elif (state=="reply"):
-                        playSound(chosenReply,0)
+                        playSound(chosenReply)
                         time.sleep(1)
                         countInteractions += 1
                         print("go to enquiry from main reply")
@@ -405,7 +426,7 @@ def logic():
 
 
                 elif (state=="wakaranai"):
-                        playSound(random.choice(soundfiles.wakaranai),0)
+                        playSound(random.choice(soundfiles.wakaranai))
                         time.sleep(1.2)
                         countInteractions += 1
                         changeState("enquiry", state, func_name(), False)
