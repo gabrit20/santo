@@ -21,6 +21,8 @@ import time
 timeInfo = time.localtime(time.time())
 month = timeInfo[1]
 day = timeInfo[2]
+smonth = str(month)
+sday = str(day)
 
 import os
 my_key_api = os.getenv("MY_OWN_KEY")

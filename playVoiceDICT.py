@@ -12,7 +12,7 @@ import alltext
 
 
 
-def playDict(language, textID, archive):
+def playDict(language, textID, dictionary):
 
 
     #stop=0
@@ -27,15 +27,9 @@ def playDict(language, textID, archive):
 
     except pygame.error:
         print("Calling TTS")
-        #print(archive)
+        print(dictionary)
             
         filename = '../audio/' + 'Language'+language+'/'+textID
-
-        text = -1
-        if type(archive) is dict:   #dictionary: pick the right language
-            text = archive[language]
-        elif type(archive) is str:    #directly a string
-            text = archive
         
         
         if (language == 'IT'):
@@ -43,21 +37,22 @@ def playDict(language, textID, archive):
             #Matteo duration longer 2, 7, 8, 'D', 2
             #Luca duration longer 2, 7, 5, 'D', 2
             #Roberto duration longer 3, 7, 2, 'D', 2
-            saveAudio(2, 7, 8, 'D', 2, audio_text=text, audio_filename=filename)
+            saveAudio(2, 7, 8, 'D', 2, audio_text=dictionary[language], audio_filename=filename)
         elif (language == 'ES'):
             #Francisco duration longer 3 2 2
             #Carlos duration longer 2 2 7  
             #saveAudio(3, 2, 2, 'd', 2, 'Hola señora', audio_filename='Language'+language+'/'+textID)
-            saveAudio(2, 2, 7, 'D', 1, audio_text=text, audio_filename=filename)
+            saveAudio(2, 2, 7, 'D', 1, audio_text=dictionary[language], audio_filename=filename)
         elif (language == 'EN'):
             #Simon duration longer
-            saveAudio(2, 1, 5, 'D', 2, audio_text=text, audio_filename=filename)
+            saveAudio(2, 1, 5, 'D', 2, audio_text=dictionary[language], audio_filename=filename)
         elif (language == 'DE'):
             #Tim duration longer
-            saveAudio(2, 3, 2, 'D', 2, audio_text=text, audio_filename=filename)
+            saveAudio(2, 3, 2, 'D', 2, audio_text=dictionary[language], audio_filename=filename)
         
 
         pygame.mixer.music.load('../audio/' + 'Language'+language+'/'+textID+'.mp3')
+        #pygame.mixer.music.load('new_audio.mp3')
         pygame.mixer.music.play()
 
 

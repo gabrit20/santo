@@ -1,9 +1,11 @@
 #coding: latin-1
 import codecs
 
+text = {}
+
 def alltextInit():
-    global text
-    text = {}
+    #global text
+    
     
     #file = open("alltext.csv")
     file = codecs.open('alltext.csv', encoding='latin-1')
@@ -23,6 +25,8 @@ def alltextInit():
         text_DE = items[4].encode('utf-8')
 
 
-        text[textID] = [text_IT, text_ES, text_EN, text_DE]
+        #text[textID] = [text_IT, text_ES, text_EN, text_DE]
+        text[textID] = {'IT':text_IT, 'ES':text_ES, 'EN':text_EN, 'DE':text_DE}
+
 
 

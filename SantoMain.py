@@ -7,6 +7,9 @@ from settings import *
 
 from alltext import *
 from allbible import *
+from allsaints import *
+from allprayers import *
+
 from playVoice import *
 from camera import cameraInit
 
@@ -51,16 +54,22 @@ def changeState(newState, previousState, callingFunction, bStopNextSpeech):
         
 
 
-def playSound(cancion, archive=alltext, row=-1, column=-1):
+def playSound(filename, archive=-1):
 
         global ser
 
-        print("playSound: ", cancion)
+        print("playSound: ", filename)
+        
+        if (archive == -1):
+                archive = text[filename] #id of filename coincides with the key of the dictionary
+        
+        print('ARCHIVE', archive)
+        #if (row != -1 and column != -1):
+        #        playList(language_out, filename, archive, row, column)
 
-        if archive == alltext:
-                playText(language_out, cancion)
-        else:
-                playArchive(language_out, cancion, archive, row, column)
+        playDict(language_out, filename, archive)
+
+                
 
         while (pygame.mixer.music.get_busy()==True):
                 time.sleep(1)
@@ -216,10 +225,13 @@ def elaborateAnswer(keyword):  #enters here only if it recognises some word
                         elif queryID == "bible":
                                 changeState("bible", state, func_name(), False)
 
-                        elif queryID == "prob":
+                        elif queryID == "pray":
+                                changeState("pray", state, func_name(), False)
+
+                        elif queryID == "problem":
                                 playSound("problem")
                                 time.sleep(1.5)
-                                changeState("pray", state, func_name(), False)
+                                changeState("pray", state, func_name(), True)
 
                         else: 
                                 for i in range(len(soundfiles.replies)):
@@ -263,6 +275,7 @@ def elaborateAnswer(keyword):  #enters here only if it recognises some word
 
                 #even if regognized is false: skip name if not detected
                 #countInteractions += 1
+                playSound("intro")
                 changeState("enquiry", state, func_name(), False)
                         
 
@@ -314,19 +327,31 @@ def logic():
 
 
                 elif (state == "saint"):
+                        global saints
                         dayInfoFound = 0
-                        for iSaint in range(len(soundfiles.saintsDB)):
-                                print("days", soundfiles.saintsDB[iSaint][0], month, soundfiles.saintsDB[iSaint][1], day)
-                                if soundfiles.saintsDB[iSaint][0] == month and soundfiles.saintsDB[iSaint][1] == day:
-                                        dayInfoFound = iSaint
-                                        break
-                                
+                                                        
                         print("playing the saint of the day")
-                        #playSound(soundfiles.saintsDB[iSaint][2])
-                        #playSound(soundfiles.saintsDB[iSaint][3]) #it
-                        #playSound(soundfiles.saintsDB[iSaint][4]) #it
-                        for iData in range(2, len(soundfiles.saintsDB[dayInfoFound])):
-                                playSound(soundfiles.saintsDB[dayInfoFound][iData])
+
+                        dayFilename = smonth + '-' + sday + 'd'
+                        nameFilename = smonth + '-' + sday + 'n'
+                        storyFilename = smonth + '-' + sday + 's'
+
+
+
+                        if (saints[smonth][sday]['d'][language_out] != ""):
+                                playSound(dayFilename, saints[smonth][sday]['d'])
+                                if (saints[smonth][sday]['n'][language_out] != ""):
+                                        playSound("dayMemory")
+                                        playSound(nameFilename, saints[smonth][sday]['n'])
+                                        time.sleep(0.5)
+                                        playSound(storyFilename, saints[smonth][sday]['s'])
+                                else:
+                                        playSound("noSaint")
+                                        playSound("sorry")
+                        else:
+                                playSound("noDay")
+                                playSound("sorry")
+                        
                         
                         time.sleep(0.8)
                                 
@@ -335,37 +360,38 @@ def logic():
 
                 elif (state == "bible"):
                         global Bible
-                        randomVerseID = random.randrange(len(Bible))
-                        randomVerse = Bible[randomVerseID]
+                        randomBookID = random.choice(Bible.keys())
+                        randomBooknum = random.choice(Bible[randomBookID].keys())
+                        while (randomBooknum.isdigit() == False): #as it contains also the key "bookNames"
+                                randomBooknum = random.choice(Bible[randomBookID].keys())
+
+
                         
-                        while (randomVerseID < len(Bible) and randomVerse[2] != 1):
-                                randomVerseID -= 1
-                                randomVerse = Bible[randomVerseID]
-                        randomVerseBookname = str(Bible[randomVerseID][0])
-                        randomVerseBooknum = str(Bible[randomVerseID][1])
-                        randomVerseFilename = str(Bible[randomVerseID][0]) + '-'  + str(Bible[randomVerseID][1]) + '-' + str(Bible[randomVerseID][2])
+                        randomVerseBookname = randomBookID
+                        randomVerseBooknum = randomBooknum
                                 
 
-                        print("Bible", Bible[randomVerseID][0], Bible[randomVerseID][1], Bible[randomVerseID][2], Bible[randomVerseID][3])
                         playSound("verse")
+                        time.sleep(0.3)
                         playSound("touchHand")
-                        playSound(randomVerseBookname, Bible, randomVerseID, 0)
-                        playSound(randomVerseBooknum, Bible, randomVerseID, 1)
-                        
-                        
+                        playSound(randomBookID, Bible[randomBookID]['bookNames'])
+                        playSound(randomBooknum, randomBooknum)  #play only the number
                         
                         time.sleep(0.8)
-                        while (state=="bible"):
-                                playSound(randomVerseFilename, Bible, randomVerseID, 3)
-                                if (randomVerseID < len(Bible)-1):
-                                        randomVerseID += 1
-                                        randomVerse = Bible[randomVerseID]
-                                        randomVerseFilename = str(Bible[randomVerseID][0]) + '-'  + str(Bible[randomVerseID][1]) + '-' + str(Bible[randomVerseID][2])
-                                        if (randomVerse[2] == 1):
-                                                break
+                        iVerse = 1
+                        iVerseFilename = randomBookID + '-'  + randomBooknum + '-' + str(iVerse)
+                        print("Bible", randomBookID, randomBooknum, str(iVerse))
+                        playSound(iVerseFilename, Bible[randomBookID][randomBooknum][str(iVerse)])
+                        
+                        while (state=="bible"): #necessary condition as touching hand will shift the state
+
+                                iVerse += 1
+                                if (str(iVerse) in Bible[randomBookID][randomBooknum]):
+                                        iVerseFilename = randomBookID + '-'  + randomBooknum + '-' + str(iVerse)
+                                        playSound(iVerseFilename, Bible[randomBookID][randomBooknum][str(iVerse)])
                                 else:
                                         break
-                                
+
                          
 
                         countInteractions += 1
@@ -373,8 +399,21 @@ def logic():
 
                                              
                 elif (state == "pray"):
-                        playSound(random.choice(soundfiles.prayers))
-                        print("replying with a prayer" )
+                        if alreadyPlayed == False:
+                                playSound("prayStart")
+                        time.sleep(1)
+                        randomPrayer = random.choice(prayers.keys())
+                        part = 1
+                        
+                        while (prayers[randomPrayer][str(part)][language_out] == ""):
+                                print("empty prayer entry; skipping")
+                                randomPrayer = random.choice(prayers.keys())
+                        
+                        while (state=="pray"):
+                                playSound(randomPrayer + str(part), prayers[randomPrayer][str(part)])
+                                part += 1
+                                if (str(part) not in prayers[randomPrayer]):
+                                        break
                         time.sleep(0.8)
 
                         countInteractions += 1
@@ -392,8 +431,7 @@ def logic():
 
                         if alreadyPlayed == False:
                                 if countInteractions <= 0:
-                                        #alreadyPlayed = playSound("tellMeLong")
-                                        alreadyPlayed = playSound("avemaria")
+                                        alreadyPlayed = playSound("tellMeLong")
                                         
                                 else:
                                         #alreadyPlayed = playSound("tellMe1")
@@ -467,11 +505,15 @@ def init():
 
 
 
-
-init()
+#texts must be initialised before init()
 alltextInit()
 allvocabularies.allvocabulariesInit()
 allbibleInit()
+allsaintsInit()
+allprayersInit()
+
+init()
+
 
 
 
