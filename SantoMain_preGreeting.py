@@ -1,11 +1,6 @@
 import random
-import sys
-
 import threading
-alreadyPlayed = False
-alreadyPlayed_ready = threading.Event()
-#state_ready = threading.Event()
-alreadyPlayed_ready.set()
+import sys
 
 
 from settings import *
@@ -24,7 +19,7 @@ speech_rec = GSpeech("")
 import soundfiles
 import allvocabularies
 
-
+alreadyPlayed = False
 global chosenReply
 chosenReply = ""
 global countInteractions
@@ -46,15 +41,13 @@ def changeState(newState, previousState, callingFunction, bStopNextSpeech):
         global alreadyPlayed
         global state
 
+        if bStopNextSpeech != -1:
+                alreadyPlayed = bStopNextSpeech
                 
         if (newState != "noreply" and previousState != "noreply"):
                 countEmpty = 0
-        if bStopNextSpeech != -1:
-                alreadyPlayed = bStopNextSpeech
-        state = newState
         print("STATE CHANGING TO " + newState + " FROM " + previousState + " IN " + callingFunction)
-        alreadyPlayed_ready.set()
-        #state_ready.set()
+        state = newState
 
 
 
@@ -93,7 +86,7 @@ def listen():
 
         global state
         global speech_rec
-        global is_recognized
+        global is_recognized #
         global countInteractions
         global countEmpty
         global alreadyPlayed
@@ -103,7 +96,7 @@ def listen():
 
                 is_recognized = -1
                 
-                #print("Speech recognition starting")
+                print("Speech recognition starting")
                 #aureola on
                 speech_rec.start()
                 
@@ -111,25 +104,26 @@ def listen():
 
                 speech_rec.stop()
                 #aureola off
-                #print("Speech recognition stopped")
+                print("Speech recognition stopped")
                 is_recognized = speech_rec.is_recognized
 
                 
                 print("is_recognized", is_recognized)
 
 
-                if (is_recognized == False):
+                if (is_recognized == -1):
 
                         countEmpty += 1
 
                         if (state=="greeting"):
                                 #skip the name
-                                if (countEmpty >= 3): 
-                                        countInteractions = 0                           
-                                        changeState("enquiry", state, func_name(), False)
+                                countEmpty = 0 
+                                countInteractions = 0                           
+                                changeState("enquiry", state, func_name(), False)
 
 
                         elif (state=="enquiry"):
+                                #pass
                                 changeState("noreply", state, func_name(), False)
                                 #it keeps running
 
@@ -137,6 +131,7 @@ def listen():
 
                                         
                         
+
 
 
 def touch():
@@ -151,54 +146,33 @@ def touch():
                         print ("hand recibo", recibo)
                         if (state=="standby"):
                                 countEmpty = 0
-                                #print("recibo1", recibo, state)
-                                #recibo = -1
-                                #print("recibo2", recibo, state)
-                                
                                 changeState("begin", state, func_name(), False)
-                                continue
                         if (state=="enquiry"):
                                 countEmpty = 0
-                                #recibo = -1
                                 speech_rec.force_stop()
                                 changeState("farewell", state, func_name(), False)
-                        if (state=="begin" or state=="greeting"):
-                                print("recibo1", recibo, state)
-                                countEmpty = 0
-                                #recibo = -1
-                                while (pygame.mixer.music.get_busy()==True):
-                                        pygame.mixer.music.stop()
-                                print("recibo2", recibo, state)
-                                changeState("enquiry", state, func_name(), False)
-                                continue
                         if (state =="reply"):
                                 while (pygame.mixer.music.get_busy()==True):
-                                        recibo = -1
                                         pygame.mixer.music.stop()
                                         changeState("enquiry", state, func_name(), False)
-                                continue
                         if (state =="saint"):
                                 while (pygame.mixer.music.get_busy()==True):
-                                        recibo = -1
                                         pygame.mixer.music.stop()
                                         changeState("enquiry", state, func_name(), False)
-                                continue
                         if (state =="pray"):
                                 while (pygame.mixer.music.get_busy()==True):
-                                        recibo = -1
                                         pygame.mixer.music.stop()
                                         changeState("enquiry", state, func_name(), False)
-                                continue
+                                
                         if (state =="bible"):
+                                print("CALLATE")
                                 while (pygame.mixer.music.get_busy()==True):
-                                        recibo = -1
                                         pygame.mixer.music.stop()
                                         changeState("enquiry", state, func_name(), False)
-                                continue
                                 
                                 
 
-                        time.sleep(3) #to avoid multiple touch detected  with just one press
+                        time.sleep(0.2) #to avoid multiple touch detected  with just one press
 
 
 
@@ -212,7 +186,7 @@ def elaborateAnswer(keyword):  #enters here only if it recognises some word
         global countInteractions
         
 
-        is_matched = False
+        is_recognized = False
         keyword = keyword.lower()
         print("keyword>", keyword)
 
@@ -229,14 +203,14 @@ def elaborateAnswer(keyword):  #enters here only if it recognises some word
                         for iWord in allvocabularies.vocabulary[iKey][language_in]: #compare the strings, one inside another
                                 if iWord in keyword or keyword in iWord:
                                         #print("match", keyword, iWord)
-                                        is_matched = True
-                                        print("setting is_matched = True in elaborateAnswer query")
+                                        is_recognized = True
+                                        print("setting is_recognized = True in elaborateAnswer query")
                                         queryID = iKey
                                         print("queryID", queryID)
                                         break
                                         break
 
-                if (is_matched == True):             
+                if (is_recognized == True):             
 
                         if queryID == "bye":
                                 playSound("goInPeace")
@@ -275,9 +249,9 @@ def elaborateAnswer(keyword):  #enters here only if it recognises some word
         elif (state == "greeting"):
                 print("in elaborateAnswer greeting")
                 if (keyword is not None):       #len(keyword) >= 3):
-                        is_matched = True
-                        print("setting is_matched = True  in elaborateAnswer greeting")
-                if (is_matched == True):
+                        is_recognized = True
+                        print("setting is_recognized = True  in elaborateAnswer greeting")
+                if (is_recognized == True):
                         print(soundfiles.users)
                         gender = "m"
                         if keyword[len(keyword)-1] == "a":
@@ -301,15 +275,11 @@ def elaborateAnswer(keyword):  #enters here only if it recognises some word
 
                 #even if regognized is false: skip name if not detected
                 #countInteractions += 1
-                time.sleep(0.5)
                 playSound("intro")
-                time.sleep(0.5)
-                playSound("aureola")
                 changeState("enquiry", state, func_name(), False)
-                time.sleep(0.8)
                         
 
-        if (is_matched == False):
+        if (is_recognized == False):
                 changeState("wakaranai", state, func_name(), False)
                                 
                         
@@ -330,44 +300,29 @@ def logic():
 
                 
                 if (state == "standby"):
-                        #print("STANDBY inside")
-                        #print(alreadyPlayed_ready.is_set())
-                        alreadyPlayed_ready.wait()
-                        if (alreadyPlayed == False and state == "standby"):
-                                #print("PLAY CHIMES")
-                                alreadyPlayed = playWave('chimes')
-                                alreadyPlayed_ready.clear()
+                        if alreadyPlayed == False:
+                                alreadyPlayed = playWave('chimes') 
                         
 
 
-                elif (state == "begin"):
-                        #print("BEGIN inside")
+                elif (state == "begin"): 
 
                         playSound("inTheNameAmen")
-                        time.sleep(0.8)
-                        if (countInteractions == 0 and state == "begin"):
+                        if (countInteractions == 0):
                                 changeState("greeting", state, func_name(), False)
                         else:
                                 changeState("enquiry", state, func_name(), False)
                         
 
 
-                elif (state=="nogreeting"):
-                        print("no greeting")
-                        time.sleep(0.1)
-                        print("countEmpty", countEmpty)
-                        changeState("greeting", state, func_name(), True)
-
-
-                elif (state == "greeting"):
-                        #print("GREETING inside")
+                elif (state == "greeting"): 
 
                         if alreadyPlayed == False:
                                 playSound("greeting1")
                                 time.sleep(0.5)
                                 alreadyPlayed = playSound("yourName")
-                                time.sleep(1)
-                        listen()
+                                time.sleep(0.5)
+                                listen()
                                 
 
 
@@ -472,14 +427,18 @@ def logic():
                         changeState("standby", state, func_name(), True) #no chimes
 
 
-                elif (state=="enquiry"):
-                        print("ENQUIRY inside")
+                elif (state=="enquiry"): 
 
                         if alreadyPlayed == False:
                                 if countInteractions <= 0:
-                                        alreadyPlayed = playSound("tellMeLong")   
+                                        alreadyPlayed = playSound("tellMeLong")
+                                        
                                 else:
-                                        alreadyPlayed = playSound(random.choice(soundfiles.variants["tellMe"]))
+                                        #alreadyPlayed = playSound("tellMe1")
+                                        for i in range(len(soundfiles.variants)):
+                                                if(soundfiles.variants[i][0] == "tellMe"): 
+                                                        alreadyPlayed = playSound(soundfiles.variants[i][random.randint(1, len(soundfiles.variants[i])-1)])
+                                                        break
                                 time.sleep(0.5)
                         listen()
 
@@ -491,7 +450,8 @@ def logic():
                 elif (state=="noreply"):
                         print("no reply")
                         time.sleep(1)
-                        print("countEmpty", countEmpty)
+                        countEmpty += 1
+                        print("go to enquiry from main noreply")
                         changeState("enquiry", state, func_name(), True)
 
 
@@ -499,11 +459,12 @@ def logic():
                         playSound(chosenReply)
                         time.sleep(1)
                         countInteractions += 1
+                        print("go to enquiry from main reply")
                         changeState("enquiry", state, func_name(), False)
 
 
                 elif (state=="wakaranai"):
-                        playSound(random.choice(soundfiles.variants["wakaranai"]))
+                        playSound(random.choice(soundfiles.wakaranai))
                         time.sleep(1.2)
                         countInteractions += 1
                         changeState("enquiry", state, func_name(), False)
@@ -540,8 +501,6 @@ def init():
         touchhand.start()
         logicThread = threading.Thread(target=logic)
         logicThread.start()
-
-        
 
 
 

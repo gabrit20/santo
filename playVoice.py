@@ -46,9 +46,9 @@ def playDict(language, textID, archive):
             saveAudio(2, 7, 8, 'D', 2, audio_text=text, audio_filename=filename)
         elif (language == 'ES'):
             #Francisco duration longer 3 2 2
-            #Carlos duration longer 2 2 7  
+            #Carlos duration longer 2 2 7  too grave
             #saveAudio(3, 2, 2, 'd', 2, 'Hola señora', audio_filename='Language'+language+'/'+textID)
-            saveAudio(2, 2, 7, 'D', 1, audio_text=text, audio_filename=filename)
+            saveAudio(3, 2, 2, 'D', 1, audio_text=text, audio_filename=filename)
         elif (language == 'EN'):
             #Simon duration longer
             saveAudio(2, 1, 5, 'D', 2, audio_text=text, audio_filename=filename)
@@ -128,6 +128,7 @@ def playWave(filename):
     m = alsaaudio.Mixer('PCM')
     m.setvolume(95)
     pygame.mixer.init()
+    print("playWave: ", filename)
 
     try:
         pygame.mixer.music.load('../audio/' + filename + '.wav')
