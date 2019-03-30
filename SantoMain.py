@@ -1,5 +1,6 @@
 import random
 import sys
+import time
 import logging
 
 import threading
@@ -34,11 +35,15 @@ countEmpty = 0
 
 import serial
 global ser
+global cabezera
 
+cabezera="$OAX"
 
 import pygame
 from pygame.mixer import music
 
+
+                        
 def func_name():
         return sys._getframe(1).f_code.co_name
 
@@ -66,7 +71,8 @@ def changeState(newState, previousState, callingFunction, bStopNextSpeech):
 def playSound(filename, archive=-1):
 
         global ser
-
+        global cabezera
+        
         print("playSound: ", filename)
         logging.info("playSound: "+ filename)
         
@@ -77,6 +83,14 @@ def playSound(filename, archive=-1):
         #if (row != -1 and column != -1):
         #        playList(language_out, filename, archive, row, column)
 
+        envia=cabezera+"B111"
+        ser.write(envia)
+        time.sleep(0.1)
+        envia=cabezera+"A111"
+        ser.write(envia)
+        time.sleep(0.1)
+        envia=cabezera+"C111"
+        ser.write(envia)
         playDict(language_out, filename, archive)
 
                 
@@ -84,7 +98,8 @@ def playSound(filename, archive=-1):
         while (pygame.mixer.music.get_busy()==True):
                 time.sleep(1)
         
-
+        envia=cabezera+"B000"
+        ser.write(envia)
         return True
 
 
@@ -100,7 +115,9 @@ def listen():
         global countInteractions
         global countEmpty
         global alreadyPlayed
-
+        global ser
+        global cabezera
+        
         #while True:
         if (state == "enquiry" or state == "greeting" ):  #shouldn't happen in other states
 
@@ -108,12 +125,22 @@ def listen():
                 
                 #print("Speech recognition starting")
                 #aureola on
+                envia=cabezera+"A111"
+                ser.write(envia)
+                time.sleep(0.1)
+                envia=cabezera+"C111"
+                ser.write(envia)
+                time.sleep(0.1)
+                envia=cabezera+"B000"
+                ser.write(envia)
                 speech_rec.start()
                 
                 time.sleep(recordingTime) # Make it equal to recording length inside Speech Recognition module.
 
                 speech_rec.stop()
                 #aureola off
+                envia=cabezera+"A000"
+                ser.write(envia)
                 #print("Speech recognition stopped")
                 is_recognized = speech_rec.is_recognized
 
@@ -525,25 +552,38 @@ def logic():
 def init():
         global ser
         global cascade
+        global cabezera
         b = 0
         speech_rec.register_callback(elaborateAnswer)
+
+
         while True:
-                try:
-                        ser = serial.Serial('/dev/ttyUSB'+ str(b),9600,timeout=0.3)
-                        time.sleep(2)
-                        print ("paso delay")
-                        ser.write("0")
-                        print ("envio")
-                        b=0
+        try:
+                ser = serial.Serial('/dev/ttyUSB'+ str(b),9600,timeout=0.3)
+                time.sleep(2)
+                print ("paso delay")
+                envia=cabezera+"0000"
+                ser.write(envia)
+                print ("envio")
+                b=0
+                break
+        except:
+                print ("No se conecto")
+                b=b+1
+                if (b==100):
+                        print ("Error de conexion")
                         break
-                except:
-                        print ("No se conecto")
-                        b=b+1
-                        if (b==100):
-                                print ("Error de conexion")
-                                break
 
-
+                
+        envia=cabezera+"B000"
+        ser.write(envia)
+        time.sleep(0.1)
+        envia=cabezera+"A000"
+        ser.write(envia)
+        time.sleep(0.1)
+        envia=cabezera+"C111"
+        ser.write(envia)
+        
         cameraInit(ser)
         touchhand=threading.Thread(target=touch)
         touchhand.start()

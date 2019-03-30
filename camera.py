@@ -4,6 +4,7 @@ import cv2
 import math
 import serial
 
+
 import numpy.linalg as np
 
 
@@ -34,6 +35,8 @@ def cameraRun(ser,cascade):
         global CAMERA_WIDTH
         global CAMERA_HEIGHT
         global memoriaC
+
+        global cabezera="$OAX"
 
         with picamera.PiCamera() as camera:
             with picamera.array.PiRGBArray(camera) as stream:
@@ -76,76 +79,85 @@ def cameraRun(ser,cascade):
                                                 if (real_x<110):
                                                         coordenada=1
                                                         if (memoriaC!=coordenada):
-                                                                    print ("1")
-                                                                    ser.write("1")
+                                                                    envia=cabezera+"1000"
+                                                                    print envia     
+                                                                    ser.write(envia)
                 ##                                        if (standby=="Y"):
                 ##                                                    cambio="B"
                                                         #print ser.read()
                                                 elif (real_x>210):
                                                         coordenada=3
                                                         if (memoriaC!=coordenada):
-                                                                    print ("3")
-                                                                    ser.write("3")
-                ##                                      if (standby=="Y"):
-                ##                                              cambio="B"
+                                                                    envia=cabezera+"3000"
+                                                                    print envia
+                                                                    ser.write(envia)
+                ##					if (standby=="Y"):
+                ##						cambio="B"
                                                         #print ser.read()
                                                 else:
                                                         coordenada=2
                                                         if (memoriaC!=coordenada):
-                                                                    print ("2")
-                                                                    ser.write("2")
-                ##                                      if (standby=="Y"):
-                ##                                              cambio="B"
+                                                                    envia=cabezera+"2000"
+                                                                    print envia
+                                                                    ser.write(envia)
+                ##					if (standby=="Y"):
+                ##						cambio="B"
                                                         #print ser.read()
                                     elif (real_y>160):
                                                 if (real_x<110):
                                                         coordenada=7
                                                         if (memoriaC!=coordenada):
-                                                                    print ("7")
-                                                                    ser.write("7")
-                ##                                      if (standby=="Y"):
-                ##                                              cambio="B"
+                                                                    envia=cabezera+"7000"
+                                                                    print envia
+                                                                    ser.write(envia)
+                ##					if (standby=="Y"):
+                ##						cambio="B"
                                                         #print ser.read()
                                                 elif (real_x>210):
                                                         coordenada=9
                                                         if (memoriaC!=coordenada):
-                                                                    print ("9")
-                                                                    ser.write("9")
-                ##                                      if (standby=="Y"):
-                ##                                              cambio="B"
+                                                                    envia=cabezera+"9000"
+                                                                    print cabezera
+                                                                    ser.write(cabezera)
+                ##					if (standby=="Y"):
+                ##						cambio="B"
                                                         #print ser.read()
                                                 else:
                                                         coordenada=8
                                                         if (memoriaC!=coordenada):
-                                                                    print ("8")
-                                                                    ser.write("8")
-                ##                                      if (standby=="Y"):
-                ##                                              cambio="B"
+                                                                    envia=cabezera+"8000"
+                                                                    print envia
+                                                                    ser.write(envia)
+                ##					if (standby=="Y"):
+                ##						cambio="B"
                                                         #print ser.read()
                                     else:
                                                 if (real_x<110):
                                                         coordenada=4
                                                         if (memoriaC!=coordenada):
-                                                                    print ("4")
-                                                                    ser.write("4")
+                                                                    envia=cabezera+"4000"
+                                                                    print envia
+                                                                    ser.write(envia)
                 ##                                        if (standby=="Y"):
                 ##                                                    cambio="B"
                                                         #print ser.read()
                                                 elif (real_x>210):
                                                         coordenada=6
                                                         if (memoriaC!=coordenada):
-                                                                    print ("6")
-                                                                    ser.write("6")
-                ##                                      if (standby=="Y"):
-                ##                                              cambio="B"
+                                                                    envia=cabezera+"6000"
+                                                                    print envia
+                                                                    ser.write(envia)
+                ##					if (standby=="Y"):
+                ##						cambio="B"
                                                         #print ser.read()
                                                 else:
                                                         coordenada=5
                                                         if (memoriaC!=coordenada):
-                                                                    print ("5")
-                                                                    ser.write("5")
-                ##                                      if (standby=="Y"):
-                ##                                              cambio="B"
+                                                                    envia=cabezera+"5000"
+                                                                    print envia
+                                                                    ser.write(envia)
+                ##					if (standby=="Y"):
+                ##						cambio="B"
                                                         #print ser.read() 
                                     time.sleep(0.8) #0.2
                                     memoriaC=coordenada
