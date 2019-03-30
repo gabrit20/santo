@@ -19,10 +19,13 @@ maxWaitingCycles = 15 #the total waiting time is given by maxWaitingCycles*recor
 
 import time
 timeInfo = time.localtime(time.time())
+year = timeInfo[0]
 month = timeInfo[1]
 day = timeInfo[2]
 smonth = str(month)
 sday = str(day)
+hour = timeInfo[3]
+minute = timeInfo[4]
 
 import os
 my_key_api = os.getenv("MY_OWN_KEY")

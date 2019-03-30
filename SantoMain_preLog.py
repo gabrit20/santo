@@ -1,6 +1,5 @@
 import random
 import sys
-import logging
 
 import threading
 alreadyPlayed = False
@@ -54,7 +53,6 @@ def changeState(newState, previousState, callingFunction, bStopNextSpeech):
                 alreadyPlayed = bStopNextSpeech
         state = newState
         print("STATE CHANGING TO " + newState + " FROM " + previousState + " IN " + callingFunction)
-        logging.info("STATE CHANGING TO " + newState + " FROM " + previousState + " IN " + callingFunction)
         alreadyPlayed_ready.set()
         #state_ready.set()
 
@@ -68,7 +66,6 @@ def playSound(filename, archive=-1):
         global ser
 
         print("playSound: ", filename)
-        logging.info("playSound: "+ filename)
         
         if (archive == -1):
                 archive = text[filename] #id of filename coincides with the key of the dictionary
@@ -154,7 +151,6 @@ def touch():
                 recibo=ser.read()
                 if ((recibo=="L")|(recibo=="R")):
                         print ("hand recibo", recibo)
-                        logging.info("hand recibo" + recibo)
                         if (state=="standby"):
                                 countEmpty = 0
                                 #print("recibo1", recibo, state)
@@ -223,7 +219,6 @@ def elaborateAnswer(keyword):  #enters here only if it recognises some word
         is_matched = False
         keyword = keyword.lower()
         print("keyword>", keyword)
-        logging.info("keyword> "+ keyword)
 
 
 
@@ -288,7 +283,6 @@ def elaborateAnswer(keyword):  #enters here only if it recognises some word
                         print("setting is_matched = True  in elaborateAnswer greeting")
                 if (is_matched == True):
                         print(soundfiles.users)
-                        logging.info("NAME: "+ keyword)
                         gender = "m"
                         if keyword[len(keyword)-1] == "a":
                                 gender = "f"
@@ -549,9 +543,6 @@ def init():
         touchhand.start()
         logicThread = threading.Thread(target=logic)
         logicThread.start()
-
-        logging.basicConfig(filename="logs/log"+str(year)+"-"+str(month)+"-"+str(day)+"-"+str(hour)+"-"+str(minute)+".txt", level=logging.DEBUG)
-    
 
         
 
