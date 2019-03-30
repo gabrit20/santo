@@ -127,6 +127,8 @@ def listen():
                                 if (countEmpty >= 3): 
                                         countInteractions = 0                           
                                         changeState("enquiry", state, func_name(), False)
+                                else:
+                                        changeState("nogreeting", state, func_name(), False)
 
 
                         elif (state=="enquiry"):
@@ -162,13 +164,15 @@ def touch():
                                 #recibo = -1
                                 speech_rec.force_stop()
                                 changeState("farewell", state, func_name(), False)
+                                continue
                         if (state=="begin" or state=="greeting"):
-                                print("recibo1", recibo, state)
+                                #print("recibo1", recibo, state)
                                 countEmpty = 0
                                 #recibo = -1
+                                speech_rec.force_stop()
                                 while (pygame.mixer.music.get_busy()==True):
                                         pygame.mixer.music.stop()
-                                print("recibo2", recibo, state)
+                                #print("recibo2", recibo, state)
                                 changeState("enquiry", state, func_name(), False)
                                 continue
                         if (state =="reply"):
@@ -354,7 +358,6 @@ def logic():
 
                 elif (state=="nogreeting"):
                         print("no greeting")
-                        time.sleep(0.1)
                         print("countEmpty", countEmpty)
                         changeState("greeting", state, func_name(), True)
 
@@ -490,7 +493,7 @@ def logic():
 
                 elif (state=="noreply"):
                         print("no reply")
-                        time.sleep(1)
+                        time.sleep(0.2)
                         print("countEmpty", countEmpty)
                         changeState("enquiry", state, func_name(), True)
 
