@@ -1,0 +1,128 @@
+INFO:root:hand reciboR
+INFO:root:STATE CHANGING TO greeting FROM standby IN touch
+INFO:root:playSound: inTheNameAmen
+INFO:root:playSound: greeting1
+INFO:root:STATE CHANGING TO meeting FROM greeting IN logic
+INFO:root:playSound: yourName
+INFO:root:keyword> mayra mayra fuerte
+INFO:root:NAME: mayra mayra fuerte
+INFO:root:playSound: meetM
+INFO:root:playSound: intro
+INFO:root:playSound: aureola
+INFO:root:STATE CHANGING TO enquiry FROM meeting IN elaborateAnswer
+INFO:root:playSound: tellMeLong
+INFO:root:keyword> zte
+INFO:root:STATE CHANGING TO wakaranai FROM enquiry IN elaborateAnswer
+INFO:root:playSound: wakaranai3
+INFO:root:STATE CHANGING TO enquiry FROM wakaranai IN logic
+INFO:root:playSound: tellMe2
+INFO:root:keyword> quiero leer la biblia
+INFO:root:STATE CHANGING TO bible FROM enquiry IN elaborateAnswer
+INFO:root:playSound: verse
+INFO:root:playSound: touchHand
+INFO:root:playSound: Job
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): www.vocalware.com
+DEBUG:urllib3.connectionpool:https://www.vocalware.com:443 "GET /tts/gen.php?EID=3&LID=2&VID=2&TXT=JOB&EXT=mp3&FX_TYPE=D&FX_LEVEL=1&ACC=6969626&API=2647432&HTTP_ERR=1&SECRET=8ce1aa6ea1c5ab9214313cd9d41d76b3&CS=0a62d43caf56f5352a8af6766b43cc39 HTTP/1.1" 200 4760
+INFO:root:playSound: 8
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): www.vocalware.com
+DEBUG:urllib3.connectionpool:https://www.vocalware.com:443 "GET /tts/gen.php?EID=3&LID=2&VID=2&TXT=8&EXT=mp3&FX_TYPE=D&FX_LEVEL=1&ACC=6969626&API=2647432&HTTP_ERR=1&SECRET=8ce1aa6ea1c5ab9214313cd9d41d76b3&CS=f4c12456fa6dabf0c7489ef4be59ce3a HTTP/1.1" 200 4107
+INFO:root:playSound: Job-8-1
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): www.vocalware.com
+DEBUG:urllib3.connectionpool:https://www.vocalware.com:443 "GET /tts/gen.php?EID=3&LID=2&VID=2&TXT=%20Respondi%C3%B3%20Bildad%20suhita,%20y%20dijo:&EXT=mp3&FX_TYPE=D&FX_LEVEL=1&ACC=6969626&API=2647432&HTTP_ERR=1&SECRET=8ce1aa6ea1c5ab9214313cd9d41d76b3&CS=3a9c0b619dd2092ab4565d2f583bc871 HTTP/1.1" 200 20152
+INFO:root:playSound: Job-8-2
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): www.vocalware.com
+DEBUG:urllib3.connectionpool:https://www.vocalware.com:443 "GET /tts/gen.php?EID=3&LID=2&VID=2&TXT=%20%C2%BFHasta%20cu%C3%A1ndo%20hablar%C3%A1s%20tales%20cosas,%20Y%20las%20palabras%20de%20tu%20boca%20ser%C3%A1n%20como%20viento%20impetuoso?&EXT=mp3&FX_TYPE=D&FX_LEVEL=1&ACC=6969626&API=2647432&HTTP_ERR=1&SECRET=8ce1aa6ea1c5ab9214313cd9d41d76b3&CS=1c8dd2484b85d99f9a942eeef07bbdfa HTTP/1.1" 200 45814
+INFO:root:playSound: Job-8-3
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): www.vocalware.com
+DEBUG:urllib3.connectionpool:https://www.vocalware.com:443 "GET /tts/gen.php?EID=3&LID=2&VID=2&TXT=%20%C2%BFAcaso%20torcer%C3%A1%20Dios%20el%20derecho,%20O%20pervertir%C3%A1%20el%20Todopoderoso%20la%20justicia?&EXT=mp3&FX_TYPE=D&FX_LEVEL=1&ACC=6969626&API=2647432&HTTP_ERR=1&SECRET=8ce1aa6ea1c5ab9214313cd9d41d76b3&CS=b7af3aa88398d4d8d50fd9691d82ace4 HTTP/1.1" 200 41462
+INFO:root:playSound: Job-8-4
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): www.vocalware.com
+DEBUG:urllib3.connectionpool:https://www.vocalware.com:443 "GET /tts/gen.php?EID=3&LID=2&VID=2&TXT=%20Si%20tus%20hijos%20pecaron%20contra%20%C3%A9l,%20El%20los%20ech%C3%B3%20en%20el%20lugar%20de%20su%20pecado.&EXT=mp3&FX_TYPE=D&FX_LEVEL=1&ACC=6969626&API=2647432&HTTP_ERR=1&SECRET=8ce1aa6ea1c5ab9214313cd9d41d76b3&CS=f983201a4e7c76a3408179b158e86d20 HTTP/1.1" 200 36029
+INFO:root:playSound: Job-8-5
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): www.vocalware.com
+DEBUG:urllib3.connectionpool:https://www.vocalware.com:443 "GET /tts/gen.php?EID=3&LID=2&VID=2&TXT=%20Si%20t%C3%BA%20de%20ma%C3%B1ana%20buscares%20a%20Dios,%20Y%20rogares%20al%20Todopoderoso.&EXT=mp3&FX_TYPE=D&FX_LEVEL=1&ACC=6969626&API=2647432&HTTP_ERR=1&SECRET=8ce1aa6ea1c5ab9214313cd9d41d76b3&CS=c53c54bf51e9fa9e0b10b8806c0b93d7 HTTP/1.1" 200 34828
+INFO:root:playSound: Job-8-6
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): www.vocalware.com
+DEBUG:urllib3.connectionpool:https://www.vocalware.com:443 "GET /tts/gen.php?EID=3&LID=2&VID=2&TXT=%20Si%20fueres%20limpio%20y%20recto,%20Ciertamente%20luego%20se%20despertar%C3%A1%20por%20ti,%20Y%20har%C3%A1%20pr%C3%B3spera%20la%20morada%20de%20tu%20justicia.&EXT=mp3&FX_TYPE=D&FX_LEVEL=1&ACC=6969626&API=2647432&HTTP_ERR=1&SECRET=8ce1aa6ea1c5ab9214313cd9d41d76b3&CS=bacc2cd7e7a1f6321b487e6740808c78 HTTP/1.1" 200 58094
+INFO:root:playSound: Job-8-7
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): www.vocalware.com
+DEBUG:urllib3.connectionpool:https://www.vocalware.com:443 "GET /tts/gen.php?EID=3&LID=2&VID=2&TXT=%20Y%20aunque%20tu%20principio%20haya%20sido%20peque%C3%B1o,%20Tu%20postrer%20estado%20ser%C3%A1%20muy%20grande.&EXT=mp3&FX_TYPE=D&FX_LEVEL=1&ACC=6969626&API=2647432&HTTP_ERR=1&SECRET=8ce1aa6ea1c5ab9214313cd9d41d76b3&CS=bb74dd3795603c3e51523cf070c265fa HTTP/1.1" 200 39993
+INFO:root:playSound: Job-8-8
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): www.vocalware.com
+DEBUG:urllib3.connectionpool:https://www.vocalware.com:443 "GET /tts/gen.php?EID=3&LID=2&VID=2&TXT=%20Porque%20pregunta%20ahora%20a%20las%20generaciones%20pasadas,%20Y%20disponte%20para%20inquirir%20a%20los%20padres%20de%20ellas.&EXT=mp3&FX_TYPE=D&FX_LEVEL=1&ACC=6969626&API=2647432&HTTP_ERR=1&SECRET=8ce1aa6ea1c5ab9214313cd9d41d76b3&CS=26f73dc37a5ec8ff8a818bdbdb0b5674 HTTP/1.1" 200 50058
+INFO:root:playSound: Job-8-9
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): www.vocalware.com
+DEBUG:urllib3.connectionpool:https://www.vocalware.com:443 "GET /tts/gen.php?EID=3&LID=2&VID=2&TXT=%20Pues%20nosotros%20somos%20de%20ayer,%20y%20nada%20sabemos,%20Siendo%20nuestros%20d%C3%ADas%20sobre%20la%20tierra%20como%20sombra.&EXT=mp3&FX_TYPE=D&FX_LEVEL=1&ACC=6969626&API=2647432&HTTP_ERR=1&SECRET=8ce1aa6ea1c5ab9214313cd9d41d76b3&CS=ae89bfb9e78c731e3a55772b5be72ae6 HTTP/1.1" 200 50504
+INFO:root:playSound: Job-8-10
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): www.vocalware.com
+DEBUG:urllib3.connectionpool:https://www.vocalware.com:443 "GET /tts/gen.php?EID=3&LID=2&VID=2&TXT=%20%C2%BFNo%20te%20ense%C3%B1ar%C3%A1n%20ellos,%20te%20hablar%C3%A1n,%20Y%20de%20su%20coraz%C3%B3n%20sacar%C3%A1n%20palabras?&EXT=mp3&FX_TYPE=D&FX_LEVEL=1&ACC=6969626&API=2647432&HTTP_ERR=1&SECRET=8ce1aa6ea1c5ab9214313cd9d41d76b3&CS=d722e9c275b5362b46cae8a101bfb151 HTTP/1.1" 200 39922
+INFO:root:playSound: Job-8-11
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): www.vocalware.com
+DEBUG:urllib3.connectionpool:https://www.vocalware.com:443 "GET /tts/gen.php?EID=3&LID=2&VID=2&TXT=%20%C2%BFCrece%20el%20junco%20sin%20lodo?%20%C2%BFCrece%20el%20prado%20sin%20agua?&EXT=mp3&FX_TYPE=D&FX_LEVEL=1&ACC=6969626&API=2647432&HTTP_ERR=1&SECRET=8ce1aa6ea1c5ab9214313cd9d41d76b3&CS=238fbe141aed160e9f1e39407c7a07ca HTTP/1.1" 200 25324
+INFO:root:playSound: Job-8-12
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): www.vocalware.com
+DEBUG:urllib3.connectionpool:https://www.vocalware.com:443 "GET /tts/gen.php?EID=3&LID=2&VID=2&TXT=%20Aun%20en%20su%20verdor,%20y%20sin%20haber%20sido%20cortado,%20Con%20todo,%20se%20seca%20primero%20que%20toda%20hierba.&EXT=mp3&FX_TYPE=D&FX_LEVEL=1&ACC=6969626&API=2647432&HTTP_ERR=1&SECRET=8ce1aa6ea1c5ab9214313cd9d41d76b3&CS=9eb39f08b2d643024a92545be2d89ecb HTTP/1.1" 200 45940
+INFO:root:playSound: Job-8-13
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): www.vocalware.com
+DEBUG:urllib3.connectionpool:https://www.vocalware.com:443 "GET /tts/gen.php?EID=3&LID=2&VID=2&TXT=%20Tales%20son%20los%20caminos%20de%20todos%20los%20que%20olvidan%20a%20Dios.%20Y%20la%20esperanza%20del%20imp%C3%ADo%20perecer%C3%A1.&EXT=mp3&FX_TYPE=D&FX_LEVEL=1&ACC=6969626&API=2647432&HTTP_ERR=1&SECRET=8ce1aa6ea1c5ab9214313cd9d41d76b3&CS=5f5bbe49955e8c6456a7f9e969cfe9af HTTP/1.1" 200 46156
+INFO:root:playSound: Job-8-14
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): www.vocalware.com
+DEBUG:urllib3.connectionpool:https://www.vocalware.com:443 "GET /tts/gen.php?EID=3&LID=2&VID=2&TXT=%20Porque%20su%20esperanza%20ser%C3%A1%20cortada,%20Y%20su%20confianza%20es%20tela%20de%20ara%C3%B1a.&EXT=mp3&FX_TYPE=D&FX_LEVEL=1&ACC=6969626&API=2647432&HTTP_ERR=1&SECRET=8ce1aa6ea1c5ab9214313cd9d41d76b3&CS=61800a436346577a92cb3f3a7a1976e6 HTTP/1.1" 200 35631
+INFO:root:playSound: Job-8-15
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): www.vocalware.com
+DEBUG:urllib3.connectionpool:https://www.vocalware.com:443 "GET /tts/gen.php?EID=3&LID=2&VID=2&TXT=%20Se%20apoyar%C3%A1%20%C3%A9l%20en%20su%20casa,%20mas%20no%20permanecer%C3%A1%20ella%20en%20pie.%20Se%20asir%C3%A1%20de%20ella,%20mas%20no%20resistir%C3%A1.&EXT=mp3&FX_TYPE=D&FX_LEVEL=1&ACC=6969626&API=2647432&HTTP_ERR=1&SECRET=8ce1aa6ea1c5ab9214313cd9d41d76b3&CS=875f80e7bb94ed8cd91574e645a75e66 HTTP/1.1" 200 53552
+INFO:root:playSound: Job-8-16
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): www.vocalware.com
+DEBUG:urllib3.connectionpool:https://www.vocalware.com:443 "GET /tts/gen.php?EID=3&LID=2&VID=2&TXT=%20A%20manera%20de%20un%20%C3%A1rbol%20est%C3%A1%20verde%20delante%20del%20sol,%20Y%20sus%20renuevos%20salen%20sobre%20su%20huerto.&EXT=mp3&FX_TYPE=D&FX_LEVEL=1&ACC=6969626&API=2647432&HTTP_ERR=1&SECRET=8ce1aa6ea1c5ab9214313cd9d41d76b3&CS=e4f99bbadcb8c0e2d598e3c5671fe9a0 HTTP/1.1" 200 43477
+INFO:root:playSound: Job-8-17
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): www.vocalware.com
+DEBUG:urllib3.connectionpool:https://www.vocalware.com:443 "GET /tts/gen.php?EID=3&LID=2&VID=2&TXT=%20Se%20van%20entretejiendo%20sus%20ra%C3%ADces%20junto%20a%20una%20fuente,%20Y%20enlaz%C3%A1ndose%20hasta%20un%20lugar%20pedregoso.&EXT=mp3&FX_TYPE=D&FX_LEVEL=1&ACC=6969626&API=2647432&HTTP_ERR=1&SECRET=8ce1aa6ea1c5ab9214313cd9d41d76b3&CS=6225e6e6aedad97eba207e90ab1a3db7 HTTP/1.1" 200 48971
+INFO:root:playSound: Job-8-18
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): www.vocalware.com
+DEBUG:urllib3.connectionpool:https://www.vocalware.com:443 "GET /tts/gen.php?EID=3&LID=2&VID=2&TXT=%20Si%20le%20arrancaren%20de%20su%20lugar,%20Este%20le%20negar%C3%A1%20entonces,%20diciendo:%20Nunca%20te%20vi.&EXT=mp3&FX_TYPE=D&FX_LEVEL=1&ACC=6969626&API=2647432&HTTP_ERR=1&SECRET=8ce1aa6ea1c5ab9214313cd9d41d76b3&CS=3127a326db08f39335e9dc9d3c710634 HTTP/1.1" 200 42981
+INFO:root:playSound: Job-8-19
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): www.vocalware.com
+DEBUG:urllib3.connectionpool:https://www.vocalware.com:443 "GET /tts/gen.php?EID=3&LID=2&VID=2&TXT=%20Ciertamente%20este%20ser%C3%A1%20el%20gozo%20de%20su%20camino.%20Y%20del%20polvo%20mismo%20nacer%C3%A1n%20otros.&EXT=mp3&FX_TYPE=D&FX_LEVEL=1&ACC=6969626&API=2647432&HTTP_ERR=1&SECRET=8ce1aa6ea1c5ab9214313cd9d41d76b3&CS=4ad96c640e5893ab453cdb096dbfaf7c HTTP/1.1" 200 42103
+INFO:root:playSound: Job-8-20
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): www.vocalware.com
+DEBUG:urllib3.connectionpool:https://www.vocalware.com:443 "GET /tts/gen.php?EID=3&LID=2&VID=2&TXT=%20He%20aqu%C3%AD,%20Dios%20no%20aborrece%20al%20perfecto,%20Ni%20apoya%20la%20mano%20de%20los%20malignos.&EXT=mp3&FX_TYPE=D&FX_LEVEL=1&ACC=6969626&API=2647432&HTTP_ERR=1&SECRET=8ce1aa6ea1c5ab9214313cd9d41d76b3&CS=4bfdb66d3bdf43b742ecc908c7371226 HTTP/1.1" 200 40703
+INFO:root:playSound: Job-8-21
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): www.vocalware.com
+DEBUG:urllib3.connectionpool:https://www.vocalware.com:443 "GET /tts/gen.php?EID=3&LID=2&VID=2&TXT=%20A%C3%BAn%20llenar%C3%A1%20tu%20boca%20de%20risa,%20Y%20tus%20labios%20de%20j%C3%BAbilo.&EXT=mp3&FX_TYPE=D&FX_LEVEL=1&ACC=6969626&API=2647432&HTTP_ERR=1&SECRET=8ce1aa6ea1c5ab9214313cd9d41d76b3&CS=211eacdfd61081523eae063caab674ea HTTP/1.1" 200 28327
+INFO:root:playSound: Job-8-22
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): www.vocalware.com
+DEBUG:urllib3.connectionpool:https://www.vocalware.com:443 "GET /tts/gen.php?EID=3&LID=2&VID=2&TXT=%20Los%20que%20te%20aborrecen%20ser%C3%A1n%20vestidos%20de%20confusi%C3%B3n.%20Y%20la%20habitaci%C3%B3n%20de%20los%20imp%C3%ADos%20perecer%C3%A1.&EXT=mp3&FX_TYPE=D&FX_LEVEL=1&ACC=6969626&API=2647432&HTTP_ERR=1&SECRET=8ce1aa6ea1c5ab9214313cd9d41d76b3&CS=6d1cc11ad7efcbfc306f6f65ff39b912 HTTP/1.1" 200 47548
+INFO:root:STATE CHANGING TO enquiry FROM bible IN logic
+INFO:root:playSound: tellMe3
+INFO:root:STATE CHANGING TO noreply FROM enquiry IN listen
+INFO:root:STATE CHANGING TO enquiry FROM noreply IN logic
+INFO:root:keyword> santo de hoy
+INFO:root:STATE CHANGING TO saint FROM enquiry IN elaborateAnswer
+INFO:root:playSound: 3-31d
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): www.vocalware.com
+DEBUG:urllib3.connectionpool:https://www.vocalware.com:443 "GET /tts/gen.php?EID=3&LID=2&VID=2&TXT=Hoy%20es%20treinta%20y%20uno%20de%20marzo&EXT=mp3&FX_TYPE=D&FX_LEVEL=1&ACC=6969626&API=2647432&HTTP_ERR=1&SECRET=8ce1aa6ea1c5ab9214313cd9d41d76b3&CS=9991a22d777c8f66794ba9aaaa4cd15e HTTP/1.1" 200 14585
+INFO:root:playSound: dayMemory
+INFO:root:playSound: 3-31n
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): www.vocalware.com
+DEBUG:urllib3.connectionpool:https://www.vocalware.com:443 "GET /tts/gen.php?EID=3&LID=2&VID=2&TXT=Santa%20Balbina&EXT=mp3&FX_TYPE=D&FX_LEVEL=1&ACC=6969626&API=2647432&HTTP_ERR=1&SECRET=8ce1aa6ea1c5ab9214313cd9d41d76b3&CS=7b76ef8ba2e5a0efaca766740c88312a HTTP/1.1" 200 9140
+INFO:root:playSound: 3-31s
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): www.vocalware.com
+DEBUG:urllib3.connectionpool:https://www.vocalware.com:443 "GET /tts/gen.php?EID=3&LID=2&VID=2&TXT=matrona%20romana,%20fundadora%20de%20la%20Iglesia%20hom%C3%83%C2%B3nima.%20Hija%20del%20tribuno%20romano%20Quirino,%20fue%20bautizada,%20cuenta%20la%20tradici%C3%83%C2%B3n,%20por%20el%20Papa%20Alejando%20I%20junto%20con%20su%20padre%20convertido%20al%20cristianismo.%20Arrestada%20con%20su%20padre%20por%20orden%20del%20emperador%20Adri%C3%83%C2%A1n,%20fue%20decapitada%20despu%C3%83%C2%A9s%20de%20largas%20torturas&EXT=mp3&FX_TYPE=D&FX_LEVEL=1&ACC=6969626&API=2647432&HTTP_ERR=1&SECRET=8ce1aa6ea1c5ab9214313cd9d41d76b3&CS=33d41da0fffb8d02d64dc21e6186d43e HTTP/1.1" 200 None
+INFO:root:STATE CHANGING TO enquiry FROM saint IN logic
+INFO:root:playSound: tellMe2
+INFO:root:STATE CHANGING TO noreply FROM enquiry IN listen
+INFO:root:STATE CHANGING TO enquiry FROM noreply IN logic
+INFO:root:STATE CHANGING TO noreply FROM enquiry IN listen
+INFO:root:STATE CHANGING TO enquiry FROM noreply IN logic
+INFO:root:keyword> gracias
+INFO:root:STATE CHANGING TO reply FROM enquiry IN elaborateAnswer
+INFO:root:playSound: yourewelcome1
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): www.vocalware.com
+DEBUG:urllib3.connectionpool:https://www.vocalware.com:443 "GET /tts/gen.php?EID=3&LID=2&VID=2&TXT=De%20nada.%20Estoy%20siempre%20a%20tu%20disposici%C3%B3n&EXT=mp3&FX_TYPE=D&FX_LEVEL=1&ACC=6969626&API=2647432&HTTP_ERR=1&SECRET=8ce1aa6ea1c5ab9214313cd9d41d76b3&CS=826bdd4953895f3ce1a33a3412a19095 HTTP/1.1" 200 24832
+INFO:root:STATE CHANGING TO enquiry FROM reply IN logic
+INFO:root:playSound: tellMe2
+INFO:root:keyword> ya me voy
+INFO:root:playSound: goInPeace
+INFO:root:playSound: retireShort
+INFO:root:STATE CHANGING TO farewell FROM enquiry IN elaborateAnswer
+INFO:root:STATE CHANGING TO standby FROM farewell IN logic

@@ -23,7 +23,7 @@ replies = [   # ID, replies
         ]
 
 
-variants = {"tellMe": ["tellMe", "tellMe1", "tellMe2"],
+variants = {"tellMe": ["tellMe1", "tellMe2", "tellMe3", "tellMe4", "tellMe5"],
             "wakaranai": ["wakaranai1", "wakaranai2", "wakaranai3"]
         }
 
@@ -38,4 +38,6 @@ users = ["gabriele",
          "sono io",
          "soy yo",
          "it's me"]
+
+
 

@@ -36,13 +36,6 @@ countEmpty = 0
 import serial
 global ser
 global cabezera
-global tiempoSer
-global aureola
-global espalda
-
-aureola=0
-espalda=0
-tiempoSer=0.30
 
 cabezera="$OAX"
 
@@ -58,7 +51,6 @@ def func_name():
 def changeState(newState, previousState, callingFunction, bStopNextSpeech):
         global alreadyPlayed
         global state
-        timeInfo = time.localtime(time.time())
 
                 
         if (newState != "noreply" and previousState != "noreply"):
@@ -67,7 +59,7 @@ def changeState(newState, previousState, callingFunction, bStopNextSpeech):
                 alreadyPlayed = bStopNextSpeech
         state = newState
         print("STATE CHANGING TO " + newState + " FROM " + previousState + " IN " + callingFunction)
-        logging.info(str(timeInfo[3])+":"+str(timeInfo[4])+ ": " + "STATE CHANGING TO " + newState + " FROM " + previousState + " IN " + callingFunction)
+        logging.info("STATE CHANGING TO " + newState + " FROM " + previousState + " IN " + callingFunction)
         alreadyPlayed_ready.set()
         #state_ready.set()
 
@@ -80,9 +72,6 @@ def playSound(filename, archive=-1):
 
         global ser
         global cabezera
-        global tiempoSer
-        global aureola
-        global espalda
         
         print("playSound: ", filename)
         logging.info("playSound: "+ filename)
@@ -93,29 +82,24 @@ def playSound(filename, archive=-1):
         print('ARCHIVE', archive)
         #if (row != -1 and column != -1):
         #        playList(language_out, filename, archive, row, column)
-        if (espalda==0):
-                time.sleep(tiempoSer)
-                envia=cabezera+"B111"
-                espalda=1
-                ser.write(envia)
-        if (aureola==1):
-                time.sleep(tiempoSer)
-                envia=cabezera+"A000"
-                aureola=0
-                ser.write(envia)
 
+        envia=cabezera+"B111"
+        ser.write(envia)
+        time.sleep(0.1)
+        envia=cabezera+"A111"
+        ser.write(envia)
+        time.sleep(0.1)
+        envia=cabezera+"C111"
+        ser.write(envia)
         playDict(language_out, filename, archive)
 
                 
 
         while (pygame.mixer.music.get_busy()==True):
                 time.sleep(1)
-
-        if (espalda==1):
-                time.sleep(tiempoSer)
-                envia=cabezera+"B000"
-                espalda=0
-                ser.write(envia)
+        
+        envia=cabezera+"B000"
+        ser.write(envia)
         return True
 
 
@@ -133,40 +117,30 @@ def listen():
         global alreadyPlayed
         global ser
         global cabezera
-        global tiempoSer
-        global aureola
-        global espalda
         
         #while True:
-        if (state == "enquiry" or state == "meeting" ):  #shouldn't happen in other states
+        if (state == "enquiry" or state == "greeting" ):  #shouldn't happen in other states
 
                 is_recognized = -1
                 
                 #print("Speech recognition starting")
                 #aureola on
-                if (aureola==0):
-                        time.sleep(tiempoSer)
-                        envia=cabezera+"A111"
-                        aureola=1
-                        ser.write(envia)
-                        
-                if (espalda==1):
-                        time.sleep(tiempoSer)
-                        envia=cabezera+"B000"
-                        espalda=0
-                        ser.write(envia)
-                        
+                envia=cabezera+"A111"
+                ser.write(envia)
+                time.sleep(0.1)
+                envia=cabezera+"C111"
+                ser.write(envia)
+                time.sleep(0.1)
+                envia=cabezera+"B000"
+                ser.write(envia)
                 speech_rec.start()
                 
                 time.sleep(recordingTime) # Make it equal to recording length inside Speech Recognition module.
 
                 speech_rec.stop()
                 #aureola off
-                if (aureola==1):
-                        time.sleep(tiempoSer)
-                        envia=cabezera+"A000"
-                        aureola=0
-                        ser.write(envia)
+                envia=cabezera+"A000"
+                ser.write(envia)
                 #print("Speech recognition stopped")
                 is_recognized = speech_rec.is_recognized
 
@@ -178,13 +152,13 @@ def listen():
 
                         countEmpty += 1
 
-                        if (state=="meeting"):
+                        if (state=="greeting"):
                                 #skip the name
                                 if (countEmpty >= 3): 
                                         countInteractions = 0                           
                                         changeState("enquiry", state, func_name(), False)
                                 else:
-                                        changeState("noname", state, func_name(), False)
+                                        changeState("nogreeting", state, func_name(), False)
 
 
                         elif (state=="enquiry"):
@@ -200,15 +174,11 @@ def listen():
 def touch():
         global state
         global alreadyPlayed
-        global countEmpty
         global countInteractions
         global speech_rec
-        recibo = -1
         while True:
-                if (ser.inWaiting()>0):
-                        recibo=ser.read()
-                        print (recibo)
-                        
+
+                recibo=ser.read()
                 if ((recibo=="L")|(recibo=="R")):
                         print ("hand recibo", recibo)
                         logging.info("hand recibo" + recibo)
@@ -218,7 +188,7 @@ def touch():
                                 #recibo = -1
                                 #print("recibo2", recibo, state)
                                 
-                                changeState("greeting", state, func_name(), False)
+                                changeState("begin", state, func_name(), False)
                                 continue
                         if (state=="enquiry"):
                                 countEmpty = 0
@@ -226,7 +196,7 @@ def touch():
                                 speech_rec.force_stop()
                                 changeState("farewell", state, func_name(), False)
                                 continue
-                        if (state=="greeting" or state=="meeting"):
+                        if (state=="begin" or state=="greeting"):
                                 #print("recibo1", recibo, state)
                                 countEmpty = 0
                                 #recibo = -1
@@ -338,7 +308,7 @@ def elaborateAnswer(keyword):  #enters here only if it recognises some word
 
                 
 
-        elif (state == "meeting"):
+        elif (state == "greeting"):
                 print("in elaborateAnswer greeting")
                 if (keyword is not None):       #len(keyword) >= 3):
                         is_matched = True
@@ -389,8 +359,6 @@ def logic():
         global countInteractions
         global countEmpty
         global chosenReply
-        global aureola
-        global espalda
         while True:
 
                 if (state != "standby"):
@@ -409,46 +377,30 @@ def logic():
                         
 
 
-                elif (state == "greeting"):
+                elif (state == "begin"):
                         #print("BEGIN inside")
-
-                        if (espalda==1):
-                                time.sleep(tiempoSer)
-                                envia=cabezera+"B000"
-                                espalda=0
-                                ser.write(envia)
-
-                        if (aureola==1):
-                                time.sleep(tiempoSer)
-                                envia=cabezera+"A000"
-                                aureola=0
-                                ser.write(envia)
-
-                        
 
                         playSound("inTheNameAmen")
                         time.sleep(0.8)
-                        playSound("greeting1")
-                        time.sleep(0.5)      
-                        playSound("myNameShort")
-                        time.sleep(0.5)      
-                        if (countInteractions == 0 and state == "greeting"):
-                                changeState("meeting", state, func_name(), False)
+                        if (countInteractions == 0 and state == "begin"):
+                                changeState("greeting", state, func_name(), False)
                         else:
                                 changeState("enquiry", state, func_name(), False)
                         
 
 
-                elif (state=="noname"):
-                        print("no name")
+                elif (state=="nogreeting"):
+                        print("no greeting")
                         print("countEmpty", countEmpty)
-                        changeState("meeting", state, func_name(), True)
+                        changeState("greeting", state, func_name(), True)
 
 
-                elif (state == "meeting"):
+                elif (state == "greeting"):
                         #print("GREETING inside")
 
                         if alreadyPlayed == False:
+                                playSound("greeting1")
+                                time.sleep(0.5)
                                 alreadyPlayed = playSound("yourName")
                                 time.sleep(1)
                         listen()
@@ -482,7 +434,7 @@ def logic():
                                 playSound("sorry")
                         
                         
-                        time.sleep(1.5)
+                        time.sleep(0.8)
                                 
                         countInteractions += 1
                         changeState("enquiry", state, func_name(), False)
@@ -521,7 +473,7 @@ def logic():
                                 else:
                                         break
 
-                        time.sleep(1.5)
+                         
 
                         countInteractions += 1
                         changeState("enquiry", state, func_name(), False)
@@ -543,7 +495,7 @@ def logic():
                                 part += 1
                                 if (str(part) not in prayers[randomPrayer]):
                                         break
-                        time.sleep(1.5)
+                        time.sleep(0.8)
 
                         countInteractions += 1
                         changeState("enquiry", state, func_name(), False)
@@ -602,20 +554,16 @@ def init():
         global ser
         global cascade
         global cabezera
-        global tiempoSer
-        global aureola
-        global espalda
-        
         b = 0
         speech_rec.register_callback(elaborateAnswer)
-        
+
+
         while True:
                 try:
                         ser = serial.Serial('/dev/ttyUSB'+ str(b),9600,timeout=0.3)
-                        time.sleep(tiempoSer)
-                        ser.flushInput()
+                        time.sleep(2)
                         print ("paso delay")
-                        envia=cabezera+"M000"
+                        envia=cabezera+"0000"
                         ser.write(envia)
                         print ("envio")
                         b=0
@@ -626,32 +574,16 @@ def init():
                         if (b==100):
                                 print ("Error de conexion")
                                 break
-        
-        #ser = serial.Serial('/dev/ttyUSB1',9600,timeout=0.3)
-        #time.sleep(tiempoSer)
-        #ser.flushInput()
-        print ("paso delay")
-        envia=cabezera+"M000"
-        ser.write(envia)
-        print ("envio")
-        time.sleep(tiempoSer)
 
-        #print ("apago espalda")
-        print ("espalda on")
-        #envia=cabezera+"B000"
-        envia=cabezera+"B111"
-        #espalda=0
-        espalda=1
+                
+        envia=cabezera+"B000"
         ser.write(envia)
-        time.sleep(tiempoSer)
-        #print ("apago aureola")
-        print ("aureola on")
-        #envia=cabezera+"A000"
-        envia=cabezera+"A111"
-        #aureola=0
-        aureola=1
+        time.sleep(0.1)
+        envia=cabezera+"A000"
         ser.write(envia)
-
+        time.sleep(0.1)
+        envia=cabezera+"C111"
+        ser.write(envia)
         
         cameraInit(ser)
         touchhand=threading.Thread(target=touch)
@@ -659,8 +591,8 @@ def init():
         logicThread = threading.Thread(target=logic)
         logicThread.start()
 
-        logging.basicConfig(filename="logs/log"+str(year)+"-"+smonth+"-"+sday+"-"+shour+"-"+sminute+".txt", level=logging.INFO)
-        logging.basicConfig(format='%(message)s')
+        logging.basicConfig(filename="logs/log"+str(year)+"-"+str(month)+"-"+str(day)+"-"+str(hour)+"-"+str(minute)+".txt", level=logging.DEBUG)
+    
 
         
 

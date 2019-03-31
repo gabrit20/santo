@@ -58,7 +58,6 @@ def func_name():
 def changeState(newState, previousState, callingFunction, bStopNextSpeech):
         global alreadyPlayed
         global state
-        timeInfo = time.localtime(time.time())
 
                 
         if (newState != "noreply" and previousState != "noreply"):
@@ -67,7 +66,7 @@ def changeState(newState, previousState, callingFunction, bStopNextSpeech):
                 alreadyPlayed = bStopNextSpeech
         state = newState
         print("STATE CHANGING TO " + newState + " FROM " + previousState + " IN " + callingFunction)
-        logging.info(str(timeInfo[3])+":"+str(timeInfo[4])+ ": " + "STATE CHANGING TO " + newState + " FROM " + previousState + " IN " + callingFunction)
+        logging.info("STATE CHANGING TO " + newState + " FROM " + previousState + " IN " + callingFunction)
         alreadyPlayed_ready.set()
         #state_ready.set()
 
@@ -389,8 +388,6 @@ def logic():
         global countInteractions
         global countEmpty
         global chosenReply
-        global aureola
-        global espalda
         while True:
 
                 if (state != "standby"):
@@ -412,25 +409,9 @@ def logic():
                 elif (state == "greeting"):
                         #print("BEGIN inside")
 
-                        if (espalda==1):
-                                time.sleep(tiempoSer)
-                                envia=cabezera+"B000"
-                                espalda=0
-                                ser.write(envia)
-
-                        if (aureola==1):
-                                time.sleep(tiempoSer)
-                                envia=cabezera+"A000"
-                                aureola=0
-                                ser.write(envia)
-
-                        
-
                         playSound("inTheNameAmen")
                         time.sleep(0.8)
                         playSound("greeting1")
-                        time.sleep(0.5)      
-                        playSound("myNameShort")
                         time.sleep(0.5)      
                         if (countInteractions == 0 and state == "greeting"):
                                 changeState("meeting", state, func_name(), False)
@@ -636,20 +617,14 @@ def init():
         print ("envio")
         time.sleep(tiempoSer)
 
-        #print ("apago espalda")
-        print ("espalda on")
-        #envia=cabezera+"B000"
-        envia=cabezera+"B111"
-        #espalda=0
-        espalda=1
+        print ("apago espalda")
+        envia=cabezera+"B000"
+        espalda=0
         ser.write(envia)
         time.sleep(tiempoSer)
-        #print ("apago aureola")
-        print ("aureola on")
-        #envia=cabezera+"A000"
-        envia=cabezera+"A111"
-        #aureola=0
-        aureola=1
+        print ("apago aureola")
+        envia=cabezera+"A000"
+        aureola=0
         ser.write(envia)
 
         
@@ -659,8 +634,8 @@ def init():
         logicThread = threading.Thread(target=logic)
         logicThread.start()
 
-        logging.basicConfig(filename="logs/log"+str(year)+"-"+smonth+"-"+sday+"-"+shour+"-"+sminute+".txt", level=logging.INFO)
-        logging.basicConfig(format='%(message)s')
+        logging.basicConfig(filename="logs/log"+str(year)+"-"+str(month)+"-"+str(day)+"-"+str(hour)+"-"+str(minute)+".txt", level=logging.DEBUG)
+    
 
         
 

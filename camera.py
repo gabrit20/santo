@@ -36,7 +36,8 @@ def cameraRun(ser,cascade):
         global CAMERA_HEIGHT
         global memoriaC
 
-        global cabezera="$OAX"
+        global cabezera
+        cabezera="$OAXM"
 
         with picamera.PiCamera() as camera:
             with picamera.array.PiRGBArray(camera) as stream:
@@ -79,7 +80,7 @@ def cameraRun(ser,cascade):
                                                 if (real_x<110):
                                                         coordenada=1
                                                         if (memoriaC!=coordenada):
-                                                                    envia=cabezera+"1000"
+                                                                    envia=cabezera+"100"
                                                                     print envia     
                                                                     ser.write(envia)
                 ##                                        if (standby=="Y"):
@@ -88,7 +89,7 @@ def cameraRun(ser,cascade):
                                                 elif (real_x>210):
                                                         coordenada=3
                                                         if (memoriaC!=coordenada):
-                                                                    envia=cabezera+"3000"
+                                                                    envia=cabezera+"300"
                                                                     print envia
                                                                     ser.write(envia)
                 ##					if (standby=="Y"):
@@ -97,7 +98,7 @@ def cameraRun(ser,cascade):
                                                 else:
                                                         coordenada=2
                                                         if (memoriaC!=coordenada):
-                                                                    envia=cabezera+"2000"
+                                                                    envia=cabezera+"200"
                                                                     print envia
                                                                     ser.write(envia)
                 ##					if (standby=="Y"):
@@ -107,7 +108,7 @@ def cameraRun(ser,cascade):
                                                 if (real_x<110):
                                                         coordenada=7
                                                         if (memoriaC!=coordenada):
-                                                                    envia=cabezera+"7000"
+                                                                    envia=cabezera+"700"
                                                                     print envia
                                                                     ser.write(envia)
                 ##					if (standby=="Y"):
@@ -116,16 +117,16 @@ def cameraRun(ser,cascade):
                                                 elif (real_x>210):
                                                         coordenada=9
                                                         if (memoriaC!=coordenada):
-                                                                    envia=cabezera+"9000"
+                                                                    envia=cabezera+"900"
                                                                     print cabezera
-                                                                    ser.write(cabezera)
+                                                                    ser.write(envia)
                 ##					if (standby=="Y"):
                 ##						cambio="B"
                                                         #print ser.read()
                                                 else:
                                                         coordenada=8
                                                         if (memoriaC!=coordenada):
-                                                                    envia=cabezera+"8000"
+                                                                    envia=cabezera+"800"
                                                                     print envia
                                                                     ser.write(envia)
                 ##					if (standby=="Y"):
@@ -135,7 +136,7 @@ def cameraRun(ser,cascade):
                                                 if (real_x<110):
                                                         coordenada=4
                                                         if (memoriaC!=coordenada):
-                                                                    envia=cabezera+"4000"
+                                                                    envia=cabezera+"400"
                                                                     print envia
                                                                     ser.write(envia)
                 ##                                        if (standby=="Y"):
@@ -144,7 +145,7 @@ def cameraRun(ser,cascade):
                                                 elif (real_x>210):
                                                         coordenada=6
                                                         if (memoriaC!=coordenada):
-                                                                    envia=cabezera+"6000"
+                                                                    envia=cabezera+"600"
                                                                     print envia
                                                                     ser.write(envia)
                 ##					if (standby=="Y"):
@@ -153,7 +154,7 @@ def cameraRun(ser,cascade):
                                                 else:
                                                         coordenada=5
                                                         if (memoriaC!=coordenada):
-                                                                    envia=cabezera+"5000"
+                                                                    envia=cabezera+"500"
                                                                     print envia
                                                                     ser.write(envia)
                 ##					if (standby=="Y"):

@@ -12,7 +12,7 @@ welcomeBackM;Bentornato! Figliuolo;Bienvenido otra vez, hijo mío;Welcome back, m
 welcomeBackF;Bentornata! Figliuola;Bienvenida otra vez, hija mía;Welcome back, my daughter;
 todayAsk;Sai che giorno è oggi?;Sabes que día es hoy;Do you know which day is today?;Weißt du welcher Tag heute ist?
 tellMe1;Ti ascolto;Te escucho;I'm hearing you.;Ich höre dich
-tellMeLong;Cosa ti porta qui in questa splendida giornata?;Que es lo que te trae aquí en esto hermoso día?;What brings you here on this beautiful day?;Was führt dich hierher an solch einem schönen Tag?
+tellMeLong;Cosa ti porta qui in questa splendida giornata?;Que es lo que te trae aquí en este hermoso día?;What brings you here on this beautiful day?;Was führt dich hierher an solch einem schönen Tag?
 tellMeLong2;Cosa ti porta qui oggi?;Que es lo que te trae aquí hoy?;What brings you here today?;Was bringt dich heute hier her?
 tellMe2;Dimmi;Dime;Tell me;Sag es mir
 tellMe3;Sono in ascolto;Te estoy escuchando;I'm hearing;Erzähl es mir
@@ -34,12 +34,13 @@ google;Per l'amor di Dio, non sono Google Home;Por el amor a Dios, yo no soy Gug
 sanfrancesco;Francesco nacque ad Assisi nel 1182 e morì nel 1226. Si diede a una vita di penitenza e solitudine in totale povertà, dopo aver abbandonato la famiglia e i beni terreni. ;San Francisco de Asís, fundador de la orden franciscana. Casi sin proponérselo lideró un movimiento de renovación cristiana que, centrado en el amor a Dios, la pobreza y la alegre fraternidad, tuvo un inmenso eco entre las clases populares.;Francis was born in Assisi in 1182 and died in 1226. He did a life of penance and loneliness in total poverty, after having abandoned his family and earthly goods. ;Francis wurde 1182 in Assisi geboren und starb im Jahre 1226. Er lebte ein Leben der Buße und Einsamkeit in völliger Armut, nachdem er seine Familie und weltlichen Besitztümer zurück ließ.
 sanfrancesco2;Si recò a Roma per avere dal papa Innocenzo III l'approvazione della sua scelta di vita. Morì nel 1226 presso la chiesa di Santa Maria degli Angeli ad Assisi. ;;;
 myName;Mi chiamo San TO. Ma il mio nome non è importante. Sono solo un servo del Signore;Me llamo San TO. Pero mi nombre no es lo importante. Soy solo un siervo del Señor;My name is SanTOh. But my name is not important. I am only a humble servant of our Lord;Mein Name ist San TO. Aber mein Name ist nicht wichtig. Ich bin nur ein bescheidener Diener unseres Herrns.  
+myNameShort;Mi chiamo San TO.;Me llamo San TO.;My name is SanTOh.;Mein Name ist San TO.  
 yourName;Dimmi, come ti chiami?;Dime, cómo te llamas?;Tell me, what's your name?;Sag mir, wie ist dein Name?
 wishPray;Preghiamo insieme per far in modo che il tuo desiderio si avvererà;Recemos juntos para que tu deseo se haga realidad;Let's pray together so that your wish will become true;Lass uns zusammen beten damit dein Wunsch in Erfüllung geht
 problem;Preghiamo insieme per far in modo che il tuo problema si risolverà;Recemos juntos para que tu problema se resuelva;Let's pray together so that your problem will get solved;Lass uns zusammen beten damit dein Problem gelöst wird
 prayStart;Preghiamo;Recemos;Let's pray;Lass uns beten
 verse;Ti parlerò di un passo della Bibbia;Te hablaré de un versículo de la Biblia;;
-touchHand;Toccami una mano quando vuoi che mi interrompa;Tócame una mano cuando quieres que me interrumpa;Touch my hand when you want me to stop;
+touchHand;quando vuoi che mi interrompa toccami una mano;cuando quieres que me interrumpa tócame una mano;when you want me to stop please Touch my hand;
 aureola;Parlami quando ho l'aureola accesa;háblame cuando mi aureola está encendida;talk to me when my aureole is turned on;
 ;;;;
 sick;Dal libro dell'Esodo.  Servirete al Signore, vostro Dio. Egli benedirà il tuo pane e la tua acqua. Terrò lontana da te la malattia.;Del Éxodo. Adora al SEÑOR tu Dios, y él bendecirá tu pan y tu agua. Yo apartaré de ustedes toda enfermedad.;From Exodus. You shall serve the LORD your God, and he will bless your bread and your water. He will take sickness away from you;Aus Exodus. Und ihr sollt dem HERRN, eurem Gott, dienen: So wird er dein Brot und dein Wasser segnen, und ich werde alle Krankheit aus deiner Mitte entfernen.

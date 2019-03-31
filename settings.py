@@ -26,6 +26,9 @@ smonth = str(month)
 sday = str(day)
 hour = timeInfo[3]
 minute = timeInfo[4]
+shour = str(hour)
+sminute = str(minute)
+
 
 import os
 my_key_api = os.getenv("MY_OWN_KEY")
