@@ -1,0 +1,118 @@
+INFO:root:hand reciboL
+INFO:root:13:19: STATE CHANGING TO greeting FROM standby IN touch
+INFO:root:playSound: inTheNameAmen
+INFO:root:playSound: greeting1
+INFO:root:playSound: myNameShort
+INFO:root:13:20: STATE CHANGING TO meeting FROM greeting IN logic
+INFO:root:playSound: yourName
+INFO:root:keyword> carmen
+INFO:root:NAME: carmen
+INFO:root:playSound: meetM
+INFO:root:playSound: intro
+INFO:root:playSound: aureola
+INFO:root:13:20: STATE CHANGING TO enquiry FROM meeting IN elaborateAnswer
+INFO:root:playSound: tellMeLong
+INFO:root:keyword> en la biblia
+INFO:root:13:20: STATE CHANGING TO bible FROM enquiry IN elaborateAnswer
+INFO:root:playSound: verse
+INFO:root:playSound: touchHand
+INFO:root:playSound: Malachi
+INFO:root:playSound: 4
+INFO:root:playSound: Malachi-4-1
+INFO:root:playSound: Malachi-4-2
+INFO:root:playSound: Malachi-4-3
+INFO:root:playSound: Malachi-4-4
+INFO:root:playSound: Malachi-4-5
+INFO:root:playSound: Malachi-4-6
+INFO:root:hand reciboL
+INFO:root:13:22: STATE CHANGING TO enquiry FROM bible IN touch
+INFO:root:13:22: STATE CHANGING TO enquiry FROM enquiry IN logic
+INFO:root:playSound: tellMe4
+INFO:root:keyword> ya me voy
+INFO:root:playSound: goInPeace
+INFO:root:playSound: retireShort
+INFO:root:13:22: STATE CHANGING TO farewell FROM enquiry IN elaborateAnswer
+INFO:root:13:23: STATE CHANGING TO standby FROM farewell IN logic
+INFO:root:hand reciboL
+INFO:root:13:23: STATE CHANGING TO greeting FROM standby IN touch
+INFO:root:playSound: inTheNameAmen
+INFO:root:playSound: greeting1
+INFO:root:playSound: myNameShort
+INFO:root:13:24: STATE CHANGING TO enquiry FROM greeting IN logic
+INFO:root:playSound: tellMe3
+INFO:root:13:24: STATE CHANGING TO noreply FROM enquiry IN listen
+INFO:root:13:24: STATE CHANGING TO enquiry FROM noreply IN logic
+INFO:root:keyword> otras cosas
+INFO:root:13:24: STATE CHANGING TO wakaranai FROM enquiry IN elaborateAnswer
+INFO:root:playSound: wakaranai3
+INFO:root:13:24: STATE CHANGING TO enquiry FROM wakaranai IN logic
+INFO:root:playSound: tellMe3
+INFO:root:keyword> qué día es hoy
+INFO:root:13:24: STATE CHANGING TO saint FROM enquiry IN elaborateAnswer
+INFO:root:playSound: 3-31d
+INFO:root:playSound: dayMemory
+INFO:root:playSound: 3-31n
+INFO:root:playSound: 3-31s
+INFO:root:13:25: STATE CHANGING TO enquiry FROM saint IN logic
+INFO:root:playSound: tellMe4
+INFO:root:keyword> el proyecto
+INFO:root:13:25: STATE CHANGING TO wakaranai FROM enquiry IN elaborateAnswer
+INFO:root:playSound: wakaranai1
+INFO:root:hand reciboR
+INFO:root:13:25: STATE CHANGING TO enquiry FROM wakaranai IN logic
+INFO:root:playSound: tellMe1
+INFO:root:keyword> ir a la iglesia o que necesitan de comprender
+INFO:root:13:25: STATE CHANGING TO wakaranai FROM enquiry IN elaborateAnswer
+INFO:root:playSound: wakaranai1
+INFO:root:13:25: STATE CHANGING TO enquiry FROM wakaranai IN logic
+INFO:root:playSound: tellMe2
+INFO:root:hand reciboR
+INFO:root:13:25: STATE CHANGING TO farewell FROM enquiry IN touch
+INFO:root:13:25: STATE CHANGING TO standby FROM farewell IN logic
+INFO:root:hand reciboR
+INFO:root:13:28: STATE CHANGING TO greeting FROM standby IN touch
+INFO:root:playSound: inTheNameAmen
+INFO:root:hand reciboR
+INFO:root:13:28: STATE CHANGING TO enquiry FROM greeting IN touch
+INFO:root:playSound: greeting1
+INFO:root:playSound: myNameShort
+INFO:root:13:28: STATE CHANGING TO enquiry FROM enquiry IN logic
+INFO:root:playSound: tellMe4
+INFO:root:13:28: STATE CHANGING TO noreply FROM enquiry IN listen
+INFO:root:13:28: STATE CHANGING TO enquiry FROM noreply IN logic
+INFO:root:keyword> gabriel
+INFO:root:13:28: STATE CHANGING TO wakaranai FROM enquiry IN elaborateAnswer
+INFO:root:playSound: wakaranai3
+INFO:root:13:28: STATE CHANGING TO enquiry FROM wakaranai IN logic
+INFO:root:playSound: tellMe2
+INFO:root:13:29: STATE CHANGING TO noreply FROM enquiry IN listen
+INFO:root:13:29: STATE CHANGING TO enquiry FROM noreply IN logic
+INFO:root:keyword> gabriel
+INFO:root:13:29: STATE CHANGING TO wakaranai FROM enquiry IN elaborateAnswer
+INFO:root:playSound: wakaranai2
+INFO:root:13:29: STATE CHANGING TO enquiry FROM wakaranai IN logic
+INFO:root:playSound: tellMe1
+INFO:root:keyword> y preguntar
+INFO:root:13:29: STATE CHANGING TO wakaranai FROM enquiry IN elaborateAnswer
+INFO:root:playSound: wakaranai2
+INFO:root:13:29: STATE CHANGING TO enquiry FROM wakaranai IN logic
+INFO:root:playSound: tellMe5
+INFO:root:keyword> el santo del día
+INFO:root:13:29: STATE CHANGING TO saint FROM enquiry IN elaborateAnswer
+INFO:root:playSound: 3-31d
+INFO:root:playSound: dayMemory
+INFO:root:playSound: 3-31n
+INFO:root:playSound: 3-31s
+INFO:root:13:30: STATE CHANGING TO enquiry FROM saint IN logic
+INFO:root:playSound: tellMe2
+INFO:root:13:30: STATE CHANGING TO noreply FROM enquiry IN listen
+INFO:root:13:30: STATE CHANGING TO enquiry FROM noreply IN logic
+INFO:root:hand reciboR
+INFO:root:13:30: STATE CHANGING TO noreply FROM enquiry IN listen
+INFO:root:13:30: STATE CHANGING TO enquiry FROM noreply IN logic
+INFO:root:keyword> noticias
+INFO:root:13:30: STATE CHANGING TO wakaranai FROM enquiry IN elaborateAnswer
+INFO:root:13:30: STATE CHANGING TO farewell FROM wakaranai IN touch
+INFO:root:hand reciboR
+INFO:root:playSound: retire
+INFO:root:13:30: STATE CHANGING TO standby FROM farewell IN logic

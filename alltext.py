@@ -24,6 +24,8 @@ def alltextInit():
         text_EN = items[3].encode('utf-8')
         text_DE = items[4].encode('utf-8')
 
+        print(textID)
+
 
         #text[textID] = [text_IT, text_ES, text_EN, text_DE]
         text[textID] = {'IT':text_IT, 'ES':text_ES, 'EN':text_EN, 'DE':text_DE}

@@ -13,6 +13,8 @@ replies = [   # ID, replies
     ["wish", "wishPray"],
     ["sick", "sick"],
     ["worry", "future"],
+    ["happy", "happiness"],
+    ["pope", "popeLima"],
     ["francis", "sanfrancesco"],
     ["yourname", "myName"],
     ["how", "genki"],
