@@ -1,0 +1,48 @@
+INFO:root:hand reciboL
+INFO:root:18:26: STATE CHANGING TO greeting FROM standby IN touch
+INFO:root:playSound: inTheNameAmen
+INFO:root:playSound: greeting1
+INFO:root:playSound: myNameShort
+INFO:root:18:26: STATE CHANGING TO meeting FROM greeting IN logic
+INFO:root:playSound: yourName
+INFO:root:keyword> kitty
+INFO:root:NAME: kitty
+INFO:root:playSound: meetM
+INFO:root:playSound: intro
+INFO:root:playSound: aureola
+INFO:root:18:26: STATE CHANGING TO enquiry FROM meeting IN elaborateAnswer
+INFO:root:playSound: tellMeLong
+INFO:root:keyword> rezar
+INFO:root:18:27: STATE CHANGING TO pray FROM enquiry IN elaborateAnswer
+INFO:root:playSound: prayStart
+INFO:root:playSound: angel1
+INFO:root:18:27: STATE CHANGING TO enquiry FROM pray IN logic
+INFO:root:playSound: tellMe4
+INFO:root:keyword> amén
+INFO:root:18:27: STATE CHANGING TO wakaranai FROM enquiry IN elaborateAnswer
+INFO:root:playSound: wakaranai3
+INFO:root:18:27: STATE CHANGING TO enquiry FROM wakaranai IN logic
+INFO:root:playSound: tellMe2
+INFO:root:keyword> si me puedes decir
+INFO:root:18:27: STATE CHANGING TO wakaranai FROM enquiry IN elaborateAnswer
+INFO:root:playSound: wakaranai3
+INFO:root:18:28: STATE CHANGING TO enquiry FROM wakaranai IN logic
+INFO:root:playSound: tellMe2
+INFO:root:keyword> algo de la biblia
+INFO:root:18:28: STATE CHANGING TO bible FROM enquiry IN elaborateAnswer
+INFO:root:playSound: verse
+INFO:root:playSound: touchHand
+INFO:root:playSound: 2 John
+INFO:root:playSound: 1
+INFO:root:playSound: 2 John-1-1
+INFO:root:playSound: 2 John-1-2
+INFO:root:playSound: 2 John-1-3
+INFO:root:playSound: 2 John-1-4
+INFO:root:hand reciboR
+INFO:root:18:29: STATE CHANGING TO enquiry FROM bible IN touch
+INFO:root:hand reciboR
+INFO:root:18:29: STATE CHANGING TO farewell FROM enquiry IN touch
+INFO:root:18:29: STATE CHANGING TO enquiry FROM farewell IN logic
+INFO:root:playSound: tellMe2
+INFO:root:keyword> amén gracias a dios
+INFO:root:18:29: STATE CHANGING TO reply FROM enquiry IN elaborateAnswer

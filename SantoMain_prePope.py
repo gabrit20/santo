@@ -16,7 +16,6 @@ from alltext import *
 from allbible import *
 from allsaints import *
 from allprayers import *
-from allpope import *
 
 from playVoice import *
 from camera import cameraInit
@@ -255,12 +254,6 @@ def touch():
                                         pygame.mixer.music.stop()
                                         changeState("enquiry", state, func_name(), False)
                                 continue
-                        if (state =="pope"):
-                                while (pygame.mixer.music.get_busy()==True):
-                                        recibo = -1
-                                        pygame.mixer.music.stop()
-                                        changeState("enquiry", state, func_name(), False)
-                                continue
                         if (state =="bible"):
                                 while (pygame.mixer.music.get_busy()==True):
                                         recibo = -1
@@ -301,7 +294,7 @@ def elaborateAnswer(keyword):  #enters here only if it recognises some word
                         #print("iKey",iKey)
                         for iWord in allvocabularies.vocabulary[iKey][language_in]: #compare the strings, one inside another
                                 if iWord in keyword or keyword in iWord:
-                                        print("match", keyword, iWord)
+                                        #print("match", keyword, iWord)
                                         is_matched = True
                                         print("setting is_matched = True in elaborateAnswer query")
                                         queryID = iKey
@@ -326,9 +319,6 @@ def elaborateAnswer(keyword):  #enters here only if it recognises some word
 
                         elif queryID == "pray":
                                 changeState("pray", state, func_name(), False)
-
-                        elif queryID == "pope":
-                                changeState("pope", state, func_name(), False)
 
                         elif queryID == "problem":
                                 playSound("problem")
@@ -558,28 +548,6 @@ def logic():
                         countInteractions += 1
                         changeState("enquiry", state, func_name(), False)
 
-                elif (state == "pope"):
-                        if alreadyPlayed == False:
-                                playSound("popeStart")
-                        time.sleep(1)
-                        randomHomely = random.choice(pope.keys())
-                        part = 1
-                        
-                        while (pope[randomHomely][str(part)][language_out] == ""):
-                                print("empty prayer entry; skipping")
-                                randomHomely = random.choice(pope.keys())
-                        
-                        while (state=="pope"):
-                                playSound(randomHomely + str(part), pope[randomHomely][str(part)])
-                                part += 1
-                                if (str(part) not in pope[randomHomely]):
-                                        break
-                        time.sleep(1.5)
-
-                        countInteractions += 1
-                        changeState("enquiry", state, func_name(), False)
-
-
                                              
                 elif (state=="farewell"):
                         if alreadyPlayed == False:
@@ -705,7 +673,6 @@ allvocabularies.allvocabulariesInit()
 allbibleInit()
 allsaintsInit()
 allprayersInit()
-allpopeInit()
 
 init()
 

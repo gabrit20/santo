@@ -1,0 +1,43 @@
+INFO:root:hand reciboL
+INFO:root:18:31: STATE CHANGING TO greeting FROM standby IN touch
+INFO:root:playSound: inTheNameAmen
+INFO:root:playSound: greeting1
+INFO:root:playSound: myNameShort
+INFO:root:18:31: STATE CHANGING TO meeting FROM greeting IN logic
+INFO:root:playSound: yourName
+INFO:root:keyword> maría
+INFO:root:NAME: maría
+INFO:root:playSound: meetF
+INFO:root:playSound: intro
+INFO:root:playSound: aureola
+INFO:root:18:31: STATE CHANGING TO enquiry FROM meeting IN elaborateAnswer
+INFO:root:playSound: tellMeLong
+INFO:root:keyword> rezar por mi hijo
+INFO:root:18:32: STATE CHANGING TO pray FROM enquiry IN elaborateAnswer
+INFO:root:playSound: prayStart
+INFO:root:playSound: angel1
+INFO:root:18:32: STATE CHANGING TO enquiry FROM pray IN logic
+INFO:root:playSound: tellMe4
+INFO:root:18:32: STATE CHANGING TO noreply FROM enquiry IN listen
+INFO:root:18:32: STATE CHANGING TO enquiry FROM noreply IN logic
+INFO:root:keyword> si entiende sólo solo
+INFO:root:18:32: STATE CHANGING TO wakaranai FROM enquiry IN elaborateAnswer
+INFO:root:playSound: wakaranai3
+INFO:root:18:32: STATE CHANGING TO enquiry FROM wakaranai IN logic
+INFO:root:playSound: tellMe4
+INFO:root:18:32: STATE CHANGING TO noreply FROM enquiry IN listen
+INFO:root:18:32: STATE CHANGING TO enquiry FROM noreply IN logic
+INFO:root:keyword> el santo de hoy
+INFO:root:18:33: STATE CHANGING TO saint FROM enquiry IN elaborateAnswer
+INFO:root:playSound: 3-31d
+INFO:root:playSound: dayMemory
+INFO:root:playSound: 3-31n
+INFO:root:playSound: 3-31s
+INFO:root:18:33: STATE CHANGING TO enquiry FROM saint IN logic
+INFO:root:playSound: tellMe2
+INFO:root:hand reciboL
+INFO:root:18:33: STATE CHANGING TO noreply FROM enquiry IN listen
+INFO:root:18:33: STATE CHANGING TO enquiry FROM noreply IN logic
+INFO:root:18:33: STATE CHANGING TO farewell FROM enquiry IN touch
+INFO:root:playSound: retire
+INFO:root:18:34: STATE CHANGING TO standby FROM farewell IN logic

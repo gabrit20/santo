@@ -1,0 +1,76 @@
+INFO:root:hand reciboL
+INFO:root:20:17: STATE CHANGING TO greeting FROM standby IN touch
+INFO:root:playSound: inTheNameAmen
+INFO:root:playSound: greeting1
+INFO:root:playSound: myNameShort
+INFO:root:20:17: STATE CHANGING TO meeting FROM greeting IN logic
+INFO:root:playSound: yourName
+INFO:root:20:17: STATE CHANGING TO noname FROM meeting IN listen
+INFO:root:20:17: STATE CHANGING TO meeting FROM noname IN logic
+INFO:root:keyword> andrea
+INFO:root:NAME: andrea
+INFO:root:playSound: meetF
+INFO:root:playSound: intro
+INFO:root:playSound: aureola
+INFO:root:20:18: STATE CHANGING TO enquiry FROM meeting IN elaborateAnswer
+INFO:root:playSound: tellMeLong
+INFO:root:keyword> la biblia
+INFO:root:20:18: STATE CHANGING TO bible FROM enquiry IN elaborateAnswer
+INFO:root:playSound: verse
+INFO:root:playSound: touchHand
+INFO:root:playSound: 2 Thessalonians
+INFO:root:playSound: 2
+INFO:root:playSound: 2 Thessalonians-2-1
+INFO:root:playSound: 2 Thessalonians-2-2
+INFO:root:playSound: 2 Thessalonians-2-3
+INFO:root:playSound: 2 Thessalonians-2-4
+INFO:root:playSound: 2 Thessalonians-2-5
+INFO:root:hand reciboL
+INFO:root:20:19: STATE CHANGING TO enquiry FROM bible IN touch
+INFO:root:20:19: STATE CHANGING TO enquiry FROM enquiry IN logic
+INFO:root:playSound: tellMe5
+INFO:root:keyword> adiós
+INFO:root:playSound: goInPeace
+INFO:root:playSound: retireShort
+INFO:root:20:20: STATE CHANGING TO farewell FROM enquiry IN elaborateAnswer
+INFO:root:20:20: STATE CHANGING TO standby FROM farewell IN logic
+INFO:root:hand reciboL
+INFO:root:20:21: STATE CHANGING TO greeting FROM standby IN touch
+INFO:root:playSound: inTheNameAmen
+INFO:root:playSound: greeting1
+INFO:root:playSound: myNameShort
+INFO:root:20:21: STATE CHANGING TO enquiry FROM greeting IN logic
+INFO:root:playSound: tellMe4
+INFO:root:20:21: STATE CHANGING TO noreply FROM enquiry IN listen
+INFO:root:20:21: STATE CHANGING TO enquiry FROM noreply IN logic
+INFO:root:keyword> santo rosario
+INFO:root:20:21: STATE CHANGING TO reply FROM enquiry IN elaborateAnswer
+INFO:root:playSound: tellMe2
+INFO:root:20:21: STATE CHANGING TO enquiry FROM reply IN logic
+INFO:root:playSound: tellMe5
+INFO:root:keyword> perecemos
+INFO:root:20:22: STATE CHANGING TO pray FROM enquiry IN elaborateAnswer
+INFO:root:playSound: prayStart
+INFO:root:playSound: gloria1
+INFO:root:20:22: STATE CHANGING TO enquiry FROM pray IN logic
+INFO:root:playSound: tellMe1
+INFO:root:keyword> puedes hablarle por cómo se llama
+INFO:root:20:22: STATE CHANGING TO wakaranai FROM enquiry IN elaborateAnswer
+INFO:root:playSound: wakaranai3
+INFO:root:20:22: STATE CHANGING TO enquiry FROM wakaranai IN logic
+INFO:root:playSound: tellMe4
+INFO:root:keyword> cómo te llamas
+INFO:root:20:22: STATE CHANGING TO reply FROM enquiry IN elaborateAnswer
+INFO:root:playSound: myName
+INFO:root:20:23: STATE CHANGING TO enquiry FROM reply IN logic
+INFO:root:playSound: tellMe5
+INFO:root:keyword> cómo estás
+INFO:root:20:23: STATE CHANGING TO reply FROM enquiry IN elaborateAnswer
+INFO:root:playSound: genki
+INFO:root:20:23: STATE CHANGING TO enquiry FROM reply IN logic
+INFO:root:playSound: tellMe2
+INFO:root:keyword> salud
+INFO:root:playSound: goInPeace
+INFO:root:playSound: retireShort
+INFO:root:20:23: STATE CHANGING TO farewell FROM enquiry IN elaborateAnswer
+INFO:root:20:23: STATE CHANGING TO standby FROM farewell IN logic

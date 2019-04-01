@@ -1,0 +1,39 @@
+INFO:root:hand reciboR
+INFO:root:19:15: STATE CHANGING TO greeting FROM standby IN touch
+INFO:root:playSound: inTheNameAmen
+INFO:root:playSound: greeting1
+INFO:root:playSound: myNameShort
+INFO:root:19:15: STATE CHANGING TO meeting FROM greeting IN logic
+INFO:root:playSound: yourName
+INFO:root:keyword> laura
+INFO:root:NAME: laura
+INFO:root:playSound: meetF
+INFO:root:playSound: intro
+INFO:root:playSound: aureola
+INFO:root:19:16: STATE CHANGING TO enquiry FROM meeting IN elaborateAnswer
+INFO:root:playSound: tellMeLong
+INFO:root:keyword> el santo del día
+INFO:root:19:16: STATE CHANGING TO saint FROM enquiry IN elaborateAnswer
+INFO:root:playSound: 3-31d
+INFO:root:playSound: dayMemory
+INFO:root:playSound: 3-31n
+INFO:root:playSound: 3-31s
+INFO:root:19:17: STATE CHANGING TO enquiry FROM saint IN logic
+INFO:root:playSound: tellMe3
+INFO:root:keyword> bueno si dios todo lo sabe
+INFO:root:19:17: STATE CHANGING TO wakaranai FROM enquiry IN elaborateAnswer
+INFO:root:playSound: wakaranai2
+INFO:root:19:17: STATE CHANGING TO enquiry FROM wakaranai IN logic
+INFO:root:playSound: tellMe4
+INFO:root:keyword> gracias
+INFO:root:19:17: STATE CHANGING TO reply FROM enquiry IN elaborateAnswer
+INFO:root:playSound: yourewelcome1
+INFO:root:19:17: STATE CHANGING TO enquiry FROM reply IN logic
+INFO:root:playSound: tellMe1
+INFO:root:hand reciboR
+INFO:root:19:18: STATE CHANGING TO noreply FROM enquiry IN listen
+INFO:root:19:18: STATE CHANGING TO enquiry FROM noreply IN logic
+INFO:root:19:18: STATE CHANGING TO farewell FROM enquiry IN touch
+INFO:root:hand reciboR
+INFO:root:playSound: retire
+INFO:root:19:18: STATE CHANGING TO standby FROM farewell IN logic

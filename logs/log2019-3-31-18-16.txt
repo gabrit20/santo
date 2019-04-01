@@ -1,0 +1,41 @@
+INFO:root:hand reciboR
+INFO:root:18:16: STATE CHANGING TO greeting FROM standby IN touch
+INFO:root:playSound: inTheNameAmen
+INFO:root:playSound: greeting1
+INFO:root:playSound: myNameShort
+INFO:root:18:17: STATE CHANGING TO meeting FROM greeting IN logic
+INFO:root:playSound: yourName
+INFO:root:keyword> tardes me llamo yanina
+INFO:root:NAME: tardes me llamo yanina
+INFO:root:playSound: meetF
+INFO:root:playSound: intro
+INFO:root:playSound: aureola
+INFO:root:18:17: STATE CHANGING TO enquiry FROM meeting IN elaborateAnswer
+INFO:root:playSound: tellMeLong
+INFO:root:keyword> recemos
+INFO:root:18:17: STATE CHANGING TO pray FROM enquiry IN elaborateAnswer
+INFO:root:playSound: prayStart
+INFO:root:playSound: angel1
+INFO:root:18:18: STATE CHANGING TO enquiry FROM pray IN logic
+INFO:root:playSound: tellMe2
+INFO:root:keyword> amén
+INFO:root:18:18: STATE CHANGING TO wakaranai FROM enquiry IN elaborateAnswer
+INFO:root:playSound: wakaranai3
+INFO:root:18:18: STATE CHANGING TO enquiry FROM wakaranai IN logic
+INFO:root:playSound: tellMe1
+INFO:root:keyword> quiero que me hables un poco del papa francisco
+INFO:root:18:18: STATE CHANGING TO pope FROM enquiry IN elaborateAnswer
+INFO:root:playSound: popeStart
+INFO:root:playSound: popeLima1
+INFO:root:playSound: popeLima2
+INFO:root:playSound: popeLima3
+INFO:root:18:20: STATE CHANGING TO enquiry FROM pope IN logic
+INFO:root:playSound: tellMe2
+INFO:root:keyword> muchas gracias amén
+INFO:root:18:20: STATE CHANGING TO reply FROM enquiry IN elaborateAnswer
+INFO:root:playSound: yourewelcome1
+INFO:root:18:20: STATE CHANGING TO enquiry FROM reply IN logic
+INFO:root:playSound: tellMe5
+INFO:root:keyword> gracias a dios
+INFO:root:18:20: STATE CHANGING TO reply FROM enquiry IN elaborateAnswer
+INFO:root:playSound: yourewelcome1

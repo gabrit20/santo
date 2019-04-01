@@ -1,0 +1,44 @@
+INFO:root:hand reciboL
+INFO:root:20:34: STATE CHANGING TO greeting FROM standby IN touch
+INFO:root:playSound: inTheNameAmen
+INFO:root:playSound: greeting1
+INFO:root:playSound: myNameShort
+INFO:root:20:35: STATE CHANGING TO meeting FROM greeting IN logic
+INFO:root:playSound: yourName
+INFO:root:keyword> isabel
+INFO:root:NAME: isabel
+INFO:root:playSound: meetM
+INFO:root:playSound: intro
+INFO:root:playSound: aureola
+INFO:root:20:35: STATE CHANGING TO enquiry FROM meeting IN elaborateAnswer
+INFO:root:playSound: tellMeLong
+INFO:root:20:35: STATE CHANGING TO noreply FROM enquiry IN listen
+INFO:root:20:35: STATE CHANGING TO enquiry FROM noreply IN logic
+INFO:root:20:35: STATE CHANGING TO noreply FROM enquiry IN listen
+INFO:root:20:35: STATE CHANGING TO enquiry FROM noreply IN logic
+INFO:root:20:36: STATE CHANGING TO noreply FROM enquiry IN listen
+INFO:root:20:36: STATE CHANGING TO enquiry FROM noreply IN logic
+INFO:root:keyword> sandwich
+INFO:root:20:36: STATE CHANGING TO wakaranai FROM enquiry IN elaborateAnswer
+INFO:root:playSound: wakaranai2
+INFO:root:20:36: STATE CHANGING TO enquiry FROM wakaranai IN logic
+INFO:root:playSound: tellMe1
+INFO:root:20:36: STATE CHANGING TO noreply FROM enquiry IN listen
+INFO:root:20:36: STATE CHANGING TO enquiry FROM noreply IN logic
+INFO:root:20:36: STATE CHANGING TO noreply FROM enquiry IN listen
+INFO:root:20:36: STATE CHANGING TO enquiry FROM noreply IN logic
+INFO:root:keyword> crecemos
+INFO:root:20:36: STATE CHANGING TO pray FROM enquiry IN elaborateAnswer
+INFO:root:playSound: prayStart
+INFO:root:playSound: padrenostro1
+INFO:root:20:37: STATE CHANGING TO enquiry FROM pray IN logic
+INFO:root:playSound: tellMe4
+INFO:root:20:37: STATE CHANGING TO noreply FROM enquiry IN listen
+INFO:root:20:37: STATE CHANGING TO enquiry FROM noreply IN logic
+INFO:root:20:37: STATE CHANGING TO noreply FROM enquiry IN listen
+INFO:root:20:37: STATE CHANGING TO enquiry FROM noreply IN logic
+INFO:root:keyword> adiós adiós muchas gracias
+INFO:root:playSound: goInPeace
+INFO:root:playSound: retireShort
+INFO:root:20:37: STATE CHANGING TO farewell FROM enquiry IN elaborateAnswer
+INFO:root:20:37: STATE CHANGING TO standby FROM farewell IN logic

@@ -1,0 +1,45 @@
+INFO:root:hand reciboR
+INFO:root:20:25: STATE CHANGING TO greeting FROM standby IN touch
+INFO:root:playSound: inTheNameAmen
+INFO:root:playSound: greeting1
+INFO:root:playSound: myNameShort
+INFO:root:20:25: STATE CHANGING TO meeting FROM greeting IN logic
+INFO:root:playSound: yourName
+INFO:root:keyword> me llamo franco y quiero
+INFO:root:NAME: me llamo franco y quiero
+INFO:root:playSound: meetM
+INFO:root:playSound: intro
+INFO:root:playSound: aureola
+INFO:root:20:25: STATE CHANGING TO enquiry FROM meeting IN elaborateAnswer
+INFO:root:playSound: tellMeLong
+INFO:root:keyword> quiero que me hables de san juan
+INFO:root:20:26: STATE CHANGING TO wakaranai FROM enquiry IN elaborateAnswer
+INFO:root:playSound: wakaranai1
+INFO:root:20:26: STATE CHANGING TO enquiry FROM wakaranai IN logic
+INFO:root:playSound: tellMe3
+INFO:root:keyword> el santo de hoy
+INFO:root:20:26: STATE CHANGING TO saint FROM enquiry IN elaborateAnswer
+INFO:root:playSound: 3-31d
+INFO:root:playSound: dayMemory
+INFO:root:playSound: 3-31n
+INFO:root:playSound: 3-31s
+INFO:root:20:27: STATE CHANGING TO enquiry FROM saint IN logic
+INFO:root:playSound: tellMe3
+INFO:root:20:27: STATE CHANGING TO noreply FROM enquiry IN listen
+INFO:root:20:27: STATE CHANGING TO enquiry FROM noreply IN logic
+INFO:root:keyword> por la información
+INFO:root:20:27: STATE CHANGING TO wakaranai FROM enquiry IN elaborateAnswer
+INFO:root:playSound: wakaranai2
+INFO:root:20:27: STATE CHANGING TO enquiry FROM wakaranai IN logic
+INFO:root:playSound: tellMe1
+INFO:root:keyword> muchas gracias por la
+INFO:root:20:27: STATE CHANGING TO reply FROM enquiry IN elaborateAnswer
+INFO:root:playSound: yourewelcome1
+INFO:root:20:27: STATE CHANGING TO enquiry FROM reply IN logic
+INFO:root:playSound: tellMe4
+INFO:root:hand reciboR
+INFO:root:20:27: STATE CHANGING TO noreply FROM enquiry IN listen
+INFO:root:20:27: STATE CHANGING TO enquiry FROM noreply IN logic
+INFO:root:20:27: STATE CHANGING TO farewell FROM enquiry IN touch
+INFO:root:playSound: retire
+INFO:root:20:28: STATE CHANGING TO standby FROM farewell IN logic

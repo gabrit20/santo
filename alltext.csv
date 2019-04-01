@@ -21,8 +21,8 @@ tellMe4;Raccontami;Cuéntame;Tell me;
 tellMe5;Parlami;Háblame;Talk to me;
 ciao;ciao;chau;bye;Tschüss
 yourewelcome1;Di niente. Sono sempre a disposizione.;De nada. Estoy siempre a tu disposición;You're welcome. I'm always available;Gern geschehen. Ich bin immer verfügbar
-introOld;Possiamo parlare del santo di oggi, della Bibbia, o possiamo pregare;Podemos hablar sobre el santo de hoy, o de la Biblia, o podemos rezar;We can talk about the saint of today, or of the Bible, or we can pray.;
-intro;;Podemos hablar sobre el santo de hoy, o de la Biblia, o de las palabras de Papa Francisco, o podemos rezar;;
+intro;Possiamo parlare del santo di oggi, della Bibbia, o possiamo pregare;Podemos hablar sobre el santo de hoy, o de la Biblia, o podemos rezar;We can talk about the saint of today, or of the Bible, or we can pray.;
+introPope;;Podemos hablar sobre el santo de hoy, o de la Biblia, o de las palabras de Papa Francisco, o podemos rezar;;
 wakaranai1;Perdonami, non ti ho sentito;Disculpame, no te escuché;I'm sorry, I could not hear you;Tut mir leid, ich konnte dich nicht hören
 wakaranai2;Perdonami, non ti ho sentito;Disculpame, no te oí;I'm sorry, I could not hear you;Tut mir leid, ich konnte dich nicht hören
 wakaranai3;Perdonami, non ho capito che hai detto;Disculpame, no entiendo lo que dijiste;I'm sorry, I did not understand what you said.;
@@ -45,7 +45,6 @@ verse;Ti parlerò di un passo della Bibbia;Te hablaré de un versículo de la Bibli
 touchHand;quando vuoi che mi interrompa toccami una mano;cuando quieres que me interrumpa tócame una mano;when you want me to stop please Touch my hand;
 aureola;Parlami quando ho l'aureola accesa;háblame cuando mi aureola está encendida;talk to me when my aureole is turned on;
 popeStart;;Te hablaré de las palabras de Papa Francisco en Lima;;
-popeLima;;Te hablaré de las palabras de Papa Francisco en Lima. . Levántate y vete a Nínive, la gran ciudad, y predícales el mensaje que te digo. Con estas palabras, el Señor se dirigía a Jonás poniéndolo en movimiento hacia esa gran ciudad que estaba a punto de ser destruida por sus muchos males. También vemos a Jesús en el Evangelio de camino hacia Galilea para predicar su buena noticia. Ambas lecturas nos revelan a Dios en movimiento de cara a las ciudades de ayer y de hoy. El Señor se pone en camino: va a Nínive, a Galilea… a Lima, a Trujillo, a Puerto Maldonado… aquí viene el Señor. Se pone en movimiento para entrar en nuestra historia personal, concreta. Lo hemos celebrado hace poco: es el Emmanuel, el Dios que quiere estar siempre con nosotros. Sí, aquí en Lima, o en donde estés viviendo, en la vida cotidiana del trabajo rutinario, en la educación esperanzadora de los hijos, entre tus anhelos y desvelos. en la intimidad del hogar y en el ruido ensordecedor de nuestras calles. Es allí, en medio de los caminos polvorientos de la historia, donde el Señor viene a tu encuentro.;;
 ;;;;
 sick;Dal libro dell'Esodo.  Servirete al Signore, vostro Dio. Egli benedirà il tuo pane e la tua acqua. Terrò lontana da te la malattia.;Del Éxodo. Adora al SEÑOR tu Dios, y él bendecirá tu pan y tu agua. Yo apartaré de ustedes toda enfermedad.;From Exodus. You shall serve the LORD your God, and he will bless your bread and your water. He will take sickness away from you;Aus Exodus. Und ihr sollt dem HERRN, eurem Gott, dienen: So wird er dein Brot und dein Wasser segnen, und ich werde alle Krankheit aus deiner Mitte entfernen.
 sick2;Preghiamo.  Guariscimi, Signore, per il potere delle tue piaghe gloriose, per la tua croce, per il tuo Preziosissimo Sangue.;;;

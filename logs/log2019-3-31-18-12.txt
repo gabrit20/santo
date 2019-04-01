@@ -1,0 +1,43 @@
+INFO:root:hand reciboL
+INFO:root:18:13: STATE CHANGING TO greeting FROM standby IN touch
+INFO:root:playSound: inTheNameAmen
+INFO:root:playSound: greeting1
+INFO:root:playSound: myNameShort
+INFO:root:18:13: STATE CHANGING TO meeting FROM greeting IN logic
+INFO:root:playSound: yourName
+INFO:root:18:13: STATE CHANGING TO noname FROM meeting IN listen
+INFO:root:18:13: STATE CHANGING TO meeting FROM noname IN logic
+INFO:root:18:13: STATE CHANGING TO noname FROM meeting IN listen
+INFO:root:18:13: STATE CHANGING TO meeting FROM noname IN logic
+INFO:root:keyword> mercedes
+INFO:root:NAME: mercedes
+INFO:root:playSound: meetM
+INFO:root:playSound: intro
+INFO:root:playSound: aureola
+INFO:root:18:14: STATE CHANGING TO enquiry FROM meeting IN elaborateAnswer
+INFO:root:playSound: tellMeLong
+INFO:root:keyword> de lo que te ha dicho
+INFO:root:18:14: STATE CHANGING TO wakaranai FROM enquiry IN elaborateAnswer
+INFO:root:playSound: wakaranai2
+INFO:root:18:14: STATE CHANGING TO enquiry FROM wakaranai IN logic
+INFO:root:playSound: tellMe2
+INFO:root:keyword> santo de hoy
+INFO:root:18:14: STATE CHANGING TO saint FROM enquiry IN elaborateAnswer
+INFO:root:playSound: 3-31d
+INFO:root:playSound: dayMemory
+INFO:root:playSound: 3-31n
+INFO:root:playSound: 3-31s
+INFO:root:18:15: STATE CHANGING TO enquiry FROM saint IN logic
+INFO:root:playSound: tellMe4
+INFO:root:keyword> sí pues todo lo saludas
+INFO:root:18:15: STATE CHANGING TO wakaranai FROM enquiry IN elaborateAnswer
+INFO:root:playSound: wakaranai1
+INFO:root:18:15: STATE CHANGING TO enquiry FROM wakaranai IN logic
+INFO:root:playSound: tellMe5
+INFO:root:keyword> a dios gracias
+INFO:root:18:15: STATE CHANGING TO reply FROM enquiry IN elaborateAnswer
+INFO:root:playSound: yourewelcome1
+INFO:root:18:16: STATE CHANGING TO enquiry FROM reply IN logic
+INFO:root:playSound: tellMe1
+INFO:root:18:16: STATE CHANGING TO noreply FROM enquiry IN listen
+INFO:root:18:16: STATE CHANGING TO enquiry FROM noreply IN logic
