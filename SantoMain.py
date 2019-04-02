@@ -292,8 +292,8 @@ def elaborateAnswer(keyword):  #enters here only if it recognises some word
 
 
 
-        if (state == "enquiry"):
-                print("in elaborateAnswer enquiry")
+        if (state == "enquiry" and len(keyword)>=2):
+                #print("in elaborateAnswer enquiry")
                 chosenReply = -1
                 queryID = -1
 
@@ -317,6 +317,13 @@ def elaborateAnswer(keyword):  #enters here only if it recognises some word
                                 time.sleep(0.4)
                                 countInteractions == 0
                                 playSound("retireShort")
+                                changeState("farewell", state, func_name(), True)
+                                
+                        elif queryID == "thanks":
+                                playSound("yourewelcome1")
+                                time.sleep(0.4)
+                                countInteractions == 0
+                                playSound("goInPeace")
                                 changeState("farewell", state, func_name(), True)
                                 
                         elif queryID == "day":
@@ -350,7 +357,7 @@ def elaborateAnswer(keyword):  #enters here only if it recognises some word
                 
 
         elif (state == "meeting"):
-                print("in elaborateAnswer greeting")
+                #print("in elaborateAnswer greeting")
                 if (keyword is not None):       #len(keyword) >= 3):
                         is_matched = True
                         print("setting is_matched = True  in elaborateAnswer greeting")
@@ -459,7 +466,17 @@ def logic():
 
                         playSound("inTheNameAmen")
                         time.sleep(0.8)
-                        playSound("greeting1")
+
+                        hour = str(timeInfo[3]
+                        if (hour < 12):
+                                playSound("greetingMorning")
+                        elif (hour < 17):
+                                playSound("greetingAfternoon")
+                        elif (hour < 20):
+                                playSound("greetingEvening")
+                        elif (hour >= 20):
+                                playSound("greetingNight")
+                                   
                         time.sleep(0.5)      
                         playSound("myNameShort")
                         time.sleep(0.5)      
@@ -574,6 +591,8 @@ def logic():
                                 part += 1
                                 if (str(part) not in prayers[randomPrayer]):
                                         break
+                        #time.sleep(0.5)
+                        #playSound("amen")
                         time.sleep(1.5)
 
                         countInteractions += 1
@@ -614,9 +633,10 @@ def logic():
 
                         if alreadyPlayed == False:
                                 if countInteractions <= 0:
-                                        alreadyPlayed = playSound("tellMeLong")   
+                                        alreadyPlayed = playSound("tellMeLong2")   
+                                elif countInteractions % 3 == 0:
+                                        alreadyPlayed = playSound(random.choice(soundfiles.variants["tellMeElse"]))
                                 else:
-                                        
                                         alreadyPlayed = playSound(random.choice(soundfiles.variants["tellMe"]))
                                 time.sleep(0.5)
                         listen()

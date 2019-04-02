@@ -32,13 +32,13 @@ month;day;;IT;ES;EN;DE
 1;31;d;;;;
 2;1;d;;;;
 2;2;d;;;;
-2;3;d;Oggi, Ã¨ il tre febbraio;;;
-2;4;d;Oggi, Ã¨ il quattro febbraio;;;
-2;5;d;Oggi, Ã¨ il cinque febbraio;;;
-2;6;d;Oggi, Ã¨ il sei febbraio;;;
-2;7;d;Oggi, Ã¨ il sette febbraio;;;
-2;8;d;Oggi, Ã¨ l'otto febbraio;;;
-2;9;d;Oggi, Ã¨ il nove febbraio;;;
+2;3;d;Oggi, è il tre febbraio;;;
+2;4;d;Oggi, è il quattro febbraio;;;
+2;5;d;Oggi, è il cinque febbraio;;;
+2;6;d;Oggi, è il sei febbraio;;;
+2;7;d;Oggi, è il sette febbraio;;;
+2;8;d;Oggi, è l'otto febbraio;;;
+2;9;d;Oggi, è il nove febbraio;;;
 2;10;d;;;;
 2;11;d;;;;
 2;12;d;;;;
@@ -149,7 +149,7 @@ month;day;;IT;ES;EN;DE
 5;27;d;;;;
 5;28;d;;;Today, it's the twentyeighth of May;Heute ist der achtundzwanzigste Mai
 5;29;d;;;Today, it's the twentynineth of May;Heute ist der neunundzwanzigste Mai
-5;30;d;;;Today, it's the thirtieth of May;Heute ist der dreiÃŸigste Mai
+5;30;d;;;Today, it's the thirtieth of May;Heute ist der dreißigste Mai
 5;31;d;;;;
 6;1;d;;;;
 6;2;d;;;;
@@ -336,7 +336,7 @@ month;day;;IT;ES;EN;DE
 11;30;d;;;;
 12;1;d;;;;
 12;2;d;;;;
-12;3;d;Oggi, Ã¨ il tre dicembre;;Today it's the third of December;
+12;3;d;Oggi, è il tre dicembre;;Today it's the third of December;
 12;4;d;;;;
 12;5;d;;;;
 12;6;d;;;;
@@ -366,7 +366,7 @@ month;day;;IT;ES;EN;DE
 12;30;d;;;;
 12;31;d;;;;
 ;;;;;;
-0;0;n;Oggi, non so che giorno Ã¨;Hoy, no se que dÃ­a es;;
+0;0;n;Oggi, non so che giorno è;Hoy, no se que día es;;
 1;1;n;;;;
 1;2;n;;;;
 1;3;n;;;;
@@ -456,7 +456,7 @@ month;day;;IT;ES;EN;DE
 3;27;n;;;;
 3;28;n;;;;
 3;29;n;;;;
-3;30;n;;San Juan ClÃ­maco;;
+3;30;n;;San Juan Clímaco;;
 3;31;n;;Santa Balbina;;
 4;1;n;;;;
 4;2;n;;San Francisco de Paola;;
@@ -734,7 +734,7 @@ month;day;;IT;ES;EN;DE
 12;30;n;;;;
 12;31;n;;;;
 ;;;;;;
-0;0;s;Oggi, non so che giorno Ã¨;Hoy, no se que dÃ­a es;;
+0;0;s;Oggi, non so che giorno è;Hoy, no se que día es;;
 1;1;s;;;;
 1;2;s;;;;
 1;3;s;;;;
@@ -768,13 +768,13 @@ month;day;;IT;ES;EN;DE
 1;31;s;;;;
 2;1;s;;;;
 2;2;s;;;;
-2;3;s;Vescovo e martire, in quanto cristiano subÃ¬ a Sivas nell'antica Armenia il martirio sotto l'imperatore Licinio.;;;
-2;4;s;Sacerdote, fondÃ² un Ordine monastico, in cui impose una doppia disciplina di vita: alle monache la regola di san Benedetto, ai chierici quella di sant'Agostino.;;;
-2;5;s;Vrgine e martire, a Catania, ancora fanciulla, nell'imperversare della persecuzione conservÃ² nel martirio illibato il corpo e integra la fede per Cristo Signore.;;;
+2;3;s;Vescovo e martire, in quanto cristiano subì a Sivas nell'antica Armenia il martirio sotto l'imperatore Licinio.;;;
+2;4;s;Sacerdote, fondò un Ordine monastico, in cui impose una doppia disciplina di vita: alle monache la regola di san Benedetto, ai chierici quella di sant'Agostino.;;;
+2;5;s;Vrgine e martire, a Catania, ancora fanciulla, nell'imperversare della persecuzione conservò nel martirio illibato il corpo e integra la fede per Cristo Signore.;;;
 2;6;s;Martiri della persecuzione contro i cristiaani in Giappone. Nel 1596, tutti loro, tra missionari, sacerdoti, e religiosi, furono arrestati e crocifissi. ;;;
-2;7;s;Sacerdote dell'Ordine dei Frati Minori e martire, che, dopo lunghi tormenti patiti in un carcere duro, morÃ¬ strangolato.;;;
-2;8;s;Gettato in carcere, si convertÃ¬ a Dio, quindi si dedicÃ²,  con i chierici somaschi, agli orfani e agli infermi.   MorÃ¬ di peste mentre curava i malati;;;
-2;9;s;Vergine e martire, dopo molte e crudeli torture, preferÃ¬ il roogo piuttosto che rinnegare la fede. accesa dall'ardore dello Spirito Santo, si gettÃ² nel fuoco;;;
+2;7;s;Sacerdote dell'Ordine dei Frati Minori e martire, che, dopo lunghi tormenti patiti in un carcere duro, morì strangolato.;;;
+2;8;s;Gettato in carcere, si convertì a Dio, quindi si dedicò,  con i chierici somaschi, agli orfani e agli infermi.   Morì di peste mentre curava i malati;;;
+2;9;s;Vergine e martire, dopo molte e crudeli torture, preferì il roogo piuttosto che rinnegare la fede. accesa dall'ardore dello Spirito Santo, si gettò nel fuoco;;;
 2;10;s;;;;
 2;11;s;;;;
 2;12;s;;;;
@@ -802,16 +802,16 @@ month;day;;IT;ES;EN;DE
 3;5;s;;;;
 3;6;s;;;;
 3;7;s;;;;
-3;8;s;;Nacido en Portugal, despuÃ©s de una vida llena de peligros en la milicia humana, prestÃ³ ayuda con constante caridad a los necesitados y enfermos en un hospital fundado por Ã©l, y se asociÃ³ compaÃ±eros, con los cuales constituyÃ³ despuÃ©s la Orden de Hospitalarios de San Juan de Dios.;;
+3;8;s;;Nacido en Portugal, después de una vida llena de peligros en la milicia humana, prestó ayuda con constante caridad a los necesitados y enfermos en un hospital fundado por él, y se asoció compañeros, con los cuales constituyó después la Orden de Hospitalarios de San Juan de Dios.;;
 3;9;s;;;;
 3;10;s;;;;
-3;11;s;;El rey Constantino de Cornwall cambiÃ³ de vida y cediÃ³ el trono a su hijo. De anciano, fue atacado por los piratas, cuando se dirigÃ­a a Kintyre en Escocia y le cortaron un brazo. TodavÃ­a tuvo tiempo de bendecir a sus acompaÃ±antes antes de morir.;;
-3;12;s;;Las heroicas virtudes de San Gregorio Magno inspiraron al Papa Pelagio II la idea de sacarlo del monasterio para hacerlo cardenal. Ocultose a fin de evitar esta dignidad. pero una columna de fuego revelÃ³ el lugar de su retiro y puso en evidencia la voluntad de Dios a su respecto.;;
+3;11;s;;El rey Constantino de Cornwall cambió de vida y cedió el trono a su hijo. De anciano, fue atacado por los piratas, cuando se dirigía a Kintyre en Escocia y le cortaron un brazo. Todavía tuvo tiempo de bendecir a sus acompañantes antes de morir.;;
+3;12;s;;Las heroicas virtudes de San Gregorio Magno inspiraron al Papa Pelagio II la idea de sacarlo del monasterio para hacerlo cardenal. Ocultose a fin de evitar esta dignidad. pero una columna de fuego reveló el lugar de su retiro y puso en evidencia la voluntad de Dios a su respecto.;;
 3;13;s;;;;
 3;14;s;;;;
 3;15;s;;;;
 3;16;s;;;;
-3;17;s;Apostolo del Vangelo fra il popolo irlandese, nacque nella Scozia da agiati e pii genitori verso la fine del secolo quinto. Fu vescovo e confessore, e per primo annunziÃ² Cristo in Irlanda Rifulse per grandissimi miracoli e per virtÃ¹.;;;
+3;17;s;Apostolo del Vangelo fra il popolo irlandese, nacque nella Scozia da agiati e pii genitori verso la fine del secolo quinto. Fu vescovo e confessore, e per primo annunziò Cristo in Irlanda Rifulse per grandissimi miracoli e per virtù.;;;
 3;18;s;;;;
 3;19;s;;;;
 3;20;s;;;;
@@ -824,12 +824,12 @@ month;day;;IT;ES;EN;DE
 3;27;s;;;;
 3;28;s;;;;
 3;29;s;;;;
-3;30;s;;"Asceta y monje, formado en el monasterio del Monte SinaÃ­, vive principalmente como un ermitaÃ±o, pero sin descuidar al prÃ³jimo. Como abad de la comunidad monÃ¡stica de origen, escribe grandes obras doctrinales, la mÃ¡s conocida ""La Escala del ParaÃ­so"". ";;
-3;31;s;;matrona romana, fundadora de la Iglesia homÃ³nima. Hija del tribuno romano Quirino, fue bautizada, cuenta la tradiciÃ³n, por el Papa Alejando I junto con su padre convertido al cristianismo. Arrestada con su padre por orden del emperador AdriÃ¡n, fue decapitada despuÃ©s de largas torturas;;
+3;30;s;;"Asceta y monje, formado en el monasterio del Monte Sinaí, vive principalmente como un ermitaño, pero sin descuidar al prójimo. Como abad de la comunidad monástica de origen, escribe grandes obras doctrinales, la más conocida ""La Escala del Paraíso"". ";;
+3;31;s;;matrona romana, fundadora de la Iglesia homónima. Hija del tribuno romano Quirino, fue bautizada, cuenta la tradición, por el Papa Alejando I junto con su padre convertido al cristianismo. Arrestada con su padre por orden del emperador Adrián, fue decapitada después de largas torturas;;
 4;1;s;;;;
-4;2;s;;eremita, fundador de la Orden de los MÃ­nimos. Patrono de Calabria y de la gente del mar, venerado como taumaturgo y protector de los pobres, que, en el Reino de NÃ¡poles regentado por los angevinos, sufrÃ­an grave abandono y abusos.;;
+4;2;s;;eremita, fundador de la Orden de los Mínimos. Patrono de Calabria y de la gente del mar, venerado como taumaturgo y protector de los pobres, que, en el Reino de Nápoles regentado por los angevinos, sufrían grave abandono y abusos.;;
 4;3;s;;;;
-4;4;s;;obispo de Sevilla y doctor de la Iglesia. NaciÃ³ en Cartagena, EspaÃ±a el aÃ±o 556. La Santa Sede lo declarÃ³ Doctor de la Iglesia, en 1722.;;
+4;4;s;;obispo de Sevilla y doctor de la Iglesia. Nació en Cartagena, España el año 556. La Santa Sede lo declaró Doctor de la Iglesia, en 1722.;;
 4;5;s;;;;
 4;6;s;;;;
 4;7;s;;;;
@@ -883,9 +883,9 @@ month;day;;IT;ES;EN;DE
 5;25;s;;;;
 5;26;s;;;;
 5;27;s;;;;
-5;28;s;A Londra in Inghilterra, beata Margherita Pole, madre di famiglia e martire, che, contessa di Salisbury e madre del cardinale Reginaldo, fu decapitata nel carcere della Torre sotto il re Enrico VIII, del quale aveva disapprovato il divorzio, trovando cosÃ¬ riposo nella pace di Cristo.;;In London in England, blessed Margaret pole, family mother and martyr who, as countess of Salisbury e mother of cardinal Reginaldo, was beheaded in the prison of the tower under the king Henry the eight, of whom she disapproved the divorce, finding finally peace in Christ.;In London, England, wurde die selige Margarete Pole Â– Familien Mutter und MÃ¤rtyrerin, als GrÃ¤fin von Salisbury und Mutter des Kardinals Reginaldo, im GefÃ¤ngnis des Turmes unter KÃ¶nig Henry dem achten gekÃ¶pft, und fand so endlich Frieden bei Christus.
-5;29;s;;;"Maximinus was an ardent enemy of the Arian heretics, opposing them in the councils of Milan, Sardica, and Cologne. He was a known miracle worker and apologist for orthodox Catholicism and was called ""one of the most courageous bishops of his time"" by St. Jerome.";Maximin war ein leidenschaftlicher Feind des Arianismus und stellte sich ihnen im Konzil von Mailand, Sardica und KÃ¶ln entgegen. Er war als WundertÃ¤ter und Apologet des orthodoxen Katholizismus bekannt und wurde von St. Jerome als Â„einer der mutigsten BischÃ¶fe seiner ZeitÂ“ bezeichnet.
-5;30;s;;;She was born in 1412 in DomrÃ©my, Bar, France. A national heroine of France, at age 18 she led the French army to victory over the English at OrlÃ©ans. Captured a year later, Joan was burned at the stake as a heretic by the English;Sie wurde 1412 in DomrÃ©my, Bar, Frankreich geboren. Als eine nationale Heldin von Frankreich, fÃ¼hrte sie mit achtzehn Jahren die franzÃ¶sische Armee zum Sieg Ã¼ber England in OrlÃ©ans. Ein Jahr spÃ¤ter wurde sie als Ketzerin auf dem Scheiterhaufen durch die EnglÃ¤nder verbrannt.
+5;28;s;A Londra in Inghilterra, beata Margherita Pole, madre di famiglia e martire, che, contessa di Salisbury e madre del cardinale Reginaldo, fu decapitata nel carcere della Torre sotto il re Enrico VIII, del quale aveva disapprovato il divorzio, trovando così riposo nella pace di Cristo.;;In London in England, blessed Margaret pole, family mother and martyr who, as countess of Salisbury e mother of cardinal Reginaldo, was beheaded in the prison of the tower under the king Henry the eight, of whom she disapproved the divorce, finding finally peace in Christ.;In London, England, wurde die selige Margarete Pole – Familien Mutter und Märtyrerin, als Gräfin von Salisbury und Mutter des Kardinals Reginaldo, im Gefängnis des Turmes unter König Henry dem achten geköpft, und fand so endlich Frieden bei Christus.
+5;29;s;;;"Maximinus was an ardent enemy of the Arian heretics, opposing them in the councils of Milan, Sardica, and Cologne. He was a known miracle worker and apologist for orthodox Catholicism and was called ""one of the most courageous bishops of his time"" by St. Jerome.";Maximin war ein leidenschaftlicher Feind des Arianismus und stellte sich ihnen im Konzil von Mailand, Sardica und Köln entgegen. Er war als Wundertäter und Apologet des orthodoxen Katholizismus bekannt und wurde von St. Jerome als „einer der mutigsten Bischöfe seiner Zeit“ bezeichnet.
+5;30;s;;;She was born in 1412 in Domrémy, Bar, France. A national heroine of France, at age 18 she led the French army to victory over the English at Orléans. Captured a year later, Joan was burned at the stake as a heretic by the English;Sie wurde 1412 in Domrémy, Bar, Frankreich geboren. Als eine nationale Heldin von Frankreich, führte sie mit achtzehn Jahren die französische Armee zum Sieg über England in Orléans. Ein Jahr später wurde sie als Ketzerin auf dem Scheiterhaufen durch die Engländer verbrannt.
 5;31;s;;;;
 6;1;s;;;;
 6;2;s;;;;
