@@ -1,0 +1,9 @@
+INFO:root:hand reciboL
+INFO:root:12:57: STATE CHANGING TO greeting FROM standby IN touch
+INFO:root:playSound: inTheNameAmen
+INFO:root:playSound: greetingNight
+INFO:root:playSound: myNameShort
+INFO:root:12:57: STATE CHANGING TO meeting FROM greeting IN logic
+INFO:root:playSound: yourName
+INFO:root:12:57: STATE CHANGING TO noname FROM meeting IN listen
+INFO:root:12:57: STATE CHANGING TO meeting FROM noname IN logic

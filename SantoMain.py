@@ -467,7 +467,8 @@ def logic():
                         playSound("inTheNameAmen")
                         time.sleep(0.8)
 
-                        hour = str(timeInfo[3]
+                        hour = timeInfo[3]
+                        print("hour", hour)
                         if (hour < 12):
                                 playSound("greetingMorning")
                         elif (hour < 17):
@@ -630,11 +631,13 @@ def logic():
 
                 elif (state=="enquiry"):
                         print("ENQUIRY inside")
+                        
 
                         if alreadyPlayed == False:
                                 if countInteractions <= 0:
                                         alreadyPlayed = playSound("tellMeLong2")   
                                 elif countInteractions % 3 == 0:
+                                        print("countInteractions", countInteractions)
                                         alreadyPlayed = playSound(random.choice(soundfiles.variants["tellMeElse"]))
                                 else:
                                         alreadyPlayed = playSound(random.choice(soundfiles.variants["tellMe"]))
