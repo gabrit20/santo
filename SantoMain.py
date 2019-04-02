@@ -282,6 +282,7 @@ def elaborateAnswer(keyword):  #enters here only if it recognises some word
         global alreadyPlayed
         global chosenReply
         global countInteractions
+        global cabezera
         
 
         is_matched = False
@@ -360,6 +361,26 @@ def elaborateAnswer(keyword):  #enters here only if it recognises some word
                         if keyword[len(keyword)-1] == "a":
                                 gender = "f"
                         print(gender)
+
+
+##                        playSound("cuellar1")
+##                        envia=cabezera+"C100"
+##                        ser.write(envia)
+##                        time.sleep(tiempoSer)
+##                        envia=cabezera+"B100"
+##                        ser.write(envia)
+##                        time.sleep(tiempoSer)
+##                        envia=cabezera+"A100"
+##                        ser.write(envia)
+##                        time.sleep(tiempoSer)
+##                        playSound("cuellar2")
+##                        time.sleep(1)
+##                        changeState("pray", state, func_name(), False)
+##                        return
+##                        
+
+
+                        
                         if keyword not in soundfiles.users:
                                 print("new user", keyword)
                                 soundfiles.users.append(keyword)
@@ -683,6 +704,9 @@ def init():
         #aureola=0
         aureola=1
         ser.write(envia)
+
+        #envia=cabezera+"C111"
+        #ser.write(envia)
 
         
         cameraInit(ser)

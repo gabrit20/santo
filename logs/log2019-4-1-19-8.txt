@@ -1,0 +1,14 @@
+INFO:root:hand reciboR
+INFO:root:19:8: STATE CHANGING TO greeting FROM standby IN touch
+INFO:root:playSound: inTheNameAmen
+INFO:root:playSound: greeting1
+INFO:root:playSound: myNameShort
+INFO:root:19:8: STATE CHANGING TO meeting FROM greeting IN logic
+INFO:root:playSound: yourName
+INFO:root:keyword> hola francis gabriel
+INFO:root:NAME: hola francis gabriel
+INFO:root:playSound: cuellar1
+INFO:root:playSound: cuellar1
+INFO:root:19:9: STATE CHANGING TO pray FROM meeting IN elaborateAnswer
+INFO:root:playSound: prayStart
+INFO:root:playSound: padrenostro1
