@@ -1,0 +1,109 @@
+INFO:root:hand reciboL
+INFO:root:23:36: STATE CHANGING TO greeting FROM standby IN touch
+INFO:root:playSound: inTheNameAmen
+INFO:root:playSound: greetingNight
+INFO:root:playSound: myNameShort
+INFO:root:23:36: STATE CHANGING TO meeting FROM greeting IN logic
+INFO:root:playSound: yourName
+INFO:root:keyword> pamela
+INFO:root:NAME: pamela
+INFO:root:playSound: meetF
+INFO:root:playSound: intro
+INFO:root:playSound: aureola
+INFO:root:23:37: STATE CHANGING TO enquiry FROM meeting IN elaborateAnswer
+INFO:root:playSound: tellMeLong2
+INFO:root:keyword> para rezar
+INFO:root:23:37: STATE CHANGING TO pray FROM enquiry IN elaborateAnswer
+INFO:root:playSound: prayStart
+INFO:root:playSound: credo1
+INFO:root:playSound: credo2
+INFO:root:23:38: STATE CHANGING TO enquiry FROM pray IN logic
+INFO:root:playSound: tellMe3
+INFO:root:23:38: STATE CHANGING TO noreply FROM enquiry IN listen
+INFO:root:23:38: STATE CHANGING TO enquiry FROM noreply IN logic
+INFO:root:keyword> de la biblia
+INFO:root:23:38: STATE CHANGING TO bible FROM enquiry IN elaborateAnswer
+INFO:root:playSound: verse
+INFO:root:playSound: touchHand
+INFO:root:playSound: Haggai
+INFO:root:playSound: 1
+INFO:root:playSound: Haggai-1-1
+INFO:root:playSound: Haggai-1-2
+INFO:root:hand reciboL
+INFO:root:23:39: STATE CHANGING TO enquiry FROM bible IN touch
+INFO:root:23:39: STATE CHANGING TO enquiry FROM enquiry IN logic
+INFO:root:playSound: tellMe2
+INFO:root:23:39: STATE CHANGING TO noreply FROM enquiry IN listen
+INFO:root:23:39: STATE CHANGING TO enquiry FROM noreply IN logic
+INFO:root:keyword> seguimos
+INFO:root:23:39: STATE CHANGING TO wakaranai FROM enquiry IN elaborateAnswer
+INFO:root:playSound: wakaranai1
+INFO:root:23:39: STATE CHANGING TO enquiry FROM wakaranai IN logic
+INFO:root:playSound: tellMeElse1
+INFO:root:23:40: STATE CHANGING TO noreply FROM enquiry IN listen
+INFO:root:23:40: STATE CHANGING TO enquiry FROM noreply IN logic
+INFO:root:keyword> repetición
+INFO:root:23:40: STATE CHANGING TO wakaranai FROM enquiry IN elaborateAnswer
+INFO:root:playSound: wakaranai3
+INFO:root:23:40: STATE CHANGING TO enquiry FROM wakaranai IN logic
+INFO:root:playSound: tellMe2
+INFO:root:23:40: STATE CHANGING TO noreply FROM enquiry IN listen
+INFO:root:23:40: STATE CHANGING TO enquiry FROM noreply IN logic
+INFO:root:keyword> rezar
+INFO:root:23:40: STATE CHANGING TO pray FROM enquiry IN elaborateAnswer
+INFO:root:playSound: prayStart
+INFO:root:playSound: gloria1
+INFO:root:23:40: STATE CHANGING TO enquiry FROM pray IN logic
+INFO:root:playSound: tellMe2
+INFO:root:keyword> cómo te llamas
+INFO:root:23:41: STATE CHANGING TO reply FROM enquiry IN elaborateAnswer
+INFO:root:playSound: myName
+INFO:root:23:41: STATE CHANGING TO enquiry FROM reply IN logic
+INFO:root:playSound: tellMeElse2
+INFO:root:keyword> quiero pedir deseos y peticiones
+INFO:root:23:41: STATE CHANGING TO reply FROM enquiry IN elaborateAnswer
+INFO:root:playSound: wishPray
+INFO:root:23:41: STATE CHANGING TO enquiry FROM reply IN logic
+INFO:root:playSound: tellMe4
+INFO:root:keyword> mi deseo es que
+INFO:root:23:41: STATE CHANGING TO reply FROM enquiry IN elaborateAnswer
+INFO:root:playSound: wishPray
+INFO:root:23:41: STATE CHANGING TO enquiry FROM reply IN logic
+INFO:root:playSound: tellMe4
+INFO:root:23:41: STATE CHANGING TO noreply FROM enquiry IN listen
+INFO:root:23:41: STATE CHANGING TO enquiry FROM noreply IN logic
+INFO:root:23:41: STATE CHANGING TO noreply FROM enquiry IN listen
+INFO:root:23:42: STATE CHANGING TO enquiry FROM noreply IN logic
+INFO:root:23:42: STATE CHANGING TO noreply FROM enquiry IN listen
+INFO:root:23:42: STATE CHANGING TO enquiry FROM noreply IN logic
+INFO:root:23:42: STATE CHANGING TO noreply FROM enquiry IN listen
+INFO:root:23:42: STATE CHANGING TO enquiry FROM noreply IN logic
+INFO:root:23:42: STATE CHANGING TO noreply FROM enquiry IN listen
+INFO:root:23:42: STATE CHANGING TO enquiry FROM noreply IN logic
+INFO:root:23:42: STATE CHANGING TO noreply FROM enquiry IN listen
+INFO:root:23:42: STATE CHANGING TO enquiry FROM noreply IN logic
+INFO:root:23:42: STATE CHANGING TO noreply FROM enquiry IN listen
+INFO:root:23:42: STATE CHANGING TO enquiry FROM noreply IN logic
+INFO:root:keyword> papá francisco
+INFO:root:23:42: STATE CHANGING TO wakaranai FROM enquiry IN elaborateAnswer
+INFO:root:playSound: wakaranai3
+INFO:root:23:42: STATE CHANGING TO enquiry FROM wakaranai IN logic
+INFO:root:playSound: tellMeElse2
+INFO:root:keyword> si del papa francisco
+INFO:root:23:42: STATE CHANGING TO pope FROM enquiry IN elaborateAnswer
+INFO:root:playSound: popeStart
+INFO:root:playSound: popeLima1
+INFO:root:playSound: popeLima2
+INFO:root:playSound: popeLima3
+INFO:root:23:44: STATE CHANGING TO enquiry FROM pope IN logic
+INFO:root:playSound: tellMe2
+INFO:root:keyword> muchas gra
+INFO:root:23:44: STATE CHANGING TO wakaranai FROM enquiry IN elaborateAnswer
+INFO:root:playSound: wakaranai2
+INFO:root:23:44: STATE CHANGING TO enquiry FROM wakaranai IN logic
+INFO:root:playSound: tellMe2
+INFO:root:keyword> muchas gracias eso es todo por hoy
+INFO:root:playSound: yourewelcome1
+INFO:root:playSound: goInPeace
+INFO:root:23:44: STATE CHANGING TO farewell FROM enquiry IN elaborateAnswer
+INFO:root:23:44: STATE CHANGING TO standby FROM farewell IN logic

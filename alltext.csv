@@ -5,7 +5,7 @@ goInPeace;Vai in pace, con la grazia del Signore;Anda en paz, con la gracia del 
 greeting1Day;Buongiorno!;Buenos días;Hello!;Hallo
 greeting1;;Buenas tardes;;
 greetingMorning;Buongiorno;Buenos días;Good morning;Guten Morgen
-greetingAfternoon;Buongiorno;Buenos días;Good afternoon;Guten Tag
+greetingAfternoon;Buongiorno;Buenas tardes;Good afternoon;Guten Tag
 greetingEvening;Buonasera;Buenas tardes;Good evening;Guten Abend
 greetingNight;Buonasera;Buenas noches;Good evening;Guten Abend
 greetingM;Buongiorno! Figliuolo;Hola, hijo mío;Hello, my son!;Hallo, mein Sohn!
@@ -18,6 +18,7 @@ welcomeBackF;Bentornata! Figliuola;Bienvenida otra vez, hija mía;Welcome back, m
 todayAsk;Sai che giorno è oggi?;Sabes que día es hoy;Do you know which day is today?;Weißt du welcher Tag heute ist?
 tellMeLong;Cosa ti porta qui in questa splendida giornata?;Que es lo que te trae aquí en este hermoso día?;What brings you here on this beautiful day?;Was führt dich hierher an solch einem schönen Tag?
 tellMeLong2;Cosa ti porta qui oggi?;Que es lo que te trae aquí, hoy?;What brings you here today?;Was bringt dich heute hier her?
+tellMeLong3;um?;um?;um?;um?
 tellMe1;Ti ascolto;Te escucho;I'm hearing you.;Ich höre dich
 tellMe2;Dimmi;Dime;Tell me;Sag es mir
 tellMe3;Sono in ascolto;Te estoy escuchando;I'm hearing;Erzähl es mir

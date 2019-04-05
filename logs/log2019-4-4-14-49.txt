@@ -1,0 +1,28 @@
+INFO:root:hand reciboR
+INFO:root:14:53: STATE CHANGING TO greeting FROM standby IN touch
+INFO:root:playSound: inTheNameAmen
+INFO:root:playSound: greetingAfternoon
+INFO:root:playSound: myNameShort
+INFO:root:14:53: STATE CHANGING TO meeting FROM greeting IN logic
+INFO:root:playSound: yourName
+INFO:root:keyword> gabriele
+INFO:root:NAME: gabriele
+INFO:root:playSound: welcomeBackM
+INFO:root:playSound: intro
+INFO:root:playSound: aureola
+INFO:root:14:54: STATE CHANGING TO enquiry FROM meeting IN elaborateAnswer
+INFO:root:playSound: tellMeLong2
+INFO:root:keyword> qué día es hoy
+INFO:root:14:54: STATE CHANGING TO saint FROM enquiry IN elaborateAnswer
+INFO:root:playSound: 4-4d
+INFO:root:playSound: dayMemory
+INFO:root:playSound: 4-4n
+INFO:root:playSound: 4-4s
+INFO:root:14:54: STATE CHANGING TO enquiry FROM saint IN logic
+INFO:root:playSound: tellMe1
+INFO:root:keyword> estoy preocupado
+INFO:root:14:55: STATE CHANGING TO reply FROM enquiry IN elaborateAnswer
+INFO:root:playSound: future
+INFO:root:14:55: STATE CHANGING TO enquiry FROM reply IN logic
+INFO:root:playSound: tellMe3
+INFO:root:hand reciboR

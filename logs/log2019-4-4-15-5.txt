@@ -1,0 +1,25 @@
+INFO:root:hand reciboL
+INFO:root:15:5: STATE CHANGING TO greeting FROM standby IN touch
+INFO:root:playSound: inTheNameAmen
+INFO:root:hand reciboR
+INFO:root:15:5: STATE CHANGING TO enquiry FROM greeting IN touch
+INFO:root:hand reciboL
+INFO:root:15:5: STATE CHANGING TO farewell FROM enquiry IN touch
+INFO:root:playSound: greetingAfternoon
+INFO:root:playSound: myNameShort
+INFO:root:15:5: STATE CHANGING TO enquiry FROM farewell IN logic
+INFO:root:playSound: tellMeLong2
+INFO:root:keyword> rezar
+INFO:root:15:5: STATE CHANGING TO pray FROM enquiry IN elaborateAnswer
+INFO:root:playSound: prayStart
+INFO:root:playSound: angel1
+INFO:root:15:6: STATE CHANGING TO enquiry FROM pray IN logic
+INFO:root:playSound: tellMe2
+INFO:root:15:6: STATE CHANGING TO noreply FROM enquiry IN listen
+INFO:root:15:6: STATE CHANGING TO enquiry FROM noreply IN logic
+INFO:root:15:6: STATE CHANGING TO noreply FROM enquiry IN listen
+INFO:root:15:6: STATE CHANGING TO enquiry FROM noreply IN logic
+INFO:root:15:6: STATE CHANGING TO noreply FROM enquiry IN listen
+INFO:root:15:6: STATE CHANGING TO enquiry FROM noreply IN logic
+INFO:root:15:6: STATE CHANGING TO noreply FROM enquiry IN listen
+INFO:root:15:6: STATE CHANGING TO enquiry FROM noreply IN logic

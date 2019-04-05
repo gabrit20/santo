@@ -1,0 +1,16 @@
+INFO:root:hand reciboR
+INFO:root:12:50: STATE CHANGING TO greeting FROM standby IN touch
+INFO:root:playSound: inTheNameAmen
+INFO:root:playSound: greetingAfternoon
+INFO:root:playSound: myNameShort
+INFO:root:hand reciboR
+INFO:root:12:50: STATE CHANGING TO enquiry FROM greeting IN touch
+INFO:root:12:50: STATE CHANGING TO enquiry FROM enquiry IN logic
+INFO:root:playSound: tellMeLong2
+INFO:root:keyword> un versículo de la biblia en escuchar
+INFO:root:12:51: STATE CHANGING TO bible FROM enquiry IN elaborateAnswer
+INFO:root:playSound: verse
+INFO:root:playSound: touchHand
+INFO:root:playSound: John
+INFO:root:playSound: 8
+INFO:root:playSound: John-8-1

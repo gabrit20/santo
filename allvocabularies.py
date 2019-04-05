@@ -7,7 +7,7 @@ def allvocabulariesInit():
     entry = {}
     
     #file = open("allvocabularies.csv")
-    file = codecs.open('allvocabularies.csv', encoding='latin-1') #it's not utf-8!
+    file = codecs.open('allvocabularies.csv', encoding='utf-8') #it's not latin-1 for the speech recognition!
     file.readline() #skips the first line
     for line in file:
         items = line.strip().split(';')
@@ -18,7 +18,7 @@ def allvocabulariesInit():
             if items[iText] != '':
                 #textArray.append(unicode(items[iText], 'utf8')) 
                 #textArray.append(str(items[iText]))
-                textArray.append(items[iText]) 
+                textArray.append(items[iText].lower()) 
         if str(items[1]) == '0': #first language: beginning of an entry
             entry = {}
         entry[languageID] = textArray

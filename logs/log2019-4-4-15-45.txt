@@ -1,0 +1,118 @@
+INFO:root:hand reciboR
+INFO:root:15:46: STATE CHANGING TO greeting FROM standby IN touch
+INFO:root:playSound: inTheNameAmen
+INFO:root:playSound: greetingAfternoon
+INFO:root:playSound: myNameShort
+INFO:root:15:46: STATE CHANGING TO meeting FROM greeting IN logic
+INFO:root:playSound: yourName
+INFO:root:keyword> yo soy jesús
+INFO:root:NAME: yo soy jesús
+INFO:root:playSound: meetM
+INFO:root:playSound: intro
+INFO:root:playSound: aureola
+INFO:root:15:46: STATE CHANGING TO enquiry FROM meeting IN elaborateAnswer
+INFO:root:playSound: tellMeLong2
+INFO:root:keyword> bueno yo quería conocerte
+INFO:root:15:47: STATE CHANGING TO wakaranai FROM enquiry IN elaborateAnswer
+INFO:root:playSound: wakaranai3
+INFO:root:15:47: STATE CHANGING TO enquiry FROM wakaranai IN logic
+INFO:root:playSound: tellMe1
+INFO:root:keyword> quería conocerte poder
+INFO:root:15:47: STATE CHANGING TO wakaranai FROM enquiry IN elaborateAnswer
+INFO:root:playSound: wakaranai1
+INFO:root:15:47: STATE CHANGING TO enquiry FROM wakaranai IN logic
+INFO:root:playSound: tellMe1
+INFO:root:keyword> de la biblia
+INFO:root:15:47: STATE CHANGING TO bible FROM enquiry IN elaborateAnswer
+INFO:root:playSound: verse
+INFO:root:playSound: touchHand
+INFO:root:playSound: 2 Timothy
+INFO:root:playSound: 3
+INFO:root:playSound: 2 Timothy-3-1
+INFO:root:playSound: 2 Timothy-3-2
+INFO:root:playSound: 2 Timothy-3-3
+INFO:root:playSound: 2 Timothy-3-4
+INFO:root:playSound: 2 Timothy-3-5
+INFO:root:playSound: 2 Timothy-3-6
+INFO:root:playSound: 2 Timothy-3-7
+INFO:root:playSound: 2 Timothy-3-8
+INFO:root:hand reciboL
+INFO:root:hand reciboL
+INFO:root:playSound: 2 Timothy-3-9
+INFO:root:hand reciboR
+INFO:root:15:49: STATE CHANGING TO enquiry FROM bible IN touch
+INFO:root:hand reciboR
+INFO:root:15:49: STATE CHANGING TO farewell FROM enquiry IN touch
+INFO:root:15:49: STATE CHANGING TO enquiry FROM farewell IN logic
+INFO:root:playSound: tellMeElse1
+INFO:root:15:49: STATE CHANGING TO noreply FROM enquiry IN listen
+INFO:root:15:49: STATE CHANGING TO enquiry FROM noreply IN logic
+INFO:root:15:49: STATE CHANGING TO noreply FROM enquiry IN listen
+INFO:root:15:49: STATE CHANGING TO enquiry FROM noreply IN logic
+INFO:root:15:50: STATE CHANGING TO noreply FROM enquiry IN listen
+INFO:root:15:50: STATE CHANGING TO enquiry FROM noreply IN logic
+INFO:root:15:50: STATE CHANGING TO noreply FROM enquiry IN listen
+INFO:root:15:50: STATE CHANGING TO enquiry FROM noreply IN logic
+INFO:root:15:50: STATE CHANGING TO noreply FROM enquiry IN listen
+INFO:root:15:50: STATE CHANGING TO enquiry FROM noreply IN logic
+INFO:root:15:50: STATE CHANGING TO noreply FROM enquiry IN listen
+INFO:root:15:50: STATE CHANGING TO enquiry FROM noreply IN logic
+INFO:root:15:50: STATE CHANGING TO noreply FROM enquiry IN listen
+INFO:root:15:50: STATE CHANGING TO enquiry FROM noreply IN logic
+INFO:root:15:50: STATE CHANGING TO noreply FROM enquiry IN listen
+INFO:root:15:50: STATE CHANGING TO enquiry FROM noreply IN logic
+INFO:root:keyword> ahora
+INFO:root:15:50: STATE CHANGING TO wakaranai FROM enquiry IN elaborateAnswer
+INFO:root:playSound: wakaranai3
+INFO:root:15:50: STATE CHANGING TO enquiry FROM wakaranai IN logic
+INFO:root:playSound: tellMe5
+INFO:root:15:50: STATE CHANGING TO noreply FROM enquiry IN listen
+INFO:root:15:50: STATE CHANGING TO enquiry FROM noreply IN logic
+INFO:root:keyword> háblame de ti
+INFO:root:15:50: STATE CHANGING TO wakaranai FROM enquiry IN elaborateAnswer
+INFO:root:playSound: wakaranai2
+INFO:root:15:51: STATE CHANGING TO enquiry FROM wakaranai IN logic
+INFO:root:playSound: tellMe3
+INFO:root:keyword> papá francisco
+INFO:root:15:51: STATE CHANGING TO pope FROM enquiry IN elaborateAnswer
+INFO:root:playSound: popeStart
+INFO:root:playSound: popeLima1
+INFO:root:playSound: popeLima2
+INFO:root:playSound: popeLima3
+INFO:root:15:52: STATE CHANGING TO enquiry FROM pope IN logic
+INFO:root:playSound: tellMeElse1
+INFO:root:15:52: STATE CHANGING TO noreply FROM enquiry IN listen
+INFO:root:15:52: STATE CHANGING TO enquiry FROM noreply IN logic
+INFO:root:15:52: STATE CHANGING TO noreply FROM enquiry IN listen
+INFO:root:15:52: STATE CHANGING TO enquiry FROM noreply IN logic
+INFO:root:15:52: STATE CHANGING TO noreply FROM enquiry IN listen
+INFO:root:15:52: STATE CHANGING TO enquiry FROM noreply IN logic
+INFO:root:keyword> degradación
+INFO:root:15:52: STATE CHANGING TO wakaranai FROM enquiry IN elaborateAnswer
+INFO:root:playSound: wakaranai1
+INFO:root:15:53: STATE CHANGING TO enquiry FROM wakaranai IN logic
+INFO:root:playSound: tellMe5
+INFO:root:keyword> no es que con toda la grabación
+INFO:root:15:53: STATE CHANGING TO wakaranai FROM enquiry IN elaborateAnswer
+INFO:root:playSound: wakaranai3
+INFO:root:15:53: STATE CHANGING TO enquiry FROM wakaranai IN logic
+INFO:root:playSound: tellMe1
+INFO:root:keyword> ayúdame a rezar el ave maría
+INFO:root:15:53: STATE CHANGING TO pray FROM enquiry IN elaborateAnswer
+INFO:root:playSound: prayStart
+INFO:root:playSound: gloria1
+INFO:root:15:53: STATE CHANGING TO enquiry FROM pray IN logic
+INFO:root:playSound: tellMeElse2
+INFO:root:keyword> damodaran
+INFO:root:15:53: STATE CHANGING TO wakaranai FROM enquiry IN elaborateAnswer
+INFO:root:playSound: wakaranai1
+INFO:root:15:54: STATE CHANGING TO enquiry FROM wakaranai IN logic
+INFO:root:playSound: tellMe5
+INFO:root:15:54: STATE CHANGING TO noreply FROM enquiry IN listen
+INFO:root:15:54: STATE CHANGING TO enquiry FROM noreply IN logic
+INFO:root:15:54: STATE CHANGING TO noreply FROM enquiry IN listen
+INFO:root:15:54: STATE CHANGING TO enquiry FROM noreply IN logic
+INFO:root:15:54: STATE CHANGING TO noreply FROM enquiry IN listen
+INFO:root:15:54: STATE CHANGING TO farewell FROM noreply IN logic
+INFO:root:playSound: retire
+INFO:root:15:54: STATE CHANGING TO standby FROM farewell IN logic

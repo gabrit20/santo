@@ -1,0 +1,45 @@
+INFO:root:hand reciboR
+INFO:root:14:11: STATE CHANGING TO greeting FROM standby IN touch
+INFO:root:playSound: inTheNameAmen
+INFO:root:playSound: greetingAfternoon
+INFO:root:playSound: myNameShort
+INFO:root:14:11: STATE CHANGING TO meeting FROM greeting IN logic
+INFO:root:playSound: yourName
+INFO:root:keyword> hola hola hola hola
+INFO:root:NAME: hola hola hola hola
+INFO:root:playSound: meetF
+INFO:root:playSound: intro
+INFO:root:playSound: aureola
+INFO:root:14:11: STATE CHANGING TO enquiry FROM meeting IN elaborateAnswer
+INFO:root:playSound: tellMeLong2
+INFO:root:keyword> háblame de la biblia
+INFO:root:14:11: STATE CHANGING TO bible FROM enquiry IN elaborateAnswer
+INFO:root:playSound: verse
+INFO:root:playSound: touchHand
+INFO:root:playSound: Jeremiah
+INFO:root:playSound: 22
+INFO:root:playSound: Jeremiah-22-1
+INFO:root:playSound: Jeremiah-22-2
+INFO:root:hand reciboL
+INFO:root:14:12: STATE CHANGING TO enquiry FROM bible IN touch
+INFO:root:14:12: STATE CHANGING TO enquiry FROM enquiry IN logic
+INFO:root:playSound: tellMe3
+INFO:root:14:12: STATE CHANGING TO noreply FROM enquiry IN listen
+INFO:root:14:12: STATE CHANGING TO enquiry FROM noreply IN logic
+INFO:root:14:13: STATE CHANGING TO noreply FROM enquiry IN listen
+INFO:root:14:13: STATE CHANGING TO enquiry FROM noreply IN logic
+INFO:root:14:13: STATE CHANGING TO noreply FROM enquiry IN listen
+INFO:root:14:13: STATE CHANGING TO enquiry FROM noreply IN logic
+INFO:root:14:13: STATE CHANGING TO noreply FROM enquiry IN listen
+INFO:root:14:13: STATE CHANGING TO enquiry FROM noreply IN logic
+INFO:root:14:13: STATE CHANGING TO noreply FROM enquiry IN listen
+INFO:root:14:13: STATE CHANGING TO enquiry FROM noreply IN logic
+INFO:root:keyword> no no no
+INFO:root:14:13: STATE CHANGING TO wakaranai FROM enquiry IN elaborateAnswer
+INFO:root:playSound: wakaranai3
+INFO:root:14:13: STATE CHANGING TO enquiry FROM wakaranai IN logic
+INFO:root:playSound: tellMe2
+INFO:root:14:13: STATE CHANGING TO noreply FROM enquiry IN listen
+INFO:root:14:13: STATE CHANGING TO enquiry FROM noreply IN logic
+INFO:root:14:13: STATE CHANGING TO noreply FROM enquiry IN listen
+INFO:root:14:13: STATE CHANGING TO enquiry FROM noreply IN logic

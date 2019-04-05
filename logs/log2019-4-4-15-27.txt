@@ -1,0 +1,31 @@
+INFO:root:hand reciboL
+INFO:root:15:29: STATE CHANGING TO greeting FROM standby IN touch
+INFO:root:playSound: inTheNameAmen
+INFO:root:playSound: greetingAfternoon
+INFO:root:playSound: myNameShort
+INFO:root:15:29: STATE CHANGING TO meeting FROM greeting IN logic
+INFO:root:playSound: yourName
+INFO:root:hand reciboL
+INFO:root:15:29: STATE CHANGING TO noname FROM meeting IN listen
+INFO:root:15:29: STATE CHANGING TO meeting FROM noname IN logic
+INFO:root:keyword> ángela
+INFO:root:NAME: ángela
+INFO:root:playSound: meetF
+INFO:root:playSound: intro
+INFO:root:playSound: aureola
+INFO:root:15:29: STATE CHANGING TO enquiry FROM meeting IN elaborateAnswer
+INFO:root:playSound: tellMeLong2
+INFO:root:15:29: STATE CHANGING TO enquiry FROM enquiry IN touch
+INFO:root:keyword> si hablemos de santo de hoy
+INFO:root:15:29: STATE CHANGING TO saint FROM enquiry IN elaborateAnswer
+INFO:root:playSound: 4-4d
+INFO:root:playSound: dayMemory
+INFO:root:playSound: 4-4n
+INFO:root:playSound: 4-4s
+INFO:root:15:30: STATE CHANGING TO enquiry FROM saint IN logic
+INFO:root:playSound: tellMe3
+INFO:root:keyword> gracias
+INFO:root:playSound: yourewelcome1
+INFO:root:playSound: goInPeace
+INFO:root:15:30: STATE CHANGING TO farewell FROM enquiry IN elaborateAnswer
+INFO:root:15:30: STATE CHANGING TO standby FROM farewell IN logic

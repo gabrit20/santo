@@ -1,0 +1,84 @@
+INFO:root:hand reciboL
+INFO:root:15:20: STATE CHANGING TO greeting FROM standby IN touch
+INFO:root:playSound: inTheNameAmen
+INFO:root:playSound: greetingAfternoon
+INFO:root:playSound: myNameShort
+INFO:root:15:20: STATE CHANGING TO meeting FROM greeting IN logic
+INFO:root:playSound: yourName
+INFO:root:15:21: STATE CHANGING TO noname FROM meeting IN listen
+INFO:root:15:21: STATE CHANGING TO meeting FROM noname IN logic
+INFO:root:keyword> me llamo daniel
+INFO:root:NAME: me llamo daniel
+INFO:root:playSound: meetM
+INFO:root:playSound: intro
+INFO:root:playSound: aureola
+INFO:root:15:21: STATE CHANGING TO enquiry FROM meeting IN elaborateAnswer
+INFO:root:playSound: tellMeLong2
+INFO:root:keyword> padre estoy preocupado
+INFO:root:15:21: STATE CHANGING TO reply FROM enquiry IN elaborateAnswer
+INFO:root:playSound: future
+INFO:root:15:22: STATE CHANGING TO enquiry FROM reply IN logic
+INFO:root:playSound: tellMe4
+INFO:root:15:22: STATE CHANGING TO noreply FROM enquiry IN listen
+INFO:root:15:22: STATE CHANGING TO enquiry FROM noreply IN logic
+INFO:root:keyword> padre estoy enamorado y
+INFO:root:15:22: STATE CHANGING TO wakaranai FROM enquiry IN elaborateAnswer
+INFO:root:playSound: wakaranai1
+INFO:root:15:22: STATE CHANGING TO enquiry FROM wakaranai IN logic
+INFO:root:playSound: tellMe5
+INFO:root:keyword> como cómo
+INFO:root:15:22: STATE CHANGING TO wakaranai FROM enquiry IN elaborateAnswer
+INFO:root:playSound: wakaranai1
+INFO:root:15:22: STATE CHANGING TO enquiry FROM wakaranai IN logic
+INFO:root:playSound: tellMeElse1
+INFO:root:15:22: STATE CHANGING TO noreply FROM enquiry IN listen
+INFO:root:15:22: STATE CHANGING TO enquiry FROM noreply IN logic
+INFO:root:15:22: STATE CHANGING TO noreply FROM enquiry IN listen
+INFO:root:15:22: STATE CHANGING TO enquiry FROM noreply IN logic
+INFO:root:keyword> padre podemos rezar
+INFO:root:15:22: STATE CHANGING TO pray FROM enquiry IN elaborateAnswer
+INFO:root:playSound: prayStart
+INFO:root:playSound: avemaria1
+INFO:root:15:23: STATE CHANGING TO enquiry FROM pray IN logic
+INFO:root:playSound: tellMe3
+INFO:root:15:23: STATE CHANGING TO noreply FROM enquiry IN listen
+INFO:root:15:23: STATE CHANGING TO enquiry FROM noreply IN logic
+INFO:root:15:23: STATE CHANGING TO noreply FROM enquiry IN listen
+INFO:root:15:23: STATE CHANGING TO enquiry FROM noreply IN logic
+INFO:root:15:23: STATE CHANGING TO noreply FROM enquiry IN listen
+INFO:root:15:23: STATE CHANGING TO enquiry FROM noreply IN logic
+INFO:root:15:24: STATE CHANGING TO noreply FROM enquiry IN listen
+INFO:root:15:24: STATE CHANGING TO enquiry FROM noreply IN logic
+INFO:root:15:24: STATE CHANGING TO noreply FROM enquiry IN listen
+INFO:root:15:24: STATE CHANGING TO enquiry FROM noreply IN logic
+INFO:root:15:24: STATE CHANGING TO noreply FROM enquiry IN listen
+INFO:root:15:24: STATE CHANGING TO enquiry FROM noreply IN logic
+INFO:root:hand reciboL
+INFO:root:15:24: STATE CHANGING TO farewell FROM enquiry IN touch
+INFO:root:keyword> pregunta más
+INFO:root:15:24: STATE CHANGING TO wakaranai FROM farewell IN elaborateAnswer
+INFO:root:playSound: wakaranai1
+INFO:root:15:24: STATE CHANGING TO enquiry FROM wakaranai IN logic
+INFO:root:playSound: tellMe5
+INFO:root:keyword> padre que nos dice el papa a los jóvenes
+INFO:root:15:24: STATE CHANGING TO pope FROM enquiry IN elaborateAnswer
+INFO:root:playSound: popeStart
+INFO:root:playSound: popeLima1
+INFO:root:playSound: popeLima2
+INFO:root:playSound: popeLima3
+INFO:root:hand reciboR
+INFO:root:15:25: STATE CHANGING TO enquiry FROM pope IN touch
+INFO:root:15:25: STATE CHANGING TO enquiry FROM enquiry IN logic
+INFO:root:playSound: tellMeElse2
+INFO:root:15:25: STATE CHANGING TO noreply FROM enquiry IN listen
+INFO:root:15:25: STATE CHANGING TO enquiry FROM noreply IN logic
+INFO:root:15:26: STATE CHANGING TO noreply FROM enquiry IN listen
+INFO:root:15:26: STATE CHANGING TO enquiry FROM noreply IN logic
+INFO:root:keyword> chao
+INFO:root:15:26: STATE CHANGING TO wakaranai FROM enquiry IN elaborateAnswer
+INFO:root:playSound: wakaranai3
+INFO:root:15:26: STATE CHANGING TO enquiry FROM wakaranai IN logic
+INFO:root:playSound: tellMe4
+INFO:root:hand reciboR
+INFO:root:15:26: STATE CHANGING TO farewell FROM enquiry IN touch
+INFO:root:hand reciboR

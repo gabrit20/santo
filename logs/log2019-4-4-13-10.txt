@@ -1,0 +1,6 @@
+INFO:root:hand reciboL
+INFO:root:13:10: STATE CHANGING TO greeting FROM standby IN touch
+INFO:root:playSound: inTheNameAmen
+INFO:root:hand reciboR
+INFO:root:13:10: STATE CHANGING TO greeting FROM standby IN touch
+INFO:root:playSound: inTheNameAmen

@@ -1,0 +1,105 @@
+INFO:root:hand reciboL
+INFO:root:16:3: STATE CHANGING TO greeting FROM standby IN touch
+INFO:root:playSound: inTheNameAmen
+INFO:root:playSound: greetingAfternoon
+INFO:root:playSound: myNameShort
+INFO:root:16:4: STATE CHANGING TO meeting FROM greeting IN logic
+INFO:root:playSound: yourName
+INFO:root:16:4: STATE CHANGING TO noname FROM meeting IN listen
+INFO:root:16:4: STATE CHANGING TO meeting FROM noname IN logic
+INFO:root:16:4: STATE CHANGING TO noname FROM meeting IN listen
+INFO:root:16:4: STATE CHANGING TO meeting FROM noname IN logic
+INFO:root:16:4: STATE CHANGING TO enquiry FROM meeting IN listen
+INFO:root:playSound: tellMeLong2
+INFO:root:16:4: STATE CHANGING TO noreply FROM enquiry IN listen
+INFO:root:16:4: STATE CHANGING TO enquiry FROM noreply IN logic
+INFO:root:keyword> preguntas
+INFO:root:16:4: STATE CHANGING TO wakaranai FROM enquiry IN elaborateAnswer
+INFO:root:playSound: wakaranai1
+INFO:root:16:4: STATE CHANGING TO enquiry FROM wakaranai IN logic
+INFO:root:playSound: tellMe3
+INFO:root:keyword> preguntas sobre la biblia
+INFO:root:16:4: STATE CHANGING TO bible FROM enquiry IN elaborateAnswer
+INFO:root:playSound: verse
+INFO:root:playSound: touchHand
+INFO:root:playSound: Philemon
+INFO:root:playSound: 1
+INFO:root:playSound: Philemon-1-1
+INFO:root:playSound: Philemon-1-2
+INFO:root:playSound: Philemon-1-3
+INFO:root:playSound: Philemon-1-4
+INFO:root:playSound: Philemon-1-5
+INFO:root:playSound: Philemon-1-6
+INFO:root:playSound: Philemon-1-7
+INFO:root:playSound: Philemon-1-8
+INFO:root:playSound: Philemon-1-9
+INFO:root:playSound: Philemon-1-10
+INFO:root:playSound: Philemon-1-11
+INFO:root:hand reciboL
+INFO:root:playSound: Philemon-1-12
+INFO:root:hand reciboR
+INFO:root:hand reciboR
+INFO:root:16:7: STATE CHANGING TO enquiry FROM bible IN touch
+INFO:root:16:7: STATE CHANGING TO enquiry FROM enquiry IN logic
+INFO:root:playSound: tellMe1
+INFO:root:keyword> quién es pablo
+INFO:root:16:7: STATE CHANGING TO wakaranai FROM enquiry IN elaborateAnswer
+INFO:root:playSound: wakaranai3
+INFO:root:16:7: STATE CHANGING TO enquiry FROM wakaranai IN logic
+INFO:root:playSound: tellMeElse1
+INFO:root:16:7: STATE CHANGING TO noreply FROM enquiry IN listen
+INFO:root:16:7: STATE CHANGING TO enquiry FROM noreply IN logic
+INFO:root:keyword> cómo estás
+INFO:root:16:8: STATE CHANGING TO reply FROM enquiry IN elaborateAnswer
+INFO:root:playSound: genki
+INFO:root:16:8: STATE CHANGING TO enquiry FROM reply IN logic
+INFO:root:playSound: tellMe5
+INFO:root:hand reciboR
+INFO:root:16:8: STATE CHANGING TO noreply FROM enquiry IN listen
+INFO:root:16:8: STATE CHANGING TO enquiry FROM noreply IN logic
+INFO:root:16:8: STATE CHANGING TO farewell FROM enquiry IN touch
+INFO:root:playSound: retire
+INFO:root:16:8: STATE CHANGING TO standby FROM farewell IN logic
+INFO:root:hand reciboR
+INFO:root:16:8: STATE CHANGING TO greeting FROM standby IN touch
+INFO:root:playSound: inTheNameAmen
+INFO:root:hand reciboR
+INFO:root:16:8: STATE CHANGING TO enquiry FROM greeting IN touch
+INFO:root:playSound: greetingAfternoon
+INFO:root:playSound: myNameShort
+INFO:root:16:8: STATE CHANGING TO enquiry FROM enquiry IN logic
+INFO:root:playSound: tellMe3
+INFO:root:16:8: STATE CHANGING TO noreply FROM enquiry IN listen
+INFO:root:16:8: STATE CHANGING TO enquiry FROM noreply IN logic
+INFO:root:16:8: STATE CHANGING TO noreply FROM enquiry IN listen
+INFO:root:16:8: STATE CHANGING TO enquiry FROM noreply IN logic
+INFO:root:16:9: STATE CHANGING TO noreply FROM enquiry IN listen
+INFO:root:16:9: STATE CHANGING TO enquiry FROM noreply IN logic
+INFO:root:16:9: STATE CHANGING TO noreply FROM enquiry IN listen
+INFO:root:16:9: STATE CHANGING TO enquiry FROM noreply IN logic
+INFO:root:16:9: STATE CHANGING TO noreply FROM enquiry IN listen
+INFO:root:16:9: STATE CHANGING TO enquiry FROM noreply IN logic
+INFO:root:16:9: STATE CHANGING TO noreply FROM enquiry IN listen
+INFO:root:16:9: STATE CHANGING TO enquiry FROM noreply IN logic
+INFO:root:16:9: STATE CHANGING TO noreply FROM enquiry IN listen
+INFO:root:16:9: STATE CHANGING TO enquiry FROM noreply IN logic
+INFO:root:keyword> en donde estuvo el papa francisco
+INFO:root:16:9: STATE CHANGING TO pope FROM enquiry IN elaborateAnswer
+INFO:root:playSound: popeStart
+INFO:root:playSound: popeLima1
+INFO:root:playSound: popeLima2
+INFO:root:playSound: popeLima3
+INFO:root:16:11: STATE CHANGING TO enquiry FROM pope IN logic
+INFO:root:playSound: tellMe4
+INFO:root:16:11: STATE CHANGING TO noreply FROM enquiry IN listen
+INFO:root:16:11: STATE CHANGING TO enquiry FROM noreply IN logic
+INFO:root:keyword> hola santo
+INFO:root:16:11: STATE CHANGING TO reply FROM enquiry IN elaborateAnswer
+INFO:root:playSound: tellMe3
+INFO:root:16:11: STATE CHANGING TO enquiry FROM reply IN logic
+INFO:root:playSound: tellMeElse2
+INFO:root:keyword> gracias por todo
+INFO:root:playSound: yourewelcome1
+INFO:root:playSound: goInPeace
+INFO:root:16:11: STATE CHANGING TO farewell FROM enquiry IN elaborateAnswer
+INFO:root:16:11: STATE CHANGING TO standby FROM farewell IN logic

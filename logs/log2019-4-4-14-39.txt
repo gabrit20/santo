@@ -1,0 +1,79 @@
+INFO:root:hand reciboL
+INFO:root:14:42: STATE CHANGING TO greeting FROM standby IN touch
+INFO:root:playSound: inTheNameAmen
+INFO:root:playSound: greetingAfternoon
+INFO:root:playSound: myNameShort
+INFO:root:14:42: STATE CHANGING TO meeting FROM greeting IN logic
+INFO:root:playSound: yourName
+INFO:root:14:42: STATE CHANGING TO noname FROM meeting IN listen
+INFO:root:14:42: STATE CHANGING TO meeting FROM noname IN logic
+INFO:root:14:42: STATE CHANGING TO noname FROM meeting IN listen
+INFO:root:14:42: STATE CHANGING TO meeting FROM noname IN logic
+INFO:root:14:42: STATE CHANGING TO enquiry FROM meeting IN listen
+INFO:root:playSound: tellMeLong2
+INFO:root:14:42: STATE CHANGING TO noreply FROM enquiry IN listen
+INFO:root:14:42: STATE CHANGING TO enquiry FROM noreply IN logic
+INFO:root:14:42: STATE CHANGING TO noreply FROM enquiry IN listen
+INFO:root:14:42: STATE CHANGING TO enquiry FROM noreply IN logic
+INFO:root:14:43: STATE CHANGING TO noreply FROM enquiry IN listen
+INFO:root:14:43: STATE CHANGING TO enquiry FROM noreply IN logic
+INFO:root:14:43: STATE CHANGING TO noreply FROM enquiry IN listen
+INFO:root:14:43: STATE CHANGING TO enquiry FROM noreply IN logic
+INFO:root:14:43: STATE CHANGING TO noreply FROM enquiry IN listen
+INFO:root:14:43: STATE CHANGING TO enquiry FROM noreply IN logic
+INFO:root:14:43: STATE CHANGING TO noreply FROM enquiry IN listen
+INFO:root:14:43: STATE CHANGING TO enquiry FROM noreply IN logic
+INFO:root:keyword> cuál es el
+INFO:root:14:43: STATE CHANGING TO wakaranai FROM enquiry IN elaborateAnswer
+INFO:root:playSound: wakaranai1
+INFO:root:14:43: STATE CHANGING TO enquiry FROM wakaranai IN logic
+INFO:root:playSound: tellMe4
+INFO:root:keyword> cuál es el santo de hoy día
+INFO:root:14:43: STATE CHANGING TO saint FROM enquiry IN elaborateAnswer
+INFO:root:playSound: 4-4d
+INFO:root:playSound: dayMemory
+INFO:root:playSound: 4-4n
+INFO:root:playSound: 4-4s
+INFO:root:14:44: STATE CHANGING TO enquiry FROM saint IN logic
+INFO:root:playSound: tellMe3
+INFO:root:14:44: STATE CHANGING TO noreply FROM enquiry IN listen
+INFO:root:14:44: STATE CHANGING TO enquiry FROM noreply IN logic
+INFO:root:14:44: STATE CHANGING TO noreply FROM enquiry IN listen
+INFO:root:14:44: STATE CHANGING TO enquiry FROM noreply IN logic
+INFO:root:14:44: STATE CHANGING TO noreply FROM enquiry IN listen
+INFO:root:14:44: STATE CHANGING TO enquiry FROM noreply IN logic
+INFO:root:keyword> dime algo así
+INFO:root:14:44: STATE CHANGING TO wakaranai FROM enquiry IN elaborateAnswer
+INFO:root:playSound: wakaranai2
+INFO:root:14:44: STATE CHANGING TO enquiry FROM wakaranai IN logic
+INFO:root:playSound: tellMeElse1
+INFO:root:keyword> algo acerca de la biblia
+INFO:root:14:45: STATE CHANGING TO bible FROM enquiry IN elaborateAnswer
+INFO:root:playSound: verse
+INFO:root:playSound: touchHand
+INFO:root:playSound: Nehemiah
+INFO:root:playSound: 11
+INFO:root:playSound: Nehemiah-11-1
+INFO:root:playSound: Nehemiah-11-2
+INFO:root:playSound: Nehemiah-11-3
+INFO:root:playSound: Nehemiah-11-4
+INFO:root:playSound: Nehemiah-11-5
+INFO:root:playSound: Nehemiah-11-6
+INFO:root:playSound: Nehemiah-11-7
+INFO:root:playSound: Nehemiah-11-8
+INFO:root:playSound: Nehemiah-11-9
+INFO:root:playSound: Nehemiah-11-10
+INFO:root:playSound: Nehemiah-11-11
+INFO:root:playSound: Nehemiah-11-12
+INFO:root:playSound: Nehemiah-11-13
+INFO:root:hand reciboL
+INFO:root:14:48: STATE CHANGING TO enquiry FROM bible IN touch
+INFO:root:14:48: STATE CHANGING TO enquiry FROM enquiry IN logic
+INFO:root:playSound: tellMe3
+INFO:root:14:48: STATE CHANGING TO noreply FROM enquiry IN listen
+INFO:root:14:48: STATE CHANGING TO enquiry FROM noreply IN logic
+INFO:root:keyword> hasta luego
+INFO:root:playSound: goInPeace
+INFO:root:playSound: retireShort
+INFO:root:14:48: STATE CHANGING TO farewell FROM enquiry IN elaborateAnswer
+INFO:root:14:49: STATE CHANGING TO standby FROM farewell IN logic

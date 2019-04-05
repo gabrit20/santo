@@ -301,6 +301,9 @@ def elaborateAnswer(keyword):  #enters here only if it recognises some word
                 for iKey in allvocabularies.vocabulary:
                         #print("iKey",iKey)
                         for iWord in allvocabularies.vocabulary[iKey][language_in]: #compare the strings, one inside another
+                                #print("iWord", iWord)
+                                #print("iWord in keyword", iWord in keyword)
+                                #print("keyword in iWord", keyword in iWord)
                                 if iWord in keyword or keyword in iWord:
                                         print("match", keyword, iWord)
                                         is_matched = True
@@ -473,9 +476,9 @@ def logic():
                                 playSound("greetingMorning")
                         elif (hour < 17):
                                 playSound("greetingAfternoon")
-                        elif (hour < 20):
+                        elif (hour < 19):
                                 playSound("greetingEvening")
-                        elif (hour >= 20):
+                        elif (hour >= 19):
                                 playSound("greetingNight")
                                    
                         time.sleep(0.5)      
@@ -670,8 +673,22 @@ def logic():
                         changeState("enquiry", state, func_name(), False)
 
 
-                
-
+def keepLightsOn():
+        while (state == "standby"):
+                if (int(time.clock()*10)%50 == 0):
+                        
+                        print ("keep lights on")
+                        envia=cabezera+"B111"
+                        espalda=1
+                        ser.write(envia)
+                        time.sleep(tiempoSer)
+                        envia=cabezera+"A111"
+                        aureola=1
+                        ser.write(envia)
+                        time.sleep(tiempoSer)
+                        candela=1
+                        envia=cabezera+"C111"
+                        ser.write(envia)
 
 
 def init():
@@ -731,6 +748,8 @@ def init():
         #envia=cabezera+"C111"
         #ser.write(envia)
 
+
+
         
         cameraInit(ser)
         touchhand=threading.Thread(target=touch)
@@ -741,7 +760,9 @@ def init():
         logging.basicConfig(filename="logs/log"+str(year)+"-"+smonth+"-"+sday+"-"+shour+"-"+sminute+".txt", level=logging.INFO)
         logging.basicConfig(format='%(message)s')
 
-        
+        #lightsOnThread = threading.Thread(target=keepLightsOn)
+        #lightsOnThread.start()
+        #keepLightsOn()        
 
 
 

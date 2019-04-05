@@ -1,0 +1,60 @@
+INFO:root:hand reciboL
+INFO:root:14:26: STATE CHANGING TO greeting FROM standby IN touch
+INFO:root:playSound: inTheNameAmen
+INFO:root:playSound: greetingAfternoon
+INFO:root:playSound: myNameShort
+INFO:root:14:27: STATE CHANGING TO meeting FROM greeting IN logic
+INFO:root:playSound: yourName
+INFO:root:keyword> me llamo claudio
+INFO:root:NAME: me llamo claudio
+INFO:root:playSound: meetM
+INFO:root:playSound: intro
+INFO:root:playSound: aureola
+INFO:root:14:27: STATE CHANGING TO enquiry FROM meeting IN elaborateAnswer
+INFO:root:playSound: tellMeLong2
+INFO:root:keyword> quiero conocer de un santo
+INFO:root:14:27: STATE CHANGING TO reply FROM enquiry IN elaborateAnswer
+INFO:root:playSound: tellMe3
+INFO:root:14:27: STATE CHANGING TO enquiry FROM reply IN logic
+INFO:root:playSound: tellMe5
+INFO:root:keyword> quiero saber del santo de hoy
+INFO:root:14:28: STATE CHANGING TO saint FROM enquiry IN elaborateAnswer
+INFO:root:playSound: 4-4d
+INFO:root:playSound: dayMemory
+INFO:root:playSound: 4-4n
+INFO:root:playSound: 4-4s
+INFO:root:14:28: STATE CHANGING TO enquiry FROM saint IN logic
+INFO:root:playSound: tellMe2
+INFO:root:14:28: STATE CHANGING TO noreply FROM enquiry IN listen
+INFO:root:14:28: STATE CHANGING TO enquiry FROM noreply IN logic
+INFO:root:keyword> quiero un pasaje de la biblia
+INFO:root:14:28: STATE CHANGING TO bible FROM enquiry IN elaborateAnswer
+INFO:root:playSound: verse
+INFO:root:playSound: touchHand
+INFO:root:playSound: Ephesians
+INFO:root:playSound: 2
+INFO:root:playSound: Ephesians-2-1
+INFO:root:playSound: Ephesians-2-2
+INFO:root:playSound: Ephesians-2-3
+INFO:root:playSound: Ephesians-2-4
+INFO:root:playSound: Ephesians-2-5
+INFO:root:playSound: Ephesians-2-6
+INFO:root:playSound: Ephesians-2-7
+INFO:root:playSound: Ephesians-2-8
+INFO:root:playSound: Ephesians-2-9
+INFO:root:hand reciboL
+INFO:root:playSound: Ephesians-2-10
+INFO:root:hand reciboR
+INFO:root:14:30: STATE CHANGING TO enquiry FROM bible IN touch
+INFO:root:14:30: STATE CHANGING TO enquiry FROM enquiry IN logic
+INFO:root:playSound: tellMeElse2
+INFO:root:keyword> chao
+INFO:root:14:31: STATE CHANGING TO wakaranai FROM enquiry IN elaborateAnswer
+INFO:root:playSound: wakaranai1
+INFO:root:14:31: STATE CHANGING TO enquiry FROM wakaranai IN logic
+INFO:root:playSound: tellMe5
+INFO:root:keyword> adiós
+INFO:root:playSound: goInPeace
+INFO:root:playSound: retireShort
+INFO:root:14:31: STATE CHANGING TO farewell FROM enquiry IN elaborateAnswer
+INFO:root:14:31: STATE CHANGING TO standby FROM farewell IN logic

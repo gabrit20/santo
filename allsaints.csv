@@ -366,7 +366,6 @@ month;day;;IT;ES;EN;DE
 12;30;d;;;;
 12;31;d;;;;
 ;;;;;;
-0;0;n;Oggi, non so che giorno è;Hoy, no se que día es;;
 1;1;n;;;;
 1;2;n;;;;
 1;3;n;;;;
@@ -462,8 +461,8 @@ month;day;;IT;ES;EN;DE
 4;2;n;;San Francisco de Paola;;
 4;3;n;;;;
 4;4;n;;San Isidro;;
-4;5;n;;;;
-4;6;n;;;;
+4;5;n;;San Vicente Ferrer;;
+4;6;n;;Santa Gala;;
 4;7;n;;;;
 4;8;n;;;;
 4;9;n;;;;
@@ -734,7 +733,6 @@ month;day;;IT;ES;EN;DE
 12;30;n;;;;
 12;31;n;;;;
 ;;;;;;
-0;0;s;Oggi, non so che giorno è;Hoy, no se que día es;;
 1;1;s;;;;
 1;2;s;;;;
 1;3;s;;;;
@@ -830,8 +828,8 @@ month;day;;IT;ES;EN;DE
 4;2;s;;eremita, fundador de la Orden de los Mínimos. Patrono de Calabria y de la gente del mar, venerado como taumaturgo y protector de los pobres, que, en el Reino de Nápoles regentado por los angevinos, sufrían grave abandono y abusos.;;
 4;3;s;;;;
 4;4;s;;obispo de Sevilla y doctor de la Iglesia. Nació en Cartagena, España el año 556. La Santa Sede lo declaró Doctor de la Iglesia, en 1722.;;
-4;5;s;;;;
-4;6;s;;;;
+4;5;s;;presbítero de la Orden de Predicadores, que, de origen español, recorrió incansablemente ciudades y caminos de Occidente, solícito por la paz y la unidad de la Iglesia, predicando a pueblos innumerables el Evangelio de la penitencia y la venida del Señor, hasta que en Vannes, de la Bretaña Menor, en Francia, entregó su espíritu a Dios.;;
+4;6;s;;En Roma, hija del cónsul Símaco, ella, al fallecer su cónyuge, vivió cerca de la iglesia de San Pedro durante muchos años, entregada a la oración, limosnas, ayunos y otras obras santas, y cuyo felicísimo tránsito fue descrito por el papa san Gregorio Magno;;
 4;7;s;;;;
 4;8;s;;;;
 4;9;s;;;;

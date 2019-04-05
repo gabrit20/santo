@@ -1,0 +1,15 @@
+INFO:root:hand reciboR
+INFO:root:12:48: STATE CHANGING TO greeting FROM standby IN touch
+INFO:root:playSound: inTheNameAmen
+INFO:root:hand reciboR
+INFO:root:12:48: STATE CHANGING TO enquiry FROM greeting IN touch
+INFO:root:playSound: greetingAfternoon
+INFO:root:playSound: myNameShort
+INFO:root:12:48: STATE CHANGING TO enquiry FROM enquiry IN logic
+INFO:root:playSound: tellMeLong2
+INFO:root:keyword> el santo de hoy
+INFO:root:12:48: STATE CHANGING TO saint FROM enquiry IN elaborateAnswer
+INFO:root:playSound: 4-5d
+INFO:root:playSound: dayMemory
+INFO:root:playSound: 4-5n
+INFO:root:playSound: 4-5s

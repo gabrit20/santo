@@ -1,0 +1,41 @@
+INFO:root:hand reciboR
+INFO:root:15:7: STATE CHANGING TO greeting FROM standby IN touch
+INFO:root:playSound: inTheNameAmen
+INFO:root:playSound: greetingAfternoon
+INFO:root:playSound: myNameShort
+INFO:root:15:7: STATE CHANGING TO meeting FROM greeting IN logic
+INFO:root:playSound: yourName
+INFO:root:keyword> me llamo jose onqoy
+INFO:root:NAME: me llamo jose onqoy
+INFO:root:playSound: meetM
+INFO:root:playSound: intro
+INFO:root:playSound: aureola
+INFO:root:15:8: STATE CHANGING TO enquiry FROM meeting IN elaborateAnswer
+INFO:root:playSound: tellMeLong2
+INFO:root:keyword> hablar sobre la biblia
+INFO:root:15:8: STATE CHANGING TO bible FROM enquiry IN elaborateAnswer
+INFO:root:playSound: verse
+INFO:root:playSound: touchHand
+INFO:root:playSound: Joel
+INFO:root:playSound: 2
+INFO:root:playSound: Joel-2-1
+INFO:root:playSound: Joel-2-2
+INFO:root:playSound: Joel-2-3
+INFO:root:hand reciboR
+INFO:root:15:9: STATE CHANGING TO enquiry FROM bible IN touch
+INFO:root:15:9: STATE CHANGING TO enquiry FROM enquiry IN logic
+INFO:root:playSound: tellMe3
+INFO:root:15:9: STATE CHANGING TO noreply FROM enquiry IN listen
+INFO:root:15:9: STATE CHANGING TO enquiry FROM noreply IN logic
+INFO:root:keyword> chao
+INFO:root:15:9: STATE CHANGING TO wakaranai FROM enquiry IN elaborateAnswer
+INFO:root:playSound: wakaranai3
+INFO:root:15:9: STATE CHANGING TO enquiry FROM wakaranai IN logic
+INFO:root:playSound: tellMe4
+INFO:root:15:10: STATE CHANGING TO noreply FROM enquiry IN listen
+INFO:root:15:10: STATE CHANGING TO enquiry FROM noreply IN logic
+INFO:root:keyword> hasta luego
+INFO:root:playSound: goInPeace
+INFO:root:playSound: retireShort
+INFO:root:15:10: STATE CHANGING TO farewell FROM enquiry IN elaborateAnswer
+INFO:root:15:10: STATE CHANGING TO standby FROM farewell IN logic
