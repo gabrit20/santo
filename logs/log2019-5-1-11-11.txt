@@ -1,0 +1,39 @@
+INFO:root:hand reciboR
+INFO:root:11:11: STATE CHANGING TO greeting FROM standby IN touch
+INFO:root:playSound: inTheNameAmen
+INFO:root:playSound: greetingMorning
+INFO:root:playSound: myNameShort
+INFO:root:11:11: STATE CHANGING TO meeting FROM greeting IN logic
+INFO:root:playSound: yourName
+INFO:root:keyword> gabriel gabriel
+INFO:root:NAME: gabriel gabriel
+INFO:root:playSound: meetM
+INFO:root:playSound: intro
+INFO:root:playSound: aureola
+INFO:root:11:12: STATE CHANGING TO enquiry FROM meeting IN elaborateAnswer
+INFO:root:playSound: tellMeLong2
+INFO:root:11:12: STATE CHANGING TO noreply FROM enquiry IN listen
+INFO:root:11:12: STATE CHANGING TO enquiry FROM noreply IN logic
+INFO:root:keyword> cómo estás
+INFO:root:11:13: STATE CHANGING TO reply FROM enquiry IN elaborateAnswer
+INFO:root:playSound: genki
+INFO:root:11:13: STATE CHANGING TO enquiry FROM reply IN logic
+INFO:root:playSound: tellMe4
+INFO:root:keyword> cómo estás
+INFO:root:11:13: STATE CHANGING TO reply FROM enquiry IN elaborateAnswer
+INFO:root:playSound: genki
+INFO:root:11:13: STATE CHANGING TO enquiry FROM reply IN logic
+INFO:root:playSound: tellMe4
+INFO:root:keyword> cómo estás
+INFO:root:11:14: STATE CHANGING TO reply FROM enquiry IN elaborateAnswer
+INFO:root:playSound: genki
+INFO:root:11:14: STATE CHANGING TO enquiry FROM reply IN logic
+INFO:root:playSound: tellMeElse2
+INFO:root:keyword> cómo estás
+INFO:root:11:14: STATE CHANGING TO reply FROM enquiry IN elaborateAnswer
+INFO:root:playSound: genki
+INFO:root:11:14: STATE CHANGING TO enquiry FROM reply IN logic
+INFO:root:playSound: tellMe2
+INFO:root:keyword> cómo estás
+INFO:root:11:14: STATE CHANGING TO reply FROM enquiry IN elaborateAnswer
+INFO:root:playSound: genki

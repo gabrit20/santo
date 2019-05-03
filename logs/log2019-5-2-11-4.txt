@@ -1,0 +1,19 @@
+INFO:root:playSound: tellMeLong2
+INFO:root:keyword> te llamas
+INFO:root:11:4: STATE CHANGING TO reply FROM enquiry IN elaborateAnswer
+INFO:root:playSound: myName
+INFO:root:11:5: STATE CHANGING TO enquiry FROM reply IN logic
+INFO:root:playSound: tellMe5
+INFO:root:keyword> hola
+INFO:root:11:5: STATE CHANGING TO reply FROM enquiry IN elaborateAnswer
+INFO:root:playSound: greeting1
+INFO:root:11:5: STATE CHANGING TO enquiry FROM reply IN logic
+INFO:root:playSound: tellMe4
+INFO:root:keyword> buscar
+INFO:root:11:6: STATE CHANGING TO wakaranai FROM enquiry IN elaborateAnswer
+INFO:root:playSound: wakaranai3
+INFO:root:11:6: STATE CHANGING TO enquiry FROM wakaranai IN logic
+INFO:root:playSound: tellMeElse1
+INFO:root:keyword> cómo estás
+INFO:root:11:6: STATE CHANGING TO reply FROM enquiry IN elaborateAnswer
+INFO:root:playSound: genki

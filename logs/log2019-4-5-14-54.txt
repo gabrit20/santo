@@ -1,0 +1,48 @@
+INFO:root:hand reciboL
+INFO:root:14:55: STATE CHANGING TO greeting FROM standby IN touch
+INFO:root:playSound: inTheNameAmen
+INFO:root:playSound: greetingAfternoon
+INFO:root:playSound: myNameShort
+INFO:root:14:56: STATE CHANGING TO meeting FROM greeting IN logic
+INFO:root:playSound: yourName
+INFO:root:keyword> josé
+INFO:root:NAME: josé
+INFO:root:playSound: meetM
+INFO:root:playSound: intro
+INFO:root:playSound: aureola
+INFO:root:14:56: STATE CHANGING TO enquiry FROM meeting IN elaborateAnswer
+INFO:root:playSound: tellMeLong2
+INFO:root:keyword> hola miguel santo del día
+INFO:root:14:56: STATE CHANGING TO saint FROM enquiry IN elaborateAnswer
+INFO:root:playSound: 4-5d
+INFO:root:playSound: dayMemory
+INFO:root:playSound: 4-5n
+INFO:root:playSound: 4-5s
+INFO:root:14:57: STATE CHANGING TO enquiry FROM saint IN logic
+INFO:root:playSound: tellMe5
+INFO:root:keyword> dime algo de la biblia
+INFO:root:14:57: STATE CHANGING TO bible FROM enquiry IN elaborateAnswer
+INFO:root:playSound: verse
+INFO:root:playSound: touchHand
+INFO:root:playSound: Romans
+INFO:root:playSound: 15
+INFO:root:playSound: Romans-15-1
+INFO:root:playSound: Romans-15-2
+INFO:root:playSound: Romans-15-3
+INFO:root:playSound: Romans-15-4
+INFO:root:hand reciboL
+INFO:root:14:58: STATE CHANGING TO enquiry FROM bible IN touch
+INFO:root:14:58: STATE CHANGING TO enquiry FROM enquiry IN logic
+INFO:root:playSound: tellMe4
+INFO:root:14:59: STATE CHANGING TO noreply FROM enquiry IN listen
+INFO:root:14:59: STATE CHANGING TO enquiry FROM noreply IN logic
+INFO:root:keyword> okay eso es todo por ahora
+INFO:root:14:59: STATE CHANGING TO wakaranai FROM enquiry IN elaborateAnswer
+INFO:root:playSound: wakaranai3
+INFO:root:14:59: STATE CHANGING TO enquiry FROM wakaranai IN logic
+INFO:root:playSound: tellMeElse2
+INFO:root:keyword> adiós
+INFO:root:playSound: goInPeace
+INFO:root:playSound: retireShort
+INFO:root:14:59: STATE CHANGING TO farewell FROM enquiry IN elaborateAnswer
+INFO:root:14:59: STATE CHANGING TO standby FROM farewell IN logic

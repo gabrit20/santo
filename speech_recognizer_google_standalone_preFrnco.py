@@ -42,8 +42,6 @@ cmd2='wget -q -U "Mozilla/5.0" --post-file recording.flac --header="Content-Type
 from settings import *
 RECORD_SECONDS = recordingTime
 setting_language = str(language_in)
-THRESHOLD = threshold
-SECONDS_IN_SILENCE = seconds_in_silence
 
 from ctypes import *
 # From alsa-lib Git 3fd4ab9be0db7c7430ebd258f2717a976381715d
@@ -187,8 +185,6 @@ class GSpeech(object):
             #Grabar audio y guardar en wav
 
             import pyaudio
-            import math
-            import struct
             import wave
             import sys
 
@@ -233,28 +229,7 @@ class GSpeech(object):
             #CHUNK, su valor siempre debe ser una potencia de 2
             CHUNK = 8192
             global RECORD_SECONDS
-            TIME_OUT = int(RATE / CHUNK * RECORD_SECONDS)
-            AMPLIFICACION_DE_SEGUNDOS_EN_TIME_OUT = int(TIME_OUT/RECORD_SECONDS)
-            global THRESHOLD
-            global SECONDS_IN_SILENCE
-            SECONDS_IN_SILENCE = SECONDS_IN_SILENCE * AMPLIFICACION_DE_SEGUNDOS_EN_TIME_OUT
             WAVE_OUTPUT_FILENAME = "grabacion.wav"
-
-            SHORT_NORMALIZE = (1.0/32768.0)
-            SIGNAL_WIDTH = 2
-
-            def root_mean_square(frame):
-                cantidad = len(frame)/SIGNAL_WIDTH
-                formato = "%dh"%(cantidad)
-                muestras = struct.unpack(formato, frame) #frame is a string. unpack return values unpacked according to the given format
-
-                suma_de_cuadrados = 0.0
-                for muestra in muestras:
-                    muestra_normalizada = muestra * SHORT_NORMALIZE
-                    suma_de_cuadrados += muestra_normalizada*muestra_normalizada
-                    media_cuadratica = math.pow(suma_de_cuadrados/cantidad,0.5)
-                    return media_cuadratica * 1000
-
 
             # start Recording
             
@@ -279,49 +254,14 @@ class GSpeech(object):
             momento_de_actualizar = int(RATE / CHUNK * RECORD_SECONDS) / float(int(toolbar_width / cantidad_a_actualizar))
             frames = []
             contador = 1
-            hubo_una_voz = 0
-            segundos_en_silencio = 0
-            for i in range(0, TIME_OUT):
-                try:
-                    data = stream.read(CHUNK)
-                    valor_del_rms = root_mean_square(data)
-                    #print(valor_del_rms)
-                    if valor_del_rms >= THRESHOLD:
-                        print(valor_del_rms, "VOICE")
-                    else:
-                        print(valor_del_rms, "NO VOICE")
-
-                    #Check if exist a voice
-                    if (hubo_una_voz == 0) and (valor_del_rms > THRESHOLD):
-                        #print("voz detectada")
-                        hubo_una_voz = 1
-                    
-                    #If someone talk then start to record
-                    if hubo_una_voz == 1:
-                        #print("comienza a grabar")
-                        frames.append(data)
-                        
-                        #If someone is talking then set SECONDS_IN_SILENCE to zero
-                        if valor_del_rms > THRESHOLD:
-                            #print("volvio a hablar")
-                            segundos_en_silencio = 0
-                    
-                    if i < momento_de_actualizar*contador <= (i+1):
-                      # update the bar
-                      contador += 1
-                      sys.stdout.write("-"*cantidad_a_actualizar)
-                      sys.stdout.flush()
-
-                    #If someone talked and now exist silence start counting SECONDS_IN_SILENCE
-                    if (hubo_una_voz == 1) and (valor_del_rms <= THRESHOLD):
-                        #print("silencio detectado")
-                        segundos_en_silencio += 1
-                        
-                        if segundos_en_silencio >= SECONDS_IN_SILENCE:
-                            break
-                except:
-                    continue
-
+            for i in range(0, int(RATE / CHUNK * RECORD_SECONDS)):
+                data = stream.read(CHUNK)
+                frames.append(data)
+                if i < momento_de_actualizar*contador <= (i+1):
+                  # update the bar
+                  contador += 1
+                  sys.stdout.write("-"*cantidad_a_actualizar)
+                  sys.stdout.flush()
             sys.stdout.write("\n")
             sys.stdout.flush()
             print("-"*20 + "finished recording" + "-"*20)
@@ -330,67 +270,62 @@ class GSpeech(object):
             stream.stop_stream()
             stream.close()
             audio.terminate()
-
-            if hubo_una_voz == 0:
-                print("The speaker didn't talk")
-            else:
-            
-                #Save to a file
-                waveFile = wave.open(WAVE_OUTPUT_FILENAME, 'wb')
-                waveFile.setnchannels(CHANNELS)
-                waveFile.setsampwidth(audio.get_sample_size(FORMAT))
-                waveFile.setframerate(RATE)
-                waveFile.writeframes(b''.join(frames))
-                waveFile.close()
+             
+            waveFile = wave.open(WAVE_OUTPUT_FILENAME, 'wb')
+            waveFile.setnchannels(CHANNELS)
+            waveFile.setsampwidth(audio.get_sample_size(FORMAT))
+            waveFile.setframerate(RATE)
+            waveFile.writeframes(b''.join(frames))
+            waveFile.close()
 
 
-                import speech_recognition as sr
-                import sys
-                global my_key_api
-                global setting_language
-                self.is_recognized = False
+            import speech_recognition as sr
+            import sys
+            global my_key_api
+            global setting_language
+            self.is_recognized = False
 
-                audio_grabado = sr.AudioFile("grabacion.wav")
-                r = sr.Recognizer()
-                with audio_grabado as source:
-                  audio = r.record(source)
+            audio_grabado = sr.AudioFile("grabacion.wav")
+            r = sr.Recognizer()
+            with audio_grabado as source:
+              audio = r.record(source)
+              try:
+                text = r.recognize_google(audio,language=setting_language)
+                print("From Google you said : {}".format(text))
+                sys.stdout.flush()
+                self.publish_message(text)
+                self.is_recognized = True
+              except sr.UnknownValueError:
+                print("Sorry could not hear your voice")
+                sys.stdout.flush()
+              except:
+                print("Could not request results from Google Speech Recognition service")
+                sys.stdout.flush()
+                
+                try:
+                  text = r.recognize_google(audio,language=setting_language,key=my_key_api)
+                  print("From Google you said : {}".format(text))
+                  sys.stdout.flush()
+                  self.publish_message(text)
+                  self.is_recognized = True
+                except sr.UnknownValueError:
+                  print("Sorry could not hear your voice")
+                  sys.stdout.flush()
+                except:
+                  print("Could not request results from Google Speech Recognition service")
+                  sys.stdout.flush()
+                  
                   try:
-                    text = r.recognize_google(audio,language=setting_language)
-                    print("From Google you said : {}".format(text))
+                    text = r.recognize_sphinx(audio,language=setting_language)
+                    print("From Sphinx you said : {}".format(text))
                     sys.stdout.flush()
                     self.publish_message(text)
                     self.is_recognized = True
                   except sr.UnknownValueError:
                     print("Sorry could not hear your voice")
                     sys.stdout.flush()
-                  except:
-                    print("Could not request results from Google Speech Recognition service")
-                    sys.stdout.flush()
-                    
-                    try:
-                      text = r.recognize_google(audio,language=setting_language,key=my_key_api)
-                      print("From Google you said : {}".format(text))
-                      sys.stdout.flush()
-                      self.publish_message(text)
-                      self.is_recognized = True
-                    except sr.UnknownValueError:
-                      print("Sorry could not hear your voice")
-                      sys.stdout.flush()
-                    except:
-                      print("Could not request results from Google Speech Recognition service")
-                      sys.stdout.flush()
-                      
-                      try:
-                        text = r.recognize_sphinx(audio,language=setting_language)
-                        print("From Sphinx you said : {}".format(text))
-                        sys.stdout.flush()
-                        self.publish_message(text)
-                        self.is_recognized = True
-                      except sr.UnknownValueError:
-                        print("Sorry could not hear your voice")
-                        sys.stdout.flush()
 
-                self.on_recognition_finished()
+              self.on_recognition_finished()
 
     def loginfo(self, message):
         print("Speech rec (google) :: " + message)

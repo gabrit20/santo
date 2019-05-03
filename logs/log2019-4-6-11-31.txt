@@ -1,0 +1,59 @@
+INFO:root:hand reciboL
+INFO:root:11:32: STATE CHANGING TO greeting FROM standby IN touch
+INFO:root:playSound: inTheNameAmen
+INFO:root:playSound: greetingMorning
+INFO:root:playSound: myNameShort
+INFO:root:11:32: STATE CHANGING TO meeting FROM greeting IN logic
+INFO:root:playSound: yourName
+INFO:root:keyword> gabriele
+INFO:root:NAME: gabriele
+INFO:root:playSound: welcomeBackM
+INFO:root:playSound: intro
+INFO:root:playSound: aureola
+INFO:root:11:32: STATE CHANGING TO enquiry FROM meeting IN elaborateAnswer
+INFO:root:playSound: tellMeLong2
+INFO:root:keyword> qué día es hoy
+INFO:root:11:33: STATE CHANGING TO saint FROM enquiry IN elaborateAnswer
+INFO:root:playSound: 4-6d
+INFO:root:playSound: dayMemory
+INFO:root:playSound: 4-6n
+INFO:root:playSound: 4-6s
+INFO:root:11:33: STATE CHANGING TO enquiry FROM saint IN logic
+INFO:root:playSound: tellMe4
+INFO:root:keyword> háblame de la biblia sobre la biblia
+INFO:root:11:33: STATE CHANGING TO bible FROM enquiry IN elaborateAnswer
+INFO:root:playSound: verse
+INFO:root:playSound: touchHand
+INFO:root:playSound: Ezekiel
+INFO:root:playSound: 28
+INFO:root:playSound: Ezekiel-28-1
+INFO:root:playSound: Ezekiel-28-2
+INFO:root:playSound: Ezekiel-28-3
+INFO:root:playSound: Ezekiel-28-4
+INFO:root:playSound: Ezekiel-28-5
+INFO:root:hand reciboR
+INFO:root:11:35: STATE CHANGING TO enquiry FROM bible IN touch
+INFO:root:11:35: STATE CHANGING TO enquiry FROM enquiry IN logic
+INFO:root:playSound: tellMe4
+INFO:root:keyword> quiero estar
+INFO:root:11:35: STATE CHANGING TO wakaranai FROM enquiry IN elaborateAnswer
+INFO:root:playSound: wakaranai1
+INFO:root:11:35: STATE CHANGING TO enquiry FROM wakaranai IN logic
+INFO:root:playSound: tellMeElse2
+INFO:root:keyword> si quiero rezar
+INFO:root:11:35: STATE CHANGING TO pray FROM enquiry IN elaborateAnswer
+INFO:root:playSound: prayStart
+INFO:root:playSound: angel1
+INFO:root:11:36: STATE CHANGING TO enquiry FROM pray IN logic
+INFO:root:playSound: tellMe1
+INFO:root:keyword> tengo que irme adiós
+INFO:root:playSound: goInPeace
+INFO:root:playSound: retireShort
+INFO:root:11:36: STATE CHANGING TO farewell FROM enquiry IN elaborateAnswer
+INFO:root:11:36: STATE CHANGING TO standby FROM farewell IN logic
+INFO:root:hand reciboL
+INFO:root:11:43: STATE CHANGING TO greeting FROM standby IN touch
+INFO:root:playSound: inTheNameAmen
+INFO:root:hand reciboR
+INFO:root:11:43: STATE CHANGING TO enquiry FROM greeting IN touch
+INFO:root:playSound: greetingMorning

@@ -1,0 +1,61 @@
+INFO:root:hand reciboL
+INFO:root:15:12: STATE CHANGING TO greeting FROM standby IN touch
+INFO:root:playSound: inTheNameAmen
+INFO:root:playSound: greetingAfternoon
+INFO:root:playSound: myNameShort
+INFO:root:15:12: STATE CHANGING TO meeting FROM greeting IN logic
+INFO:root:playSound: yourName
+INFO:root:15:12: STATE CHANGING TO noname FROM meeting IN listen
+INFO:root:15:12: STATE CHANGING TO meeting FROM noname IN logic
+INFO:root:keyword> me llamó josé
+INFO:root:NAME: me llamó josé
+INFO:root:playSound: meetM
+INFO:root:playSound: intro
+INFO:root:playSound: aureola
+INFO:root:15:13: STATE CHANGING TO enquiry FROM meeting IN elaborateAnswer
+INFO:root:playSound: tellMeLong2
+INFO:root:keyword> cuál es la enseña
+INFO:root:15:13: STATE CHANGING TO wakaranai FROM enquiry IN elaborateAnswer
+INFO:root:playSound: wakaranai3
+INFO:root:15:13: STATE CHANGING TO enquiry FROM wakaranai IN logic
+INFO:root:playSound: tellMe4
+INFO:root:15:13: STATE CHANGING TO noreply FROM enquiry IN listen
+INFO:root:15:13: STATE CHANGING TO enquiry FROM noreply IN logic
+INFO:root:15:13: STATE CHANGING TO noreply FROM enquiry IN listen
+INFO:root:15:13: STATE CHANGING TO enquiry FROM noreply IN logic
+INFO:root:keyword> de hoy
+INFO:root:15:14: STATE CHANGING TO saint FROM enquiry IN elaborateAnswer
+INFO:root:playSound: 4-5d
+INFO:root:playSound: dayMemory
+INFO:root:playSound: 4-5n
+INFO:root:hand reciboR
+INFO:root:15:14: STATE CHANGING TO enquiry FROM saint IN touch
+INFO:root:playSound: 4-5s
+INFO:root:15:14: STATE CHANGING TO enquiry FROM enquiry IN logic
+INFO:root:playSound: tellMe1
+INFO:root:keyword> cuál es la homilía de hoy
+INFO:root:15:14: STATE CHANGING TO wakaranai FROM enquiry IN elaborateAnswer
+INFO:root:playSound: wakaranai2
+INFO:root:15:14: STATE CHANGING TO enquiry FROM wakaranai IN logic
+INFO:root:playSound: tellMeElse1
+INFO:root:15:15: STATE CHANGING TO noreply FROM enquiry IN listen
+INFO:root:15:15: STATE CHANGING TO enquiry FROM noreply IN logic
+INFO:root:15:15: STATE CHANGING TO noreply FROM enquiry IN listen
+INFO:root:15:15: STATE CHANGING TO enquiry FROM noreply IN logic
+INFO:root:15:15: STATE CHANGING TO noreply FROM enquiry IN listen
+INFO:root:15:15: STATE CHANGING TO enquiry FROM noreply IN logic
+INFO:root:keyword> homilía del papa
+INFO:root:15:15: STATE CHANGING TO pope FROM enquiry IN elaborateAnswer
+INFO:root:playSound: popeStart
+INFO:root:playSound: popeLima1
+INFO:root:playSound: popeLima2
+INFO:root:playSound: popeLima3
+INFO:root:15:16: STATE CHANGING TO enquiry FROM pope IN logic
+INFO:root:playSound: tellMe4
+INFO:root:15:16: STATE CHANGING TO noreply FROM enquiry IN listen
+INFO:root:15:16: STATE CHANGING TO enquiry FROM noreply IN logic
+INFO:root:keyword> gracias
+INFO:root:playSound: yourewelcome1
+INFO:root:playSound: goInPeace
+INFO:root:15:17: STATE CHANGING TO farewell FROM enquiry IN elaborateAnswer
+INFO:root:15:17: STATE CHANGING TO standby FROM farewell IN logic

@@ -18,7 +18,7 @@ replies = [   # ID, replies
     ["amen", "tellMeElse2"],
     ["padrenostro", "padrenostro"],
     #["pope", "popeLima"],
-    #["francis", "sanfrancesco"],
+    ["francis", "sanfrancesco"],
     ["yourname", "myName"],
     ["how", "genki"],
     ["hi", "greeting1"],

@@ -1,0 +1,64 @@
+INFO:root:hand reciboR
+INFO:root:14:49: STATE CHANGING TO greeting FROM standby IN touch
+INFO:root:playSound: inTheNameAmen
+INFO:root:playSound: greetingAfternoon
+INFO:root:playSound: myNameShort
+INFO:root:14:49: STATE CHANGING TO meeting FROM greeting IN logic
+INFO:root:playSound: yourName
+INFO:root:keyword> me llamo raúl
+INFO:root:NAME: me llamo raúl
+INFO:root:playSound: meetM
+INFO:root:playSound: intro
+INFO:root:playSound: aureola
+INFO:root:14:50: STATE CHANGING TO enquiry FROM meeting IN elaborateAnswer
+INFO:root:playSound: tellMeLong2
+INFO:root:keyword> alam el el génesis
+INFO:root:14:50: STATE CHANGING TO wakaranai FROM enquiry IN elaborateAnswer
+INFO:root:playSound: wakaranai3
+INFO:root:14:50: STATE CHANGING TO enquiry FROM wakaranai IN logic
+INFO:root:playSound: tellMe3
+INFO:root:keyword> quiero hablar sobre la biblia
+INFO:root:14:50: STATE CHANGING TO bible FROM enquiry IN elaborateAnswer
+INFO:root:playSound: verse
+INFO:root:playSound: touchHand
+INFO:root:playSound: Jude
+INFO:root:playSound: 1
+INFO:root:playSound: Jude-1-1
+INFO:root:playSound: Jude-1-2
+INFO:root:playSound: Jude-1-3
+INFO:root:hand reciboR
+INFO:root:14:51: STATE CHANGING TO enquiry FROM bible IN touch
+INFO:root:14:51: STATE CHANGING TO enquiry FROM enquiry IN logic
+INFO:root:playSound: tellMe5
+INFO:root:keyword> qué santo es hoy es santo del día
+INFO:root:14:51: STATE CHANGING TO saint FROM enquiry IN elaborateAnswer
+INFO:root:playSound: 4-5d
+INFO:root:playSound: dayMemory
+INFO:root:playSound: 4-5n
+INFO:root:playSound: 4-5s
+INFO:root:14:52: STATE CHANGING TO enquiry FROM saint IN logic
+INFO:root:playSound: tellMeElse2
+INFO:root:14:52: STATE CHANGING TO noreply FROM enquiry IN listen
+INFO:root:14:52: STATE CHANGING TO enquiry FROM noreply IN logic
+INFO:root:14:52: STATE CHANGING TO noreply FROM enquiry IN listen
+INFO:root:14:52: STATE CHANGING TO enquiry FROM noreply IN logic
+INFO:root:keyword> el papa francisco
+INFO:root:14:52: STATE CHANGING TO pope FROM enquiry IN elaborateAnswer
+INFO:root:playSound: popeStart
+INFO:root:playSound: popeLima1
+INFO:root:playSound: popeLima2
+INFO:root:playSound: popeLima3
+INFO:root:hand reciboR
+INFO:root:14:53: STATE CHANGING TO enquiry FROM pope IN touch
+INFO:root:14:53: STATE CHANGING TO enquiry FROM enquiry IN logic
+INFO:root:playSound: tellMe2
+INFO:root:keyword> charles ans
+INFO:root:14:53: STATE CHANGING TO wakaranai FROM enquiry IN elaborateAnswer
+INFO:root:playSound: wakaranai1
+INFO:root:14:53: STATE CHANGING TO enquiry FROM wakaranai IN logic
+INFO:root:playSound: tellMe5
+INFO:root:keyword> adiós
+INFO:root:playSound: goInPeace
+INFO:root:playSound: retireShort
+INFO:root:14:54: STATE CHANGING TO farewell FROM enquiry IN elaborateAnswer
+INFO:root:14:54: STATE CHANGING TO standby FROM farewell IN logic

@@ -1,0 +1,16 @@
+INFO:root:playSound: tellMeLong2
+INFO:root:10:56: STATE CHANGING TO noreply FROM enquiry IN listen
+INFO:root:10:56: STATE CHANGING TO enquiry FROM noreply IN logic
+INFO:root:keyword> hola
+INFO:root:10:56: STATE CHANGING TO reply FROM enquiry IN elaborateAnswer
+INFO:root:playSound: greeting1
+INFO:root:10:56: STATE CHANGING TO enquiry FROM reply IN logic
+INFO:root:playSound: tellMe4
+INFO:root:keyword> cómo estás
+INFO:root:10:57: STATE CHANGING TO reply FROM enquiry IN elaborateAnswer
+INFO:root:playSound: genki
+INFO:root:10:57: STATE CHANGING TO enquiry FROM reply IN logic
+INFO:root:playSound: tellMe1
+INFO:root:keyword> cómo te llamas cómo te llamas
+INFO:root:10:57: STATE CHANGING TO reply FROM enquiry IN elaborateAnswer
+INFO:root:playSound: myName

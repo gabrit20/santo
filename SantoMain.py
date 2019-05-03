@@ -690,6 +690,16 @@ def keepLightsOn():
                         envia=cabezera+"C111"
                         ser.write(envia)
 
+def detectCandle():
+        global ser
+        global cabezera
+
+        envia=cabezera+"V000"
+        ser.write(envia)
+        for i in range(0,6):
+                state=ser.read()
+                print (state)
+        return state
 
 def init():
         global ser
@@ -708,9 +718,9 @@ def init():
                         time.sleep(tiempoSer)
                         ser.flushInput()
                         print ("paso delay")
-                        envia=cabezera+"M000"
-                        ser.write(envia)
-                        print ("envio")
+                        #envia=cabezera+"M000"
+                        #ser.write(envia)
+                        #print ("envio")
                         b=0
                         break
                 except:
@@ -720,37 +730,51 @@ def init():
                                 print ("Error de conexion")
                                 break
         
-        #ser = serial.Serial('/dev/ttyUSB1',9600,timeout=0.3)
-        #time.sleep(tiempoSer)
-        #ser.flushInput()
-        print ("paso delay")
-        envia=cabezera+"M000"
-        ser.write(envia)
-        print ("envio")
-        time.sleep(tiempoSer)
+        banderita=0
+        while (banderita==0):
+                """
+                envia=cabezera+"V000"
+                ser.write(envia)
+                
+                for i in range(0, 6):
+                        x=ser.read()
+                """
+                candleOn=detectCandle()
+                time.sleep(0.1)
+                if (candleOn=='0'):
+                        banderita=1
+                        envia=cabezera+"M000"
+                        ser.write(envia)
+                        print ("envio")     
+                        #ser = serial.Serial('/dev/ttyUSB1',9600,timeout=0.3)
+                        #time.sleep(tiempoSer)
+                        #ser.flushInput()
+                        print ("paso delay")
+                        envia=cabezera+"M000"
+                        ser.write(envia)
+                        print ("envio")
+                        time.sleep(tiempoSer)
 
-        #print ("apago espalda")
-        print ("espalda on")
-        #envia=cabezera+"B000"
-        envia=cabezera+"B111"
-        #espalda=0
-        espalda=1
-        ser.write(envia)
-        time.sleep(tiempoSer)
-        #print ("apago aureola")
-        print ("aureola on")
-        #envia=cabezera+"A000"
-        envia=cabezera+"A111"
-        #aureola=0
-        aureola=1
-        ser.write(envia)
+                        #print ("apago espalda")
+                        print ("espalda on")
+                        #envia=cabezera+"B000"
+                        envia=cabezera+"B111"
+                        #espalda=0
+                        espalda=1
+                        ser.write(envia)
+                        time.sleep(tiempoSer)
+                        #print ("apago aureola")
+                        print ("aureola on")
+                        #envia=cabezera+"A000"
+                        envia=cabezera+"A111"
+                        #aureola=0
+                        aureola=1
+                        ser.write(envia)
 
-        #envia=cabezera+"C111"
-        #ser.write(envia)
+                        #envia=cabezera+"C111"
+                        #ser.write(envia)
 
-
-
-        
+                        
         cameraInit(ser)
         touchhand=threading.Thread(target=touch)
         touchhand.start()
@@ -758,11 +782,7 @@ def init():
         logicThread.start()
 
         logging.basicConfig(filename="logs/log"+str(year)+"-"+smonth+"-"+sday+"-"+shour+"-"+sminute+".txt", level=logging.INFO)
-        logging.basicConfig(format='%(message)s')
-
-        #lightsOnThread = threading.Thread(target=keepLightsOn)
-        #lightsOnThread.start()
-        #keepLightsOn()        
+        logging.basicConfig(format='%(message)s')       
 
 
 
