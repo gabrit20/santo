@@ -295,10 +295,11 @@ class GSpeech(object):
                     if (hubo_una_voz == 0) and (valor_del_rms > THRESHOLD):
                         #print("voz detectada")
                         hubo_una_voz = 1
+                        print("comienza a grabar")
                     
                     #If someone talk then start to record
                     if hubo_una_voz == 1:
-                        #print("comienza a grabar")
+                        print("appending data")
                         frames.append(data)
                         
                         #If someone is talking then set SECONDS_IN_SILENCE to zero
@@ -313,11 +314,13 @@ class GSpeech(object):
                       sys.stdout.flush()
 
                     #If someone talked and now exist silence start counting SECONDS_IN_SILENCE
+                    print(segundos_en_silencio, SECONDS_IN_SILENCE)
                     if (hubo_una_voz == 1) and (valor_del_rms <= THRESHOLD):
-                        #print("silencio detectado")
+                        print("silencio detectado")
                         segundos_en_silencio += 1
                         
                         if segundos_en_silencio >= SECONDS_IN_SILENCE:
+                            print("break")
                             break
                 except:
                     continue
