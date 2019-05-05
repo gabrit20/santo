@@ -44,7 +44,6 @@ RECORD_SECONDS = recordingTime
 setting_language = str(language_in)
 THRESHOLD = threshold
 SECONDS_IN_SILENCE = seconds_in_silence
-speech_lock = 3
 
 from ctypes import *
 # From alsa-lib Git 3fd4ab9be0db7c7430ebd258f2717a976381715d
@@ -172,8 +171,6 @@ class GSpeech(object):
 
     def on_recognition_finished(self):
         self.loginfo("Recognition finished")
-        speech_lock = False
-        print("speech_lock google after", speech_lock)
 
     def publish_message(self, message):
         if self.callback is not None:
@@ -270,7 +267,6 @@ class GSpeech(object):
 
             import time
             global cantidad_de_veces_mas_rapido
-            
             factor = 5
             toolbar_width = int(RECORD_SECONDS/cantidad_de_veces_mas_rapido) * factor * cantidad_de_veces_mas_rapido
             # setup toolbar
@@ -290,7 +286,7 @@ class GSpeech(object):
                     data = stream.read(CHUNK)
                     valor_del_rms = root_mean_square(data)
                     #print(valor_del_rms)
-                    if valor_del_rms > THRESHOLD:
+                    if valor_del_rms >= THRESHOLD:
                         print(valor_del_rms, "VOICE")
                     else:
                         print(valor_del_rms, "NO VOICE")
@@ -301,19 +297,21 @@ class GSpeech(object):
                         hubo_una_voz = 1
                         print("comienza a grabar")
                     
-                    print("appending data")
-                    frames.append(data)
+                    #If someone talk then start to record
+                    if hubo_una_voz == 1:
+                        print("appending data")
+                        frames.append(data)
                         
-                    #If someone is talking then set SECONDS_IN_SILENCE to zero
-                    if (hubo_una_voz == 1) and (valor_del_rms > THRESHOLD):
-                        #print("volvio a hablar")
-                        segundos_en_silencio = 0
+                        #If someone is talking then set SECONDS_IN_SILENCE to zero
+                        if valor_del_rms > THRESHOLD:
+                            #print("volvio a hablar")
+                            segundos_en_silencio = 0
                     
                     if i < momento_de_actualizar*contador <= (i+1):
-                        # update the bar
-                        contador += 1
-                        sys.stdout.write("-"*cantidad_a_actualizar)
-                        sys.stdout.flush()
+                      # update the bar
+                      contador += 1
+                      sys.stdout.write("-"*cantidad_a_actualizar)
+                      sys.stdout.flush()
 
                     #If someone talked and now exist silence start counting SECONDS_IN_SILENCE
                     print(segundos_en_silencio, SECONDS_IN_SILENCE_AUX)
@@ -335,11 +333,6 @@ class GSpeech(object):
             stream.stop_stream()
             stream.close()
             audio.terminate()
-
-            global speech_lock
-            print("speech_lock google before1", speech_lock)
-            speech_lock = False
-            print("speech_lock google before2", speech_lock)
 
             if hubo_una_voz == 0:
                 print("The speaker didn't talk")

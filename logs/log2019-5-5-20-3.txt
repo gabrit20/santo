@@ -1,0 +1,3 @@
+INFO:root:playSound: tellMeLong2
+INFO:root:keyword> hola cómo te llamas
+INFO:root:20:3: STATE CHANGING TO reply FROM enquiry IN elaborateAnswer

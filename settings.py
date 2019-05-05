@@ -19,7 +19,7 @@ cantidad_de_veces_mas_rapido = 2
 threshold = 0.08
 
 #Si hay SECONDS_IN_SILENCE segundos seguidos de silencio se detiene de grabar
-seconds_in_silence = 1#3
+seconds_in_silence = 1.5 #3
 
 maxWaitingCycles = 15 #the total waiting time is given by maxWaitingCycles*recordingTime
 

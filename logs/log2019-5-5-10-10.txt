@@ -1,0 +1,6 @@
+INFO:root:playSound: tellMeLong2
+INFO:root:keyword> qué tal
+INFO:root:10:10: STATE CHANGING TO wakaranai FROM enquiry IN elaborateAnswer
+INFO:root:playSound: wakaranai2
+INFO:root:10:10: STATE CHANGING TO enquiry FROM wakaranai IN logic
+INFO:root:playSound: tellMe2

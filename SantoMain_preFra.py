@@ -23,7 +23,6 @@ from camera import cameraInit
 
 from speech_recognizer_google_standalone import GSpeech
 speech_rec = GSpeech("")
-from speech_recognizer_google_standalone import speech_lock
 
 import soundfiles
 import allvocabularies
@@ -138,15 +137,11 @@ def listen():
         global tiempoSer
         global aureola
         global espalda
-        global speech_lock
         
         #while True:
         if (state == "enquiry" or state == "meeting" ):  #shouldn't happen in other states
 
                 is_recognized = -1
-                print("speech_lock main before1", speech_lock)
-                speech_lock = True
-                print("speech_lock main before2", speech_lock)
                 
                 #print("Speech recognition starting")
                 #aureola on
@@ -163,17 +158,10 @@ def listen():
                         ser.write(envia)
                         
                 speech_rec.start()
-
-                while(speech_lock == True):
-                        #if (int(time.clock()*10)%1000 == 0):
-                        #        print("speech_lock main while", speech_lock)
-                        time.sleep(1)
-                        print("speech_lock main while", speech_lock)
-                        pass
-                #time.sleep(recordingTime) # Make it equal to recording length inside Speech Recognition module.
+                
+                time.sleep(recordingTime) # Make it equal to recording length inside Speech Recognition module.
 
                 speech_rec.stop()
-                print("speech_lock main after", speech_lock)
                 #aureola off
                 if (aureola==1):
                         time.sleep(tiempoSer)

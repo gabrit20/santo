@@ -20,7 +20,7 @@ cortana;1;es-PE;cortana;;;;;
 cortana;2;en-GB;cortana;;;;;
 cortana;3;de-DE;cortana;;;;;
 day;0;it-IT;giorno è oggi;oggi che giorno;santo di oggi;santo del giorno;;
-day;1;es-PE;día es hoy;santo de hoy;santo del día;;;
+day;1;es-PE;día es hoy;santo de hoy;santo del día;dia es hoy;santo del dia;;
 day;2;en-GB;what day;day is today;saint of today;saint of the day;;
 day;3;de-DE;namenstag;kalendartag;tag ist heute;welcher tag;heiliger des tages;heutiger heiliger
 francis;0;it-IT;san francesco;;;;;
