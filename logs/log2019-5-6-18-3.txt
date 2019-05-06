@@ -1,4 +1,0 @@
-INFO:root:playSound: tellMeLong2
-INFO:root:hand reciboL
-INFO:root:18:3: STATE CHANGING TO farewell FROM enquiry IN touch
-INFO:root:playSound: retire
