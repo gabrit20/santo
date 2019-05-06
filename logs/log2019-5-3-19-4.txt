@@ -1,8 +1,0 @@
-INFO:root:playSound: tellMeLong2
-INFO:root:keyword> quería saber si va todo bien
-INFO:root:19:4: STATE CHANGING TO wakaranai FROM enquiry IN elaborateAnswer
-INFO:root:playSound: wakaranai3
-INFO:root:19:5: STATE CHANGING TO enquiry FROM wakaranai IN logic
-INFO:root:playSound: tellMe3
-INFO:root:keyword> llama
-INFO:root:19:5: STATE CHANGING TO reply FROM enquiry IN elaborateAnswer

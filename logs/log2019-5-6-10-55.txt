@@ -1,0 +1,21 @@
+INFO:root:playSound: tellMeLong2
+INFO:root:10:55: STATE CHANGING TO noreply FROM enquiry IN listen
+INFO:root:10:55: STATE CHANGING TO enquiry FROM noreply IN logic
+INFO:root:10:55: STATE CHANGING TO noreply FROM enquiry IN listen
+INFO:root:10:55: STATE CHANGING TO enquiry FROM noreply IN logic
+INFO:root:10:55: STATE CHANGING TO noreply FROM enquiry IN listen
+INFO:root:10:55: STATE CHANGING TO enquiry FROM noreply IN logic
+INFO:root:10:55: STATE CHANGING TO noreply FROM enquiry IN listen
+INFO:root:10:55: STATE CHANGING TO enquiry FROM noreply IN logic
+INFO:root:10:55: STATE CHANGING TO noreply FROM enquiry IN listen
+INFO:root:10:55: STATE CHANGING TO enquiry FROM noreply IN logic
+INFO:root:10:55: STATE CHANGING TO noreply FROM enquiry IN listen
+INFO:root:10:55: STATE CHANGING TO enquiry FROM noreply IN logic
+INFO:root:10:55: STATE CHANGING TO noreply FROM enquiry IN listen
+INFO:root:10:55: STATE CHANGING TO enquiry FROM noreply IN logic
+INFO:root:10:55: STATE CHANGING TO noreply FROM enquiry IN listen
+INFO:root:10:55: STATE CHANGING TO enquiry FROM noreply IN logic
+INFO:root:10:55: STATE CHANGING TO noreply FROM enquiry IN listen
+INFO:root:keyword> hola cómo estás
+INFO:root:10:55: STATE CHANGING TO enquiry FROM wakaranai IN logic
+INFO:root:10:55: STATE CHANGING TO wakaranai FROM noreply IN elaborateAnswer

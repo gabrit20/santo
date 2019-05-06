@@ -44,7 +44,7 @@ RECORD_SECONDS = recordingTime
 setting_language = str(language_in)
 THRESHOLD = threshold
 SECONDS_IN_SILENCE = seconds_in_silence
-speech_lock = 3
+speech_lock = False
 
 from ctypes import *
 # From alsa-lib Git 3fd4ab9be0db7c7430ebd258f2717a976381715d
@@ -139,6 +139,10 @@ class GSpeech(object):
         else:
             print("gspeech is already stopped")
 
+    def is_in_recognition(self):
+        global speech_lock
+        return speech_lock
+
     def force_stop(self):
         """Stop speech recognition"""
         if self.started:
@@ -172,8 +176,8 @@ class GSpeech(object):
 
     def on_recognition_finished(self):
         self.loginfo("Recognition finished")
-        speech_lock = False
-        print("speech_lock google after", speech_lock)
+        #speech_lock = False
+        #print("speech_lock google after", speech_lock)
 
     def publish_message(self, message):
         if self.callback is not None:
@@ -245,6 +249,10 @@ class GSpeech(object):
 
             SHORT_NORMALIZE = (1.0/32768.0)
             SIGNAL_WIDTH = 2
+
+            global speech_lock
+            speech_lock = True
+            
 
             def root_mean_square(frame):
                 cantidad = len(frame)/SIGNAL_WIDTH
@@ -335,11 +343,7 @@ class GSpeech(object):
             stream.stop_stream()
             stream.close()
             audio.terminate()
-
-            global speech_lock
-            print("speech_lock google before1", speech_lock)
-            speech_lock = False
-            print("speech_lock google before2", speech_lock)
+            
 
             if hubo_una_voz == 0:
                 print("The speaker didn't talk")
@@ -400,7 +404,10 @@ class GSpeech(object):
                         print("Sorry could not hear your voice")
                         sys.stdout.flush()
 
-                self.on_recognition_finished()
+            self.on_recognition_finished()
+            print("speech_lock google before1", speech_lock)
+            speech_lock = False
+            print("speech_lock google before2", speech_lock)
 
     def loginfo(self, message):
         print("Speech rec (google) :: " + message)

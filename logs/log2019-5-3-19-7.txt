@@ -1,9 +1,0 @@
-INFO:root:playSound: tellMeLong2
-INFO:root:keyword> jaume primer
-INFO:root:19:8: STATE CHANGING TO wakaranai FROM enquiry IN elaborateAnswer
-INFO:root:playSound: wakaranai2
-INFO:root:19:8: STATE CHANGING TO enquiry FROM wakaranai IN logic
-INFO:root:playSound: tellMe1
-INFO:root:keyword> gabriel
-INFO:root:19:8: STATE CHANGING TO wakaranai FROM enquiry IN elaborateAnswer
-INFO:root:playSound: wakaranai3

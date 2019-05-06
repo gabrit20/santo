@@ -1,3 +1,0 @@
-INFO:root:playSound: tellMeLong2
-INFO:root:keyword> hola qué tal
-INFO:root:19:57: STATE CHANGING TO reply FROM enquiry IN elaborateAnswer

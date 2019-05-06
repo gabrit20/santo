@@ -23,6 +23,8 @@ seconds_in_silence = 1.5 #3
 
 maxWaitingCycles = 15 #the total waiting time is given by maxWaitingCycles*recordingTime
 
+speech_lock = False
+
 import time
 timeInfo = time.localtime(time.time())
 year = timeInfo[0]

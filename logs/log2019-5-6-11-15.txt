@@ -1,0 +1,17 @@
+INFO:root:playSound: tellMeLong2
+INFO:root:keyword> me llamo gabriel
+INFO:root:11:16: STATE CHANGING TO reply FROM enquiry IN elaborateAnswer
+INFO:root:playSound: meet
+INFO:root:11:16: STATE CHANGING TO enquiry FROM reply IN logic
+INFO:root:playSound: tellMe4
+INFO:root:keyword> qué día es hoy
+INFO:root:11:16: STATE CHANGING TO saint FROM enquiry IN elaborateAnswer
+INFO:root:playSound: noDay
+INFO:root:playSound: sorry
+INFO:root:11:16: STATE CHANGING TO enquiry FROM saint IN logic
+INFO:root:playSound: tellMe1
+INFO:root:keyword> hasta luego
+INFO:root:playSound: goInPeace
+INFO:root:playSound: retireShort
+INFO:root:11:16: STATE CHANGING TO farewell FROM enquiry IN elaborateAnswer
+INFO:root:11:16: STATE CHANGING TO standby FROM farewell IN logic
