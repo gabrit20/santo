@@ -29,9 +29,9 @@ tellMeElse2;Vuoi parlare di qualcos'altro?;Quieres hablar de algo mas?;Do you wa
 ciao;ciao;chau;bye;Tschüss
 yourewelcome1;Di niente. Sono sempre a disposizione.;De nada. Estoy siempre a tu disposición;You're welcome. I'm always available;Gern geschehen. Ich bin immer verfügbar
 intro;Possiamo parlare del santo di oggi, della Bibbia, o possiamo pregare;Podemos hablar sobre el santo de hoy, o de la Biblia, o podemos rezar;We can talk about the saint of today, or of the Bible, or we can pray.;
-introPope;;Podemos hablar sobre el santo de hoy, o de la Biblia, o de las palabras de Papa Francisco, o podemos rezar;;
+introPope;;Podemos hablar sobre el santo de hoy, o de la Biblia, o de las palabras de Papa Francisco, o podemos rezar;We can talk about the saint of today, or of the Bible, or of the words of Pope Francis, or we can pray.;
 wakaranai1;Perdonami, non ti ho sentito;Disculpame, no te escuché;I'm sorry, I could not hear you;Tut mir leid, ich konnte dich nicht hören
-wakaranai2;Perdonami, non ti ho sentito;Disculpame, no te oí;I'm sorry, I could not hear you;Tut mir leid, ich konnte dich nicht hören
+wakaranai2;Perdonami, non ti ho sentito bene;Disculpame, no te oí;I'm sorry, I could not hear you well;Tut mir leid, ich konnte dich nicht hören
 wakaranai3;Perdonami, non ho capito che hai detto;Disculpame, no entiendo lo que dijiste;I'm sorry, I did not understand what you said.;
 retire;Torno in preghiera. Sono disponibile in qualsiasi momento.;Vuelvo en oración. Estoy disponible en cualquier momento;I go back to prayer. I'm available anytime;Ich werde weiter beten. Ich bin immer verfügbar.
 retireShort;Torno in preghiera;Vuelvo en oración.;I go back to prayer.;Ich werde weiter beten. 
@@ -48,10 +48,10 @@ yourName;Dimmi, come ti chiami?;Dime, cómo te llamas?;Tell me, what's your name?
 wishPray;Preghiamo insieme per far in modo che il tuo desiderio si avvererà;Recemos juntos para que tu deseo se haga realidad;Let's pray together so that your wish will become true;Lass uns zusammen beten damit dein Wunsch in Erfüllung geht
 problem;Preghiamo insieme per far in modo che il tuo problema si risolverà;Recemos juntos para que tu problema se resuelva;Let's pray together so that your problem will get solved;Lass uns zusammen beten damit dein Problem gelöst wird
 prayStart;Preghiamo;Recemos;Let's pray;Lass uns beten
-verse;Ti parlerò di un passo della Bibbia;Te hablaré de un versículo de la Biblia;;
+verse;Ti parlerò di un passo della Bibbia;Te hablaré de un versículo de la Biblia;I will tell you a verse from the Bible;
 touchHand;quando vuoi che mi interrompa toccami una mano;cuando quieres que me interrumpa tócame una mano;when you want me to stop please Touch my hand;
 aureola;Parlami quando ho l'aureola accesa;háblame cuando mi aureola está encendida;talk to me when my aureole is turned on;
-popeStart;;Te hablaré de las palabras de Papa Francisco en Lima;;
+popeStart;;Te hablaré de las palabras de Papa Francisco en Lima;I will tell you some words of Pope Francis;
 cuellar1;;Tu eres Francisco Cuéllar. Un gran pecador.;;
 cuellar2;;tenemos que rezar mucho porque vas a ir al infierno;;
 ;;;;
@@ -63,6 +63,6 @@ happiness;;Feliz el hombre que encontró la sabiduría y el que obtiene la intelig
 mercy;;El Señor su Dios es compasivo y misericordioso. Si ustedes se vuelven a él, jamás los abandonará.;;
 ;;;;
 dayMemory;E' ill giorno della memoria dii;Es el día de la memoria de;It's the day of the memory of;Es ist der Namenstag
-noDay;Oggi, non so che giorno è;Hoy, no se que día es;;
-sorry;Mi dispiace.;Lo siento.;;
+noDay;Oggi, non so che giorno è;Hoy, no se que día es;I don't know what day is today;
+sorry;Mi dispiace.;Lo siento.;I'm sorry;
 noSaint;Non mi ricordo il santo di oggi;No me acuerdo el santo de hoy;I don't remember today's saint;

@@ -1,0 +1,13 @@
+INFO:root:playSound: tellMeLong2
+INFO:root:keyword> i'm worried
+INFO:root:18:53: STATE CHANGING TO reply FROM enquiry IN elaborateAnswer
+INFO:root:playSound: future
+INFO:root:18:54: STATE CHANGING TO enquiry FROM reply IN logic
+INFO:root:playSound: tellMe4
+INFO:root:keyword> what's your name
+INFO:root:18:54: STATE CHANGING TO reply FROM enquiry IN elaborateAnswer
+INFO:root:playSound: myName
+INFO:root:18:54: STATE CHANGING TO enquiry FROM reply IN logic
+INFO:root:playSound: tellMe1
+INFO:root:keyword> tell me something about the bible
+INFO:root:18:54: STATE CHANGING TO bible FROM enquiry IN elaborateAnswer

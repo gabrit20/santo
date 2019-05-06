@@ -1,0 +1,6 @@
+INFO:root:playSound: tellMeLong2
+INFO:root:keyword> thank you so much
+INFO:root:playSound: yourewelcome1
+INFO:root:playSound: goInPeace
+INFO:root:18:55: STATE CHANGING TO farewell FROM enquiry IN elaborateAnswer
+INFO:root:18:56: STATE CHANGING TO standby FROM farewell IN logic
