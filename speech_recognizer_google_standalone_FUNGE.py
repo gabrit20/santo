@@ -157,9 +157,6 @@ class GSpeech(object):
             print("gspeech recognizer force stopped")
         else:
             print("gspeech is already force stopped")
-            
-        speech_lock = False
-        #print("speech_lock google force_stop", speech_lock)
 
 
     def isStarted(self):
@@ -179,8 +176,8 @@ class GSpeech(object):
 
     def on_recognition_finished(self):
         self.loginfo("Recognition finished")
-        #speech_lock = False   #does not work here
-        #print("speech_lock google finished", speech_lock)
+        #speech_lock = False
+        #print("speech_lock google after", speech_lock)
 
     def publish_message(self, message):
         if self.callback is not None:
@@ -301,18 +298,18 @@ class GSpeech(object):
                     data = stream.read(CHUNK)
                     valor_del_rms = root_mean_square(data)
                     #print(valor_del_rms)
-                    #if valor_del_rms > THRESHOLD:
-                    #    print(valor_del_rms, "VOICE")
-                    #else:
-                    #    print(valor_del_rms, "NO VOICE")
+                    if valor_del_rms > THRESHOLD:
+                        print(valor_del_rms, "VOICE")
+                    else:
+                        print(valor_del_rms, "NO VOICE")
 
                     #Check if exist a voice
                     if (hubo_una_voz == 0) and (valor_del_rms > THRESHOLD):
                         #print("voz detectada")
                         hubo_una_voz = 1
-                        #print("comienza a grabar")
+                        print("comienza a grabar")
                     
-                    #print("appending data")
+                    print("appending data")
                     frames.append(data)
                         
                     #If someone is talking then set SECONDS_IN_SILENCE to zero
@@ -327,13 +324,13 @@ class GSpeech(object):
                         sys.stdout.flush()
 
                     #If someone talked and now exist silence start counting SECONDS_IN_SILENCE
-                    #print("seconds in silence", segundos_en_silencio, SECONDS_IN_SILENCE_AUX)
+                    print(segundos_en_silencio, SECONDS_IN_SILENCE_AUX)
                     if (hubo_una_voz == 1) and (valor_del_rms <= THRESHOLD):
-                        #print("silencio detectado")
+                        print("silencio detectado")
                         segundos_en_silencio += 1
                         
                         if segundos_en_silencio >= SECONDS_IN_SILENCE_AUX:
-                            #print("break")
+                            print("break")
                             break
                 except:
                     continue
@@ -349,7 +346,7 @@ class GSpeech(object):
             
 
             if hubo_una_voz == 0:
-                print("No voice detected")
+                print("The speaker didn't talk")
             else:
             
                 #Save to a file
@@ -378,7 +375,7 @@ class GSpeech(object):
                     self.publish_message(text)
                     self.is_recognized = True
                   except sr.UnknownValueError:
-                    print("Speech not recognised")
+                    print("Sorry could not hear your voice")
                     sys.stdout.flush()
                   except:
                     print("Could not request results from Google Speech Recognition service")
@@ -391,7 +388,7 @@ class GSpeech(object):
                       self.publish_message(text)
                       self.is_recognized = True
                     except sr.UnknownValueError:
-                      print("Speech not recognised")
+                      print("Sorry could not hear your voice")
                       sys.stdout.flush()
                     except:
                       print("Could not request results from Google Speech Recognition service")
@@ -404,14 +401,13 @@ class GSpeech(object):
                         self.publish_message(text)
                         self.is_recognized = True
                       except sr.UnknownValueError:
-                        print("Speech not recognised")
+                        print("Sorry could not hear your voice")
                         sys.stdout.flush()
 
             self.on_recognition_finished()
-            #print("speech_lock google before", speech_lock)
+            print("speech_lock google before1", speech_lock)
             speech_lock = False
-            #print("speech_lock google after", speech_lock)
-
+            print("speech_lock google before2", speech_lock)
 
     def loginfo(self, message):
         print("Speech rec (google) :: " + message)

@@ -1,0 +1,6 @@
+INFO:root:playSound: tellMeLong2
+INFO:root:keyword> buenos días
+INFO:root:17:48: STATE CHANGING TO reply FROM enquiry IN elaborateAnswer
+INFO:root:playSound: greeting1
+INFO:root:17:48: STATE CHANGING TO enquiry FROM reply IN logic
+INFO:root:playSound: tellMe3
