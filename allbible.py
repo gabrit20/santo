@@ -55,8 +55,8 @@ def allbibleInit():
             pass
 
 
-allbibleInit()
-#for iBook in Bible:
-#    print(iBook)
-print(Bible['Gen']['bookNames'])
-print(Bible['Rev']['3']['1'])
+##allbibleInit()
+###for iBook in Bible:
+###    print(iBook)
+##print(Bible['Gen']['bookNames'])
+##print(Bible['Rev']['3']['1'])
