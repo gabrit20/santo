@@ -6,8 +6,8 @@ language_in = 'en-GB'   #'en-GB' #de-DE #en-US #ja-JP #it-IT #es-PE  #see http:/
 gender = "m"
 
 #initial state
-#state = "standby"#
-state = "enquiry"
+state = "standby"#
+#state = "enquiry"
 
 
 #must be the same
