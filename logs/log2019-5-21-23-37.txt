@@ -1,0 +1,39 @@
+INFO:root:hand reciboL
+INFO:root:23:37: STATE CHANGING TO greeting FROM standby IN touch
+INFO:root:playSound: inTheNameAmen
+INFO:root:playSound: greetingNight
+INFO:root:playSound: myNameShort
+INFO:root:23:37: STATE CHANGING TO meeting FROM greeting IN logic
+INFO:root:playSound: yourName
+INFO:root:keyword> i don't remember my name
+INFO:root:NAME: i don't remember my name
+INFO:root:playSound: meetM
+INFO:root:playSound: intro
+INFO:root:playSound: aureola
+INFO:root:23:38: STATE CHANGING TO enquiry FROM meeting IN elaborateAnswer
+INFO:root:playSound: tellMeLong2
+INFO:root:keyword> talk me about the bible
+INFO:root:23:38: STATE CHANGING TO bible FROM enquiry IN elaborateAnswer
+INFO:root:playSound: verse
+INFO:root:playSound: touchHand
+INFO:root:playSound: Sir
+INFO:root:playSound: 46
+INFO:root:playSound: Sir-46-1
+INFO:root:playSound: Sir-46-2
+INFO:root:hand reciboL
+INFO:root:playSound: Sir-46-3
+INFO:root:playSound: Sir-46-4
+INFO:root:hand reciboL
+INFO:root:23:39: STATE CHANGING TO enquiry FROM bible IN touch
+INFO:root:23:39: STATE CHANGING TO enquiry FROM enquiry IN logic
+INFO:root:playSound: tellMe5
+INFO:root:keyword> good night
+INFO:root:23:39: STATE CHANGING TO wakaranai FROM enquiry IN elaborateAnswer
+INFO:root:playSound: wakaranai1
+INFO:root:23:39: STATE CHANGING TO enquiry FROM wakaranai IN logic
+INFO:root:playSound: tellMe5
+INFO:root:keyword> goodbye i'm leaving i said i'm leaving
+INFO:root:playSound: goInPeace
+INFO:root:playSound: retireShort
+INFO:root:23:40: STATE CHANGING TO farewell FROM enquiry IN elaborateAnswer
+INFO:root:23:40: STATE CHANGING TO standby FROM farewell IN logic
