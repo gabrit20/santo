@@ -12,7 +12,7 @@ def allbibleInit():
     booksFile.readline() #skips the first line
     for line in booksFile:
         items = line.strip().split(';')
-        bookID = str(items[0])
+        bookID = str(items[0])  #3 latters abbreviation
         bookName_IT = items[1].encode('utf-8')
         bookName_ES = items[2].encode('utf-8')
         bookName_EN = items[3].encode('utf-8')
@@ -21,31 +21,42 @@ def allbibleInit():
 
         Bible[bookID] = {'bookNames': {'IT':bookName_IT, 'ES':bookName_ES, 'EN':bookName_EN, 'DE':bookName_DE}}
 
-        
+
+
     
+    
+    for iLanguage in language_list:
 
-    singleBiblefile = codecs.open('Bible'+language_out+'.csv', encoding='latin-1')
+        try: 
+            with codecs.open('Bible'+iLanguage+'.csv', encoding='latin-1') as singleBiblefile:
+                #print (iLanguage)
+                for line in singleBiblefile:
+                    #print(line)
+                    items = line.strip().split(';')
+                    bookName = items[0].encode('utf-8')
+                    bookNameNotEncoded = items[0]
+                    bookNum = str(items[1])
+                    
+                    verseNum = str(items[2])
+                    verse = items[3].encode('utf-8')
 
-    for line in singleBiblefile:
+                    for iBook in Bible:
+                        if (bookName == Bible[iBook]['bookNames'][iLanguage] or bookNameNotEncoded == iBook):  #full name or abbreviation
 
-        items = line.strip().split(';')
-        bookName = items[0].encode('utf-8')
-        bookNum = str(items[1])
-        verseNum = str(items[2])
-        verse = items[3].encode('utf-8')
+                            if bookNum not in Bible[iBook]:
+                                Bible[iBook][bookNum] = {}
+                            if verseNum not in Bible[iBook][bookNum]:
+                                Bible[iBook][bookNum][verseNum] = {}
 
-        for iBook in Bible:
-            if (Bible[iBook]['bookNames'][language_out] == bookName):
-
-                if bookNum not in Bible[iBook]:
-                    Bible[iBook][bookNum] = {}
-                if verseNum not in Bible[iBook][bookNum]:
-                    Bible[iBook][bookNum][verseNum] = {}
-
-                Bible[iBook][bookNum][verseNum][language_out] = verse
-                break
+                            Bible[iBook][bookNum][verseNum][iLanguage] = verse
+                            #print(iBook,bookNum,verseNum,iLanguage,verse)
+                            break
+        except:
+            pass
 
 
-#allbibleInit()
-#print(Bible['Genesis']['bookNames'])
-#print(Bible['Genesis']['3']['1'])
+allbibleInit()
+#for iBook in Bible:
+#    print(iBook)
+print(Bible['Gen']['bookNames'])
+print(Bible['Rev']['3']['1'])

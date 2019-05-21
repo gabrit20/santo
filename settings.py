@@ -2,6 +2,7 @@
 #https://www.science.co.il/language/Locale-codes.php
 language_out = "EN" #"IT" #"ES" #"EN" #"DE"
 language_in = 'en-GB'   #'en-GB' #de-DE #en-US #ja-JP #it-IT #es-PE  #see http://www.lingoes.net/en/translator/langcode.htm
+language_list = ["IT","ES","EN","DE"]
 
 gender = "m"
 

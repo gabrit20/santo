@@ -550,7 +550,7 @@ def logic():
                         global Bible
                         randomBookID = random.choice(Bible.keys())
                         randomBooknum = random.choice(Bible[randomBookID].keys())
-                        while (randomBooknum.isdigit() == False): #as it contains also the key "bookNames"
+                        while (randomBooknum.isdigit() == False): #as the dictionary Bible contains also the key "bookNames"
                                 randomBooknum = random.choice(Bible[randomBookID].keys())
 
 
