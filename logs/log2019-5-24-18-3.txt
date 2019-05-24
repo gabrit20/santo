@@ -1,0 +1,4 @@
+INFO:root:playSound: tellMeLong2
+INFO:root:keyword> halo
+INFO:root:18:3: STATE CHANGING TO wakaranai FROM enquiry IN elaborateAnswer
+INFO:root:playSound: wakaranai1

@@ -37,7 +37,7 @@ def playDict(language, textID, archive):
         elif type(archive) is str:    #directly a string
             text = archive
         
-        
+        #print("TEXT",text)
         if (language == 'IT'):
             #engineID, languageID, voiceID, effectID, effectStrength
             #Matteo duration longer 2, 7, 8, 'D', 2

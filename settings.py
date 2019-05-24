@@ -7,8 +7,8 @@ language_list = ["IT","ES","EN","DE"]
 gender = "m"
 
 #initial state
-state = "standby"#
-#state = "enquiry"
+#state = "standby"#
+state = "enquiry"
 
 
 #must be the same

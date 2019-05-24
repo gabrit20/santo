@@ -1,0 +1,6 @@
+INFO:root:playSound: tellMeLong2
+INFO:root:keyword> what day is today
+INFO:root:17:17: STATE CHANGING TO saint FROM enquiry IN elaborateAnswer
+INFO:root:playSound: 5-19d
+INFO:root:playSound: noSaint
+INFO:root:playSound: sorry

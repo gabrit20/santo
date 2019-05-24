@@ -1,0 +1,36 @@
+INFO:root:playSound: tellMeLong2
+INFO:root:keyword> i
+INFO:root:17:42: STATE CHANGING TO wakaranai FROM enquiry IN elaborateAnswer
+INFO:root:playSound: wakaranai1
+INFO:root:17:43: STATE CHANGING TO enquiry FROM wakaranai IN logic
+INFO:root:playSound: tellMe3
+INFO:root:keyword> i was saying something
+INFO:root:17:43: STATE CHANGING TO wakaranai FROM enquiry IN elaborateAnswer
+INFO:root:playSound: wakaranai3
+INFO:root:17:43: STATE CHANGING TO enquiry FROM wakaranai IN logic
+INFO:root:playSound: tellMe4
+INFO:root:keyword> hey right
+INFO:root:17:43: STATE CHANGING TO wakaranai FROM enquiry IN elaborateAnswer
+INFO:root:playSound: wakaranai1
+INFO:root:17:43: STATE CHANGING TO enquiry FROM wakaranai IN logic
+INFO:root:playSound: tellMeElse1
+INFO:root:keyword> well actually
+INFO:root:17:43: STATE CHANGING TO wakaranai FROM enquiry IN elaborateAnswer
+INFO:root:playSound: wakaranai1
+INFO:root:hand reciboR
+INFO:root:17:43: STATE CHANGING TO enquiry FROM wakaranai IN logic
+INFO:root:playSound: tellMe3
+INFO:root:keyword> actually there is
+INFO:root:17:43: STATE CHANGING TO wakaranai FROM enquiry IN elaborateAnswer
+INFO:root:playSound: wakaranai3
+INFO:root:17:44: STATE CHANGING TO enquiry FROM wakaranai IN logic
+INFO:root:playSound: tellMe3
+INFO:root:keyword> molokai night
+INFO:root:17:44: STATE CHANGING TO wakaranai FROM enquiry IN elaborateAnswer
+INFO:root:playSound: wakaranai2
+INFO:root:hand reciboR
+INFO:root:hand reciboR
+INFO:root:hand reciboR
+INFO:root:hand reciboR
+INFO:root:hand reciboR
+INFO:root:hand reciboL

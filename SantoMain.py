@@ -517,9 +517,12 @@ def logic():
 
                 elif (state == "saint"):
                         global saints
+                        global dates
                         dayInfoFound = 0
                                                         
                         print("playing the saint of the day")
+                        smonth = str(random.randint(1,12))
+                        sday = str(random.randint(1,31))
 
                         dayFilename = smonth + '-' + sday + 'd'
                         nameFilename = smonth + '-' + sday + 'n'
@@ -527,8 +530,9 @@ def logic():
 
 
 
-                        if (saints[smonth][sday]['d'][language_out] != ""):
-                                playSound(dayFilename, saints[smonth][sday]['d'])
+                        if (dates[smonth][sday][language_out] != ""):
+                                #playSound("today")
+                                playSound(dayFilename, dates[smonth][sday])
                                 if (saints[smonth][sday]['n'][language_out] != ""):
                                         playSound("dayMemory")
                                         playSound(nameFilename, saints[smonth][sday]['n'])

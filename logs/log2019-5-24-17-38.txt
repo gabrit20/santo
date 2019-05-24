@@ -1,0 +1,27 @@
+INFO:root:playSound: tellMeLong2
+INFO:root:17:38: STATE CHANGING TO noreply FROM enquiry IN listen
+INFO:root:17:38: STATE CHANGING TO enquiry FROM noreply IN logic
+INFO:root:keyword> what day is today
+INFO:root:17:38: STATE CHANGING TO saint FROM enquiry IN elaborateAnswer
+INFO:root:playSound: 9-13d
+INFO:root:playSound: noSaint
+INFO:root:playSound: sorry
+INFO:root:17:38: STATE CHANGING TO enquiry FROM saint IN logic
+INFO:root:playSound: tellMe2
+INFO:root:keyword> what day is today
+INFO:root:17:38: STATE CHANGING TO saint FROM enquiry IN elaborateAnswer
+INFO:root:playSound: 4-25d
+INFO:root:playSound: noSaint
+INFO:root:playSound: sorry
+INFO:root:17:39: STATE CHANGING TO enquiry FROM saint IN logic
+INFO:root:playSound: tellMe2
+INFO:root:keyword> what day is today
+INFO:root:17:39: STATE CHANGING TO saint FROM enquiry IN elaborateAnswer
+INFO:root:playSound: 10-21d
+INFO:root:playSound: noSaint
+INFO:root:playSound: sorry
+INFO:root:17:39: STATE CHANGING TO enquiry FROM saint IN logic
+INFO:root:playSound: tellMeElse1
+INFO:root:keyword> the day of today
+INFO:root:17:39: STATE CHANGING TO wakaranai FROM enquiry IN elaborateAnswer
+INFO:root:playSound: wakaranai2

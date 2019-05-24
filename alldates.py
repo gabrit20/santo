@@ -3,14 +3,14 @@ import codecs
 from settings import *
 
 
-#saints = {}
+dates = {}
 dateformat = {'IT':"DDMM", 'ES':"DDMM", 'EN':"DDMM", 'DE':"DDMM"}
 days = []
 months = []
 words = []
 
 def alldatesInit():
-    global saints
+    global dates
 
     
     
@@ -37,9 +37,9 @@ def alldatesInit():
             days.append({'IT':text_IT, 'ES':text_ES, 'EN':text_EN, 'DE':text_DE})
 
     file.close()
-    print(words)
-    print(months)
-    print(days)
+    #print(words)
+    #print(months)
+    #print(days)
 
     
     for m in range(len(months)):
@@ -79,18 +79,14 @@ def alldatesInit():
                 sentences[lan] = sentence.encode('utf-8')
             
 
-            if month not in saints:
-                saints[month] = {}
-            if day not in saints[month]:
-                saints[month][day] = {}
-            #saints[month][day][info] = [text_IT, text_ES, text_EN, text_DE]
-            saints[month][day]['d'] = sentences
+            if month not in dates:
+                dates[month] = {}
+            if day not in dates[month]:
+                dates[month][day] = {}
+            dates[month][day] = sentences
             #print(month, day, sentences)
 
 
-
-        #print(month, day, info, saints[month][day][info])
-        #print()
 
 
 
