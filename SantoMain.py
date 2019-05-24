@@ -15,6 +15,7 @@ from settings import *
 from alltext import *
 from allbible import *
 from allsaints import *
+from alldates import *
 from allprayers import *
 from allpope import *
 
@@ -799,6 +800,7 @@ alltextInit()
 allvocabularies.allvocabulariesInit()
 allbibleInit()
 allsaintsInit()
+alldatesInit()
 allprayersInit()
 allpopeInit()
 

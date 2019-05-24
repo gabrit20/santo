@@ -21,7 +21,7 @@ def allsaintsInit():
         items = line.strip().split(';')
         month = str(items[0])
         day = str(items[1])
-        info = str(items[2])
+        info = str(items[2])  #d/n/s
         text_IT = items[3].encode('utf-8')
         text_ES = items[4].encode('utf-8')
         text_EN = items[5].encode('utf-8')
@@ -39,7 +39,7 @@ def allsaintsInit():
 
         #print(month, day, info, saints[month][day][info])
         #print()
-
+    file.close()
 
 
 ##allsaintsInit()

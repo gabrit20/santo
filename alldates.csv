@@ -1,0 +1,48 @@
+datatype;number;IT;ES;EN;DE
+words;0;Oggi,;Hoy,;Today,;Heute,
+words;1;Ë;es;it's the;ist 
+words;2;;de;of;
+words;3;.;.;.;.
+month;1;gennaio;;January;
+month;2;febbraio;;February;
+month;3;marzo;marzo;March;
+month;4;aprile;abril;April;
+month;5;maggio;;May;
+month;6;giugno;;June;
+month;7;luglio;;July;
+month;8;agosto;;August;
+month;9;settembre;;September;
+month;10;ottobre;;October;
+month;11;novembre;;November;
+month;12;dicembre;;December;
+day;1;l'uno;primero;first ;
+day;2;il due;segundo;second ;
+day;3;il tre;tercero;third ;
+day;4;il quattro;cuatro;fourth ;
+day;5;il cinque;cinco;fifth ;
+day;6;;seis;sixth ;
+day;7;;siete;seventh ;
+day;8;l'otto;ocho;eighth ;
+day;9;il nove;;ninth ;
+day;10;;;tenth ;
+day;11;;once;eleventh ;
+day;12;;doce;twelfth ;
+day;13;;;thirteenth ;
+day;14;;;fourteenth ;
+day;15;;;fifteenth ;
+day;16;;;sixteenth ;
+day;17;;;seventeenth ;
+day;18;;;eighteenth ;
+day;19;;;nineteenth ;
+day;20;;;twentieth ;
+day;21;;;twenty-first ;
+day;22;;;twenty-second ;
+day;23;;;twenty-third ;
+day;24;;;twenty-fourth ;
+day;25;;;twenty-fifth ;
+day;26;;;twenty-sixth ;
+day;27;;;twenty-seventh ;
+day;28;;;twenty-eighth ;der achtundzwanzigste 
+day;29;;;twenty-ninth ;der neunundzwanzigste
+day;30;;treinta;thirtieth ;der dreiﬂigste
+day;31;;treinta y uno;thirty-first ;
