@@ -332,7 +332,7 @@ def elaborateAnswer(keyword):  #enters here only if it recognises some word
 
                 for iKey in allvocabularies.vocSources:
                         #print("iKey",iKey)
-                        for iWord in allvocabularies.vocGeneric[iKey][language_in]: #compare the strings, one inside another
+                        for iWord in allvocabularies.vocSources[iKey][language_in]: #compare the strings, one inside another
                                 #print("iWord", iWord)
                                 #print("iWord in keyword", iWord in keyword)
                                 #print("keyword in iWord", keyword in iWord)
@@ -346,9 +346,9 @@ def elaborateAnswer(keyword):  #enters here only if it recognises some word
                                         break
                                         break
 
-                 for iKey in allvocabularies.vocTopics:
+                for iKey in allvocabularies.vocTopics:
                         #print("iKey",iKey)
-                        for iWord in allvocabularies.vocGeneric[iKey][language_in]: #compare the strings, one inside another
+                        for iWord in allvocabularies.vocTopics[iKey][language_in]: #compare the strings, one inside another
                                 #print("iWord", iWord)
                                 #print("iWord in keyword", iWord in keyword)
                                 #print("keyword in iWord", keyword in iWord)
@@ -357,15 +357,14 @@ def elaborateAnswer(keyword):  #enters here only if it recognises some word
                                         is_matched = True
                                         print("setting is_matched = True in elaborateAnswer query")
                                         queryID = iKey
-                                        query[2] = iKey
+                                        query[1] = iKey
                                         print("queryID", queryID)
                                         break
                                         break
 
-
-                 for iKey in allvocabularies.vocPeople:
+                for iKey in allvocabularies.vocPeople:
                         #print("iKey",iKey)
-                        for iWord in allvocabularies.vocGeneric[iKey][language_in]: #compare the strings, one inside another
+                        for iWord in allvocabularies.vocPeople[iKey][language_in]: #compare the strings, one inside another
                                 #print("iWord", iWord)
                                 #print("iWord in keyword", iWord in keyword)
                                 #print("keyword in iWord", keyword in iWord)
@@ -374,7 +373,7 @@ def elaborateAnswer(keyword):  #enters here only if it recognises some word
                                         is_matched = True
                                         print("setting is_matched = True in elaborateAnswer query")
                                         queryID = iKey
-                                        query[3] = iKey
+                                        query[1] = iKey
                                         print("queryID", queryID)
                                         break
                                         break
