@@ -52,6 +52,8 @@ def playDict(language, textID, archive):
         elif (language == 'EN'):
             #Simon duration longer
             saveAudio(2, 1, 5, 'D', 2, audio_text=text, audio_filename=filename)
+            #Hugh duration longer
+            #saveAudio(3, 1, 5, 'D', 2, audio_text=text, audio_filename=filename)
         elif (language == 'DE'):
             #Tim duration longer
             saveAudio(2, 3, 2, 'D', 2, audio_text=text, audio_filename=filename)

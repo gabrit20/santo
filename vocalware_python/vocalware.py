@@ -31,7 +31,8 @@ def generateURLNaive(engine_id, language_id, voice_id, effect_type, effect_level
 
 def generateChecksum(data):
 	m = hashlib.md5()
-	m.update(''.join([str(d.value) for d in data]))
+	line = ''.join([str(d.value) for d in data])
+	m.update(line.encode('utf-8'))
 	return m.hexdigest()
 
 
@@ -67,9 +68,28 @@ def generateURL(engine_id, language_id, voice_id, effect_type, effect_level, aud
 def saveAudio(engine_id, language_id, voice_id, effect_type, effect_level, 
 				audio_text='Hello, this is a new audio', audio_filename='audio'):
 	
+	print("TEXT", audio_text)
 	audio_url = generateURL(engine_id, language_id, voice_id, effect_type, effect_level, audio_text)
+	print(audio_url)
 	
-	audio_file = requests.get(audio_url)
+	try:
+		print("TRY1")
+		audio_file = requests.get(audio_url)
+	except:
+		try:
+			print("EXCEPT TRY1")
+			headers = { 'User-Agent': 'Mozilla/5.0 (Windows NT 6.0; WOW64; rv:24.0) Gecko/20100101 Firefox/49.0' }
+			audio_file = requests.get(audio_url, headers=headers)
+		except:
+			print("EXCEPT2")
+			headers = {'User-Agent': 'Mozilla/5.0 (Windows NT 6.1; WOW64; rv:49.0) Gecko/20100101 Firefox/49.0',
+						'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
+						'Accept-Language': 'en-US,en;q=0.5',
+						'Accept-Encoding': 'gzip, deflate',
+						'DNT': '1',
+						'Connection': 'keep-alive',
+						'Upgrade-Insecure-Requests': '1'}
+			audio_file = requests.get(audio_url, headers=headers)
 
 	with open(audio_filename + '.mp3', 'wb') as f:
 		f.write(audio_file.content)
@@ -79,12 +99,6 @@ def saveAudio(engine_id, language_id, voice_id, effect_type, effect_level,
 
 #def main():        
 if __name__ == '__main__':
-#	saveAudio(engine_id=3, language_id=2, voice_id=3, effect_type='P', effect_level=1,
-#				audio_text='Hola señora', audio_filename='new_audio')
-	saveAudio(engine_id=2, language_id=7, voice_id=8, effect_type='P', effect_level=2,
-				audio_text='Vieni bello', audio_filename='new_audio')
-
-
-
-
+	#saveAudio(2, 1, 5, 'D', 2, "I'm sorry, I could not hear you", audio_filename='vocalware_new_audio')
+        saveAudio(2, 1, 5, 'D', 2, "Today, it's the sixteenth of May", audio_filename='vocalware_new_audio')
 

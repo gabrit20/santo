@@ -1,0 +1,14 @@
+INFO:root:playSound: tellMeLong2
+INFO:root:keyword> lalalalala
+INFO:root:15:54: STATE CHANGING TO wakaranai FROM enquiry IN elaborateAnswer
+INFO:root:playSound: wakaranai1
+INFO:root:TTS exception!I'm sorry, I could not hear you
+INFO:root:15:55: STATE CHANGING TO enquiry FROM wakaranai IN logic
+INFO:root:playSound: tellMe2
+INFO:root:TTS exception!I'm sorry, I could not hear you
+INFO:root:15:55: STATE CHANGING TO noreply FROM enquiry IN listen
+INFO:root:15:55: STATE CHANGING TO enquiry FROM noreply IN logic
+INFO:root:keyword> thank you very much
+INFO:root:playSound: yourewelcome1
+INFO:root:TTS exception!I'm sorry, I could not hear you
+INFO:root:playSound: goInPeace
