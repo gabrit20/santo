@@ -282,6 +282,14 @@ def touch():
 
 
 
+
+
+
+        
+def verifyTopic(keyword): 
+        pass
+
+
         
 def elaborateAnswer(keyword):  #enters here only if it recognises some word
         global v
@@ -298,7 +306,7 @@ def elaborateAnswer(keyword):  #enters here only if it recognises some word
         print("keyword>", keyword)
         logging.info("keyword> "+ keyword)
 
-
+        query = [-1, -1, -1, -1] #Generic, Sources, Topics, People
 
         if (state == "enquiry" and len(keyword)>=2):
                 #print("in elaborateAnswer enquiry")
@@ -306,9 +314,9 @@ def elaborateAnswer(keyword):  #enters here only if it recognises some word
                 queryID = -1
 
 
-                for iKey in allvocabularies.vocabulary:
+                for iKey in allvocabularies.vocGeneric:
                         #print("iKey",iKey)
-                        for iWord in allvocabularies.vocabulary[iKey][language_in]: #compare the strings, one inside another
+                        for iWord in allvocabularies.vocGeneric[iKey][language_in]: #compare the strings, one inside another
                                 #print("iWord", iWord)
                                 #print("iWord in keyword", iWord in keyword)
                                 #print("keyword in iWord", keyword in iWord)
@@ -317,10 +325,60 @@ def elaborateAnswer(keyword):  #enters here only if it recognises some word
                                         is_matched = True
                                         print("setting is_matched = True in elaborateAnswer query")
                                         queryID = iKey
+                                        query[0] = iKey
                                         print("queryID", queryID)
                                         break
                                         break
 
+                for iKey in allvocabularies.vocSources:
+                        #print("iKey",iKey)
+                        for iWord in allvocabularies.vocGeneric[iKey][language_in]: #compare the strings, one inside another
+                                #print("iWord", iWord)
+                                #print("iWord in keyword", iWord in keyword)
+                                #print("keyword in iWord", keyword in iWord)
+                                if iWord in keyword or keyword in iWord:
+                                        print("match", keyword, iWord)
+                                        is_matched = True
+                                        print("setting is_matched = True in elaborateAnswer query")
+                                        queryID = iKey
+                                        query[1] = iKey
+                                        print("queryID", queryID)
+                                        break
+                                        break
+
+                 for iKey in allvocabularies.vocTopics:
+                        #print("iKey",iKey)
+                        for iWord in allvocabularies.vocGeneric[iKey][language_in]: #compare the strings, one inside another
+                                #print("iWord", iWord)
+                                #print("iWord in keyword", iWord in keyword)
+                                #print("keyword in iWord", keyword in iWord)
+                                if iWord in keyword or keyword in iWord:
+                                        print("match", keyword, iWord)
+                                        is_matched = True
+                                        print("setting is_matched = True in elaborateAnswer query")
+                                        queryID = iKey
+                                        query[2] = iKey
+                                        print("queryID", queryID)
+                                        break
+                                        break
+
+
+                 for iKey in allvocabularies.vocPeople:
+                        #print("iKey",iKey)
+                        for iWord in allvocabularies.vocGeneric[iKey][language_in]: #compare the strings, one inside another
+                                #print("iWord", iWord)
+                                #print("iWord in keyword", iWord in keyword)
+                                #print("keyword in iWord", keyword in iWord)
+                                if iWord in keyword or keyword in iWord:
+                                        print("match", keyword, iWord)
+                                        is_matched = True
+                                        print("setting is_matched = True in elaborateAnswer query")
+                                        queryID = iKey
+                                        query[3] = iKey
+                                        print("queryID", queryID)
+                                        break
+                                        break
+                                
                 if (is_matched == True):             
 
                         if queryID == "bye":
@@ -521,8 +579,8 @@ def logic():
                         dayInfoFound = 0
                                                         
                         print("playing the saint of the day")
-                        smonth = str(random.randint(1,12))
-                        sday = str(random.randint(1,31))
+                        #smonth = str(random.randint(1,12)) #test random month
+                        #sday = str(random.randint(1,31)) #test random day
 
                         dayFilename = smonth + '-' + sday + 'd'
                         nameFilename = smonth + '-' + sday + 'n'

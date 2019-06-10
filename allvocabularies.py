@@ -1,13 +1,19 @@
 import codecs
 
 def allvocabulariesInit():
-    global vocabulary
-    vocabulary = {}
+    global vocabularyGeneric
+    vocabularyGeneric = {}
+    global vocabularySources
+    vocabularySources = {}
+    global vocabularyTopics
+    vocabularyTopics = {}
+    global vocabularyPeople
+    vocabularyPeople = {}
     Nlanguages = 4
     entry = {}
     
-    #file = open("allvocabularies.csv")
-    file = codecs.open('allvocabularies.csv', encoding='utf-8') #it's not latin-1 for the speech recognition!
+    #print("Generic")
+    file = codecs.open('allvocabulariesGeneric.csv') 
     file.readline() #skips the first line
     for line in file:
         items = line.strip().split(';')
@@ -16,14 +22,76 @@ def allvocabulariesInit():
         textArray = []
         for iText in range(3, len(items)):
             if items[iText] != '':
-                #textArray.append(unicode(items[iText], 'utf8')) 
-                #textArray.append(str(items[iText]))
                 textArray.append(items[iText].lower()) 
         if str(items[1]) == '0': #first language: beginning of an entry
             entry = {}
         entry[languageID] = textArray
-
         if str(items[1]) == str(Nlanguages-1): #last language: end of an entry
-            vocabulary[keywordID] = entry
+            vocabularyGeneric[keywordID] = entry
             #print("ENTRY")
-            #print(keywordID, vocabulary[keywordID])
+            print(keywordID, vocGeneric[keywordID])
+    file.close()
+
+    #print("Sources")
+    file = codecs.open('allvocabulariesSources.csv') 
+    file.readline() #skips the first line
+    for line in file:
+        items = line.strip().split(';')
+        keywordID = str(items[0])
+        languageID = str(items[2])
+        textArray = []
+        for iText in range(3, len(items)):
+            if items[iText] != '':
+                textArray.append(items[iText].lower()) 
+        if str(items[1]) == '0': #first language: beginning of an entry
+            entry = {}
+        entry[languageID] = textArray
+        if str(items[1]) == str(Nlanguages-1): #last language: end of an entry
+            vocabularySources[keywordID] = entry
+            #print("ENTRY")
+            print(keywordID, vocSources[keywordID])
+    file.close()
+
+    #print("Topics")
+    file = codecs.open('allvocabulariesTopics.csv') 
+    file.readline() #skips the first line
+    for line in file:
+        items = line.strip().split(';')
+        keywordID = str(items[0])
+        languageID = str(items[2])
+        textArray = []
+        for iText in range(3, len(items)):
+            if items[iText] != '':
+                textArray.append(items[iText].lower())  
+        if str(items[1]) == '0': #first language: beginning of an entry
+            entry = {}
+        entry[languageID] = textArray
+        if str(items[1]) == str(Nlanguages-1): #last language: end of an entry
+            vocabularyTopics[keywordID] = entry
+            #print("ENTRY")
+            print(keywordID, vocTopics[keywordID])
+    file.close()
+
+    #print("People")
+    file = codecs.open('allvocabulariesPeople.csv') 
+    file.readline() #skips the first line
+    for line in file:
+        items = line.strip().split(';')
+        keywordID = str(items[0])
+        languageID = str(items[2])
+        textArray = []
+        for iText in range(3, len(items)):
+            if items[iText] != '':
+                textArray.append(items[iText].lower()) 
+        if str(items[1]) == '0': #first language: beginning of an entry
+            entry = {}
+        entry[languageID] = textArray
+        if str(items[1]) == str(Nlanguages-1): #last language: end of an entry
+            vocabularyPeople[keywordID] = entry
+            #print("ENTRY")
+            print(keywordID, vocPeople[keywordID])
+    file.close()
+
+
+#allvocabulariesInit()
+#print(vocabularyPeople)

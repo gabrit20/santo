@@ -20,6 +20,7 @@ replies = [   # ID, replies
     #["pope", "popeLima"],
     ["francis", "sanfrancesco"],
     ["yourname", "myName"],
+    ["hear", "hear"],
     ["how", "genki"],
     ["hi", "greeting1"],
     ["santo", "tellMe3"]
@@ -28,7 +29,7 @@ replies = [   # ID, replies
 
 variants = {"tellMe": ["tellMe1", "tellMe2", "tellMe3", "tellMe4", "tellMe5"],
             "tellMeElse": ["tellMeElse1", "tellMeElse2"],
-            "wakaranai": ["wakaranai1", "wakaranai2"]#, "wakaranai3"]
+            "wakaranai": ["wakaranai1", "wakaranai2", "wakaranai3"]
         }
 
 
