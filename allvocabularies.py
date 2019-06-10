@@ -1,14 +1,14 @@
 import codecs
 
 def allvocabulariesInit():
-    global vocabularyGeneric
-    vocabularyGeneric = {}
-    global vocabularySources
-    vocabularySources = {}
-    global vocabularyTopics
-    vocabularyTopics = {}
-    global vocabularyPeople
-    vocabularyPeople = {}
+    global vocGeneric
+    vocGeneric = {}
+    global vocSources
+    vocSources = {}
+    global vocTopics
+    vocTopics = {}
+    global vocPeople
+    vocPeople = {}
     Nlanguages = 4
     entry = {}
     
