@@ -27,7 +27,7 @@ def allvocabulariesInit():
             entry = {}
         entry[languageID] = textArray
         if str(items[1]) == str(Nlanguages-1): #last language: end of an entry
-            vocabularyGeneric[keywordID] = entry
+            vocGeneric[keywordID] = entry
             #print("ENTRY")
             print(keywordID, vocGeneric[keywordID])
     file.close()
@@ -47,7 +47,7 @@ def allvocabulariesInit():
             entry = {}
         entry[languageID] = textArray
         if str(items[1]) == str(Nlanguages-1): #last language: end of an entry
-            vocabularySources[keywordID] = entry
+            vocSources[keywordID] = entry
             #print("ENTRY")
             print(keywordID, vocSources[keywordID])
     file.close()
@@ -67,7 +67,7 @@ def allvocabulariesInit():
             entry = {}
         entry[languageID] = textArray
         if str(items[1]) == str(Nlanguages-1): #last language: end of an entry
-            vocabularyTopics[keywordID] = entry
+            vocTopics[keywordID] = entry
             #print("ENTRY")
             print(keywordID, vocTopics[keywordID])
     file.close()
@@ -87,7 +87,7 @@ def allvocabulariesInit():
             entry = {}
         entry[languageID] = textArray
         if str(items[1]) == str(Nlanguages-1): #last language: end of an entry
-            vocabularyPeople[keywordID] = entry
+            vocPeople[keywordID] = entry
             #print("ENTRY")
             print(keywordID, vocPeople[keywordID])
     file.close()
