@@ -1,0 +1,8 @@
+INFO:root:playSound: tellMeLong2
+INFO:root:keyword> háblame de la biblia
+INFO:root:11:1: STATE CHANGING TO bible FROM enquiry IN elaborateAnswer
+INFO:root:playSound: verse
+INFO:root:playSound: touchHand
+INFO:root:playSound: Hab
+INFO:root:playSound: 1
+INFO:root:playSound: Hab-1-1

@@ -1,0 +1,9 @@
+INFO:root:playSound: tellMeLong2
+INFO:root:keyword> háblame de la biblia
+INFO:root:11:9: STATE CHANGING TO bible FROM enquiry IN elaborateAnswer
+INFO:root:playSound: verse
+INFO:root:playSound: touchHand
+INFO:root:playSound: Galatians
+INFO:root:playSound: 2
+INFO:root:playSound: Galatians-2-1
+INFO:root:playSound: Galatians-2-2

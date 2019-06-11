@@ -13,7 +13,7 @@ def allvocabulariesInit():
     entry = {}
     
     #print("Generic")
-    file = codecs.open('allvocabulariesGeneric.csv') 
+    file = codecs.open('allvocabulariesGeneric.csv', encoding='latin-1') #used to be utf-8
     file.readline() #skips the first line
     for line in file:
         items = line.strip().split(';')
@@ -29,11 +29,11 @@ def allvocabulariesInit():
         if str(items[1]) == str(Nlanguages-1): #last language: end of an entry
             vocGeneric[keywordID] = entry
             #print("ENTRY")
-            print(keywordID, vocGeneric[keywordID])
+            #print(keywordID, vocGeneric[keywordID])
     file.close()
 
     #print("Sources")
-    file = codecs.open('allvocabulariesSources.csv') 
+    file = codecs.open('allvocabulariesSources.csv', encoding='latin-1')
     file.readline() #skips the first line
     for line in file:
         items = line.strip().split(';')
@@ -49,11 +49,11 @@ def allvocabulariesInit():
         if str(items[1]) == str(Nlanguages-1): #last language: end of an entry
             vocSources[keywordID] = entry
             #print("ENTRY")
-            print(keywordID, vocSources[keywordID])
+            #print(keywordID, vocSources[keywordID])
     file.close()
 
     #print("Topics")
-    file = codecs.open('allvocabulariesTopics.csv') 
+    file = codecs.open('allvocabulariesTopics.csv', encoding='latin-1')
     file.readline() #skips the first line
     for line in file:
         items = line.strip().split(';')
@@ -69,11 +69,11 @@ def allvocabulariesInit():
         if str(items[1]) == str(Nlanguages-1): #last language: end of an entry
             vocTopics[keywordID] = entry
             #print("ENTRY")
-            print(keywordID, vocTopics[keywordID])
+            #print(keywordID, vocTopics[keywordID])
     file.close()
 
     #print("People")
-    file = codecs.open('allvocabulariesPeople.csv') 
+    file = codecs.open('allvocabulariesPeople.csv', encoding='latin-1')
     file.readline() #skips the first line
     for line in file:
         items = line.strip().split(';')
@@ -89,7 +89,7 @@ def allvocabulariesInit():
         if str(items[1]) == str(Nlanguages-1): #last language: end of an entry
             vocPeople[keywordID] = entry
             #print("ENTRY")
-            print(keywordID, vocPeople[keywordID])
+            #print(keywordID, vocPeople[keywordID])
     file.close()
 
 

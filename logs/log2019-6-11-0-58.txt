@@ -1,0 +1,8 @@
+INFO:root:playSound: tellMeLong2
+INFO:root:keyword> tutta mia la città
+INFO:root:0:58: STATE CHANGING TO noreply FROM enquiry IN listen
+INFO:root:0:58: STATE CHANGING TO enquiry FROM noreply IN logic
+INFO:root:playSound: tellMeLong2
+INFO:root:keyword> hola qué tal
+INFO:root:0:59: STATE CHANGING TO noreply FROM enquiry IN listen
+INFO:root:0:59: STATE CHANGING TO enquiry FROM noreply IN logic

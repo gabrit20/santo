@@ -1,0 +1,34 @@
+INFO:root:playSound: tellMeLong2
+INFO:root:keyword> hola cómo estás
+INFO:root:10:43: STATE CHANGING TO reply FROM enquiry IN elaborateAnswer
+INFO:root:playSound: greeting1
+INFO:root:10:43: STATE CHANGING TO enquiry FROM reply IN logic
+INFO:root:playSound: tellMe1
+INFO:root:keyword> háblame de
+INFO:root:10:43: STATE CHANGING TO wakaranai FROM enquiry IN elaborateAnswer
+INFO:root:playSound: wakaranai2
+INFO:root:10:43: STATE CHANGING TO enquiry FROM wakaranai IN logic
+INFO:root:playSound: tellMe5
+INFO:root:keyword> háblame de francisco
+INFO:root:10:43: STATE CHANGING TO wakaranai FROM enquiry IN elaborateAnswer
+INFO:root:playSound: wakaranai2
+INFO:root:10:43: STATE CHANGING TO enquiry FROM wakaranai IN logic
+INFO:root:playSound: tellMeElse1
+INFO:root:keyword> puedes oírme
+INFO:root:10:43: STATE CHANGING TO noreply FROM enquiry IN listen
+INFO:root:10:43: STATE CHANGING TO enquiry FROM noreply IN logic
+INFO:root:10:44: STATE CHANGING TO noreply FROM enquiry IN listen
+INFO:root:10:44: STATE CHANGING TO enquiry FROM noreply IN logic
+INFO:root:10:44: STATE CHANGING TO noreply FROM enquiry IN listen
+INFO:root:10:44: STATE CHANGING TO enquiry FROM noreply IN logic
+INFO:root:keyword> háblame de la misericordia
+INFO:root:10:44: STATE CHANGING TO reply FROM enquiry IN elaborateAnswer
+INFO:root:playSound: mercy
+INFO:root:10:44: STATE CHANGING TO enquiry FROM reply IN logic
+INFO:root:playSound: tellMe3
+INFO:root:10:45: STATE CHANGING TO noreply FROM enquiry IN listen
+INFO:root:10:45: STATE CHANGING TO enquiry FROM noreply IN logic
+INFO:root:10:45: STATE CHANGING TO noreply FROM enquiry IN listen
+INFO:root:10:45: STATE CHANGING TO farewell FROM noreply IN logic
+INFO:root:playSound: retire
+INFO:root:10:45: STATE CHANGING TO standby FROM farewell IN logic

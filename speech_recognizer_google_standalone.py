@@ -381,7 +381,7 @@ class GSpeech(object):
                     print("Speech not recognised")
                     sys.stdout.flush()
                   except:
-                    print("Could not request results from Google Speech Recognition service")
+                    print("Could not request results from Google Speech Recognition service (1)")
                     sys.stdout.flush()
                     
                     try:
@@ -394,7 +394,7 @@ class GSpeech(object):
                       print("Speech not recognised")
                       sys.stdout.flush()
                     except:
-                      print("Could not request results from Google Speech Recognition service")
+                      print("Could not request results from Google Speech Recognition service (2)")
                       sys.stdout.flush()
                       
                       try:

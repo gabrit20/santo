@@ -1,0 +1,16 @@
+INFO:root:playSound: tellMeLong2
+INFO:root:keyword> i'm worried about tomorrow
+INFO:root:0:55: STATE CHANGING TO reply FROM enquiry IN elaborateAnswer
+INFO:root:playSound: future
+INFO:root:0:55: STATE CHANGING TO enquiry FROM reply IN logic
+INFO:root:playSound: tellMe5
+INFO:root:keyword> i've got to go
+INFO:root:0:55: STATE CHANGING TO wakaranai FROM enquiry IN elaborateAnswer
+INFO:root:playSound: wakaranai1
+INFO:root:0:55: STATE CHANGING TO enquiry FROM wakaranai IN logic
+INFO:root:playSound: tellMe4
+INFO:root:keyword> goodbye i said goodbye
+INFO:root:playSound: goInPeace
+INFO:root:playSound: retireShort
+INFO:root:0:56: STATE CHANGING TO farewell FROM enquiry IN elaborateAnswer
+INFO:root:0:56: STATE CHANGING TO standby FROM farewell IN logic

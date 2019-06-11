@@ -377,6 +377,8 @@ def elaborateAnswer(keyword):  #enters here only if it recognises some word
                                         print("queryID", queryID)
                                         break
                                         break
+
+                print("QUERY", query)
                                 
                 if (is_matched == True):             
 

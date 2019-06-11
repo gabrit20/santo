@@ -1,0 +1,4 @@
+INFO:root:playSound: tellMeLong2
+INFO:root:keyword> háblame de la misericordia
+INFO:root:10:55: STATE CHANGING TO reply FROM enquiry IN elaborateAnswer
+INFO:root:playSound: mercy
