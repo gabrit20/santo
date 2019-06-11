@@ -1,4 +1,0 @@
-INFO:root:playSound: tellMeLong2
-INFO:root:hand reciboR
-INFO:root:16:38: STATE CHANGING TO farewell FROM enquiry IN touch
-INFO:root:16:38: STATE CHANGING TO standby FROM farewell IN logic

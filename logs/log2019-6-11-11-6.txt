@@ -1,8 +1,0 @@
-INFO:root:playSound: tellMeLong2
-INFO:root:keyword> háblame en la biblia
-INFO:root:11:6: STATE CHANGING TO bible FROM enquiry IN elaborateAnswer
-INFO:root:playSound: verse
-INFO:root:playSound: touchHand
-INFO:root:playSound: 1 Maccabees
-INFO:root:playSound: 15
-INFO:root:playSound: 1 Maccabees-15-1

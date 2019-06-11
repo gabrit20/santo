@@ -1,4 +1,0 @@
-INFO:root:playSound: tellMeLong2
-INFO:root:keyword> what day is today
-INFO:root:17:29: STATE CHANGING TO saint FROM enquiry IN elaborateAnswer
-INFO:root:playSound: today

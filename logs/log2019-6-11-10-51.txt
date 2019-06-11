@@ -1,4 +1,0 @@
-INFO:root:playSound: tellMeLong2
-INFO:root:keyword> puedes oírme
-INFO:root:10:51: STATE CHANGING TO reply FROM enquiry IN elaborateAnswer
-INFO:root:playSound: hearYou

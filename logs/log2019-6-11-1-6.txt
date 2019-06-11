@@ -1,6 +1,0 @@
-INFO:root:playSound: tellMeLong2
-INFO:root:keyword> hola qué tal
-INFO:root:1:7: STATE CHANGING TO reply FROM enquiry IN elaborateAnswer
-INFO:root:playSound: greeting1
-INFO:root:1:7: STATE CHANGING TO enquiry FROM reply IN logic
-INFO:root:playSound: tellMe5

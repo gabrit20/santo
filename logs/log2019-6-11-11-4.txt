@@ -1,8 +1,0 @@
-INFO:root:playSound: tellMeLong2
-INFO:root:keyword> háblame de la biblia
-INFO:root:11:5: STATE CHANGING TO bible FROM enquiry IN elaborateAnswer
-INFO:root:playSound: verse
-INFO:root:playSound: touchHand
-INFO:root:playSound: Job
-INFO:root:playSound: 20
-INFO:root:playSound: Job-20-1

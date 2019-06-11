@@ -1,8 +1,0 @@
-ps aux
-sudo kill -9 5678
-
-
-pkill -f UltimaVersion.py
-
-
-python SantoMain.py

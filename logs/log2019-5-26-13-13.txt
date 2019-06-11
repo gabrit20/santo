@@ -1,4 +1,0 @@
-INFO:root:playSound: tellMeLong2
-INFO:root:keyword> lalalalala papa papa
-INFO:root:13:14: STATE CHANGING TO wakaranai FROM enquiry IN elaborateAnswer
-INFO:root:playSound: wakaranai2

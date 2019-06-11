@@ -1,2 +1,0 @@
-INFO:root:playSound: tellMeLong2
-INFO:root:TTS exception!Today, it's the sixtheenth of May

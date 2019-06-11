@@ -1,4 +1,0 @@
-INFO:root:playSound: tellMeLong2
-INFO:root:keyword> what's your name
-INFO:root:16:14: STATE CHANGING TO reply FROM enquiry IN elaborateAnswer
-INFO:root:playSound: myName

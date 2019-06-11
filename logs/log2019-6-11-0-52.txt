@@ -1,4 +1,0 @@
-INFO:root:playSound: tellMeLong2
-INFO:root:keyword> adiós
-INFO:root:0:53: STATE CHANGING TO noreply FROM enquiry IN listen
-INFO:root:0:53: STATE CHANGING TO enquiry FROM noreply IN logic

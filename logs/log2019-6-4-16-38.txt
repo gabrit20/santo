@@ -1,2 +1,0 @@
-INFO:root:playSound: tellMeLong2
-INFO:root:TTS exception!I'm sorry, I could not hear you

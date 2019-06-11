@@ -31,8 +31,9 @@ def generateURLNaive(engine_id, language_id, voice_id, effect_type, effect_level
 
 def generateChecksum(data):
 	m = hashlib.md5()
-	line = ''.join([str(d.value) for d in data])
-	m.update(line.encode('utf-8'))
+	#line = ''.join([str(d.value) for d in data])
+	#m.update(line.encode('utf-8'))
+	m.update(''.join([str(d.value) for d in data]))
 	return m.hexdigest()
 
 
