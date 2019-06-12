@@ -18,6 +18,7 @@ from allsaints import *
 from alldates import *
 from allprayers import *
 from allpope import *
+from allvocabularies import *
 
 from playVoice import *
 from camera import cameraInit
@@ -26,7 +27,7 @@ from speech_recognizer_google_standalone import GSpeech
 speech_rec = GSpeech("")
 
 import soundfiles
-import allvocabularies
+#import allvocabularies
 
 
 global chosenReply
@@ -302,6 +303,7 @@ def elaborateAnswer(keyword):  #enters here only if it recognises some word
         
 
         is_matched = False
+        answer_found = False
         keyword = keyword.lower()
         print("keyword>", keyword)
         logging.info("keyword> "+ keyword)
@@ -313,123 +315,99 @@ def elaborateAnswer(keyword):  #enters here only if it recognises some word
                 chosenReply = -1
                 queryID = -1
 
+                loopQueryIndex = [0, 1, 2, 3]
+                loopVoc = [vocGeneric, vocSources, vocTopics, vocPeople]
 
-                for iKey in allvocabularies.vocGeneric:
-                        #print("iKey",iKey)
-                        for iWord in allvocabularies.vocGeneric[iKey][language_in]: #compare the strings, one inside another
-                                #print("iWord", iWord)
-                                #print("iWord in keyword", iWord in keyword)
-                                #print("keyword in iWord", keyword in iWord)
-                                if iWord in keyword or keyword in iWord:
-                                        print("match", keyword, iWord)
-                                        is_matched = True
-                                        print("setting is_matched = True in elaborateAnswer query")
-                                        queryID = iKey
-                                        query[0] = iKey
-                                        print("queryID", queryID)
-                                        break
-                                        break
+                for iQueryIndex, voc in zip(loopQueryIndex, loopVoc):
+                        for iKey in voc:
+                                #print("iKey",iKey)
+                                for iWord in voc[iKey][language_in]: #compare the strings, one inside another
+                                        #print("iWord", iWord)
+                                        #print("iWord in keyword", iWord in keyword)
+                                        #print("keyword in iWord", keyword in iWord)
+                                        if iWord in keyword or keyword in iWord:
+                                                print("match", keyword, iWord)
+                                                is_matched = True
+                                                query[iQueryIndex] = iKey
+                                                break
+                                                break
 
-                for iKey in allvocabularies.vocSources:
-                        #print("iKey",iKey)
-                        for iWord in allvocabularies.vocSources[iKey][language_in]: #compare the strings, one inside another
-                                #print("iWord", iWord)
-                                #print("iWord in keyword", iWord in keyword)
-                                #print("keyword in iWord", keyword in iWord)
-                                if iWord in keyword or keyword in iWord:
-                                        print("match", keyword, iWord)
-                                        is_matched = True
-                                        print("setting is_matched = True in elaborateAnswer query")
-                                        queryID = iKey
-                                        query[1] = iKey
-                                        print("queryID", queryID)
-                                        break
-                                        break
-
-                for iKey in allvocabularies.vocTopics:
-                        #print("iKey",iKey)
-                        for iWord in allvocabularies.vocTopics[iKey][language_in]: #compare the strings, one inside another
-                                #print("iWord", iWord)
-                                #print("iWord in keyword", iWord in keyword)
-                                #print("keyword in iWord", keyword in iWord)
-                                if iWord in keyword or keyword in iWord:
-                                        print("match", keyword, iWord)
-                                        is_matched = True
-                                        print("setting is_matched = True in elaborateAnswer query")
-                                        queryID = iKey
-                                        query[1] = iKey
-                                        print("queryID", queryID)
-                                        break
-                                        break
-
-                for iKey in allvocabularies.vocPeople:
-                        #print("iKey",iKey)
-                        for iWord in allvocabularies.vocPeople[iKey][language_in]: #compare the strings, one inside another
-                                #print("iWord", iWord)
-                                #print("iWord in keyword", iWord in keyword)
-                                #print("keyword in iWord", keyword in iWord)
-                                if iWord in keyword or keyword in iWord:
-                                        print("match", keyword, iWord)
-                                        is_matched = True
-                                        print("setting is_matched = True in elaborateAnswer query")
-                                        queryID = iKey
-                                        query[1] = iKey
-                                        print("queryID", queryID)
-                                        break
-                                        break
 
                 print("QUERY", query)
                                 
-                if (is_matched == True):             
+                if (is_matched == True):
 
-                        if queryID == "bye":
+
+                        #CASE 1: direct command
+                        
+                        if query == ["bye", -1, -1, -1]:
+                        #if queryID == "bye":
                                 playSound("goInPeace")
                                 time.sleep(0.4)
                                 countInteractions == 0
                                 playSound("retireShort")
+                                answer_found = True
                                 changeState("farewell", state, func_name(), True)
-                                
-                        elif queryID == "thanks":
+
+                        elif query == ["thanks", -1, -1, -1]:        
+                        #elif queryID == "thanks":
                                 playSound("yourewelcome1")
                                 time.sleep(0.4)
                                 countInteractions == 0
                                 playSound("goInPeace")
+                                answer_found = True
                                 changeState("farewell", state, func_name(), True)
                                 
-                        elif queryID == "day":
+                        elif query == ["day", -1, -1, -1]:
+                        #elif queryID == "day":
+                                answer_found = True
                                 changeState("saint", state, func_name(), False)
 
-                        elif queryID == "bible":
+                        #CASE 2: direct command to random mode
+                                
+                        elif query == [-1, "bible", -1, -1]:
+                        #elif queryID == "bible":
+                                answer_found = True
                                 changeState("bible", state, func_name(), False)
 
-                        elif queryID == "pray":
+                        elif query == [-1, "pray", -1, -1]:
+                        #elif queryID == "pray":
+                                answer_found = True
                                 changeState("pray", state, func_name(), False)
 
-                        elif queryID == "pope":
+                        elif query == [-1, "pope", -1, -1]:
+                        #elif queryID == "pope":
+                                answer_found = True
                                 changeState("pope", state, func_name(), False)
 
-                        elif queryID == "problem":
-                                playSound("problem")
-                                time.sleep(1.5)
-                                changeState("pray", state, func_name(), True)
+##                        elif queryID == "problem":
+##                                playSound("problem")
+##                                time.sleep(1.5)
+##                                changeState("pray", state, func_name(), True)
 
-                        else: 
+
+                        #CASE 3: direct keyword to answer
+                                
+                        elif query[1:3] == [-1, -1, -1] and query[0] != -1:
                                 for i in range(len(soundfiles.replies)):
                                         print("soundfiles.replies[i]", soundfiles.replies[i])
-                                        if(soundfiles.replies[i][0] == queryID): 
+                                        if(soundfiles.replies[i][0] == query[0]): 
                                                chosenReply = soundfiles.replies[i][random.randint(1, len(soundfiles.replies[i])-1)]
                                                break
-                                print("replying to " + keyword +" with file " +chosenReply )
-                                
-                                changeState("reply", state, func_name(), False)
+                                if chosenReply != -1:
+                                        answer_found = True
+                                        print("replying to " + keyword +" with file " +chosenReply )
+                                        changeState("reply", state, func_name(), False)
 
-
-                
+                        #CASE 4: query
+                        #loop in alltopics
+                        #CASE 4B: perform a search
 
         elif (state == "meeting"):
                 #print("in elaborateAnswer greeting")
                 if (keyword is not None):       #len(keyword) >= 3):
                         is_matched = True
+                        answer_found = True
                         print("setting is_matched = True  in elaborateAnswer greeting")
                 if (is_matched == True):
                         print(soundfiles.users)
@@ -483,8 +461,8 @@ def elaborateAnswer(keyword):  #enters here only if it recognises some word
                 changeState("enquiry", state, func_name(), False)
                 time.sleep(0.8)
                         
-
-        if (is_matched == False):
+        #CASE 5: did not understand
+        if (is_matched == False or answer_found == False):
                 changeState("wakaranai", state, func_name(), False)
                                 
                         
@@ -860,7 +838,8 @@ def init():
 
 #texts must be initialised before init()
 alltextInit()
-allvocabularies.allvocabulariesInit()
+#allvocabularies.
+allvocabulariesInit()
 allbibleInit()
 allsaintsInit()
 alldatesInit()

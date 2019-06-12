@@ -33,6 +33,8 @@ introPope;;Podemos hablar sobre el santo de hoy, o de la Biblia, o de las palabr
 wakaranai1;Perdonami, non ti ho sentito;Disculpame, no te escuché;I'm sorry, I could not hear you;Tut mir leid, ich konnte dich nicht hören
 wakaranai2;Perdonami, non ti ho sentito;Disculpame, no te oí;I'm sorry, I could not hear you;Tut mir leid, ich konnte dich nicht hören
 wakaranai3;Perdonami, non ho capito che hai detto;Disculpame, no entiendo lo que dijiste;I'm sorry, I did not understand what you said.;
+wakaranaiAnswer;Perdonami, non so come rispondere a questo;;I'm sorry, I don't have the answer to that;
+wakaranaiSearch;Perdonami, non sono riuscito a trovare una risposta appropriata;;I'm sorry, I could not find an appropriate answer;
 retire;Torno in preghiera. Sono disponibile in qualsiasi momento.;Vuelvo en oración. Estoy disponible en cualquier momento;I go back to prayer. I'm available anytime;Ich werde weiter beten. Ich bin immer verfügbar.
 retireShort;Torno in preghiera;Vuelvo en oración.;I go back to prayer.;Ich werde weiter beten. 
 genki;Ho qualche acciacco ma sto bene. Grazie.;Tengo achaques pero estoy bien. Gracias;Somehow achy but I'm fine. Thanks.;Ein bisschen schmerzlich, aber es geht mir gut. Danke.
