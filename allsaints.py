@@ -42,9 +42,12 @@ def allsaintsInit():
     file.close()
 
 
-##allsaintsInit()
-##for i in range(1, 13):
-##    print("")
-##    print (i)
-##    for j in range(1, 30):
-##        print (j, saints[str(i)][str(j)])
+print("Initialising saints...")
+if __name__ == '__main__':
+    allsaintsInit()
+    for i in range(1, 13):
+        print("")
+        print (i)
+        for j in range(1, 30):
+            print (j, saints[str(i)][str(j)])
+

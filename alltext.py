@@ -31,4 +31,4 @@ def alltextInit():
         text[textID] = {'IT':text_IT, 'ES':text_ES, 'EN':text_EN, 'DE':text_DE}
 
 
-
+print("Initialising text...")

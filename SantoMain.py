@@ -27,7 +27,6 @@ from speech_recognizer_google_standalone import GSpeech
 speech_rec = GSpeech("")
 
 import soundfiles
-#import allvocabularies
 
 
 global chosenReply
@@ -388,7 +387,7 @@ def elaborateAnswer(keyword):  #enters here only if it recognises some word
 
                         #CASE 3: direct keyword to answer
                                 
-                        elif query[1:3] == [-1, -1, -1] and query[0] != -1:
+                        elif query[1:4] == [-1, -1, -1] and query[0] != -1:
                                 for i in range(len(soundfiles.replies)):
                                         print("soundfiles.replies[i]", soundfiles.replies[i])
                                         if(soundfiles.replies[i][0] == query[0]): 
@@ -838,7 +837,6 @@ def init():
 
 #texts must be initialised before init()
 alltextInit()
-#allvocabularies.
 allvocabulariesInit()
 allbibleInit()
 allsaintsInit()

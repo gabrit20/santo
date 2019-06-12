@@ -42,6 +42,7 @@ def allvocabulariesInit():
                 #print(keywordID, voc[keywordID])
         file.close()
 
+print("Initialising vocabularies...")
 if __name__ == '__main__':
     allvocabulariesInit()
     print(vocGeneric)

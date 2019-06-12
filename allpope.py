@@ -34,3 +34,5 @@ def allpopeInit():
 
         pope[popeID][part] = {'IT':text_IT, 'ES':text_ES, 'EN':text_EN, 'DE':text_DE}
 
+
+print("Initialising pope...")

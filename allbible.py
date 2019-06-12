@@ -54,9 +54,11 @@ def allbibleInit():
         except:
             pass
 
+print("Initialising Bible...")
+if __name__ == '__main__':
+    allbibleInit()
+    #for iBook in Bible:
+    #    print(iBook)
+    print(Bible['Gen']['bookNames'])
+    print(Bible['Rev']['3']['1'])
 
-##allbibleInit()
-###for iBook in Bible:
-###    print(iBook)
-##print(Bible['Gen']['bookNames'])
-##print(Bible['Rev']['3']['1'])
