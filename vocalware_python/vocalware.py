@@ -74,15 +74,15 @@ def saveAudio(engine_id, language_id, voice_id, effect_type, effect_level,
 	print(audio_url)
 	
 	try:
-		print("TRY1")
+		#print("TRY1")
 		audio_file = requests.get(audio_url)
 	except:
 		try:
-			print("EXCEPT TRY1")
+			print("Vocalware EXCEPT TRY1")
 			headers = { 'User-Agent': 'Mozilla/5.0 (Windows NT 6.0; WOW64; rv:24.0) Gecko/20100101 Firefox/49.0' }
 			audio_file = requests.get(audio_url, headers=headers)
 		except:
-			print("EXCEPT2")
+			print("Vocalware EXCEPT2")
 			headers = {'User-Agent': 'Mozilla/5.0 (Windows NT 6.1; WOW64; rv:49.0) Gecko/20100101 Firefox/49.0',
 						'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
 						'Accept-Language': 'en-US,en;q=0.5',
@@ -98,7 +98,7 @@ def saveAudio(engine_id, language_id, voice_id, effect_type, effect_level,
 	print('New audio "' + audio_filename + '.mp3" saved successfully')
 
 
-#def main():        
+      
 if __name__ == '__main__':
 	#saveAudio(2, 1, 5, 'D', 2, "I'm sorry, I could not hear you", audio_filename='vocalware_new_audio')
         saveAudio(2, 1, 5, 'D', 2, "Today, it's the sixteenth of May", audio_filename='vocalware_new_audio')
