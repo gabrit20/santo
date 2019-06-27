@@ -16,7 +16,7 @@ meetF;Piacere di conoscerti! Figliuola;Encantado de conocerte! hija mía;Nice to 
 welcomeBackM;Bentornato! Figliuolo;Bienvenido otra vez, hijo mío;Welcome back, my son;
 welcomeBackF;Bentornata! Figliuola;Bienvenida otra vez, hija mía;Welcome back, my daughter;
 todayAsk;Sai che giorno è oggi?;Sabes que día es hoy;Do you know which day is today?;Weißt du welcher Tag heute ist?
-hearYou;Ti sento;puedo oírte;I can hear you;Ich kann Dich hören
+hearyou;Ti sento;puedo oírte;I can hear you;Ich kann Dich hören
 tellMeLong;Cosa ti porta qui in questa splendida giornata?;Que es lo que te trae aquí en este hermoso día?;What brings you here on this beautiful day?;Was führt dich hierher an solch einem schönen Tag?
 tellMeLong2;Cosa ti porta qui oggi?;Que es lo que te trae aquí, hoy?;What brings you here today?;Was bringt dich heute hier her?
 tellMe1;Ti ascolto;Te escucho;I'm hearing you.;Ich höre dich
@@ -30,6 +30,8 @@ ciao;ciao;chau;bye;Tschüss
 yourewelcome1;Di niente. Sono sempre a disposizione.;De nada. Estoy siempre a tu disposición;You're welcome. I'm always available;Gern geschehen. Ich bin immer verfügbar
 intro;Possiamo parlare del santo di oggi, della Bibbia, o possiamo pregare;Podemos hablar sobre el santo de hoy, o de la Biblia, o podemos rezar;We can talk about the saint of today, or of the Bible, or we can pray.;
 introPope;;Podemos hablar sobre el santo de hoy, o de la Biblia, o de las palabras de Papa Francisco, o podemos rezar;;
+search;Fammi fare una ricerca. Aspetta un attimo.;Dejame hacer una busqueda. Espera un rato.;Please let me do a search. Hold on.;
+noresults;Perdonami, non ho trovato alcuna informazione su quello che hai chiesto;Disculpame, no encontré alguna información sobre lo que me preguntaste;I'm sorry, I could not find any information about what you asked;
 wakaranai1;Perdonami, non ti ho sentito;Disculpame, no te escuché;I'm sorry, I could not hear you;Tut mir leid, ich konnte dich nicht hören
 wakaranai2;Perdonami, non ti ho sentito;Disculpame, no te oí;I'm sorry, I could not hear you;Tut mir leid, ich konnte dich nicht hören
 wakaranai3;Perdonami, non ho capito che hai detto;Disculpame, no entiendo lo que dijiste;I'm sorry, I did not understand what you said.;

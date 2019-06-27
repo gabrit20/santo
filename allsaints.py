@@ -8,41 +8,38 @@ saints = {}
 
 
 def allsaintsInit():
+    print("Initialising saints...")
+    
     global saints
 
     
     
-    
-    file = codecs.open('allsaints.csv', encoding='latin-1')
-    file.readline() #skips the first line
-    for line in file:
+    with codecs.open('allsaints.csv', encoding='latin-1') as file:
+        file.readline() #skips the first line
+        for line in file:
 
-        
-        items = line.strip().split(';')
-        month = str(items[0])
-        day = str(items[1])
-        info = str(items[2])  #d/n/s
-        text_IT = items[3].encode('utf-8')
-        text_ES = items[4].encode('utf-8')
-        text_EN = items[5].encode('utf-8')
-        text_DE = items[6].encode('utf-8')
+            for iLanguage in language_list:
+                items = line.strip().split(';')
+                month = str(items[0])
+                day = str(items[1])
+                info = str(items[2])  #d/n/s (day/name/story)
+                text = items[3+language_list.index(iLanguage)].lower().encode('utf-8')
+                
 
 
-        if month not in saints:
-            saints[month] = {}
-        if day not in saints[month]:
-            saints[month][day] = {}
-        #saints[month][day][info] = [text_IT, text_ES, text_EN, text_DE]
-        saints[month][day][info] = {'IT':text_IT, 'ES':text_ES, 'EN':text_EN, 'DE':text_DE}
+                if month not in saints:
+                    saints[month] = {}
+                if day not in saints[month]:
+                    saints[month][day] = {}
+                if info not in saints[month][day]:
+                    saints[month][day][info] = {}
+                saints[month][day][info][iLanguage] = text
+
+                #print(month, day, info, saints[month][day][info])
+                #print()
 
 
 
-        #print(month, day, info, saints[month][day][info])
-        #print()
-    file.close()
-
-
-print("Initialising saints...")
 if __name__ == '__main__':
     allsaintsInit()
     for i in range(1, 13):
@@ -50,4 +47,5 @@ if __name__ == '__main__':
         print (i)
         for j in range(1, 30):
             print (j, saints[str(i)][str(j)])
+    print(saints)
 

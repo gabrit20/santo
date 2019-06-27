@@ -19,6 +19,8 @@ from alldates import *
 from allprayers import *
 from allpope import *
 from allvocabularies import *
+from allquotes import *
+from allentries import *
 
 from playVoice import *
 from camera import cameraInit
@@ -257,24 +259,6 @@ def touch():
                                         pygame.mixer.music.stop()
                                         changeState("enquiry", state, func_name(), False)
                                 continue
-                        if (state =="pray"):
-                                while (pygame.mixer.music.get_busy()==True):
-                                        recibo = -1
-                                        pygame.mixer.music.stop()
-                                        changeState("enquiry", state, func_name(), False)
-                                continue
-                        if (state =="pope"):
-                                while (pygame.mixer.music.get_busy()==True):
-                                        recibo = -1
-                                        pygame.mixer.music.stop()
-                                        changeState("enquiry", state, func_name(), False)
-                                continue
-                        if (state =="bible"):
-                                while (pygame.mixer.music.get_busy()==True):
-                                        recibo = -1
-                                        pygame.mixer.music.stop()
-                                        changeState("enquiry", state, func_name(), False)
-                                continue
                                 
                                 
 
@@ -283,12 +267,269 @@ def touch():
 
 
 
+def retrieveTextFromKey(source, key, wholeBook=False): #TODO: key not found exception
+        """retrieves a single dictionary (with all the languages) or more than one,
+        into a list containing each filename and dictionary/string
+        to be processed by playSound(filename, archive=-1)"""
+        textPartsToPlay = []
+        if (source == 'text'):
+                dictionaryEntry = text[key]    
+                if dictionaryEntry[language_out] != "":
+                        textPartsToPlay.append([key, dictionaryEntry])
+        elif (source == 'pray'):
+                counter = 0
+                for counter in range(0, maxNumPartsText):
+                        if str(counter) in prayers[key]['parts']: #if entry exists
+                                dictionaryEntry = prayers[key]['parts'][str(counter)] 
+                                if dictionaryEntry[language_out] != "":
+                                        textPartsToPlay.append([key, dictionaryEntry])           
+        elif (source == 'pope'):
+                counter = 0
+                for counter in range(0, maxNumPartsText):
+                        if str(counter) in pope[key]['parts']: #if entry exists
+                                dictionaryEntry = pope[key]['parts'][str(counter)] 
+                                if dictionaryEntry[language_out] != "":
+                                        textPartsToPlay.append([key, dictionaryEntry])      
+        elif (source == 'quotes'):
+                counter = 0
+                for counter in range(0, maxNumPartsText):
+                        if str(counter) in quotes[key]['parts']: #if entry exists
+                                dictionaryEntry = quotes[key]['parts'][str(counter)] 
+                                if dictionaryEntry[language_out] != "":
+                                        textPartsToPlay.append([key, dictionaryEntry])    
+        elif (source == 'saints'):
+                [month, day, info] = IDtoDate(key)
+                dictionaryEntry = saints[month][day][info] 
+                if dictionaryEntry[language_out] != "":
+                        textPartsToPlay.append([key, dictionaryEntry])    
+        elif ((source == 'bible' or source in Biblebooks) and wholeBook == False):
+                [book,bookNum,verseNum] = BibleIDtoData(key)
+                print("coordinates:",book,bookNum,verseNum)
+                dictionaryEntry = Bible[book][bookNum][verseNum]
+                if dictionaryEntry[language_out] != "":
+                        textPartsToPlay.append([key, dictionaryEntry])
+                #previous and next also included
+                previousVerseNum = str(int(verseNum)-1)
+                if previousVerseNum in Bible[book][bookNum]:
+                        previousKey = BibleDataToID(book, bookNum, previousVerseNum)
+                        textPartsToPlay.insert(0, [previousKey, Bible[book][bookNum][previousVerseNum] ] )
+                nextVerseNum = str(int(verseNum)+1)
+                if nextVerseNum in Bible[book][bookNum]:
+                        nextKey = BibleDataToID(book, bookNum, nextVerseNum)
+                        textPartsToPlay.append( [nextKey, Bible[book][bookNum][nextVerseNum] ] )
+                #also bookName and book number
+                textPartsToPlay.insert(0, [book, Biblebooks[book] ])
+                textPartsToPlay.insert(1, [bookNum, bookNum] )
+        elif ((source == 'bible' or source in Biblebooks) and wholeBook == True):
+                [book,bookNum,verseNum] = BibleIDtoData(key)
+                #book="Dan"
+                #bookNum="1"
+                #also bookName and book number
+                textPartsToPlay.insert(0, [book, Biblebooks[book] ])
+                textPartsToPlay.insert(1, [bookNum, bookNum] )
+                
+                for iVerse in Bible[book][bookNum]:
+                        key = BibleDataToID(book,bookNum,iVerse)
+                        print("coordinates:",book,bookNum,iVerse)
+                        dictionaryEntry = Bible[book][bookNum][iVerse]
+                        print("dictionaryEntry", dictionaryEntry)
+                        if dictionaryEntry[language_out] != "":
+                                textPartsToPlay.append([key, dictionaryEntry])         
+                
+        #print("textPartsToPlay", textPartsToPlay)
+        return textPartsToPlay
 
+
+def BibleIDtoData(key):
+        book = key[0:3] #012
+        bookNum = key[3]
+        if key[4] != ":":
+                bookNum += key[4]
+        verseNum = key[key.index(":")+1 : len(key)]
+        return [book, bookNum, verseNum]
+
+
+def BibleDataToID(book, bookNum, verseNum):
+        return str(book) + str(bookNum) + ":" + str(verseNum)
+
+
+def IDtoDate(key):
+        month = key[0]
+        if key[1].isdigit():
+                month += key[1]
+        day = key[key.index("-")+1 : len(key)-1]
+        info = key[len(key)-1]
+        return [month, day, info]
+
+
+def dateToID(month, day, info):
+        return str(month) + '-' + str(day) + info
+
+
+def wordInSentence(currentSource, listWords, wordsGroup, sentence, foundKey, foundResults): #foundResults is passed by reference
+        """wordsGroup can be 'topic' or 'people'"""
+        for i in range(len(listWords)):
+                if listWords[i] in sentence:
+                        #foundKey = str(book) + str(bookNum) + ":" + str(verseNum)
+                        #foundKey = prayer
+                        if foundKey not in foundResults:
+                                foundResults[foundKey] = {}
+                                foundResults[foundKey]['source'] = currentSource
+                                foundResults[foundKey]['topic'] = 0
+                                foundResults[foundKey]['people'] = 0
+                        foundResults[foundKey][wordsGroup] += 1  #example: 'topic'
+                        #print("FOUND", listWords[i], foundKey)
+
+
+def randomSearchText(source):
+        if (source == 'bible'):
+                randomBookID = random.choice(list(Bible.keys()))
+                randomBookNum = random.choice(list(Bible[randomBookID].keys()))
+                verseNum = 1
+                randomChoice = BibleDataToID(randomBookID, randomBookNum, verseNum)
+
+
+        if (source in list(Biblebooks.keys())):
+                randomBookNum = random.choice(list(Bible[source].keys()))
+                verseNum = 1
+                randomChoice = BibleDataToID(source, randomBookNum, verseNum)
+
+
+
+        if (source == 'pray'):
+                #OLD: this one would not work if all prayers are missing in one language
+##                randomChoice = random.choice(list(prayers.keys()))
+##                while (prayers[randomPrayer]['parts']['1'][language_out] == "" or
+##                       prayers[randomPrayer]['randomOK'] == "0"):
+##                        print("empty prayer entry; skipping")
+##                        randomChoice = random.choice(prayers.keys())
+##
+                allkeys = list(prayers.keys())
+                i = 0
+                while i < len(allkeys):
+                        print(allkeys[i])
+                        if prayers[allkeys[i]]['parts']['1'][language_out] == "" or \
+                           prayers[allkeys[i]]['randomOK'] == "0":
+                                allkeys.remove(allkeys[i])
+                                i -= 1
+                        i += 1
+                randomChoice = random.choice(allkeys)
+                        
+                        
+        if (source == 'pope'):
+                allkeys = list(pope.keys())
+                i = 0
+                while i < len(allkeys):
+                        print(allkeys[i])
+                        if pope[allkeys[i]]['parts']['1'][language_out] == "" or \
+                           pope[allkeys[i]]['randomOK'] == "0":
+                                allkeys.remove(allkeys[i])
+                                i -= 1
+                        i += 1
+                randomChoice = random.choice(allkeys)
+
+        return [source, randomChoice]
 
         
-def verifyTopic(keyword): 
-        pass
 
+def searchText(source, topic, people):
+        """searchs for topic OR people in sources and adds to foundResults.
+        In foundResults filters out in case of topic AND people those with only one of the two
+        then picks a random entry
+        returns the foundSource and the key"""
+        listWordsTopic = []
+        if topic != -1:
+                listWordsTopic = vocTopics[topic][language_in]
+                for i in range(len(listWordsTopic)):
+                        listWordsTopic[i] = listWordsTopic[i].encode('utf-8')
+        listWordsPeople = []
+        if people != -1:
+                listWordsPeople = vocPeople[people][language_in]
+                for i in range(len(listWordsPeople)):
+                        listWordsPeople[i] = listWordsPeople[i].encode('utf-8')
+        print(listWordsTopic)
+        print("listWordsTopic", listWordsTopic)
+        foundSource = None
+        print("Searching....")
+        foundResults = {}   #key, topic, people
+        if (source == 'bible' or source == -1):
+                foundSource = 'bible'
+                for book in Bible:
+                        #print("book", book)
+                        for bookNum in Bible[book]:
+                                #print("bookNum", bookNum)
+                                for verseNum in Bible[book][bookNum]:
+                                        #print("verseNum", verseNum)
+                                        #print(Bible[book][bookNum][verseNum])
+                                        #print(Bible[book][bookNum][verseNum][language_out])
+                                        if (language_out in Bible[book][bookNum][verseNum]): #check that language exists
+                                                foundKey = BibleDataToID(book, bookNum, verseNum)
+                                                wordInSentence(foundSource, listWordsTopic, 'topic', Bible[book][bookNum][verseNum][language_out], foundKey, foundResults)
+                                                wordInSentence(foundSource, listWordsPeople, 'people', Bible[book][bookNum][verseNum][language_out], foundKey, foundResults)
+
+        if (source == 'pray' or source == -1):
+                foundSource = 'pray'
+                for prayer in prayers:
+                        for part in prayers[prayer]['parts']:
+                                print(prayers[prayer]['parts'][part])
+                                if (language_out in prayers[prayer]['parts'][part]): #check that language exists
+                                        foundKey = prayer
+                                        wordInSentence(foundSource, listWordsTopic, 'topic', prayers[prayer]['parts'][part][language_out], foundKey, foundResults)
+                                        wordInSentence(foundSource, listWordsPeople, 'people', prayers[prayer]['parts'][part][language_out], foundKey, foundResults)
+
+
+        if (source == 'pope' or source == -1): #exactly the same as prayers
+                foundSource = 'pope'
+                for popeword in pope:
+                        for part in pope[popeword]['parts']:
+                                if (language_out in pope[popeword]['parts'][part]): #check that language exists
+                                        foundKey = popeword
+                                        wordInSentence(foundSource, listWordsTopic, 'topic', pope[popeword]['parts'][part][language_out], foundKey, foundResults)
+                                        wordInSentence(foundSource, listWordsPeople, 'people', pope[popeword]['parts'][part][language_out], foundKey, foundResults)
+
+
+        if (source == 'quotes' or source == -1): #exactly the same as prayers
+                foundSource = 'quotes'
+                for quote in quotes:
+                        for part in quotes[quote]['parts']:
+                                if (language_out in quotes[quote]['parts'][part]): #check that language exists
+                                        foundKey = quote
+                                        wordInSentence(foundSource, listWordsTopic, 'topic', quotes[quote]['parts'][part][language_out], foundKey, foundResults)
+                                        wordInSentence(foundSource, listWordsPeople, 'people', quotes[quote]['parts'][part][language_out], foundKey, foundResults)
+
+        if (people != -1):
+                if people[0].isdigit(): #if it's a date, the query is a saint
+                        foundSource = 'saints'
+                        foundKey = people[0:len(people)-1] + 's'
+                        if foundKey not in foundResults:
+                                foundResults[foundKey] = {}
+                                foundResults[foundKey]['source'] = foundSource
+                                foundResults[foundKey]['topic'] = 0
+                                foundResults[foundKey]['people'] = 1
+
+
+        #print("foundResults:", foundResults)
+        #filter case of AND
+        if (topic != -1 and people != -1):
+                for result in list(foundResults): #converted to a list to force a copy of the keys to avoid runtime error
+                        if foundResults[result]['topic']==0 or foundResults[result]['people'] ==0:
+                                del foundResults[result]
+                                #print("deleted", result)
+
+        print("filtered foundResults:", foundResults)
+        
+        if len(foundResults) > 0:        
+                chosenResult = random.choice(list(foundResults))   #chosenResult is a key of dictionary
+                if (['-1', source, topic, people, chosenResult, '0'] not in entries):
+                        print("adding to the entries")
+                        entries.append(['-1', source, topic, people, chosenResult, '0'])
+                print("chosenResult:",chosenResult)
+                print(entries)
+
+                return [foundResults[chosenResult]['source'], chosenResult]
+        else:
+                return [None, None]
+                
 
         
 def elaborateAnswer(keyword):  #enters here only if it recognises some word
@@ -297,8 +538,7 @@ def elaborateAnswer(keyword):  #enters here only if it recognises some word
         global gender
         global alreadyPlayed
         global chosenReply
-        global countInteractions
-        global cabezera
+
         
 
         is_matched = False
@@ -325,7 +565,7 @@ def elaborateAnswer(keyword):  #enters here only if it recognises some word
                                         #print("iWord in keyword", iWord in keyword)
                                         #print("keyword in iWord", keyword in iWord)
                                         if iWord in keyword or keyword in iWord:
-                                                print("match", keyword, iWord)
+                                                print("match: [", keyword, "] with [", iWord, "]")
                                                 is_matched = True
                                                 query[iQueryIndex] = iKey
                                                 break
@@ -333,6 +573,16 @@ def elaborateAnswer(keyword):  #enters here only if it recognises some word
 
 
                 print("QUERY", query)
+                
+                iCommand = 0
+                iSource = 1
+                iTopic = 2
+                iPeople = 3
+                #command = query[iCommand]
+                #source = query[iSource]
+                #topic = query[iTopic]
+                #people = query[iPeople]
+                answerColumn = iPeople+1 #column after
                                 
                 if (is_matched == True):
 
@@ -350,57 +600,123 @@ def elaborateAnswer(keyword):  #enters here only if it recognises some word
 
                         elif query == ["thanks", -1, -1, -1]:        
                         #elif queryID == "thanks":
-                                playSound("yourewelcome1")
-                                time.sleep(0.4)
-                                countInteractions == 0
-                                playSound("goInPeace")
+##                                playSound("yourewelcome1")
+##                                time.sleep(0.4)
+##                                countInteractions == 0
+##                                playSound("goInPeace")
                                 answer_found = True
+                                print("changeState", "farewell")
                                 changeState("farewell", state, func_name(), True)
+                                
                                 
                         elif query == ["day", -1, -1, -1]:
                         #elif queryID == "day":
                                 answer_found = True
+                                print("changeState", "saint")
                                 changeState("saint", state, func_name(), False)
+                                
 
                         #CASE 2: direct command to random mode
                                 
                         elif query == [-1, "bible", -1, -1]:
                         #elif queryID == "bible":
-                                answer_found = True
-                                changeState("bible", state, func_name(), False)
+                                playSound("verse")
+                                time.sleep(0.3)
+                                playSound("touchHand")
+                                time.sleep(0.8)
+                                [searchResultSource, searchResultReply] = randomSearchText(query[iSource])
+                                if (searchResultReply != None):
+                                        chosenReply = retrieveTextFromKey(searchResultSource, searchResultReply, True )
+                                        answer_found = True
+        
+                                        print("random Bible part: ", chosenReply )
+                                print("changeState", "reply")
+                                changeState("reply", state, func_name(), False)
+
+
+                        elif query[iSource] in list(Biblebooks.keys()) and query[0] == -1 and query[2:4] == [-1, -1]:
+                                [searchResultSource, searchResultReply] = randomSearchText(query[iSource])
+                                if (searchResultReply != None):
+                                        chosenReply = retrieveTextFromKey(searchResultSource, searchResultReply, True )
+                                        answer_found = True
+        
+                                        print("random Bible part: ", chosenReply )
+                                print("changeState", "reply")
+                                changeState("reply", state, func_name(), False)
+
+                                
 
                         elif query == [-1, "pray", -1, -1]:
                         #elif queryID == "pray":
                                 answer_found = True
-                                changeState("pray", state, func_name(), False)
+                                playSound("prayStart")
+                                time.sleep(1)
+                                [searchResultSource, searchResultReply] = randomSearchText(query[iSource])
+                                if (searchResultReply != None):
+                                        chosenReply = retrieveTextFromKey(searchResultSource, searchResultReply )
+                                        print("random pray: ", chosenReply )
+                                print("changeState", "reply")
+                                changeState("reply", state, func_name(), False)
+                                
 
                         elif query == [-1, "pope", -1, -1]:
                         #elif queryID == "pope":
                                 answer_found = True
-                                changeState("pope", state, func_name(), False)
-
-##                        elif queryID == "problem":
-##                                playSound("problem")
-##                                time.sleep(1.5)
-##                                changeState("pray", state, func_name(), True)
-
+                                playSound("popeStart")
+                                time.sleep(1)
+                                print("changeState", "reply")
+                                changeState("reply", state, func_name(), False)
+                                
 
                         #CASE 3: direct keyword to answer
                                 
-                        elif query[1:4] == [-1, -1, -1] and query[0] != -1:
-                                for i in range(len(soundfiles.replies)):
-                                        print("soundfiles.replies[i]", soundfiles.replies[i])
-                                        if(soundfiles.replies[i][0] == query[0]): 
-                                               chosenReply = soundfiles.replies[i][random.randint(1, len(soundfiles.replies[i])-1)]
-                                               break
+                        elif query[1:4] == [-1, -1, -1] and query[iCommand] != -1:
+                                for iEntry in range(1, len(entries)): #skip first line
+                                        if (query[iCommand] == entries[iEntry][iCommand]):         
+                                                chosenEntry = entries[iEntry]
+                                                chosenReply = retrieveTextFromKey('text', chosenEntry[answerColumn])
+                                                break
                                 if chosenReply != -1:
                                         answer_found = True
-                                        print("replying to " + keyword +" with file " +chosenReply )
+                                        print("replying to ", keyword, " with: ", chosenReply )
                                         changeState("reply", state, func_name(), False)
+                                                                           
+                                        
 
-                        #CASE 4: query
-                        #loop in alltopics
-                        #CASE 4B: perform a search
+                        #CASE 4/5: entries and query
+                        else:
+                                availableEntries = []
+                                for iEntry in range(1, len(entries)): #skip first line
+
+                                        
+                                        if ((query[iSource] == entries[iEntry][iSource] or query[iSource] == -1) and
+                                            query[iTopic] == entries[iEntry][iTopic] and
+                                            query[iPeople] == entries[iEntry][iPeople]):
+                                                availableEntries.append(iEntry)
+                                #CASE 4A: available entry
+                                if len(availableEntries)>0:
+                                        print(availableEntries)
+                                        chosenEntry = entries[random.choice(availableEntries)]           
+                                        chosenReply = retrieveTextFromKey(chosenEntry[iSource], chosenEntry[answerColumn] )
+                                        print("retrieveTextFromKey", chosenEntry[iSource], chosenEntry[answerColumn])
+                                #CASE 4B: search
+                                else:
+                                        playSound("search")
+                                        time.sleep(0.2)
+                                        [searchResultSource, searchResultReply] = searchText(query[iSource], query[iTopic], query[iPeople])
+                                        if (searchResultReply != None):
+                                                chosenReply = retrieveTextFromKey(searchResultSource, searchResultReply )
+                                if chosenReply != -1:
+                                        answer_found = True
+                                        print("replying to ", keyword, " with: ", chosenReply )
+                                        changeState("reply", state, func_name(), False)
+                                        print("answer found")
+                                else:
+                                        playSound("noresults")
+                                        changeState("wakaranai", state, func_name(), False) #for now wakaranai
+                                        print("answer not found")
+                                        
+
 
         elif (state == "meeting"):
                 #print("in elaborateAnswer greeting")
@@ -465,6 +781,7 @@ def elaborateAnswer(keyword):  #enters here only if it recognises some word
                 changeState("wakaranai", state, func_name(), False)
                                 
                         
+      
 
         
 
@@ -587,91 +904,6 @@ def logic():
                         countInteractions += 1
                         changeState("enquiry", state, func_name(), False)
 
-                elif (state == "bible"):
-                        global Bible
-                        randomBookID = random.choice(Bible.keys())
-                        randomBooknum = random.choice(Bible[randomBookID].keys())
-                        while (randomBooknum.isdigit() == False): #as the dictionary Bible contains also the key "bookNames"
-                                randomBooknum = random.choice(Bible[randomBookID].keys())
-
-
-                        
-                        randomVerseBookname = randomBookID
-                        randomVerseBooknum = randomBooknum
-                                
-
-                        playSound("verse")
-                        time.sleep(0.3)
-                        playSound("touchHand")
-                        playSound(randomBookID, Bible[randomBookID]['bookNames'])
-                        playSound(randomBooknum, randomBooknum)  #play only the number
-                        
-                        time.sleep(0.8)
-                        iVerse = 1
-                        iVerseFilename = randomBookID + '-'  + randomBooknum + '-' + str(iVerse)
-                        print("Bible", randomBookID, randomBooknum, str(iVerse))
-                        playSound(iVerseFilename, Bible[randomBookID][randomBooknum][str(iVerse)])
-                        
-                        while (state=="bible"): #necessary condition as touching hand will shift the state
-
-                                iVerse += 1
-                                if (str(iVerse) in Bible[randomBookID][randomBooknum]):
-                                        iVerseFilename = randomBookID + '-'  + randomBooknum + '-' + str(iVerse)
-                                        playSound(iVerseFilename, Bible[randomBookID][randomBooknum][str(iVerse)])
-                                else:
-                                        break
-
-                        time.sleep(1.5)
-
-                        countInteractions += 1
-                        changeState("enquiry", state, func_name(), False)
-
-                                             
-                elif (state == "pray"):
-                        if alreadyPlayed == False:
-                                playSound("prayStart")
-                        time.sleep(1)
-                        randomPrayer = random.choice(prayers.keys())
-                        part = 1
-                        
-                        while (prayers[randomPrayer][str(part)][language_out] == ""):
-                                print("empty prayer entry; skipping")
-                                randomPrayer = random.choice(prayers.keys())
-                        
-                        while (state=="pray"):
-                                playSound(randomPrayer + str(part), prayers[randomPrayer][str(part)])
-                                part += 1
-                                if (str(part) not in prayers[randomPrayer]):
-                                        break
-                        #time.sleep(0.5)
-                        #playSound("amen")
-                        time.sleep(1.5)
-
-                        countInteractions += 1
-                        changeState("enquiry", state, func_name(), False)
-
-                elif (state == "pope"):
-                        if alreadyPlayed == False:
-                                playSound("popeStart")
-                        time.sleep(1)
-                        randomHomely = random.choice(pope.keys())
-                        part = 1
-                        
-                        while (pope[randomHomely][str(part)][language_out] == ""):
-                                print("empty prayer entry; skipping")
-                                randomHomely = random.choice(pope.keys())
-                        
-                        while (state=="pope"):
-                                playSound(randomHomely + str(part), pope[randomHomely][str(part)])
-                                part += 1
-                                if (str(part) not in pope[randomHomely]):
-                                        break
-                        time.sleep(1.5)
-
-                        countInteractions += 1
-                        changeState("enquiry", state, func_name(), False)
-
-
                                              
                 elif (state=="farewell"):
                         if alreadyPlayed == False:
@@ -708,8 +940,11 @@ def logic():
 
 
                 elif (state=="reply"):
-                        playSound(chosenReply)
-                        time.sleep(1)
+                        while (state=="reply"): #necessary condition as touching hand will shift the state
+                                for replyPart in chosenReply:
+                                        playSound(chosenReply)
+                                        time.sleep(0.1)
+                        time.sleep(1.5)
                         countInteractions += 1
                         changeState("enquiry", state, func_name(), False)
 
@@ -837,12 +1072,16 @@ def init():
 
 #texts must be initialised before init()
 alltextInit()
-allvocabulariesInit()
 allbibleInit()
 allsaintsInit()
 alldatesInit()
 allprayersInit()
 allpopeInit()
+allquotesInit()
+allentriesInit()
+#vocabularies must be done after saints and Bible
+allvocabulariesInit()
+
 
 init()
 

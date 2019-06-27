@@ -6,32 +6,39 @@ from settings import *
 prayers = {}
 
 
-
 def allprayersInit():
     global prayers
 
     
+
+    with codecs.open('allprayers.csv', encoding='latin-1') as file:
+
+        file.readline() #skips the first line
+        for line in file:
+
+            items = line.strip().split(';')
+            prayerID = str(items[0])
+            randomOK = str(items[1])
+            part = str(items[2]) 
+
+            for iLanguage in language_list:    
+                
+                text = items[3+language_list.index(iLanguage)].lower().encode('utf-8')
+
+                if prayerID not in prayers:
+                    prayers[prayerID] = {}
+                if 'parts' not in prayers[prayerID]:
+                    prayers[prayerID]['parts'] = {}
+                if part not in prayers[prayerID]['parts']:
+                    prayers[prayerID]['parts'][part] = {}
+
+                prayers[prayerID]['parts'][part][iLanguage] = text
+            prayers[prayerID]['randomOK'] = randomOK
+                
     
-    
-    file = codecs.open('allprayers.csv', encoding='latin-1')
-    file.readline() #skips the first line
-    for line in file:
-
-        
-        items = line.strip().split(';')
-        prayerID = str(items[0])
-        part = str(items[1])
-        text_IT = items[2].encode('utf-8')
-        text_ES = items[3].encode('utf-8')
-        text_EN = items[4].encode('utf-8')
-        text_DE = items[5].encode('utf-8')
-
-
-        if prayerID not in prayers:
-            prayers[prayerID] = {}
-        if part not in prayers[prayerID]:
-            prayers[prayerID][part] = {}
-
-        prayers[prayerID][part] = {'IT':text_IT, 'ES':text_ES, 'EN':text_EN, 'DE':text_DE}
-
 print("Initialising prayers...")
+
+
+if __name__ == '__main__':
+    allprayersInit()
+    print(prayers)

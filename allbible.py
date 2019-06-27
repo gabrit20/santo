@@ -3,45 +3,50 @@ import codecs
 from settings import *
 
 Bible = {}
+Biblebooks = {}
 
 
 def allbibleInit():
 
+    for iLanguage in language_list:
 
-    booksFile = codecs.open("BibleBooks.csv", encoding='latin-1')
-    booksFile.readline() #skips the first line
-    for line in booksFile:
-        items = line.strip().split(';')
-        bookID = str(items[0])  #3 latters abbreviation
-        bookName_IT = items[1].encode('utf-8')
-        bookName_ES = items[2].encode('utf-8')
-        bookName_EN = items[3].encode('utf-8')
-        bookName_DE = items[4].encode('utf-8')
+        with codecs.open("BibleBooks.csv", encoding='latin-1') as booksFile:
+            booksFile.readline() #skips the first line
+            for line in booksFile:
+                items = line.strip().split(';')
+                bookID = str(items[0])  #3 latters abbreviation
+                bookName = items[1+language_list.index(iLanguage)].lower().encode('utf-8')
 
+                if bookID not in Bible:
+                    Bible[bookID] = {}
+                #Bible[bookID] = {'bookNames': {'IT':bookName_IT, 'ES':bookName_ES, 'EN':bookName_EN, 'DE':bookName_DE}}
 
-        Bible[bookID] = {'bookNames': {'IT':bookName_IT, 'ES':bookName_ES, 'EN':bookName_EN, 'DE':bookName_DE}}
+                if bookID not in Biblebooks:
+                    Biblebooks[bookID] = {}
+                Biblebooks[bookID][iLanguage] = bookName
 
+    #print(Biblebooks)
 
-
-    
     
     for iLanguage in language_list:
 
-        try: 
+        try:
+            #iLanguage = 'EN'
             with codecs.open('Bible'+iLanguage+'.csv', encoding='latin-1') as singleBiblefile:
-                #print (iLanguage)
+                print ("Processing Bible", iLanguage)
+                
                 for line in singleBiblefile:
                     #print(line)
                     items = line.strip().split(';')
-                    bookName = items[0].encode('utf-8')
-                    bookNameNotEncoded = items[0]
+                    bookName = items[0].lower().encode('utf-8') #may be "Gen" or "Génesis", will become "gen" or "gen\...nesis"
                     bookNum = str(items[1])
                     
                     verseNum = str(items[2])
-                    verse = items[3].encode('utf-8')
+                    verse = items[3].lower().encode('utf-8')
 
                     for iBook in Bible:
-                        if (bookName == Bible[iBook]['bookNames'][iLanguage] or bookNameNotEncoded == iBook):  #full name or abbreviation
+                        #print(bookName, iBook, iBook.lower().encode('utf-8'), Biblebooks[iBook][iLanguage]) #iBook is a 3 characters. Only for string comparison, must be made lower()
+                        if (bookName == iBook.lower().encode('utf-8') or bookName == Biblebooks[iBook][iLanguage]):  #full name or abbreviation
 
                             if bookNum not in Bible[iBook]:
                                 Bible[iBook][bookNum] = {}
@@ -49,16 +54,17 @@ def allbibleInit():
                                 Bible[iBook][bookNum][verseNum] = {}
 
                             Bible[iBook][bookNum][verseNum][iLanguage] = verse
-                            #print(iBook,bookNum,verseNum,iLanguage,verse)
+                            #print("assigned", iBook,bookNum,verseNum,iLanguage,verse)
                             break
-        except:
-            pass
+        except IOError:
+            print("Bible file not found", iLanguage)
+
 
 print("Initialising Bible...")
 if __name__ == '__main__':
     allbibleInit()
     #for iBook in Bible:
     #    print(iBook)
-    print(Bible['Gen']['bookNames'])
-    print(Bible['Rev']['3']['1'])
+    print(Biblebooks['Gen'])
+    print(Bible['Rev']['3'])
 
