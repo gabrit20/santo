@@ -1,0 +1,3 @@
+INFO:root:playSound: tellMeLong2
+INFO:root:keyword> estoy un poco preocupado
+INFO:root:20:32: STATE CHANGING TO reply FROM enquiry IN elaborateAnswer

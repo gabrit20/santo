@@ -942,9 +942,11 @@ def logic():
                 elif (state=="reply"):
                         while (state=="reply"): #necessary condition as touching hand will shift the state
                                 for replyPart in chosenReply:
-                                        playSound(chosenReply)
+                                        print("REPLY with ", replyPart[0], replyPart[1])
+                                        playSound(replyPart[0], replyPart[1])
                                         time.sleep(0.1)
-                        time.sleep(1.5)
+                                break
+                        time.sleep(2)
                         countInteractions += 1
                         changeState("enquiry", state, func_name(), False)
 
