@@ -235,8 +235,8 @@ month;day;;IT;ES;EN;DE
 8;21;n;;;;
 8;22;n;;;;
 8;23;n;;;;
-8;24;n;;;;
-8;25;n;;;;
+8;24;n;San Bartolomeo;;;
+8;25;n;San Ludovico;;;
 8;26;n;;;;
 8;27;n;;;;
 8;28;n;;;;
@@ -336,7 +336,7 @@ month;day;;IT;ES;EN;DE
 11;30;n;;;;
 12;1;n;;;;
 12;2;n;;;;
-12;3;n;;;St. Francis Xavier;
+12;3;n;;;saint Francis Xavier;
 12;4;n;;;;
 12;5;n;;;;
 12;6;n;;;;
@@ -514,8 +514,8 @@ month;day;;IT;ES;EN;DE
 5;25;s;;;;
 5;26;s;;;;
 5;27;s;;;;
-5;28;s;A Londra in Inghilterra, beata Margherita Pole, madre di famiglia e martire, che, contessa di Salisbury e madre del cardinale Reginaldo, fu decapitata nel carcere della Torre sotto il re Enrico VIII, del quale aveva disapprovato il divorzio, trovando così riposo nella pace di Cristo.;;In London in England, blessed Margaret pole, family mother and martyr who, as countess of Salisbury e mother of cardinal Reginaldo, was beheaded in the prison of the tower under the king Henry the eight, of whom she disapproved the divorce, finding finally peace in Christ.;In London, England, wurde die selige Margarete Pole – Familien Mutter und Märtyrerin, als Gräfin von Salisbury und Mutter des Kardinals Reginaldo, im Gefängnis des Turmes unter König Henry dem achten geköpft, und fand so endlich Frieden bei Christus.
-5;29;s;;;"Maximinus was an ardent enemy of the Arian heretics, opposing them in the councils of Milan, Sardica, and Cologne. He was a known miracle worker and apologist for orthodox Catholicism and was called ""one of the most courageous bishops of his time"" by St. Jerome.";Maximin war ein leidenschaftlicher Feind des Arianismus und stellte sich ihnen im Konzil von Mailand, Sardica und Köln entgegen. Er war als Wundertäter und Apologet des orthodoxen Katholizismus bekannt und wurde von St. Jerome als „einer der mutigsten Bischöfe seiner Zeit“ bezeichnet.
+5;28;s;A Londra in Inghilterra, beata Margherita Pole, madre di famiglia e martire, che, contessa di Salisbury e madre del cardinale Reginaldo, fu decapitata nel carcere della Torre sotto il re Enrico VIII, del quale aveva disapprovato il divorzio, trovando così riposo nella pace di Cristo.;;In London in England, blessed Margaret pole, family mother and martyr who, as countess of Salisbury e mother of cardinal Reginaldo, was beheaded in the prison of the tower under the king Henry the eight, of whom she disapproved the divorce, finding finally peace in Chrisaint;In London, England, wurde die selige Margarete Pole – Familien Mutter und Märtyrerin, als Gräfin von Salisbury und Mutter des Kardinals Reginaldo, im Gefängnis des Turmes unter König Henry dem achten geköpft, und fand so endlich Frieden bei Christus.
+5;29;s;;;"Maximinus was an ardent enemy of the Arian heretics, opposing them in the councils of Milan, Sardica, and Cologne. He was a known miracle worker and apologist for orthodox Catholicism and was called ""one of the most courageous bishops of his time"" by saint Jerome.";Maximin war ein leidenschaftlicher Feind des Arianismus und stellte sich ihnen im Konzil von Mailand, Sardica und Köln entgegen. Er war als Wundertäter und Apologet des orthodoxen Katholizismus bekannt und wurde von heiligen Jerome als „einer der mutigsten Bischöfe seiner Zeit“ bezeichnet.
 5;30;s;;;She was born in 1412 in Domrémy, Bar, France. A national heroine of France, at age 18 she led the French army to victory over the English at Orléans. Captured a year later, Joan was burned at the stake as a heretic by the English;Sie wurde 1412 in Domrémy, Bar, Frankreich geboren. Als eine nationale Heldin von Frankreich, führte sie mit achtzehn Jahren die französische Armee zum Sieg über England in Orléans. Ein Jahr später wurde sie als Ketzerin auf dem Scheiterhaufen durch die Engländer verbrannt.
 5;31;s;;;;
 6;1;s;;;;
@@ -602,8 +602,8 @@ month;day;;IT;ES;EN;DE
 8;21;s;;;;
 8;22;s;;;;
 8;23;s;;;;
-8;24;s;;;;
-8;25;s;;;;
+8;24;s;L'apostolo San Bartolomeo era galileo e probabilmente pescatore come la maggior parte degli Apostoli. Scelto da Gesù, Natanaele, il suo nome originario, ebbe anch'egli la felice sorte di nutrire l'anima sua delle parole di vita che uscivano dal labbro benedetto del Divin Maestro per tutto il tempo della sua predicazione, e di essere testimonio dei suoi miracoli. ;;;
+8;25;s;nacque nell'anno 1215 in Puassy, ove ricevette anche il santo battesimo. Ebbe per genitori Luigi ottavo e la regina Bianca di Castiglia, donna di grande pietà e virtù. Quando fu maggiorenne, venne consacrato e coronato re di Francia come Luigi nono. riguardò poi sempre la sua consacrazione non come una semplice cerimonia, ma come un impegno ed un obbligo che egli assumeva davanti a Dio ed agli uomini di far regnare Gesù Cristo in tutti i suoi stati. ;;;
 8;26;s;;;;
 8;27;s;;;;
 8;28;s;;;;

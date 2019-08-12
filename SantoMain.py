@@ -327,14 +327,19 @@ def retrieveTextFromKey(source, key, wholeBook=False): #TODO: key not found exce
                 #also bookName and book number
                 textPartsToPlay.insert(0, [book, Biblebooks[book] ])
                 textPartsToPlay.insert(1, [bookNum, bookNum] )
-                
+
+                maxNumVerses = 5
+                numAddedVerses = 0
                 for iVerse in Bible[book][bookNum]:
                         key = BibleDataToID(book,bookNum,iVerse)
-                        print("coordinates:",book,bookNum,iVerse)
+                        print("coordinates (wholebook):",book,bookNum,iVerse)
                         dictionaryEntry = Bible[book][bookNum][iVerse]
-                        print("dictionaryEntry", dictionaryEntry)
+                        print("dictionaryEntry (wholebook)", dictionaryEntry)
                         if dictionaryEntry[language_out] != "":
-                                textPartsToPlay.append([key, dictionaryEntry])         
+                                textPartsToPlay.append([key, dictionaryEntry])
+                                numAddedVerses += 1
+                                if numAddedVerses >= maxNumVerses:
+                                        break
                 
         #print("textPartsToPlay", textPartsToPlay)
         return textPartsToPlay
@@ -447,8 +452,8 @@ def searchText(source, topic, people):
                 listWordsPeople = vocPeople[people][language_in]
                 for i in range(len(listWordsPeople)):
                         listWordsPeople[i] = listWordsPeople[i].encode('utf-8')
-        print(listWordsTopic)
         print("listWordsTopic", listWordsTopic)
+        print("listWordsPeople", listWordsPeople)
         foundSource = None
         print("Searching....")
         foundResults = {}   #key, topic, people
@@ -471,7 +476,7 @@ def searchText(source, topic, people):
                 foundSource = 'pray'
                 for prayer in prayers:
                         for part in prayers[prayer]['parts']:
-                                print(prayers[prayer]['parts'][part])
+                                #print(prayers[prayer]['parts'][part])
                                 if (language_out in prayers[prayer]['parts'][part]): #check that language exists
                                         foundKey = prayer
                                         wordInSentence(foundSource, listWordsTopic, 'topic', prayers[prayer]['parts'][part][language_out], foundKey, foundResults)
@@ -497,6 +502,7 @@ def searchText(source, topic, people):
                                         wordInSentence(foundSource, listWordsTopic, 'topic', quotes[quote]['parts'][part][language_out], foundKey, foundResults)
                                         wordInSentence(foundSource, listWordsPeople, 'people', quotes[quote]['parts'][part][language_out], foundKey, foundResults)
 
+        #print("foundResults before saints:", foundResults)
         if (people != -1):
                 if people[0].isdigit(): #if it's a date, the query is a saint
                         foundSource = 'saints'
@@ -509,20 +515,34 @@ def searchText(source, topic, people):
 
 
         #print("foundResults:", foundResults)
-        #filter case of AND
+        #filter case of AND (as so far it collected OR)
         if (topic != -1 and people != -1):
                 for result in list(foundResults): #converted to a list to force a copy of the keys to avoid runtime error
                         if foundResults[result]['topic']==0 or foundResults[result]['people'] ==0:
                                 del foundResults[result]
                                 #print("deleted", result)
 
+        #print("entriesSkip", entriesSkip)
+        for result in list(foundResults):
+                #print([-1, foundResults[result]['source'], topic, people, result])
+                if ([-1, foundResults[result]['source'], topic, people, result] in entriesSkip):
+                        del foundResults[result]
+                        #print("skipping", result)
+
         print("filtered foundResults:", foundResults)
+
+        """
+        foundResults contains for each key:
+        the source where it has been found, and the flags topic and people, which are 0/1
+        the variable foundSource will be overwritten and is not usable
+        topic and people are the variables containing the original query parameters
+        """
         
         if len(foundResults) > 0:        
                 chosenResult = random.choice(list(foundResults))   #chosenResult is a key of dictionary
-                if (['-1', source, topic, people, chosenResult, '0'] not in entries):
+                if ([-1, source, topic, people, chosenResult, '0'] not in entries):
                         print("adding to the entries")
-                        entries.append(['-1', source, topic, people, chosenResult, '0'])
+                        entries.append([-1, source, topic, people, chosenResult, '0'])
                 print("chosenResult:",chosenResult)
                 print(entries)
 
@@ -598,7 +618,7 @@ def elaborateAnswer(keyword):  #enters here only if it recognises some word
                                 answer_found = True
                                 changeState("farewell", state, func_name(), True)
 
-                        elif query == ["thanks", -1, -1, -1]:        
+                        elif query == ["thanks", -1, -1, -1] or query == ["ijou", -1, -1, -1]:        
                         #elif queryID == "thanks":
 ##                                playSound("yourewelcome1")
 ##                                time.sleep(0.4)
@@ -622,7 +642,7 @@ def elaborateAnswer(keyword):  #enters here only if it recognises some word
                         #elif queryID == "bible":
                                 playSound("verse")
                                 time.sleep(0.3)
-                                playSound("touchHand")
+                                #playSound("touchHand")
                                 time.sleep(0.8)
                                 [searchResultSource, searchResultReply] = randomSearchText(query[iSource])
                                 if (searchResultReply != None):
@@ -693,13 +713,15 @@ def elaborateAnswer(keyword):  #enters here only if it recognises some word
                                             query[iTopic] == entries[iEntry][iTopic] and
                                             query[iPeople] == entries[iEntry][iPeople]):
                                                 availableEntries.append(iEntry)
+                                print("availableEntries", availableEntries)
                                 #CASE 4A: available entry
-                                if len(availableEntries)>0:
-                                        print(availableEntries)
+                                numAvailableEntries = len(availableEntries)
+                                if numAvailableEntries>0 and random.randint(0, numAvailableEntries+1)<numAvailableEntries: #50% if one entry, 33% if two entries
+                                        
                                         chosenEntry = entries[random.choice(availableEntries)]           
                                         chosenReply = retrieveTextFromKey(chosenEntry[iSource], chosenEntry[answerColumn] )
                                         print("retrieveTextFromKey", chosenEntry[iSource], chosenEntry[answerColumn])
-                                #CASE 4B: search
+                                #CASE 4B: search if no entries or with probability 1/(1+numAvailableEntries)
                                 else:
                                         playSound("search")
                                         time.sleep(0.2)
@@ -713,7 +735,7 @@ def elaborateAnswer(keyword):  #enters here only if it recognises some word
                                         print("answer found")
                                 else:
                                         playSound("noresults")
-                                        changeState("wakaranai", state, func_name(), False) #for now wakaranai
+                                        changeState("wakaranai", state, func_name(), True) #for now wakaranai
                                         print("answer not found")
                                         
 

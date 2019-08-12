@@ -3,7 +3,7 @@ inTheNameAmen;Nel nome del padre, del figlio, e dello Spirito Santo, Amen;Nel no
 amen;Amen;Amen;Amen;Amen
 goInPeace;Vai in pace, con la grazia del Signore;Anda en paz, con la gracia del Señor.;Go in peace, and may God bless you;Gehe in Frieden und möge Gott dich segnen
 greeting1Day;Buongiorno!;Buenos días;Hello!;Hallo
-greeting1;;Buenas tardes;;
+greeting1;Buongiorno!;Buenas tardes;Hello!;Hallo
 greetingMorning;Buongiorno;Buenos días;Good morning;Guten Morgen
 greetingAfternoon;Buongiorno;Buenos días;Good afternoon;Guten Tag
 greetingEvening;Buonasera;Buenas tardes;Good evening;Guten Abend
@@ -32,11 +32,12 @@ intro;Possiamo parlare del santo di oggi, della Bibbia, o possiamo pregare;Podem
 introPope;;Podemos hablar sobre el santo de hoy, o de la Biblia, o de las palabras de Papa Francisco, o podemos rezar;;
 search;Fammi fare una ricerca. Aspetta un attimo.;Dejame hacer una busqueda. Espera un rato.;Please let me do a search. Hold on.;
 noresults;Perdonami, non ho trovato alcuna informazione su quello che hai chiesto;Disculpame, no encontré alguna información sobre lo que me preguntaste;I'm sorry, I could not find any information about what you asked;
+wakaranaiSearch;Perdonami, non sono riuscito a trovare una risposta appropriata;;I'm sorry, I could not find an appropriate answer;
 wakaranai1;Perdonami, non ti ho sentito;Disculpame, no te escuché;I'm sorry, I could not hear you;Tut mir leid, ich konnte dich nicht hören
 wakaranai2;Perdonami, non ti ho sentito;Disculpame, no te oí;I'm sorry, I could not hear you;Tut mir leid, ich konnte dich nicht hören
 wakaranai3;Perdonami, non ho capito che hai detto;Disculpame, no entiendo lo que dijiste;I'm sorry, I did not understand what you said.;
 wakaranaiAnswer;Perdonami, non so come rispondere a questo;;I'm sorry, I don't have the answer to that;
-wakaranaiSearch;Perdonami, non sono riuscito a trovare una risposta appropriata;;I'm sorry, I could not find an appropriate answer;
+wakaranaiAnswer2;Perdonami, non sono in grado di rispondere;;I'm sorry, I am not able to answer;
 retire;Torno in preghiera. Sono disponibile in qualsiasi momento.;Vuelvo en oración. Estoy disponible en cualquier momento;I go back to prayer. I'm available anytime;Ich werde weiter beten. Ich bin immer verfügbar.
 retireShort;Torno in preghiera;Vuelvo en oración.;I go back to prayer.;Ich werde weiter beten. 
 genki;Ho qualche acciacco ma sto bene. Grazie.;Tengo achaques pero estoy bien. Gracias;Somehow achy but I'm fine. Thanks.;Ein bisschen schmerzlich, aber es geht mir gut. Danke.

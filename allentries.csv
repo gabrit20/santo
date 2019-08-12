@@ -5,12 +5,14 @@ command;source;topic;people;answerID;priority
 -1;pope;gratitude;-1;pope_gratitude;0
 -1;pope;lima;-1;pope_Lima;0
 -1;pope;peru;-1;pope_Lima;0
+-1;pope;sons;-1;pope_genitori;0
 -1;pray;health;-1;p_lucas;0
 -1;bible;help;-1;Gen2:18;0
 -1;bible;hope;-1;Job14:7;0
 -1;bible;hope;-1;Psa9:18;0
 -1;bible;sick;-1;Exo23:25;0
--1;bible;sick;-1;Exo41:3;0
+-1;bible;sick;-1;Psa41:3;0
+-1;bible;sick;-1;Psa88:1;0
 -1;pray;sick;-1;p_guarigione;0
 -1;bible;wealth;-1;Pro10:22;0
 -1;bible;wealth;-1;Pro13:7;0
@@ -26,6 +28,7 @@ siri;text;-1;-1;siri;0
 cortana;text;-1;-1;cortana;0
 myname;text;-1;-1;meet;-1
 hearme;text;-1;-1;hearyou;-1
+whatsup;text;-1;-1;hearyou;-1
 yourname;text;-1;-1;myName;-1
 how;text;-1;-1;genki;-2
 hi;text;-1;-1;greeting1;-2

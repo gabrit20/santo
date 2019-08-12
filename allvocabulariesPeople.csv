@@ -1,13 +1,13 @@
-KeywordName;NLanguage (0=it-IT, 1=es-PE, 2=en-GB, 3=de-DE);LanguageID;Words;
-francis;0;it-IT;san francesco;
-francis;1;es-PE;san francisco;
-francis;2;en-GB;saint francis;
-francis;3;de-DE;heiliger franziskus;
-jesus;0;it-IT;gesù;cristo
-jesus;1;es-PE;Jesús;cristo
-jesus;2;en-GB;jesus;christ
-jesus;3;de-DE;;
-god;0;it-IT;Dio;Signore
-god;1;es-PE;Dios;Señor
-god;2;en-GB;God;Lord
-god;3;de-DE;Gott;
+KeywordName;NLanguage (0=it-IT, 1=es-PE, 2=en-GB, 3=de-DE);LanguageID;Words;;;
+francis;0;it-IT;san francesco;;;
+francis;1;es-PE;san francisco;;;
+francis;2;en-GB;saint francis;;;
+francis;3;de-DE;heiliger franziskus;;;
+jesus;0;it-IT;gesù;cristo;;
+jesus;1;es-PE;Jesús;cristo;;
+jesus;2;en-GB;jesus;christ;;
+jesus;3;de-DE;;;;
+god;0;it-IT;su Dio;da Dio;al Signore;il Signore
+god;1;es-PE;sobre Dios;de Dios;para Dios;el Señor
+god;2;en-GB;about God;from God;to God;our Lord
+god;3;de-DE;Gott;;;

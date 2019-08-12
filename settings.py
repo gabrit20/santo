@@ -1,7 +1,7 @@
 #More information about languages could be found in;
 #https://www.science.co.il/language/Locale-codes.php
-language_out = "ES" #"IT" #"ES" #"EN" #"DE"
-language_in = 'es-PE'   #'en-GB' #de-DE #en-US #ja-JP #it-IT #es-PE  #see http://www.lingoes.net/en/translator/langcode.htm
+language_out = "IT" #"IT" #"ES" #"EN" #"DE"
+language_in = 'it-IT'   #'en-GB' #de-DE #en-US #ja-JP #it-IT #es-PE  #see http://www.lingoes.net/en/translator/langcode.htm
 language_list = ["IT","ES","EN","DE"]
 language_list_in = ["it-IT","es-PE","en-GB","de-DE"]
 
