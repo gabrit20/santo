@@ -8,14 +8,14 @@ Biblebooks = {}
 
 def allbibleInit():
 
-    for iLanguage in language_list:
+    for iLanguage in language_list_out:
 
         with codecs.open("BibleBooks.csv", encoding='latin-1') as booksFile:
             booksFile.readline() #skips the first line
             for line in booksFile:
                 items = line.strip().split(';')
                 bookID = str(items[0])  #3 latters abbreviation
-                bookName = items[1+language_list.index(iLanguage)].lower().encode('utf-8')
+                bookName = items[1+language_list_out.index(iLanguage)].lower().encode('utf-8')
 
                 if bookID not in Bible:
                     Bible[bookID] = {}
@@ -28,7 +28,9 @@ def allbibleInit():
     #print(Biblebooks)
 
     
-    for iLanguage in language_list:
+    for iLanguage in language_list_out:
+        if iLanguage != language_out:
+            continue #cut loading times
 
         try:
             #iLanguage = 'EN'

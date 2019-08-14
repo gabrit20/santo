@@ -26,6 +26,7 @@ tellMe4;Raccontami;Cuéntame;Tell me;
 tellMe5;Parlami;Háblame;Talk to me;
 tellMeElse1;Qualcos'altro?;algo mas?;Anything else?;
 tellMeElse2;Vuoi parlare di qualcos'altro?;Quieres hablar de algo mas?;Do you want to talk about anything else?;
+tellMeElse3;Sono in ascolto;Te estoy escuchando;I'm hearing;Erzähl es mir
 ciao;ciao;chau;bye;Tschüss
 yourewelcome1;Di niente. Sono sempre a disposizione.;De nada. Estoy siempre a tu disposición;You're welcome. I'm always available;Gern geschehen. Ich bin immer verfügbar
 intro;Possiamo parlare del santo di oggi, della Bibbia, o possiamo pregare;Podemos hablar sobre el santo de hoy, o de la Biblia, o podemos rezar;We can talk about the saint of today, or of the Bible, or we can pray.;
@@ -56,7 +57,8 @@ prayStart;Preghiamo;Recemos;Let us pray;Lass uns beten
 verse;Ti parlerò di un passo della Bibbia;Te hablaré de un versículo de la Biblia;;
 touchHand;quando vuoi che mi interrompa toccami una mano;cuando quieres que me interrumpa tócame una mano;when you want me to stop please Touch my hand;
 aureola;Parlami quando ho l'aureola accesa;háblame cuando mi aureola está encendida;talk to me when my aureole is turned on;
-popeStart;;Te hablaré de las palabras de Papa Francisco en Lima;;
+popeStart;Ti citerò parole di Papa Francesco;Te citaré de palabras de Papa Francisco;I will cite you words of Pope Francis;
+quoteStart;Ti citerò alcune parole;Te citaré unas palabras;I will cite you a few words;
 cuellar1;;Tu eres Francisco Cuéllar. Un gran pecador.;;
 cuellar2;;tenemos que rezar mucho porque vas a ir al infierno;;
 ;;;;

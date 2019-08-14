@@ -94,7 +94,7 @@ def playSound(filename, archive=-1):
         if (archive == -1):
                 archive = text[filename] #id of filename coincides with the key of the dictionary
         
-        print('ARCHIVE', archive)
+        #print('ARCHIVE', archive)
         #if (row != -1 and column != -1):
         #        playList(language_out, filename, archive, row, column)
         if (espalda==0):
@@ -282,21 +282,30 @@ def retrieveTextFromKey(source, key, wholeBook=False): #TODO: key not found exce
                         if str(counter) in prayers[key]['parts']: #if entry exists
                                 dictionaryEntry = prayers[key]['parts'][str(counter)] 
                                 if dictionaryEntry[language_out] != "":
-                                        textPartsToPlay.append([key, dictionaryEntry])           
+                                        textPartsToPlay.append([key+"_"+str(counter), dictionaryEntry])
+                if len(textPartsToPlay)>0:
+                        playSound("prayStart")
+                        time.sleep(1)
         elif (source == 'pope'):
                 counter = 0
                 for counter in range(0, maxNumPartsText):
                         if str(counter) in pope[key]['parts']: #if entry exists
                                 dictionaryEntry = pope[key]['parts'][str(counter)] 
                                 if dictionaryEntry[language_out] != "":
-                                        textPartsToPlay.append([key, dictionaryEntry])      
+                                        textPartsToPlay.append([key+"_"+str(counter), dictionaryEntry])
+                if len(textPartsToPlay)>0:
+                        playSound("popeStart") 
+                        time.sleep(1)
         elif (source == 'quotes'):
                 counter = 0
                 for counter in range(0, maxNumPartsText):
                         if str(counter) in quotes[key]['parts']: #if entry exists
                                 dictionaryEntry = quotes[key]['parts'][str(counter)] 
                                 if dictionaryEntry[language_out] != "":
-                                        textPartsToPlay.append([key, dictionaryEntry])    
+                                        textPartsToPlay.append([key+"_"+str(counter), dictionaryEntry])
+                if len(textPartsToPlay)>0:
+                        playSound("quoteStart") 
+                        time.sleep(1)
         elif (source == 'saints'):
                 [month, day, info] = IDtoDate(key)
                 dictionaryEntry = saints[month][day][info] 
@@ -320,6 +329,10 @@ def retrieveTextFromKey(source, key, wholeBook=False): #TODO: key not found exce
                 #also bookName and book number
                 textPartsToPlay.insert(0, [book, Biblebooks[book] ])
                 textPartsToPlay.insert(1, [bookNum, bookNum] )
+                if len(textPartsToPlay)>0:
+                        playSound("verse")
+                        time.sleep(0.5)
+                
         elif ((source == 'bible' or source in Biblebooks) and wholeBook == True):
                 [book,bookNum,verseNum] = BibleIDtoData(key)
                 #book="Dan"
@@ -328,7 +341,6 @@ def retrieveTextFromKey(source, key, wholeBook=False): #TODO: key not found exce
                 textPartsToPlay.insert(0, [book, Biblebooks[book] ])
                 textPartsToPlay.insert(1, [bookNum, bookNum] )
 
-                maxNumVerses = 5
                 numAddedVerses = 0
                 for iVerse in Bible[book][bookNum]:
                         key = BibleDataToID(book,bookNum,iVerse)
@@ -340,8 +352,12 @@ def retrieveTextFromKey(source, key, wholeBook=False): #TODO: key not found exce
                                 numAddedVerses += 1
                                 if numAddedVerses >= maxNumVerses:
                                         break
+                if len(textPartsToPlay)>0:
+                        playSound("verse")
+                        time.sleep(0.5)
                 
-        #print("textPartsToPlay", textPartsToPlay)
+                
+        print("textPartsToPlay", textPartsToPlay)
         return textPartsToPlay
 
 
@@ -386,7 +402,7 @@ def wordInSentence(currentSource, listWords, wordsGroup, sentence, foundKey, fou
                         #print("FOUND", listWords[i], foundKey)
 
 
-def randomSearchText(source):
+def randomsearchTextString(source):
         if (source == 'bible'):
                 randomBookID = random.choice(list(Bible.keys()))
                 randomBookNum = random.choice(list(Bible[randomBookID].keys()))
@@ -437,7 +453,7 @@ def randomSearchText(source):
 
         
 
-def searchText(source, topic, people):
+def searchTextString(source, topic, people):
         """searchs for topic OR people in sources and adds to foundResults.
         In foundResults filters out in case of topic AND people those with only one of the two
         then picks a random entry
@@ -544,7 +560,7 @@ def searchText(source, topic, people):
                         print("adding to the entries")
                         entries.append([-1, source, topic, people, chosenResult, '0'])
                 print("chosenResult:",chosenResult)
-                print(entries)
+                #print("entries", entries)
 
                 return [foundResults[chosenResult]['source'], chosenResult]
         else:
@@ -620,13 +636,13 @@ def elaborateAnswer(keyword):  #enters here only if it recognises some word
 
                         elif query == ["thanks", -1, -1, -1] or query == ["ijou", -1, -1, -1]:        
                         #elif queryID == "thanks":
-##                                playSound("yourewelcome1")
-##                                time.sleep(0.4)
+                                playSound("yourewelcome1")
+                                time.sleep(0.4)
 ##                                countInteractions == 0
 ##                                playSound("goInPeace")
                                 answer_found = True
                                 print("changeState", "farewell")
-                                changeState("farewell", state, func_name(), True)
+                                changeState("farewell", state, func_name(), False)
                                 
                                 
                         elif query == ["day", -1, -1, -1]:
@@ -640,11 +656,11 @@ def elaborateAnswer(keyword):  #enters here only if it recognises some word
                                 
                         elif query == [-1, "bible", -1, -1]:
                         #elif queryID == "bible":
-                                playSound("verse")
-                                time.sleep(0.3)
+                                #playSound("verse") #moved to retrieveTextFromKey
+                                #time.sleep(0.3)
                                 #playSound("touchHand")
                                 time.sleep(0.8)
-                                [searchResultSource, searchResultReply] = randomSearchText(query[iSource])
+                                [searchResultSource, searchResultReply] = randomsearchTextString(query[iSource])
                                 if (searchResultReply != None):
                                         chosenReply = retrieveTextFromKey(searchResultSource, searchResultReply, True )
                                         answer_found = True
@@ -655,7 +671,7 @@ def elaborateAnswer(keyword):  #enters here only if it recognises some word
 
 
                         elif query[iSource] in list(Biblebooks.keys()) and query[0] == -1 and query[2:4] == [-1, -1]:
-                                [searchResultSource, searchResultReply] = randomSearchText(query[iSource])
+                                [searchResultSource, searchResultReply] = randomsearchTextString(query[iSource])
                                 if (searchResultReply != None):
                                         chosenReply = retrieveTextFromKey(searchResultSource, searchResultReply, True )
                                         answer_found = True
@@ -669,9 +685,9 @@ def elaborateAnswer(keyword):  #enters here only if it recognises some word
                         elif query == [-1, "pray", -1, -1]:
                         #elif queryID == "pray":
                                 answer_found = True
-                                playSound("prayStart")
-                                time.sleep(1)
-                                [searchResultSource, searchResultReply] = randomSearchText(query[iSource])
+                                #playSound("prayStart") #moved to retrieveTextFromKey
+                                #time.sleep(1)
+                                [searchResultSource, searchResultReply] = randomsearchTextString(query[iSource])
                                 if (searchResultReply != None):
                                         chosenReply = retrieveTextFromKey(searchResultSource, searchResultReply )
                                         print("random pray: ", chosenReply )
@@ -682,8 +698,8 @@ def elaborateAnswer(keyword):  #enters here only if it recognises some word
                         elif query == [-1, "pope", -1, -1]:
                         #elif queryID == "pope":
                                 answer_found = True
-                                playSound("popeStart")
-                                time.sleep(1)
+                                #playSound("popeStart") #moved to retrieveTextFromKey
+                                #time.sleep(1)
                                 print("changeState", "reply")
                                 changeState("reply", state, func_name(), False)
                                 
@@ -716,7 +732,10 @@ def elaborateAnswer(keyword):  #enters here only if it recognises some word
                                 print("availableEntries", availableEntries)
                                 #CASE 4A: available entry
                                 numAvailableEntries = len(availableEntries)
-                                if numAvailableEntries>0 and random.randint(0, numAvailableEntries+1)<numAvailableEntries: #50% if one entry, 33% if two entries
+                                if numAvailableEntries>0:
+                                        dieroll = random.randint(0, numAvailableEntries)
+                                        print("dieroll",dieroll)
+                                if numAvailableEntries>0 and dieroll<numAvailableEntries: #50% if one entry, 33% if two entries
                                         
                                         chosenEntry = entries[random.choice(availableEntries)]           
                                         chosenReply = retrieveTextFromKey(chosenEntry[iSource], chosenEntry[answerColumn] )
@@ -725,7 +744,7 @@ def elaborateAnswer(keyword):  #enters here only if it recognises some word
                                 else:
                                         playSound("search")
                                         time.sleep(0.2)
-                                        [searchResultSource, searchResultReply] = searchText(query[iSource], query[iTopic], query[iPeople])
+                                        [searchResultSource, searchResultReply] = searchTextString(query[iSource], query[iTopic], query[iPeople])
                                         if (searchResultReply != None):
                                                 chosenReply = retrieveTextFromKey(searchResultSource, searchResultReply )
                                 if chosenReply != -1:
@@ -940,12 +959,12 @@ def logic():
 
                         if alreadyPlayed == False:
                                 if countInteractions <= 0:
-                                        alreadyPlayed = playSound("tellMeLong2")   
-                                elif countInteractions % 3 == 0:
+                                        alreadyPlayed = playSound(random.choice(soundfiles.variants["tellMeLong"]))   
+                                elif countInteractions % 4 == 0:
                                         print("countInteractions", countInteractions)
-                                        alreadyPlayed = playSound(random.choice(soundfiles.variants["tellMeElse"]))
-                                else:
                                         alreadyPlayed = playSound(random.choice(soundfiles.variants["tellMe"]))
+                                else:
+                                        alreadyPlayed = playSound(random.choice(soundfiles.variants["tellMeElse"]))
                                 time.sleep(0.5)
                         listen()
 
@@ -974,7 +993,7 @@ def logic():
 
 
                 elif (state=="wakaranai"):
-                        playSound(random.choice(soundfiles.variants["wakaranai"]))
+                        playSound(random.choice(soundfiles.variants["wakaranaiAnswer"]))
                         time.sleep(1.2)
                         countInteractions += 1
                         changeState("enquiry", state, func_name(), False)

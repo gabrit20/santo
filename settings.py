@@ -2,7 +2,7 @@
 #https://www.science.co.il/language/Locale-codes.php
 language_out = "IT" #"IT" #"ES" #"EN" #"DE"
 language_in = 'it-IT'   #'en-GB' #de-DE #en-US #ja-JP #it-IT #es-PE  #see http://www.lingoes.net/en/translator/langcode.htm
-language_list = ["IT","ES","EN","DE"]
+language_list_out = ["IT","ES","EN","DE"]
 language_list_in = ["it-IT","es-PE","en-GB","de-DE"]
 
 gender = "m"
@@ -26,6 +26,7 @@ seconds_in_silence = 1.5 #3
 maxWaitingCycles = 5 #the total waiting time is given by maxWaitingCycles*recordingTime
 
 maxNumPartsText = 10 #maximum number of blocks in which a text can be split
+maxNumVerses = 5 #maximum number of random verses to be read from the Bible
 
 speech_lock = False
 

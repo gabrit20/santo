@@ -47,7 +47,7 @@ def alldatesInit():
         for d in range(len(days)):
             day = str(d+1)
             sentences = {}
-            for lan in language_list:
+            for lan in language_list_out:
                 sentence = ""
                 dateformat_language = dateformat[lan]
 

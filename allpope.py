@@ -22,9 +22,9 @@ def allpopeInit():
             part = str(items[2]) 
             
 
-            for iLanguage in language_list:
+            for iLanguage in language_list_out:
 
-                text = items[3+language_list.index(iLanguage)].lower().encode('utf-8')
+                text = items[3+language_list_out.index(iLanguage)].lower().encode('utf-8')
 
 
                 if popeID not in pope:

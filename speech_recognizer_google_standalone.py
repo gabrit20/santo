@@ -406,6 +406,9 @@ class GSpeech(object):
                       except sr.UnknownValueError:
                         print("Speech not recognised")
                         sys.stdout.flush()
+                      except:
+                        print("Could not request results from Sphinx")
+                        sys.stdout.flush()
 
             self.on_recognition_finished()
             #print("speech_lock google before", speech_lock)

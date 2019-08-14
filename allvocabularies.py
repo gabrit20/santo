@@ -26,7 +26,7 @@ def allvocabulariesInit():
 ##    vocTopics = {}
 ##    global vocPeople
 ##    vocPeople = {}
-    Nlanguages = len(language_list)
+    Nlanguages = len(language_list_out)
     entry = {}
 
     loopCSV = ["Generic", "Sources", "Topics", "People"]
@@ -60,7 +60,7 @@ def allvocabulariesInit():
         for day in saints[month]:
             for info in saints[month][day]:
                 if info == 'n': #name
-                    for iLanguage in language_list:
+                    for iLanguage in language_list_out:
                         #print(month, day, iLanguage, saints[month][day]['s'][iLanguage])
                         if saints[month][day]['n'][iLanguage] != b'' and saints[month][day]['s'][iLanguage] != b'': #should be at least one language not empty (both name and story)
                             newKey = str(month) + '-' + str(day) + 'n'
@@ -69,8 +69,8 @@ def allvocabulariesInit():
                                 vocPeople[newKey] = {}
                             for j in range(len(language_list_in)):
                                 listOfSynonims = []   #necessary as words to be recognised have to be contained in a list. Otherwise it operates on a string, letter by latter
-                                if saints[month][day]['n'][language_list[j]] != b'':
-                                    listOfSynonims.append(saints[month][day]['n'][language_list[j]].decode('utf-8'))
+                                if saints[month][day]['n'][language_list_out[j]] != b'':
+                                    listOfSynonims.append(saints[month][day]['n'][language_list_out[j]].decode('utf-8'))
                                 vocPeople[newKey][language_list_in[j]] = listOfSynonims 
                             break
 # NO
@@ -78,16 +78,16 @@ def allvocabulariesInit():
 ##        for day in saints[month]:
 ##            for info in saints[month][day]:
 ##                if info == 'n': #name
-##                    for j in range(len(language_list)):
-##                        if saints[month][day]['n'][language_list[j]] != b'' and saints[month][day]['s'][language_list[j]] != b'': #should be at least one language not empty (both name and story)
+##                    for j in range(len(language_list_out)):
+##                        if saints[month][day]['n'][language_list_out[j]] != b'' and saints[month][day]['s'][language_list_out[j]] != b'': #should be at least one language not empty (both name and story)
 ##                            newKey = str(month) + '-' + str(day) + 'n'
 ##                            #print("ADDING", newKey)
 ##                            if newKey not in vocPeople:
 ##                                vocPeople[newKey] = {}
 ##
 ##                            listOfSynonims = []
-##                            if saints[month][day]['n'][language_list[j]] != b'':
-##                                listOfSynonims.append(saints[month][day]['n'][language_list[j]].decode('utf-8'))
+##                            if saints[month][day]['n'][language_list_out[j]] != b'':
+##                                listOfSynonims.append(saints[month][day]['n'][language_list_out[j]].decode('utf-8'))
 ##                            vocPeople[newKey][language_list_in[j]] = listOfSynonims 
                       
             
@@ -98,8 +98,8 @@ def allvocabulariesInit():
             for j in range(len(language_list_in)):
                 listOfSynonims = []
                 #print(Biblebooks[bookID])
-                if Biblebooks[bookID][language_list[j]] != b'':
-                     listOfSynonims.append(Biblebooks[bookID][language_list[j]].decode('utf-8'))
+                if Biblebooks[bookID][language_list_out[j]] != b'':
+                     listOfSynonims.append(Biblebooks[bookID][language_list_out[j]].decode('utf-8'))
                 vocSources[bookID][language_list_in[j]] = listOfSynonims
 
 

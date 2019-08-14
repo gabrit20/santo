@@ -1,0 +1,32 @@
+INFO:root:playSound: tellMeLong2
+INFO:root:5:48: STATE CHANGING TO noreply FROM enquiry IN listen
+INFO:root:5:48: STATE CHANGING TO enquiry FROM noreply IN logic
+INFO:root:5:48: STATE CHANGING TO noreply FROM enquiry IN listen
+INFO:root:5:48: STATE CHANGING TO enquiry FROM noreply IN logic
+INFO:root:keyword> gatto
+INFO:root:playSound: search
+INFO:root:playSound: quoteStart
+INFO:root:5:48: STATE CHANGING TO reply FROM enquiry IN elaborateAnswer
+INFO:root:playSound: q_trap_0
+INFO:root:playSound: q_trap_1
+INFO:root:5:48: STATE CHANGING TO enquiry FROM reply IN logic
+INFO:root:playSound: tellMeElse3
+INFO:root:keyword> dimmi ancora del mio gatto
+INFO:root:playSound: quoteStart
+INFO:root:5:49: STATE CHANGING TO reply FROM enquiry IN elaborateAnswer
+INFO:root:playSound: q_trap_0
+INFO:root:playSound: q_trap_1
+INFO:root:5:49: STATE CHANGING TO enquiry FROM reply IN logic
+INFO:root:playSound: tellMeElse2
+INFO:root:keyword> sì che ho perso la fede
+INFO:root:playSound: quoteStart
+INFO:root:5:49: STATE CHANGING TO reply FROM enquiry IN elaborateAnswer
+INFO:root:playSound: q_thomas_faith2_0
+INFO:root:playSound: q_thomas_faith2_1
+INFO:root:5:49: STATE CHANGING TO enquiry FROM reply IN logic
+INFO:root:playSound: tellMeElse1
+INFO:root:keyword> no è tutto grazie
+INFO:root:playSound: yourewelcome1
+INFO:root:5:50: STATE CHANGING TO farewell FROM enquiry IN elaborateAnswer
+INFO:root:playSound: retire
+INFO:root:5:50: STATE CHANGING TO standby FROM farewell IN logic

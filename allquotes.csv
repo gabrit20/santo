@@ -1,5 +1,23 @@
 quoteID;randomOK;part;IT;ES;EN;DE
-q_thomas;0;0;;De Santo Tomas de Aquino;;
-q_thomas;0;1;;Para alguien que tiene fe, no es necesaria ninguna explicación. Para aquel sin fe, no hay explicación posible.;To one who has faith, no explanation is necessary. To one without faith, no explanation is possible.;
+q_thomas_faith;0;0;Di San Tommaso d'Aquino.;De Santo Tomas de Aquino.;;
+q_thomas_faith;0;1;Per colui che ha fede, non servono spiegazioni. Per colui che non ha fede, nessuna spiegazione è possibile.;Para alguien que tiene fe, no es necesaria ninguna explicación. Para aquel sin fe, no hay explicación posible.;To one who has faith, no explanation is necessary. To one without faith, no explanation is possible.;
 q_Mat6:34;0;0;Dal Vangelo, secondo Matteo. ;Del Gospel, según Mateo 3:34. ;From the Gospel according to Matthew. ;Aus dem Matthäusevangelium.
 q_Mat6:34;0;1;Non affannarti per il domani, perché il domani avrà già le sue inquietudini. A ciascun giorno basta la sua pena.;no se angustien por el mañana, el cual tendrá sus propios afanes. Cada día tiene ya sus problemas;Do not worry about tomorrow, for tomorrow will worry about itself. Each day has enough trouble of its own.;Darum sorgt nicht für morgen, denn der morgige Tag wird für das Seine sorgen. Es ist genug, dass jeder Tag seine eigene Plage hat.
+q_trap;0;0;Di Giovanni Trapattoni;;By Giovanni Trapattoni.;
+q_trap;0;1;Non dire gatto se non ce l'hai nel sacco;;Don't say cat if you don't have it in your sack;
+q_thomas_suf;0;0;Di San Tommaso d'Aquino.;;;
+q_thomas_suf;0;1;Chi riceve qualcosa senza soffrire la conserva senza amore.;;;
+q_thomas_sad;0;0;Di San Tommaso d'Aquino.;;;
+q_thomas_sad;0;1;"Una sconsiderata tristezza è una malattia dell'anima; una tristezza moderata pertiene invece a una corretta condotta dello spirito, data la condizione di questa vita.";;;
+q_thomas_work;0;0;Di San Tommaso d'Aquino.;;;
+q_thomas_work;0;1;Non ci può essere gioia nella vita senza la gioia del lavoro.;;;
+q_thomas_faith2;0;0;Di San Tommaso d'Aquino.;;;
+q_thomas_faith2;0;1;Quando la fede non coincide con la ragione bisogna astenersi dal dare ragione alla fede.;;;
+q_thomas_devil;0;0;Di San Tommaso d'Aquino.;;;
+q_thomas_devil;0;1;Il demonio è causa occasionale e indiretta di tutti i nostri peccati in quanto fu lui a indurre il primo uomo a quel peccato dal quale la natura umana fu viziata in modo da rendere noi tutti proclivi alla colpa: come si potrebbe dire che è causa della combustione colui che ha seccato la legna, da cui deriva la sua facilità a bruciare.;;;
+q_thomas_motor;0;0;Di San Tommaso d'Aquino.;;;
+q_thomas_motor;0;1;"I motori intermedi non muovono se non in quanto sono mossi dal primo motore, come il bastone non muove se non in quanto è mosso dalla mano. Quindi è necessario arrivare a un primo motore che non sia mosso da altri; e tutti riconoscono che esso è Dio.";;;
+q_thomas_faith3;0;0;Di San Tommaso d'Aquino.;;;
+q_thomas_faith3;0;1;Alle verità che trascendono la nostra natura è necessario aderire con la fede, e ciò che crediamo lo dobbiamo all'autorità.;;;
+q_thomas_pray;0;0;Di San Tommaso d'Aquino.;;;
+q_thomas_pray;0;1;Succede che la preghiera fatta per gli altri non ottenga l'effetto desiderato, a dispetto delle condizioni più favorevoli alla sua efficacia: intenzione retta, fervore, perseveranza. Bisogna cercare la ragione nell'ostacolo imposto dalla persona che dovrebbe beneficiarne, ostacolo che non può essere eliminato finché persiste il libero arbitrio.;;;

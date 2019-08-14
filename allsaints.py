@@ -18,12 +18,12 @@ def allsaintsInit():
         file.readline() #skips the first line
         for line in file:
 
-            for iLanguage in language_list:
+            for iLanguage in language_list_out:
                 items = line.strip().split(';')
                 month = str(items[0])
                 day = str(items[1])
                 info = str(items[2])  #d/n/s (day/name/story)
-                text = items[3+language_list.index(iLanguage)].lower().encode('utf-8')
+                text = items[3+language_list_out.index(iLanguage)].lower().encode('utf-8')
                 
 
 

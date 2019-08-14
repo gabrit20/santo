@@ -1,6 +1,14 @@
 command;source;topic;people;answerID;priority
 -1;bible;advice;-1;Pro4:23;0
--1;quotes;faith;-1;q_thomas;0
+-1;quotes;faith;-1;q_thomas_faith;0
+-1;quotes;faith;-1;q_thomas_faith2;0
+-1;quotes;sin;-1;q_thomas_devil;0
+-1;quotes;suffer;-1;q_thomas_suf;0
+-1;quotes;sadness;-1;q_thomas_sad;0
+-1;quotes;work;-1;q_thomas_work;0
+-1;quotes;problem;-1;q_thomas_motor;0
+-1;quotes;problem;-1;q_thomas_pray;0
+-1;quotes;cat;-1;q_trap;0
 -1;pray;grace;-1;p_benito;0
 -1;pope;gratitude;-1;pope_gratitude;0
 -1;pope;lima;-1;pope_Lima;0
