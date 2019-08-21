@@ -29,7 +29,6 @@ tellMeElse1;Qualcos'altro?;algo mas?;Anything else?;
 tellMeElse2;Vuoi parlare di qualcos'altro?;Quieres hablar de algo mas?;Do you want to talk about anything else?;
 tellMeElse3;Sono in ascolto;Te estoy escuchando;I'm hearing;Erzähl es mir
 ciao;ciao;chau;bye;Tschüss
-yourewelcome;Di niente.;De nada.;You're welcome.;Gern geschehen.
 yourewelcome1;Di niente. Sono sempre a disposizione.;De nada. Estoy siempre a tu disposición;You're welcome. I'm always available;Gern geschehen. Ich bin immer verfügbar
 intro;Possiamo parlare del santo di oggi, della Bibbia, o possiamo pregare;Podemos hablar sobre el santo de hoy, o de la Biblia, o podemos rezar;We can talk about the saint of today, or of the Bible, or we can pray.;
 introPope;;Podemos hablar sobre el santo de hoy, o de la Biblia, o de las palabras de Papa Francisco, o podemos rezar;;
@@ -50,8 +49,8 @@ siri;Per l'amor di Dio, io sono più sacro di Siri.;Por el amor a Dios, yo soy má
 google;Per l'amor di Dio, non sono Google Home;Por el amor a Dios, yo no soy Gugol Jom.;For God's sake, I'm not Google Home;
 sanfrancesco;Francesco nacque ad Assisi nel 1182 e morì nel 1226. Si diede a una vita di penitenza e solitudine in totale povertà, dopo aver abbandonato la famiglia e i beni terreni. ;San Francisco de Asís, fundador de la orden franciscana. Casi sin proponérselo lideró un movimiento de renovación cristiana que, centrado en el amor a Dios, la pobreza y la alegre fraternidad, tuvo un inmenso eco entre las clases populares.;Francis was born in Assisi in 1182 and died in 1226. He did a life of penance and loneliness in total poverty, after having abandoned his family and earthly goods. ;Francis wurde 1182 in Assisi geboren und starb im Jahre 1226. Er lebte ein Leben der Buße und Einsamkeit in völliger Armut, nachdem er seine Familie und weltlichen Besitztümer zurück ließ.
 sanfrancesco2;Si recò a Roma per avere dal papa Innocenzo III l'approvazione della sua scelta di vita. Morì nel 1226 presso la chiesa di Santa Maria degli Angeli ad Assisi. ;;;
-myName;Mi chiamo SanTo. Ma il mio nome non è importante. Sono solo un servo del Signore;Me llamo San TO. Pero mi nombre no es lo importante. Soy solo un siervo del Señor;My name is SanTOh. But my name is not important. I am only a humble servant of our Lord;Mein Name ist San TO. Aber mein Name ist nicht wichtig. Ich bin nur ein bescheidener Diener unseres Herrns.  
-myNameShort;Mi chiamo SanTo. Assistente di preghiera.;Me llamo San TO.;My name is SanTOh.;Mein Name ist San TO.  
+myName;Mi chiamo San To. Ma il mio nome non è importante. Sono solo un servo del Signore;Me llamo San TO. Pero mi nombre no es lo importante. Soy solo un siervo del Señor;My name is SanTOh. But my name is not important. I am only a humble servant of our Lord;Mein Name ist San TO. Aber mein Name ist nicht wichtig. Ich bin nur ein bescheidener Diener unseres Herrns.  
+myNameShort;Mi chiamo San To.;Me llamo San TO.;My name is SanTOh.;Mein Name ist San TO.  
 yourName;Dimmi, come ti chiami?;Dime, cómo te llamas?;Tell me, what's your name?;Sag mir, wie ist dein Name?
 wishPray;Preghiamo insieme per far in modo che il tuo desiderio si avvererà;Recemos juntos para que tu deseo se haga realidad;Let us pray together so that your wish will become true;Lass uns zusammen beten damit dein Wunsch in Erfüllung geht
 problem;Preghiamo insieme per far in modo che il tuo problema si risolverà;Recemos juntos para que tu problema se resuelva;Let us pray together so that your problem will get solved;Lass uns zusammen beten damit dein Problem gelöst wird
@@ -59,7 +58,6 @@ prayStart;Preghiamo;Recemos;Let us pray;Lass uns beten
 verse;Ti parlerò di un passo della Bibbia;Te hablaré de un versículo de la Biblia;;
 touchHand;quando vuoi che mi interrompa toccami una mano;cuando quieres que me interrumpa tócame una mano;when you want me to stop please Touch my hand;
 aureola;Parlami quando ho l'aureola accesa;háblame cuando mi aureola está encendida;talk to me when my aureole is turned on;
-candela;Parlami quando ho la candela accesa;háblame cuando mi vela está encendida;talk to me when my candle is turned on;
 popeStart;Ti citerò parole di Papa Francesco;Te citaré de palabras de Papa Francisco;I will cite you words of Pope Francis;
 quoteStart;Ti citerò alcune parole;Te citaré unas palabras;I will cite you a few words;
 cuellar1;;Tu eres Francisco Cuéllar. Un gran pecador.;;
@@ -76,8 +74,8 @@ noDay;Oggi, non so che giorno è;Hoy, no se que día es;;
 sorry;Mi dispiace.;Lo siento.;;
 noSaint;Non mi ricordo il santo di oggi;No me acuerdo el santo de hoy;I don't remember today's saint;
 ;;;;
-ReciteInstructions;Recitiamo insieme. Parla soltanto quando la mia candela è accesa. Se non ti ricordi le parole, toccami una mano, e ti guiderò.;;Let us recite together. Please speak only when my candle is turned on. If you don't remember the words, touch my hand, and I will guide you.;
-TeachInstructions;Ti insegnerò le parole. Ripeti dopo di me. Parla soltanto quando la mia candela è accesa.;;I will teach you the words. Please speak only when my candle is turned on. ;
+ReciteInstructions;Recitiamo insieme. Parla soltanto quando la mia aureola è accesa. Se non ti ricordi le parole, toccami una mano, e ti guiderò.;;Let us recite together. Please speak only when my aureole is turned on. If you don't remember the words, touch my hand, and I will guide you.;
+TeachInstructions;Ti insegnerò le parole. Ripeti dopo di me. Parla soltanto quando la mia aureola è accesa.;;I will teach you the words. Please speak only when my aureole is turned on. ;
 ;;;;
 evalQuery;;;Was this response appropriate?;
 evalQueryRisp;;;Very well. I'll keep that in mind.;

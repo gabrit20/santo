@@ -1,0 +1,22 @@
+INFO:root:hand reciboR
+INFO:root:23:52: STATE CHANGING TO greeting FROM standby IN touch
+INFO:root:playSound: inTheNameAmen
+INFO:root:playSound: greetingNight
+INFO:root:playSound: myNameShort
+INFO:root:23:52: STATE CHANGING TO meeting FROM greeting IN logic
+INFO:root:playSound: yourName
+INFO:root:23:53: STATE CHANGING TO noname FROM meeting IN listen
+INFO:root:23:53: STATE CHANGING TO meeting FROM noname IN logic
+INFO:root:keyword> antipatia personale perretti ho sempre avuto un rapporto
+INFO:root:NAME: antipatia personale perretti ho sempre avuto un rapporto
+INFO:root:playSound: meetM
+INFO:root:playSound: intro
+INFO:root:playSound: aureola
+INFO:root:23:53: STATE CHANGING TO enquiry FROM meeting IN elaborateAnswer
+INFO:root:playSound: tellMeLong
+INFO:root:23:53: STATE CHANGING TO noreply FROM enquiry IN listen
+INFO:root:23:53: STATE CHANGING TO enquiry FROM noreply IN logic
+INFO:root:23:53: STATE CHANGING TO noreply FROM enquiry IN listen
+INFO:root:23:53: STATE CHANGING TO enquiry FROM noreply IN logic
+INFO:root:23:54: STATE CHANGING TO noreply FROM enquiry IN listen
+INFO:root:23:54: STATE CHANGING TO enquiry FROM noreply IN logic

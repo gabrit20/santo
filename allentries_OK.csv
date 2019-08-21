@@ -1,4 +1,4 @@
-command;source;topic;people;answerID;priority;extended
+command;source;topic;people;answerID;priority
 -1;bible;advice;-1;Pro4:23;0
 -1;quotes;faith;-1;q_thomas_faith;0
 -1;quotes;faith;-1;q_thomas_faith2;0
@@ -14,8 +14,7 @@ command;source;topic;people;answerID;priority;extended
 -1;pope;lima;-1;pope_Lima;0
 -1;pope;peru;-1;pope_Lima;0
 -1;pope;sons;-1;pope_genitori;0
--1;pray;sick;-1;p_lucas;0
--1;pray;sick;-1;p_guarigione;0
+-1;pray;health;-1;p_lucas;0
 -1;bible;help;-1;Gen2:18;0
 -1;bible;hope;-1;Job14:7;0
 -1;bible;hope;-1;Psa9:18;0
@@ -24,15 +23,13 @@ command;source;topic;people;answerID;priority;extended
 -1;bible;sick;-1;Psa88:1;0
 -1;bible;sick;-1;Sir30:15;0
 -1;bible;wealth;-1;Sir30:16;0
+-1;pray;sick;-1;p_guarigione;0
 -1;bible;wealth;-1;Pro10:22;0
 -1;bible;wealth;-1;Pro13:7;0
 -1;bible;worry;-1;Mat6:34;0
 -1;bible;worry;-1;Mat6:25;0
 -1;bible;worry;-1;Luk12:25;0
 -1;quotes;worry;-1;q_Mat6:34;0
--1;bible;work;-1;2Th3:10;0;1
--1;bible;age;-1;Tit2:3;0;1
--1;bible;age;-1;Sir25:5;0;1
 -1;pray;padrenostro;-1;padrenostro;0
 -1;text;-1;francis;sanfrancesco;0
 google;text;-1;-1;google;0

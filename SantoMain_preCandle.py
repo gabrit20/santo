@@ -43,12 +43,10 @@ global cabezera
 global tiempoSer
 global aureola
 global espalda
-global candela
 
 aureola=0
 espalda=0
 tiempoSer=0.30
-candela=0
 
 cabezera="$OAX"
 
@@ -89,7 +87,6 @@ def playSound(filename, archive=-1):
         global tiempoSer
         global aureola
         global espalda
-        global candela
         
         print("playSound: ", filename)
         logging.info("playSound: "+ filename)
@@ -105,26 +102,14 @@ def playSound(filename, archive=-1):
                 envia=cabezera+"B111"
                 espalda=1
                 ser.write(envia)
-        #print("aureola (playSound1): ", aureola)
-        #print("candela (playSound1): ", candela)
-##        if (aureola==1):
-##                print("aureola (playSound): ", aureola)
-##                time.sleep(tiempoSer)
-##                envia=cabezera+"A000"
-##                aureola=0
-##                ser.write(envia)
-##                print("aureola set to 000 (playSound)")
-##                print("aureola (playSound): ", aureola)
-        if (candela==1):                
+        if (aureola==1):
+                print("aureola (playSound): ", aureola)
                 time.sleep(tiempoSer)
-                envia=cabezera+"C000"
-                candela=0
+                envia=cabezera+"A000"
+                aureola=0
                 ser.write(envia)
-                print("candela set to 000 (playSound)")
-                #print("candela (playSound2): ", candela)
-
-
-
+                print("aureola set to 000 (playSound)")
+                print("aureola (playSound): ", aureola)
 
         playDict(language_out, filename, archive)
 
@@ -158,7 +143,6 @@ def listen():
         global tiempoSer
         global aureola
         global espalda
-        global candela
         
         #while True:
         if (state == "enquiry" or state == "meeting" ):  #shouldn't happen in other states
@@ -167,24 +151,14 @@ def listen():
                 
                 #print("Speech recognition starting")
                 #aureola on
-                #print("candela (listen1): ", aureola)
-                #print("candela (listen1): ", candela)
-##                if (aureola==0):
-##                        time.sleep(tiempoSer)
-##                        envia=cabezera+"A111"
-##                        aureola=1
-##                        ser.write(envia)
-##                        print("aureola set to 111 (listen)")
-##                        print("aureola (listen2): ", aureola)
-                if (candela==0):
+                if (aureola==0):
                         time.sleep(tiempoSer)
-                        envia=cabezera+"C111"
-                        candela=1
+                        print("aureola (listen): ", aureola)
+                        envia=cabezera+"A111"
+                        aureola=1
                         ser.write(envia)
-                        print("candela set to 111 (listen)")
-                        #print("candela (listen2): ", candela)
-
-
+                        print("aureola set to 111 (listen)")
+                        print("aureola (listen): ", aureola)
                         
                 if (espalda==1):
                         time.sleep(tiempoSer)
@@ -205,24 +179,14 @@ def listen():
 
                 speech_rec.stop()
                 #aureola off
-##                if (aureola==1):
-##                        time.sleep(tiempoSer)
-##                        print("aureola (listen3): ", aureola)
-##                        envia=cabezera+"A000"
-##                        aureola=0
-##                        ser.write(envia)
-##                        print("aureola set to 000 (listen)")
-##                        print("aureola (listen4): ", aureola)
-                if (candela==1):
+                if (aureola==1):
                         time.sleep(tiempoSer)
-                        #print("candela (listen3): ", candela)
-                        envia=cabezera+"C000"
-                        candela=0
+                        print("aureola (listen): ", aureola)
+                        envia=cabezera+"A000"
+                        aureola=0
                         ser.write(envia)
-                        print("candela set to 000 (listen)")
-                        #print("candela (listen4): ", candela)
-
-                        
+                        print("aureola set to 000 (listen)")
+                        print("aureola (listen): ", aureola)
                 #print("Speech recognition stopped")
                 is_recognized = speech_rec.is_recognized
 
@@ -671,6 +635,7 @@ def elaborateAnswer(keyword):  #enters here only if it recognises some word
                         #CASE 1: direct command
                         
                         if query == ["bye", -1, -1, -1]:
+                        #if queryID == "bye":
                                 playSound("goInPeace")
                                 time.sleep(0.4)
                                 countInteractions == 0
@@ -678,8 +643,9 @@ def elaborateAnswer(keyword):  #enters here only if it recognises some word
                                 answer_found = True
                                 changeState("farewell", state, func_name(), True)
 
-                        elif query == ["thanks", -1, -1, -1]:        
-                                playSound("yourewelcome")
+                        elif query == ["thanks", -1, -1, -1] or query == ["ijou", -1, -1, -1]:        
+                        #elif queryID == "thanks":
+                                playSound("yourewelcome1")
                                 time.sleep(0.4)
 ##                                countInteractions == 0
 ##                                playSound("goInPeace")
@@ -687,15 +653,9 @@ def elaborateAnswer(keyword):  #enters here only if it recognises some word
                                 print("changeState", "farewell")
                                 changeState("farewell", state, func_name(), False)
                                 
-                        elif query == ["ijou", -1, -1, -1]:        
-##                                countInteractions == 0
-##                                playSound("goInPeace")
-                                answer_found = True
-                                print("changeState", "farewell")
-                                changeState("farewell", state, func_name(), False)
-
                                 
                         elif query == ["day", -1, -1, -1]:
+                        #elif queryID == "day":
                                 answer_found = True
                                 print("changeState", "saint")
                                 changeState("saint", state, func_name(), False)
@@ -786,7 +746,7 @@ def elaborateAnswer(keyword):  #enters here only if it recognises some word
                                         if ((query[iSource] == entries[iEntry][iSource] or query[iSource] == -1) and
                                             query[iTopic] == entries[iEntry][iTopic] and
                                             query[iPeople] == entries[iEntry][iPeople]):
-                                                availableEntries.append(entries[iEntry])
+                                                availableEntries.append(iEntry)
                                 print("availableEntries", availableEntries)
                                 #CASE 5: available entry
                                 numAvailableEntries = len(availableEntries)
@@ -795,7 +755,7 @@ def elaborateAnswer(keyword):  #enters here only if it recognises some word
                                         print("dieroll",dieroll)
                                 if numAvailableEntries>0 and dieroll<numAvailableEntries: #50% if one entry, 33% if two entries
                                         
-                                        chosenEntry = availableEntries[dieroll]           
+                                        chosenEntry = entries[random.choice(availableEntries)]           
                                         chosenReply = retrieveTextFromKey(chosenEntry[iSource], chosenEntry[answerColumn] )
                                         print("retrieveTextFromKey", chosenEntry[iSource], chosenEntry[answerColumn])
                                 #CASE 6: search if no entries or with probability 1/(1+numAvailableEntries)
@@ -871,8 +831,7 @@ def elaborateAnswer(keyword):  #enters here only if it recognises some word
                 time.sleep(0.5)
                 playSound("intro")
                 time.sleep(0.5)
-##                playSound("aureola")
-                playSound("candela")
+                playSound("aureola")
                 changeState("enquiry", state, func_name(), False)
                 time.sleep(0.8)
                         
@@ -893,7 +852,6 @@ def logic():
         global chosenReply
         global aureola
         global espalda
-        global candela
         while True:
 
                 if (state != "standby"):
@@ -921,18 +879,12 @@ def logic():
                                 espalda=0
                                 ser.write(envia)
 
-##                        if (aureola==1):
-##                                time.sleep(tiempoSer)
-##                                envia=cabezera+"A000"
-##                                aureola=0
-##                                ser.write(envia)
-                        print("candela (greeting1): ", candela)
-                        if (candela==1):
+                        if (aureola==1):
                                 time.sleep(tiempoSer)
-                                envia=cabezera+"C000"
-                                candela=0
+                                envia=cabezera+"A000"
+                                aureola=0
                                 ser.write(envia)
-                                print("candela (greeting2): ", candela)
+
                         
 
                         playSound("inTheNameAmen")
@@ -1100,7 +1052,6 @@ def init():
         global tiempoSer
         global aureola
         global espalda
-        global candela
         
         b = 0
         speech_rec.register_callback(elaborateAnswer)
@@ -1147,11 +1098,6 @@ def init():
                         ser.write(envia)
                         print ("envio")
                         time.sleep(tiempoSer)
-                        
-                        candela=1
-                        print("candela (init): ", candela)
-                        
-                        
 
                         #print ("apago espalda")
                         print ("espalda on")
@@ -1169,7 +1115,6 @@ def init():
                         aureola=1
                         ser.write(envia)
                         print("aureola set to 111")
-                        print("aureola (init): ", aureola)
 
                         #envia=cabezera+"C111"
                         #ser.write(envia)

@@ -1,0 +1,128 @@
+INFO:root:hand reciboL
+INFO:root:22:13: STATE CHANGING TO greeting FROM standby IN touch
+INFO:root:playSound: inTheNameAmen
+INFO:root:playSound: greetingNight
+INFO:root:playSound: myNameShort
+INFO:root:22:13: STATE CHANGING TO meeting FROM greeting IN logic
+INFO:root:playSound: yourName
+INFO:root:keyword> giuliana
+INFO:root:NAME: giuliana
+INFO:root:playSound: meetF
+INFO:root:playSound: intro
+INFO:root:playSound: aureola
+INFO:root:22:14: STATE CHANGING TO enquiry FROM meeting IN elaborateAnswer
+INFO:root:playSound: tellMeLong
+INFO:root:22:14: STATE CHANGING TO noreply FROM enquiry IN listen
+INFO:root:22:14: STATE CHANGING TO enquiry FROM noreply IN logic
+INFO:root:keyword> che protegga la mia
+INFO:root:22:14: STATE CHANGING TO wakaranai FROM enquiry IN elaborateAnswer
+INFO:root:playSound: wakaranaiAnswer2
+INFO:root:22:14: STATE CHANGING TO enquiry FROM wakaranai IN logic
+INFO:root:playSound: tellMeElse2
+INFO:root:keyword> particolare
+INFO:root:22:14: STATE CHANGING TO wakaranai FROM enquiry IN elaborateAnswer
+INFO:root:playSound: wakaranaiAnswer2
+INFO:root:22:15: STATE CHANGING TO enquiry FROM wakaranai IN logic
+INFO:root:playSound: tellMeElse2
+INFO:root:keyword> se potesse dire qualcosa
+INFO:root:22:15: STATE CHANGING TO wakaranai FROM enquiry IN elaborateAnswer
+INFO:root:playSound: wakaranaiAnswer2
+INFO:root:22:15: STATE CHANGING TO enquiry FROM wakaranai IN logic
+INFO:root:playSound: tellMeElse3
+INFO:root:keyword> ebbene io prego ogni mattina ogni sera per tutti i miei cari
+INFO:root:22:15: STATE CHANGING TO wakaranai FROM enquiry IN elaborateAnswer
+INFO:root:playSound: wakaranaiAnswer
+INFO:root:22:16: STATE CHANGING TO enquiry FROM wakaranai IN logic
+INFO:root:playSound: tellMe5
+INFO:root:keyword> e poi certi qualcosa su qualche argomento
+INFO:root:22:16: STATE CHANGING TO wakaranai FROM enquiry IN elaborateAnswer
+INFO:root:playSound: wakaranaiAnswer2
+INFO:root:22:16: STATE CHANGING TO enquiry FROM wakaranai IN logic
+INFO:root:playSound: tellMeElse2
+INFO:root:keyword> la vecchiaia su sulla salute
+INFO:root:playSound: search
+INFO:root:playSound: verse
+INFO:root:22:16: STATE CHANGING TO reply FROM enquiry IN elaborateAnswer
+INFO:root:playSound: Sir
+INFO:root:playSound: 30
+INFO:root:playSound: Sir30:15
+INFO:root:playSound: Sir30:16
+INFO:root:playSound: Sir30:17
+INFO:root:22:17: STATE CHANGING TO enquiry FROM reply IN logic
+INFO:root:playSound: tellMeElse2
+INFO:root:keyword> sì posso parlare
+INFO:root:22:17: STATE CHANGING TO wakaranai FROM enquiry IN elaborateAnswer
+INFO:root:playSound: wakaranaiAnswer
+INFO:root:22:17: STATE CHANGING TO enquiry FROM wakaranai IN logic
+INFO:root:playSound: tellMeElse2
+INFO:root:keyword> io ho una certa età 88 anni
+INFO:root:22:18: STATE CHANGING TO wakaranai FROM enquiry IN elaborateAnswer
+INFO:root:playSound: wakaranaiAnswer
+INFO:root:22:18: STATE CHANGING TO enquiry FROM wakaranai IN logic
+INFO:root:playSound: tellMe1
+INFO:root:keyword> ha detto ho una certa età
+INFO:root:22:18: STATE CHANGING TO wakaranai FROM enquiry IN elaborateAnswer
+INFO:root:playSound: wakaranaiAnswer
+INFO:root:22:18: STATE CHANGING TO enquiry FROM wakaranai IN logic
+INFO:root:playSound: tellMeElse3
+INFO:root:keyword> qualcosa sulla vecchiaia parlare te la vecchiaia
+INFO:root:22:18: STATE CHANGING TO wakaranai FROM enquiry IN elaborateAnswer
+INFO:root:playSound: wakaranaiAnswer2
+INFO:root:22:18: STATE CHANGING TO enquiry FROM wakaranai IN logic
+INFO:root:playSound: tellMeElse3
+INFO:root:keyword> ascoltami
+INFO:root:22:19: STATE CHANGING TO wakaranai FROM enquiry IN elaborateAnswer
+INFO:root:playSound: wakaranaiAnswer2
+INFO:root:22:19: STATE CHANGING TO enquiry FROM wakaranai IN logic
+INFO:root:playSound: tellMeElse3
+INFO:root:keyword> non vedi quando è la luce accesa che non va la luce ecco
+INFO:root:22:19: STATE CHANGING TO wakaranai FROM enquiry IN elaborateAnswer
+INFO:root:playSound: wakaranaiAnswer2
+INFO:root:22:19: STATE CHANGING TO enquiry FROM wakaranai IN logic
+INFO:root:playSound: tellMe2
+INFO:root:22:19: STATE CHANGING TO noreply FROM enquiry IN listen
+INFO:root:22:19: STATE CHANGING TO enquiry FROM noreply IN logic
+INFO:root:keyword> qualcosa sulla felicità
+INFO:root:playSound: search
+INFO:root:playSound: verse
+INFO:root:22:19: STATE CHANGING TO reply FROM enquiry IN elaborateAnswer
+INFO:root:playSound: Ecc
+INFO:root:playSound: 4
+INFO:root:playSound: Ecc4:2
+INFO:root:playSound: Ecc4:3
+INFO:root:playSound: Ecc4:4
+INFO:root:22:20: STATE CHANGING TO enquiry FROM reply IN logic
+INFO:root:playSound: tellMeElse3
+INFO:root:keyword> dimmene qualcos'altro se la felicità
+INFO:root:22:20: STATE CHANGING TO noreply FROM enquiry IN listen
+INFO:root:22:20: STATE CHANGING TO enquiry FROM noreply IN logic
+INFO:root:22:20: STATE CHANGING TO noreply FROM enquiry IN listen
+INFO:root:22:20: STATE CHANGING TO enquiry FROM noreply IN logic
+INFO:root:22:20: STATE CHANGING TO noreply FROM enquiry IN listen
+INFO:root:22:20: STATE CHANGING TO farewell FROM noreply IN logic
+INFO:root:playSound: retire
+INFO:root:22:21: STATE CHANGING TO standby FROM farewell IN logic
+INFO:root:hand reciboR
+INFO:root:22:21: STATE CHANGING TO greeting FROM standby IN touch
+INFO:root:playSound: inTheNameAmen
+INFO:root:playSound: greetingNight
+INFO:root:playSound: myNameShort
+INFO:root:22:21: STATE CHANGING TO enquiry FROM greeting IN logic
+INFO:root:playSound: tellMeElse2
+INFO:root:keyword> sì sulla felicità
+INFO:root:22:22: STATE CHANGING TO noreply FROM enquiry IN listen
+INFO:root:22:22: STATE CHANGING TO enquiry FROM noreply IN logic
+INFO:root:keyword> sulla felicità
+INFO:root:22:22: STATE CHANGING TO noreply FROM enquiry IN listen
+INFO:root:22:22: STATE CHANGING TO enquiry FROM noreply IN logic
+INFO:root:keyword> cerca ci sei
+INFO:root:22:22: STATE CHANGING TO noreply FROM enquiry IN listen
+INFO:root:22:22: STATE CHANGING TO enquiry FROM noreply IN logic
+INFO:root:keyword> eccolo mi senti
+INFO:root:22:22: STATE CHANGING TO noreply FROM enquiry IN listen
+INFO:root:22:22: STATE CHANGING TO enquiry FROM noreply IN logic
+INFO:root:keyword> no mi devo sentire
+INFO:root:22:23: STATE CHANGING TO noreply FROM enquiry IN listen
+INFO:root:22:23: STATE CHANGING TO farewell FROM noreply IN logic
+INFO:root:playSound: retire
+INFO:root:22:23: STATE CHANGING TO standby FROM farewell IN logic

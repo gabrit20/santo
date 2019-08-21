@@ -1,0 +1,5 @@
+INFO:root:playSound: tellMeLong2
+INFO:root:keyword> ok è tutto
+INFO:root:15:45: STATE CHANGING TO farewell FROM enquiry IN elaborateAnswer
+INFO:root:playSound: retire
+INFO:root:15:45: STATE CHANGING TO standby FROM farewell IN logic

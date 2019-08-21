@@ -160,7 +160,7 @@ def cameraRun(ser,cascade):
                 ##					if (standby=="Y"):
                 ##						cambio="B"
                                                         #print ser.read() 
-                                    time.sleep(0.8) #0.2
+                                    time.sleep(1.0) #0.8
                                     memoriaC=coordenada
                 ##                      if (state=="standby"):
                 ##                              print standby

@@ -375,7 +375,9 @@ class GSpeech(object):
                     text = r.recognize_google(audio,language=setting_language)
                     print("From Google you said : {}".format(text))
                     sys.stdout.flush()
-                    self.publish_message(text)
+                    print("flushed")
+                    #self.publish_message(text)
+                    #print("publish_message called")
                     self.is_recognized = True
                   except sr.UnknownValueError:
                     print("Speech not recognised")
@@ -409,6 +411,9 @@ class GSpeech(object):
                       except:
                         print("Could not request results from Sphinx")
                         sys.stdout.flush()
+                  finally: #moved here to be able to see exceptions happening in the callback
+                    self.publish_message(text)
+                    print("publish_message called")
 
             self.on_recognition_finished()
             #print("speech_lock google before", speech_lock)

@@ -1,0 +1,2 @@
+INFO:root:hand reciboL
+INFO:root:21:24: STATE CHANGING TO greeting FROM standby IN touch

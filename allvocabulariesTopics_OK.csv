@@ -3,11 +3,11 @@ advice;0;it-IT;consiglio;;;;;;;
 advice;1;es-PE;;;;;;;;
 advice;2;en-GB;advice;;;;;;;
 advice;3;de-DE;;;;;;;;
-age;0;it-IT;vecchiaia;vecchio;vecchia;una certa età;la mia età;anziano;anziani;terza età
-age;1;es-PE;viejo;vieja;;;;;;
-age;2;en-GB;old age;aging;ageing;feel old;;;;
-age;3;de-DE;;;;;;;;
-anger;0;it-IT;rabbia;arrabbiato;arrabbiato;irritazione;irritato;irritata;irritarti;arrabbiarti;collera;l'ira
+aging;0;it-IT;vecchiaia;vecchio;vecchia;una certa età;la mia età;anziano;anziani;terza età
+aging;1;es-PE;viejo;vieja;;;;;;
+aging;2;en-GB;old age;aging;ageing;feel old;;;;
+aging;3;de-DE;;;;;;;;
+anger;0;it-IT;rabbia;arrabbiato;arrabbiato;irritazione;irritato;irritata;irritarti;arrabbiarti
 anger;1;es-PE;;;;;;;;
 anger;2;en-GB;anger;angry;irritation;irritated;;;;
 anger;3;de-DE;;;;;;;;

@@ -1,0 +1,9 @@
+INFO:root:playSound: tellMeLong
+INFO:root:8:36: STATE CHANGING TO noreply FROM enquiry IN listen
+INFO:root:8:36: STATE CHANGING TO enquiry FROM noreply IN logic
+INFO:root:8:36: STATE CHANGING TO noreply FROM enquiry IN listen
+INFO:root:8:36: STATE CHANGING TO enquiry FROM noreply IN logic
+INFO:root:8:36: STATE CHANGING TO noreply FROM enquiry IN listen
+INFO:root:8:36: STATE CHANGING TO enquiry FROM noreply IN logic
+INFO:root:8:36: STATE CHANGING TO noreply FROM enquiry IN listen
+INFO:root:8:36: STATE CHANGING TO enquiry FROM noreply IN logic

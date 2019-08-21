@@ -1,0 +1,17 @@
+INFO:root:hand reciboR
+INFO:root:21:29: STATE CHANGING TO greeting FROM standby IN touch
+INFO:root:playSound: inTheNameAmen
+INFO:root:playSound: greetingNight
+INFO:root:playSound: myNameShort
+INFO:root:21:29: STATE CHANGING TO meeting FROM greeting IN logic
+INFO:root:playSound: yourName
+INFO:root:keyword> francesco quero
+INFO:root:NAME: francesco quero
+INFO:root:playSound: meetM
+INFO:root:21:29: STATE CHANGING TO noname FROM meeting IN listen
+INFO:root:21:29: STATE CHANGING TO meeting FROM noname IN logic
+INFO:root:keyword> francisco choir
+INFO:root:NAME: francisco choir
+INFO:root:playSound: meetM
+INFO:root:21:29: STATE CHANGING TO noname FROM meeting IN listen
+INFO:root:21:29: STATE CHANGING TO meeting FROM noname IN logic
