@@ -154,6 +154,7 @@ class GSpeech(object):
 ##                    print("Cannot kill sound recognition process: {0}".format(e))
             if self.recog_thread.is_alive():
                 self.recog_thread.join()
+                #self.recog_thread.kill() #none of them work
             print("gspeech recognizer force stopped")
         else:
             print("gspeech is already force stopped")
@@ -376,14 +377,15 @@ class GSpeech(object):
                     print("From Google you said : {}".format(text))
                     sys.stdout.flush()
                     print("flushed")
-                    #self.publish_message(text)
-                    #print("publish_message called")
+                    self.publish_message(text)
+                    print("publish_message called")
                     self.is_recognized = True
                   except sr.UnknownValueError:
                     print("Speech not recognised")
                     sys.stdout.flush()
-                  except:
+                  except Exception as e: 
                     print("Could not request results from Google Speech Recognition service (1)")
+                    print(e)
                     sys.stdout.flush()
                     
                     try:
@@ -411,9 +413,7 @@ class GSpeech(object):
                       except:
                         print("Could not request results from Sphinx")
                         sys.stdout.flush()
-                  finally: #moved here to be able to see exceptions happening in the callback
-                    self.publish_message(text)
-                    print("publish_message called")
+
 
             self.on_recognition_finished()
             #print("speech_lock google before", speech_lock)

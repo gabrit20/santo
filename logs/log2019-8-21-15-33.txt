@@ -1,2 +1,0 @@
-INFO:root:playSound: tellMeLong
-INFO:root:keyword> parliamo della vecchiaia

@@ -11,15 +11,11 @@ pope;0;it-IT;il papa;papa francesco;papà francesco;del papa;
 pope;1;es-PE;el papa;papa francisco;papá francisco;del papa;
 pope;2;en-GB;the pope;pope francis;of the pope;;
 pope;3;de-DE;;;;;
-praytogether;0;it-IT;preghiamo insieme;pregare insieme;dire una preghiera insieme;recitiamo insieme;recitare insieme;
-praytogether;1;es-PE;recemos juntos;rezar juntos;rezando juntos;oración juntos;
-praytogether;2;en-GB;let's pray together;we pray together;want to pray together;say a prayer together;like to pray together;recite together
-praytogether;3;de-DE;lass uns beten;;;;
-learnpray;0;it-IT;imparare una preghiera;imparare a pregare;;insegnarmi una preghiera;insegnarmi a pregare
-learnpray;1;es-PE;aprender una oración;aprender a rezar;enseñarme una oración;enseñarme a rezar;
-learnpray;2;en-GB;learn a prayer;learn to pray;teach me a prayer;teach me to pray;
-learnpray;3;de-DE;;;;;
 pray;0;it-IT;preghiamo;vorrei pregare;vorrei dire una preghiera;;
 pray;1;es-PE;recemos;rezar;rezando;oración;
 pray;2;en-GB;let's pray;we pray;want to pray;say a prayer;like to pray
 pray;3;de-DE;lass uns beten;;;;
+learnpray;0;it-IT;imparare una preghiera;imparare a pregare;;insegnarmi una preghiera;insegnarmi a pregare
+learnpray;1;es-PE;aprender una oración;aprender a rezar;enseñarme una oración;enseñarme a rezar;
+learnpray;2;en-GB;learn a prayer;learn to pray;teach me a prayer;teach me to pray;
+learnpray;3;de-DE;;;;;

@@ -1,6 +1,6 @@
 textID;IT;ES;EN;DE
-inTheNameAmen;Nel nome del padre, del figlio, e dello Spirito Santo, Amen;Nel nombre del Padre, del Hijo, y del Espíritu Santo, Amen;In the name of the Father, and of the Son, and of the Holy Spirit, Amen;Im Namen des Vaters, des Sohnes und des heiligen Geistes, Amen.
-amen;Amen;Amen;Amen;Amen
+inTheNameAmen;Nel nome del padre, del figlio, e dello Spirito Santo, Amen;Nel nombre del Padre, del Hijo, y del Espíritu Santo, Amén;In the name of the Father, and of the Son, and of the Holy Spirit, Amen;Im Namen des Vaters, des Sohnes und des heiligen Geistes, Amen.
+amen;Amen;Amén;Amen;Amen
 goInPeace;Vai in pace, con la grazia del Signore;Anda en paz, con la gracia del Señor.;Go in peace, and may God bless you;Gehe in Frieden und möge Gott dich segnen
 greeting1Day;Buongiorno!;Buenos días;Hello!;Hallo
 greeting1;Buongiorno!;Buenas tardes;Hello!;Hallo
@@ -76,8 +76,9 @@ noDay;Oggi, non so che giorno è;Hoy, no se que día es;;
 sorry;Mi dispiace.;Lo siento.;;
 noSaint;Non mi ricordo il santo di oggi;No me acuerdo el santo de hoy;I don't remember today's saint;
 ;;;;
-ReciteInstructions;Recitiamo insieme. Parla soltanto quando la mia candela è accesa. Se non ti ricordi le parole, toccami una mano, e ti guiderò.;;Let us recite together. Please speak only when my candle is turned on. If you don't remember the words, touch my hand, and I will guide you.;
-TeachInstructions;Ti insegnerò le parole. Ripeti dopo di me. Parla soltanto quando la mia candela è accesa.;;I will teach you the words. Please speak only when my candle is turned on. ;
+youasked;Mi hai chiesto;Me preguntaste;You asked me;
+reciteInstructions;Recitiamo insieme. Parla soltanto quando la mia candela è accesa. Se non ti ricordi le parole, toccami una mano, e ti guiderò.;;Let us recite together. Please speak only when my candle is turned on. If you don't remember the words, touch my hand, and I will guide you.;
+teachInstructions;Ti insegnerò le parole. Ripeti dopo di me. Parla soltanto quando la mia candela è accesa.;;I will teach you the words. Please speak only when my candle is turned on. ;
 ;;;;
 evalQuery;;;Was this response appropriate?;
 evalQueryRisp;;;Very well. I'll keep that in mind.;

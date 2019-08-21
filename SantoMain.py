@@ -2,6 +2,7 @@ import random
 import sys
 import time
 import logging
+import Levenshtein
 
 import threading
 alreadyPlayed = False
@@ -21,6 +22,7 @@ from allpope import *
 from allvocabularies import *
 from allquotes import *
 from allentries import *
+from allinteractive import *
 
 from playVoice import *
 from camera import cameraInit
@@ -30,12 +32,17 @@ speech_rec = GSpeech("")
 
 import soundfiles
 
-
+global query
+query = [-1, -1, -1, -1] #Generic, Sources, Topics, People
 global chosenReply
 chosenReply = ""
 global countInteractions
 countInteractions = 0
 countEmpty = 0
+global prayturns_currentIndex
+prayturns_currentIndex = -1
+global prayturns_currentKey
+prayturns_currentKey = -1
 
 import serial
 global ser
@@ -161,7 +168,8 @@ def listen():
         global candela
         
         #while True:
-        if (state == "enquiry" or state == "meeting" ):  #shouldn't happen in other states
+        if (state in ["enquiry","meeting","prayturns","prayturns_loopok","prayturns_loopfail"]):
+                #shouldn't happen in other states
 
                 is_recognized = -1
                 
@@ -247,6 +255,17 @@ def listen():
                                 changeState("noreply", state, func_name(), False)
                                 #it keeps running
 
+                        elif (state in ["prayturns","prayturns_loopok","prayturns_loopfail"]):
+                                envia=cabezera+"C100" #RED
+                                ser.write(envia)
+                                time.sleep(tiempoSer*3)
+
+                                envia=cabezera+"C000"
+                                ser.write(envia)
+                                time.sleep(tiempoSer)
+                                changeState("prayturns_loopfail", state, func_name(), False)
+                                
+
                                 
 
                                         
@@ -304,6 +323,10 @@ def touch():
                                         pygame.mixer.music.stop()
                                         changeState("enquiry", state, func_name(), False)
                                 continue
+                        if (state in ["prayturns","prayturns_loopok","prayturns_loopfail"]):
+                                speech_rec.force_stop()
+                                changeState("prayturns_loopfail", state, func_name(), False)
+                        
                                 
                                 
 
@@ -619,6 +642,7 @@ def elaborateAnswer(keyword):  #enters here only if it recognises some word
         global gender
         global alreadyPlayed
         global chosenReply
+        global query
 
         
 
@@ -753,8 +777,8 @@ def elaborateAnswer(keyword):  #enters here only if it recognises some word
                                 changeState("reply", state, func_name(), False)
 
 
-                        #CASE 3: pray in turns
-                        elif query[1:4] == ["learnpray", -1, -1]:
+                        #CASE 3: pray together in turns
+                        elif query[1] == "praytogether":
                                 answer_found = True
                                 #playSound("popeStart") #moved to retrieveTextFromKey
                                 #time.sleep(1)
@@ -875,8 +899,41 @@ def elaborateAnswer(keyword):  #enters here only if it recognises some word
                 playSound("candela")
                 changeState("enquiry", state, func_name(), False)
                 time.sleep(0.8)
+
+
+        elif (state in ["prayturns","prayturns_loopok","prayturns_loopfail"]):
+                print("received")
+                is_matched = True
+                answer_found = True
+
+
+                print("comparison", keyword, interactive[prayturns_currentKey]['parts'][str(prayturns_currentIndex)][language_out].decode('utf-8'))
+                similarity = Levenshtein.ratio(keyword, interactive[prayturns_currentKey]['parts'][str(prayturns_currentIndex)][language_out].decode('utf-8'))
+                print("similarity", similarity)
+                if (similarity >= similarity_threshold):
+                        envia=cabezera+"C011" #BLUE
+                        ser.write(envia)
+                        time.sleep(tiempoSer*3)
                         
-        #CASE 5: did not understand
+                        envia=cabezera+"C000" 
+                        ser.write(envia)
+                        time.sleep(tiempoSer)
+                        changeState("prayturns_loopok", state, func_name(), False)
+                else:                
+                        envia=cabezera+"C100" #RED
+                        ser.write(envia)
+                        time.sleep(tiempoSer*3)
+                        
+                        envia=cabezera+"C000" 
+                        ser.write(envia)
+                        time.sleep(tiempoSer)
+                        changeState("prayturns_loopfail", state, func_name(), False)                
+
+
+
+
+                        
+        #CASE final: did not understand
         if (is_matched == False or answer_found == False):
                 changeState("wakaranai", state, func_name(), False)
                                 
@@ -894,6 +951,9 @@ def logic():
         global aureola
         global espalda
         global candela
+        global prayturns_currentIndex
+        global prayturns_currentKey
+        
         while True:
 
                 if (state != "standby"):
@@ -1065,6 +1125,90 @@ def logic():
                         changeState("enquiry", state, func_name(), False)
 
 
+
+                elif (state == "prayturns"):
+                        
+
+                        if alreadyPlayed == False: 
+                                alreadyPlayed = True   #otherwise it loops inside here
+                                print("pray together", query[2])
+
+                                print(list(interactive.keys()))
+
+                                if query[2] != -1:
+
+                                        for key in list(interactive.keys()):
+                                                if key == query[2] + "_interactive":
+                                                        if interactive[key]['parts']['1'][language_out] != "":
+                                                                playSound("youasked")
+                                                                time.sleep(0.3)
+                                                                print("YOU ASKED:", key, interactive[key]['parts']["0"])
+                                                                playSound(key+"_0", interactive[key]['parts']["0"])
+                                                                time.sleep(0.8)
+                                                                playSound("reciteInstructions")
+                                                                
+                                        
+                                                                time.sleep(1.2)
+
+
+                                                                prayturns_currentIndex = 1
+                                                                prayturns_currentKey = key
+                                                                playSound(key+"_" + str(prayturns_currentIndex), interactive[key]['parts'][str(prayturns_currentIndex)])
+
+                                                                prayturns_currentIndex  +=1
+                                                                listen()
+                                                                break
+                                else:
+                                        changeState("wakaranai", state, func_name(), False) #for now wakaranai
+                                                
+                                
+
+
+
+                elif (state == "prayturns_loopfail"):
+                        
+
+                        if alreadyPlayed == False:
+                                alreadyPlayed = True
+                                print("now at", prayturns_currentIndex)
+
+                                time.sleep(1.5)
+
+                                playSound(key+"_" + str(prayturns_currentIndex), interactive[prayturns_currentKey]['parts'][str(prayturns_currentIndex)])
+
+                                prayturns_currentIndex  +=1
+
+                                if (str(prayturns_currentIndex) in interactive[prayturns_currentKey]['parts'].keys()):
+                                        listen()
+
+                                else:
+                                        time.sleep(2.0)
+                                        countInteractions += 1
+                                        changeState("enquiry", state, func_name(), False)
+
+                elif (state == "prayturns_loopok"):
+                        
+
+                        if alreadyPlayed == False:
+                                alreadyPlayed = True
+                                print("now at", prayturns_currentIndex)
+
+                                prayturns_currentIndex += 1
+
+                                if (str(prayturns_currentIndex) in interactive[prayturns_currentKey]['parts'].keys()):
+                                        print("INSIDE")
+                                        listen()
+
+                                else:
+                                        playSound("amen")
+                                        time.sleep(2.0)
+                                        countInteractions += 1
+                                        changeState("enquiry", state, func_name(), False)
+
+
+
+
+
 def keepLightsOn():
         while (state == "standby"):
                 if (int(time.clock()*10)%50 == 0):
@@ -1196,6 +1340,7 @@ allprayersInit()
 allpopeInit()
 allquotesInit()
 allentriesInit()
+allinteractiveInit()
 #vocabularies must be done after saints and Bible
 allvocabulariesInit()
 

@@ -30,6 +30,8 @@ maxNumVerses = 5 #maximum number of random verses to be read from the Bible
 
 speech_lock = False
 
+similarity_threshold = 0.7
+
 import time
 timeInfo = time.localtime(time.time())
 year = timeInfo[0]
