@@ -1,0 +1,86 @@
+INFO:root:hand reciboR
+INFO:root:8:48: STATE CHANGING TO greeting FROM standby IN touch
+INFO:root:playSound: inTheNameAmen
+INFO:root:playSound: greetingMorning
+INFO:root:playSound: myNameShort
+INFO:root:8:48: STATE CHANGING TO meeting FROM greeting IN logic
+INFO:root:playSound: yourName
+INFO:root:keyword> hey it's me
+INFO:root:NAME: hey it's me
+INFO:root:playSound: meetM
+INFO:root:playSound: intro
+INFO:root:playSound: candela
+INFO:root:8:48: STATE CHANGING TO enquiry FROM meeting IN elaborateAnswer
+INFO:root:playSound: tellMeLong
+INFO:root:keyword> tell me what day is today
+INFO:root:8:49: STATE CHANGING TO saint FROM enquiry IN elaborateAnswer
+INFO:root:playSound: 11-22d
+INFO:root:playSound: noSaint
+INFO:root:playSound: sorry
+INFO:root:8:49: STATE CHANGING TO enquiry FROM saint IN logic
+INFO:root:playSound: tellMeElse3
+INFO:root:keyword> so how are you
+INFO:root:8:49: STATE CHANGING TO reply FROM enquiry IN elaborateAnswer
+INFO:root:playSound: genki
+INFO:root:8:49: STATE CHANGING TO enquiry FROM reply IN logic
+INFO:root:playSound: tellMeElse2
+INFO:root:keyword> yes please let's talk something about the bible
+INFO:root:playSound: verse
+INFO:root:8:50: STATE CHANGING TO reply FROM enquiry IN elaborateAnswer
+INFO:root:playSound: Gen
+INFO:root:playSound: 12
+INFO:root:playSound: Gen12:11
+INFO:root:playSound: Gen12:10
+INFO:root:playSound: Gen12:13
+INFO:root:playSound: Gen12:12
+INFO:root:playSound: Gen12:15
+INFO:root:8:51: STATE CHANGING TO enquiry FROM reply IN logic
+INFO:root:playSound: tellMeElse2
+INFO:root:keyword> well i don't know i'm tired you know much work
+INFO:root:8:51: STATE CHANGING TO reply FROM enquiry IN elaborateAnswer
+INFO:root:8:51: STATE CHANGING TO enquiry FROM reply IN logic
+INFO:root:playSound: tellMe1
+INFO:root:keyword> i said i'm tired but too much work
+INFO:root:playSound: verse
+INFO:root:8:51: STATE CHANGING TO reply FROM enquiry IN elaborateAnswer
+INFO:root:playSound: 2Th
+INFO:root:playSound: 3
+INFO:root:playSound: 2Th3:9
+INFO:root:playSound: 2Th3:10
+INFO:root:playSound: 2Th3:11
+INFO:root:8:52: STATE CHANGING TO enquiry FROM reply IN logic
+INFO:root:playSound: tellMeElse1
+INFO:root:8:52: STATE CHANGING TO noreply FROM enquiry IN listen
+INFO:root:8:52: STATE CHANGING TO enquiry FROM noreply IN logic
+INFO:root:8:52: STATE CHANGING TO noreply FROM enquiry IN listen
+INFO:root:8:52: STATE CHANGING TO enquiry FROM noreply IN logic
+INFO:root:8:52: STATE CHANGING TO noreply FROM enquiry IN listen
+INFO:root:8:52: STATE CHANGING TO enquiry FROM noreply IN logic
+INFO:root:8:52: STATE CHANGING TO noreply FROM enquiry IN listen
+INFO:root:8:52: STATE CHANGING TO enquiry FROM noreply IN logic
+INFO:root:hand reciboL
+INFO:root:8:52: STATE CHANGING TO farewell FROM enquiry IN touch
+INFO:root:playSound: retire
+INFO:root:8:53: STATE CHANGING TO standby FROM farewell IN logic
+INFO:root:hand reciboL
+INFO:root:8:53: STATE CHANGING TO greeting FROM standby IN touch
+INFO:root:playSound: inTheNameAmen
+INFO:root:playSound: greetingMorning
+INFO:root:playSound: myNameShort
+INFO:root:8:53: STATE CHANGING TO enquiry FROM greeting IN logic
+INFO:root:playSound: tellMeElse3
+INFO:root:8:53: STATE CHANGING TO noreply FROM enquiry IN listen
+INFO:root:8:53: STATE CHANGING TO enquiry FROM noreply IN logic
+INFO:root:8:53: STATE CHANGING TO noreply FROM enquiry IN listen
+INFO:root:8:53: STATE CHANGING TO enquiry FROM noreply IN logic
+INFO:root:keyword> let's pray together
+INFO:root:8:53: STATE CHANGING TO prayturns FROM enquiry IN elaborateAnswer
+INFO:root:8:53: STATE CHANGING TO wakaranai FROM prayturns IN logic
+INFO:root:playSound: wakaranaiAnswer
+INFO:root:8:54: STATE CHANGING TO enquiry FROM wakaranai IN logic
+INFO:root:playSound: tellMeElse2
+INFO:root:keyword> now that's see thank you
+INFO:root:playSound: yourewelcome
+INFO:root:8:54: STATE CHANGING TO farewell FROM enquiry IN elaborateAnswer
+INFO:root:playSound: retire
+INFO:root:8:54: STATE CHANGING TO standby FROM farewell IN logic

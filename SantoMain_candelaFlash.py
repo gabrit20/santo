@@ -122,16 +122,13 @@ def playSound(filename, archive=-1):
 ##                ser.write(envia)
 ##                print("aureola set to 000 (playSound)")
 ##                print("aureola (playSound): ", aureola)
-                
-        #if (candela==1):      #can be also other colours, turn off anyway          
-        time.sleep(tiempoSer)
-        envia=cabezera+"C000"
-        candela=0
-        ser.write(envia)
-        print("candela set to 000 (playSound)")
+        if (candela==1):                
+                time.sleep(tiempoSer)
+                envia=cabezera+"C000"
+                candela=0
+                ser.write(envia)
+                print("candela set to 000 (playSound)")
                 #print("candela (playSound2): ", candela)
-
-
 
 
 
@@ -187,13 +184,12 @@ def listen():
 ##                        ser.write(envia)
 ##                        print("aureola set to 111 (listen)")
 ##                        print("aureola (listen2): ", aureola)
-                
-                #if (candela==0): #can be also other colours, set to white anyway
-                time.sleep(tiempoSer)
-                envia=cabezera+"C111"
-                candela=1
-                ser.write(envia)
-                print("candela set to 111 (listen)")
+                if (candela==0):
+                        time.sleep(tiempoSer)
+                        envia=cabezera+"C111"
+                        candela=1
+                        ser.write(envia)
+                        print("candela set to 111 (listen)")
                         #print("candela (listen2): ", candela)
 
 
@@ -264,6 +260,9 @@ def listen():
                                 ser.write(envia)
                                 time.sleep(tiempoSer*3)
 
+                                envia=cabezera+"C000"
+                                ser.write(envia)
+                                time.sleep(tiempoSer)
                                 changeState("prayturns_loopfail", state, func_name(), False)
                                 
 
@@ -916,12 +915,18 @@ def elaborateAnswer(keyword):  #enters here only if it recognises some word
                         ser.write(envia)
                         time.sleep(tiempoSer*3)
                         
+                        envia=cabezera+"C000" 
+                        ser.write(envia)
+                        time.sleep(tiempoSer)
                         changeState("prayturns_loopok", state, func_name(), False)
                 else:                
                         envia=cabezera+"C100" #RED
                         ser.write(envia)
                         time.sleep(tiempoSer*3)
                         
+                        envia=cabezera+"C000" 
+                        ser.write(envia)
+                        time.sleep(tiempoSer)
                         changeState("prayturns_loopfail", state, func_name(), False)                
 
 

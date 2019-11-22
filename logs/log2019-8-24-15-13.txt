@@ -1,0 +1,44 @@
+INFO:root:hand reciboL
+INFO:root:15:15: STATE CHANGING TO greeting FROM standby IN touch
+INFO:root:playSound: inTheNameAmen
+INFO:root:playSound: greetingAfternoon
+INFO:root:playSound: myNameShort
+INFO:root:15:16: STATE CHANGING TO meeting FROM greeting IN logic
+INFO:root:playSound: yourName
+INFO:root:keyword> matilde
+INFO:root:NAME: matilde
+INFO:root:playSound: meetM
+INFO:root:playSound: intro
+INFO:root:playSound: candela
+INFO:root:15:16: STATE CHANGING TO enquiry FROM meeting IN elaborateAnswer
+INFO:root:playSound: tellMeLong
+INFO:root:keyword> mi sto un po' annoiando
+INFO:root:15:16: STATE CHANGING TO wakaranai FROM enquiry IN elaborateAnswer
+INFO:root:playSound: wakaranaiAnswer2
+INFO:root:15:16: STATE CHANGING TO enquiry FROM wakaranai IN logic
+INFO:root:playSound: tellMeElse1
+INFO:root:keyword> qual è la strada per la felicità
+INFO:root:playSound: search
+INFO:root:playSound: verse
+INFO:root:15:17: STATE CHANGING TO reply FROM enquiry IN elaborateAnswer
+INFO:root:playSound: Sir
+INFO:root:playSound: 25
+INFO:root:playSound: Sir25:7
+INFO:root:playSound: Sir25:8
+INFO:root:playSound: Sir25:9
+INFO:root:15:18: STATE CHANGING TO enquiry FROM reply IN logic
+INFO:root:playSound: tellMeElse1
+INFO:root:keyword> no
+INFO:root:15:18: STATE CHANGING TO noreply FROM enquiry IN listen
+INFO:root:15:18: STATE CHANGING TO enquiry FROM noreply IN logic
+INFO:root:keyword> è tutto grazie
+INFO:root:15:18: STATE CHANGING TO noreply FROM enquiry IN listen
+INFO:root:15:18: STATE CHANGING TO enquiry FROM noreply IN logic
+INFO:root:15:18: STATE CHANGING TO noreply FROM enquiry IN listen
+INFO:root:15:18: STATE CHANGING TO enquiry FROM noreply IN logic
+INFO:root:15:18: STATE CHANGING TO noreply FROM enquiry IN listen
+INFO:root:15:18: STATE CHANGING TO enquiry FROM noreply IN logic
+INFO:root:15:18: STATE CHANGING TO noreply FROM enquiry IN listen
+INFO:root:15:18: STATE CHANGING TO farewell FROM noreply IN logic
+INFO:root:playSound: retire
+INFO:root:15:18: STATE CHANGING TO standby FROM farewell IN logic

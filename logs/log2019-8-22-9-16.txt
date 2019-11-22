@@ -1,0 +1,30 @@
+INFO:root:playSound: tellMeLong
+INFO:root:keyword> preghiamo insieme
+INFO:root:9:17: STATE CHANGING TO prayturns FROM enquiry IN elaborateAnswer
+INFO:root:9:17: STATE CHANGING TO wakaranai FROM prayturns IN logic
+INFO:root:playSound: wakaranaiAnswer
+INFO:root:9:17: STATE CHANGING TO enquiry FROM wakaranai IN logic
+INFO:root:playSound: tellMeElse1
+INFO:root:keyword> preghiamo insieme l'ave maria
+INFO:root:9:17: STATE CHANGING TO prayturns FROM enquiry IN elaborateAnswer
+INFO:root:playSound: youasked
+INFO:root:playSound: avemaria_interactive_0
+INFO:root:playSound: reciteInstructions
+INFO:root:playSound: avemaria_interactive_1
+INFO:root:keyword> il signore non lo so
+INFO:root:9:18: STATE CHANGING TO prayturns_loopok FROM prayturns IN elaborateAnswer
+INFO:root:keyword> non c'è
+INFO:root:9:18: STATE CHANGING TO prayturns_loopfail FROM prayturns_loopok IN elaborateAnswer
+INFO:root:playSound: avemaria_interactive_3
+INFO:root:keyword> e benedetto
+INFO:root:9:18: STATE CHANGING TO prayturns_loopfail FROM prayturns_loopfail IN elaborateAnswer
+INFO:root:playSound: avemaria_interactive_4
+INFO:root:9:19: STATE CHANGING TO prayturns_loopfail FROM prayturns_loopfail IN listen
+INFO:root:playSound: avemaria_interactive_5
+INFO:root:9:19: STATE CHANGING TO prayturns_loopfail FROM prayturns_loopfail IN listen
+INFO:root:playSound: avemaria_interactive_6
+INFO:root:keyword> adesso e nell'ora della nostra morte
+INFO:root:9:19: STATE CHANGING TO prayturns_loopok FROM prayturns_loopfail IN elaborateAnswer
+INFO:root:playSound: amen
+INFO:root:9:19: STATE CHANGING TO enquiry FROM prayturns_loopok IN logic
+INFO:root:playSound: tellMeElse2

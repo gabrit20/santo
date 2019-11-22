@@ -1,0 +1,15 @@
+INFO:root:playSound: tellMeLong
+INFO:root:keyword> che giorno è oggi
+INFO:root:11:3: STATE CHANGING TO saint FROM enquiry IN elaborateAnswer
+INFO:root:playSound: 8-24d
+INFO:root:playSound: dayMemory
+INFO:root:playSound: 8-24n
+INFO:root:playSound: 8-24s
+INFO:root:hand reciboL
+INFO:root:hand reciboR
+INFO:root:11:4: STATE CHANGING TO enquiry FROM saint IN logic
+INFO:root:playSound: tellMeElse3
+INFO:root:11:4: STATE CHANGING TO noreply FROM enquiry IN listen
+INFO:root:11:4: STATE CHANGING TO enquiry FROM noreply IN logic
+INFO:root:11:4: STATE CHANGING TO noreply FROM enquiry IN listen
+INFO:root:11:4: STATE CHANGING TO enquiry FROM noreply IN logic

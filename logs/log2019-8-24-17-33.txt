@@ -1,0 +1,33 @@
+INFO:root:hand reciboL
+INFO:root:17:38: STATE CHANGING TO greeting FROM standby IN touch
+INFO:root:playSound: inTheNameAmen
+INFO:root:playSound: greetingEvening
+INFO:root:playSound: myNameShort
+INFO:root:17:39: STATE CHANGING TO meeting FROM greeting IN logic
+INFO:root:playSound: yourName
+INFO:root:keyword> gabriele
+INFO:root:NAME: gabriele
+INFO:root:playSound: welcomeBackM
+INFO:root:playSound: intro
+INFO:root:playSound: candela
+INFO:root:17:39: STATE CHANGING TO enquiry FROM meeting IN elaborateAnswer
+INFO:root:playSound: tellMeLong2
+INFO:root:keyword> dimmi che giorno è oggi
+INFO:root:17:39: STATE CHANGING TO saint FROM enquiry IN elaborateAnswer
+INFO:root:playSound: 8-24d
+INFO:root:playSound: dayMemory
+INFO:root:playSound: 8-24n
+INFO:root:playSound: 8-24s
+INFO:root:17:40: STATE CHANGING TO enquiry FROM saint IN logic
+INFO:root:playSound: tellMeElse1
+INFO:root:keyword> preghiamo insieme l'ave maria
+INFO:root:17:40: STATE CHANGING TO prayturns FROM enquiry IN elaborateAnswer
+INFO:root:playSound: youasked
+INFO:root:playSound: avemaria_interactive_0
+INFO:root:playSound: reciteInstructions
+INFO:root:playSound: avemaria_interactive_1
+INFO:root:keyword> il signore è con te
+INFO:root:17:41: STATE CHANGING TO prayturns_loopok FROM prayturns IN elaborateAnswer
+INFO:root:keyword> tu sei tu sei e poi non me lo ricordo
+INFO:root:17:41: STATE CHANGING TO prayturns_loopfail FROM prayturns_loopok IN elaborateAnswer
+INFO:root:playSound: avemaria_interactive_3
