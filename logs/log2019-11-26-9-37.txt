@@ -1,0 +1,87 @@
+INFO:root:hand reciboL
+INFO:root:9:39: STATE CHANGING TO greeting FROM standby IN touch
+INFO:root:playSound: inTheNameAmen
+INFO:root:playSound: greetingMorning
+INFO:root:playSound: myNameShort
+INFO:root:9:39: STATE CHANGING TO meeting FROM greeting IN logic
+INFO:root:playSound: yourName
+INFO:root:keyword> my name is carol carol
+INFO:root:NAME: my name is carol carol
+INFO:root:playSound: meetM
+INFO:root:playSound: intro
+INFO:root:playSound: candela
+INFO:root:9:39: STATE CHANGING TO enquiry FROM meeting IN elaborateAnswer
+INFO:root:playSound: tellMeLong
+INFO:root:9:40: STATE CHANGING TO noreply FROM enquiry IN listen
+INFO:root:9:40: STATE CHANGING TO enquiry FROM noreply IN logic
+INFO:root:keyword> how are you
+INFO:root:9:40: STATE CHANGING TO reply FROM enquiry IN elaborateAnswer
+INFO:root:playSound: genki
+INFO:root:9:40: STATE CHANGING TO enquiry FROM reply IN logic
+INFO:root:playSound: tellMeElse2
+INFO:root:keyword> yes tell me about the afterlife
+INFO:root:9:40: STATE CHANGING TO wakaranai FROM enquiry IN elaborateAnswer
+INFO:root:playSound: wakaranaiAnswer2
+INFO:root:9:40: STATE CHANGING TO enquiry FROM wakaranai IN logic
+INFO:root:playSound: tellMeElse3
+INFO:root:9:40: STATE CHANGING TO noreply FROM enquiry IN listen
+INFO:root:9:40: STATE CHANGING TO enquiry FROM noreply IN logic
+INFO:root:keyword> something about happiness
+INFO:root:playSound: verse
+INFO:root:9:41: STATE CHANGING TO reply FROM enquiry IN elaborateAnswer
+INFO:root:playSound: Sir
+INFO:root:playSound: 25
+INFO:root:playSound: Sir25:7
+INFO:root:playSound: Sir25:8
+INFO:root:playSound: Sir25:9
+INFO:root:9:42: STATE CHANGING TO enquiry FROM reply IN logic
+INFO:root:playSound: tellMeElse2
+INFO:root:9:42: STATE CHANGING TO noreply FROM enquiry IN listen
+INFO:root:9:42: STATE CHANGING TO enquiry FROM noreply IN logic
+INFO:root:9:42: STATE CHANGING TO noreply FROM enquiry IN listen
+INFO:root:9:42: STATE CHANGING TO enquiry FROM noreply IN logic
+INFO:root:9:42: STATE CHANGING TO noreply FROM enquiry IN listen
+INFO:root:9:42: STATE CHANGING TO enquiry FROM noreply IN logic
+INFO:root:keyword> any prayer
+INFO:root:9:42: STATE CHANGING TO wakaranai FROM enquiry IN elaborateAnswer
+INFO:root:playSound: wakaranaiAnswer2
+INFO:root:9:42: STATE CHANGING TO enquiry FROM wakaranai IN logic
+INFO:root:playSound: tellMe5
+INFO:root:keyword> i would like to pray
+INFO:root:playSound: prayStart
+INFO:root:9:42: STATE CHANGING TO reply FROM enquiry IN elaborateAnswer
+INFO:root:playSound: padrenostro_1
+INFO:root:9:43: STATE CHANGING TO enquiry FROM reply IN logic
+INFO:root:playSound: tellMeElse1
+INFO:root:keyword> what day is today
+INFO:root:9:43: STATE CHANGING TO saint FROM enquiry IN elaborateAnswer
+INFO:root:playSound: 11-26d
+INFO:root:playSound: noSaint
+INFO:root:playSound: sorry
+INFO:root:9:43: STATE CHANGING TO enquiry FROM saint IN logic
+INFO:root:playSound: tellMeElse1
+INFO:root:9:44: STATE CHANGING TO noreply FROM enquiry IN listen
+INFO:root:9:44: STATE CHANGING TO enquiry FROM noreply IN logic
+INFO:root:keyword> about saint francis
+INFO:root:playSound: search
+INFO:root:playSound: noresults
+INFO:root:9:44: STATE CHANGING TO wakaranai FROM enquiry IN elaborateAnswer
+INFO:root:9:44: STATE CHANGING TO wakaranai FROM wakaranai IN elaborateAnswer
+INFO:root:playSound: wakaranaiAnswer2
+INFO:root:9:44: STATE CHANGING TO enquiry FROM wakaranai IN logic
+INFO:root:playSound: tellMeElse2
+INFO:root:keyword> can you tell me about saint paul
+INFO:root:9:45: STATE CHANGING TO wakaranai FROM enquiry IN elaborateAnswer
+INFO:root:playSound: wakaranaiAnswer
+INFO:root:9:45: STATE CHANGING TO enquiry FROM wakaranai IN logic
+INFO:root:playSound: tellMe5
+INFO:root:keyword> okay
+INFO:root:9:45: STATE CHANGING TO wakaranai FROM enquiry IN elaborateAnswer
+INFO:root:playSound: wakaranaiAnswer2
+INFO:root:9:45: STATE CHANGING TO enquiry FROM wakaranai IN logic
+INFO:root:playSound: tellMeElse2
+INFO:root:keyword> thank you for talking to me thank you
+INFO:root:playSound: yourewelcome
+INFO:root:9:46: STATE CHANGING TO farewell FROM enquiry IN elaborateAnswer
+INFO:root:playSound: retire
+INFO:root:9:46: STATE CHANGING TO standby FROM farewell IN logic
