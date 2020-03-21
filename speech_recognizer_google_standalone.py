@@ -34,7 +34,7 @@ from __future__ import unicode_literals
 
 import json, shlex, socket, subprocess, sys, threading
 import io
-from google.cloud import speech
+#from google.cloud import speech
 import shlex,subprocess,os
 cmd1='sox -r 16000 -t alsa hw:1,0 recording.flac silence 1 0.1 1% 1 1.5 1%'
 cmd2='wget -q -U "Mozilla/5.0" --post-file recording.flac --header="Content-Type: audio/x-flac; rate=16000" -O - "https://www.google.com/speech-api/v2/recognize?output=json&lang=ru-ru&key=yourkey"'
@@ -76,11 +76,11 @@ class GSpeech(object):
 
     def __init__(self, _api_key):
         """Constructor"""
-        # configure system commands
-        self._use_old_api = False
+        ## configure system commands
+        #self._use_old_api = False
 
-        if not self._use_old_api:
-            self._speech_client = speech.Client()
+        #if not self._use_old_api:
+        #    self._speech_client = speech.Client()
 
         self.recording_process = None
         self.callback = None

@@ -1,5 +1,0 @@
-INFO:root:playSound: tellMeLong
-INFO:root:keyword> preghiamo preghiamo
-INFO:root:playSound: prayStart
-INFO:root:9:16: STATE CHANGING TO reply FROM enquiry IN elaborateAnswer
-INFO:root:playSound: angel_1
